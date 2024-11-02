@@ -2374,7 +2374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624e48642449e8148ae5cdaee559c937, type: 3}
   m_Name: Movement
   m_EditorClassIdentifier: 
-  uiPosition: {x: -6.500122, y: 3.999939}
+  uiPosition: {x: -5.500122, y: 3.999939}
   defaultName: NewState
   m_Parent: {fileID: 114028739362575944}
   m_Connections:
