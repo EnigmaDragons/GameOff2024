@@ -32,7 +32,8 @@ MonoBehaviour:
   BranchPruneTags: []
   Nodes:
   - Graph: {fileID: 11400000}
-    TileSets: []
+    TileSets:
+    - {fileID: 11400000, guid: 40bb2f5273da12c469e5d2943f69c435, type: 2}
     NodeType: 1
     Position: 0
     Label: Start
@@ -40,7 +41,8 @@ MonoBehaviour:
     Locks: []
     LockPlacement: 0
   - Graph: {fileID: 11400000}
-    TileSets: []
+    TileSets:
+    - {fileID: 11400000, guid: 9528192f1ca480744a8b14e44c9cfaa4, type: 2}
     NodeType: 2
     Position: 1
     Label: Goal
@@ -49,7 +51,8 @@ MonoBehaviour:
     LockPlacement: 0
   Lines:
   - Graph: {fileID: 11400000}
-    DungeonArchetypes: []
+    DungeonArchetypes:
+    - {fileID: 11400000, guid: 4b9127106582a1247b5455e254d1e35c, type: 2}
     Position: 0
     Length: 1
     Keys: []
