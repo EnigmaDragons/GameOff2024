@@ -1,4 +1,3 @@
-using System.IO;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -18,7 +17,10 @@ public class SpyController : MonoBehaviour
 
     Vector3 destination;
 
-    NavMeshPath pathToPlayer;
+    private NavMeshPath pathToPlayer;
+
+    private bool _playerFound = false;
+    private bool _destinationFound = false;
 
     // the interval between calculating the distance to the player
     [SerializeField] float playerDistanceCalcInterval;
@@ -27,24 +29,48 @@ public class SpyController : MonoBehaviour
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        if (navMeshAgent == null)
+            Log.Error("Missing NavMeshAgent");
     }
 
     private void Start()
     {
-        navMeshAgent.SetDestination(DestinationSingleton.instance.transform.position);
-        //playerCharacterTransform = GameObject.FindWithTag("Player").transform;
         pathToPlayer = new NavMeshPath();
     }
 
     private void FixedUpdate()
     {
+        if (!_playerFound)
+        {
+            var gObj = GameObject.FindWithTag("Player");
+            if (gObj != null)
+            {
+                playerCharacterTransform = gObj.transform;
+                _playerFound = true;
+            }
+        }
+
+        if (!_destinationFound)
+        {
+            if (DestinationSingleton.instance != null && DestinationSingleton.instance.transform != null)
+            {
+                navMeshAgent.SetDestination(DestinationSingleton.instance.transform.position);
+                _destinationFound = true;
+            }
+        }
+
+        if (!_playerFound || !_destinationFound)
+        {
+            Debug.Log("Player or Destination not found yet");
+            return;
+        }
+
         if(playerDistanceCalcTimer <= 0f)
         {
-            if(playerCharacterTransform == null)
+            if (pathToPlayer != null && pathToPlayer.corners != null)
             {
-                playerCharacterTransform = GameObject.FindWithTag("Player").transform;
+                Debug.Log(pathToPlayer.corners.Length);
             }
-            Debug.Log(pathToPlayer.corners.Length);
 
             if (navMeshAgent.CalculatePath(playerCharacterTransform.position, pathToPlayer))
             {
@@ -53,7 +79,6 @@ public class SpyController : MonoBehaviour
                 navMeshAgent.speed = spySpeed;
                 playerDistanceCalcTimer = playerDistanceCalcInterval;
             }
-
         }
         else
         {

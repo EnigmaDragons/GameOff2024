@@ -262,7 +262,7 @@ MonoBehaviour:
   m_SpawnOnStart: 1
   m_DeathAction: 0
   m_StartingLoadout: {fileID: 0}
-  m_ReplaceStartingItems: 1
+  m_ReplaceStartingItems: 0
 --- !u!114 &3791211544953134053
 MonoBehaviour:
   m_ObjectHideFlags: 0

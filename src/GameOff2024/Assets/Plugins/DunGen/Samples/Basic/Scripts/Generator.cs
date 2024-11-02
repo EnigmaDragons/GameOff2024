@@ -11,7 +11,7 @@ namespace DunGen.Demo
 		public Action<StringBuilder> GetAdditionalText;
 
 		private StringBuilder infoText = new StringBuilder();
-		private bool showStats = true;
+		private bool showStats = false;
 		private float keypressDelay = 0.1f;
 		private float timeSinceLastPress;
 		private bool allowHold;
