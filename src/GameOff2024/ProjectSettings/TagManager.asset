@@ -2,9 +2,12 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 3
+  serializedVersion: 2
   tags:
-  - AI
+  - Music
+  - UiSounds
+  - Loader
+  - AppManagers
   layers:
   - Default
   - TransparentFX
@@ -14,25 +17,25 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessingVolumes
-  - EnvironmentRough
-  - EnvironmentDetail
-  - MovingPlatforms
-  - DynamicProps
-  - CharacterControllers
-  - CharacterFirstPerson
-  - CharacterExternal
-  - CharacterPhysics
-  - CharacterRagdoll
-  - CharacterNonColliding
-  - WieldablesFirstPerson
-  - WieldablesExternal
-  - TriggerZones
-  - InteractiveObjects
-  - Doors
-  - SmallDynamicObjects
-  - Effects
-  - AiVisibility
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -42,5 +45,3 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  m_RenderingLayers:
-  - Default
