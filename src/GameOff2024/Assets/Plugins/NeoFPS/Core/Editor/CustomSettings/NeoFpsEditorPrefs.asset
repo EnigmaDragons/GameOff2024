@@ -19,6 +19,6 @@ MonoBehaviour:
   m_CurrentInputSettingsVersion: 2
   m_CurrentPlayerSettingsVersion: 1
   m_CurrentBuildSettingsVersion: 7
-  m_CurrentNeoFPSVersion: 0
-  m_RenderPipeline: 0
+  m_CurrentNeoFPSVersion: 1130
+  m_RenderPipeline: 2
   m_DisableNeoObjectBrowsers: 0
