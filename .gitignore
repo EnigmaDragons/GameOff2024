@@ -49,7 +49,7 @@ sysinfo.txt
 !/[Aa]ssets/Editor Default Resources/FMOD/*
 
 # Ignore the Cache folder since it is updated locally.
-/[Aa]ssets/Plugins/FMOD/Cache/*
+/src/GameOff2024/Assets/Plugins/FMOD/Cache/*
 
 # Ignore bank files in the StreamingAssets folder.
 /[Aa]ssets/StreamingAssets/**/*.bank
