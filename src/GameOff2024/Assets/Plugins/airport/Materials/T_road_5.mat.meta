@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b76e11a8ff6765d47aa68cba678479bc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 262051
+  packageName: poly airport
+  packageVersion: 1.0
+  assetPath: Assets/airport/Materials/T_road_5.mat
+  uploadId: 607271

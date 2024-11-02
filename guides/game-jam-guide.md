@@ -1,6 +1,6 @@
 # Game Jam Guide
 
-At Enigma Dragons, we've been jamming with many different teams for 3 years. Here are the key things we want the team to keep in mind.
+This jam is a bit different than most. We're not just making a game, we're also going to be marketing it and getting it ready for a commercial release.
 
 ----
 
@@ -35,23 +35,52 @@ If you accomplish this, then you succeeded at the jam, regardless of how people 
 ### General Jam Schedule
 
 - Day Before Jam - Setup your workspace. Buy food/snacks/drinks. Complete the Quick Start Guide.
-- 1hr before Jam - Jump in Voice Chat with the Jam Team. Get to know each other.
-- Jam Start - 1-2 hours brainstorm session. Reach Team Consensus on Game Design and Initial Scope.
-- First 8 Hours - Blitz to create the skeleton game, playable from Main Menu to Victory and Game Over.
-- First Main Jam Phase - Add content and mechanics. QA Testers work on finding bugs. Designers work on making the game fun.
-- Jam Midpoint - Team Syncs to review current full game and creates a shared vision for Content Complete Milestone
-- Second Main Jam Phase - Finish up key content, mechanics and game feel.
-- Final 6 Hours - Polish the game. Everyone plays through the game. Tune visuals. Fix bugs. 
-- 2hr before Jam End - Create Game Page, Gameplay Video, Sizzle Trailer, etc.
-- Final Hour - Test Final Build and Submit once approved. 
+
+--- Phase 1: Launch
+- Day 1 - 1hr before Jam - Jump in Voice Chat with the Jam Team. Get to know each other.
+- Day 1 - Jam Start - 1-2 hours brainstorm session. Reach Team Consensus on Game Design and Initial Scope.
+- Day 1-3 - Blitz to create the skeleton game, playable from Main Menu to Victory and Game Over + Core Gameplay Loop
+
+--- Phase 2: Core Build
+- Day 3-8 - Add content and mechanics. QA Testers work on finding bugs. Designers work on making the game fun.
+- Day 8 - Team Syncs to review current full game and creates a shared vision for Content Complete Milestone
+- Day 8-14 - Expand content and polish. World should be bigger and have the feel locked in.
+
+--- Phase 3: Expanded Content
+- Day 15 - Team Syncs to review current full game and creates a shared vision for Final Core Phase
+- Day 15-21 - Finish up key content, mechanics and game feel.
+
+--- Phase 4: Polish and Finalize
+- Day 21 - Team Syncs to review current full game and creates a shared vision for Final Polish Phase
+- Day 21-28 - Polish the game. Everyone plays through the game. Tune visuals. Fix bugs. 
+
+--- Phase 5: Jam Submission
+- Day 28-31 - Deep QA. Finalize and submit. Finalize initial marketing materials (copy/video/trailer(s)/screenshots).
+
+--- Phase 6: Jam Review & Commercial Release Plan
 - After Jam - Team Retrospective in Voice Chat. Talk about what went well, what didn't go well, and how we can improve.
+- After Jam - Discuss and Finalize Marketing & Release Plan
 
 ----
 
-### Basic Milestones
+### Basic Development Milestones
 
 - 1st - Game Skeleton Complete
 - 2nd - Core Gameplay Loop Complete
 - 3rd - Initial Content Complete
 - 4th - Content Complete
 - 5th - Polished and Finalized
+- 6th - Commercial Release Plan In Motion
+
+----
+
+### Basic Marketing Milestones
+
+- 1st - Game Design Document Complete
+- 2nd - Game Title/Logo/Capsule Image/Short Description/Long Description First Draft
+- 3rd - Concept Screenshots Created
+- 4th - Steam Page Launched
+- 5th - Steam Page Revision 1
+- 6th - Steam Page Reviewed
+- 7th - Steam Page Finalized
+

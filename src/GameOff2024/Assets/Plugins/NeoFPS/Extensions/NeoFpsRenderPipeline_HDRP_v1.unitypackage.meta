@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e418be8a647116948b84ac1d06db8aeb
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 150179
+  packageName: 'NeoFPS: FPS Controller, Template & Toolkit'
+  packageVersion: 1.1.30d
+  assetPath: Assets/NeoFPS/Extensions/NeoFpsRenderPipeline_HDRP_v1.unitypackage
+  uploadId: 689162
