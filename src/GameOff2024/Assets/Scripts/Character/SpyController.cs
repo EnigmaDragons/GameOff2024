@@ -74,7 +74,6 @@ public class SpyController : OnMessage<GameStateChanged>
         if(playerCharacterTransform != null)
         {
             _playerFound = true;
-            Debug.Log("Player Found");
 
         }
         destinationTransform = msg.State.spyDestination;
@@ -82,8 +81,6 @@ public class SpyController : OnMessage<GameStateChanged>
         {
             _destinationFound = true;
             navMeshAgent.SetDestination(destinationTransform.position);
-            Debug.Log("Destination Set");
-
         }
     }
 }

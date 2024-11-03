@@ -14,4 +14,7 @@ public sealed class GameState
 
     public Transform playerTransform;
     public Transform spyDestination;
+
+    public bool gameWon;
+    public bool gameLost;
 }
