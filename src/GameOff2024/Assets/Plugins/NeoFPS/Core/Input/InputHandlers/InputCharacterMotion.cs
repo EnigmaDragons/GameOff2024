@@ -61,6 +61,10 @@ namespace NeoFPS
         [SerializeField, MotionGraphParameterKey(MotionGraphParameterType.Trigger), Tooltip("The key to the ability trigger property in the character motion graph.")]
         private string m_AbilityKey = "ability";
 
+        [SerializeField, MotionGraphParameterKey(MotionGraphParameterType.Int)] 
+        private string m_MaxAirJumpCountKey = "maxAirJumpCount";
+
+
         [Header("Custom Inputs")]
 
         [SerializeField, Tooltip("Map input buttons to motion graph parameters here.")]
@@ -82,9 +86,12 @@ namespace NeoFPS
         private TriggerParameter m_DodgeLeftTrigger = null;
         private TriggerParameter m_DodgeRightTrigger = null;
         private TriggerParameter m_AbilityTrigger = null;
+        private IntParameter m_MaxAirJumpCountProperty = null;
 
         private float m_DodgeLeftTimer = 0f;
         private float m_DodgeRightTimer = 0f;
+
+        private bool dashEnabled = false;
 
         [Serializable]
         private struct MotionGraphInput
@@ -141,6 +148,7 @@ namespace NeoFPS
                 m_DodgeLeftTrigger = motionGraph.GetTriggerProperty(m_DodgeLeftKey);
                 m_DodgeRightTrigger = motionGraph.GetTriggerProperty(m_DodgeRightKey);
                 m_AbilityTrigger = motionGraph.GetTriggerProperty(m_AbilityKey);
+                m_MaxAirJumpCountProperty = motionGraph.GetIntProperty(m_MaxAirJumpCountKey);
 
                 for (int i = 0; i < m_CustomInputs.Length; ++i)
                     m_CustomInputs[i].Initialise(m_Character.motionController.motionGraph);
@@ -304,7 +312,7 @@ namespace NeoFPS
                 }
 
                 // Ability
-                if (m_AbilityTrigger != null)
+                if (m_AbilityTrigger != null && dashEnabled)
                 {
                     if (GetButtonDown(FpsInputButton.Ability))
                         m_AbilityTrigger.Trigger();
@@ -387,6 +395,25 @@ namespace NeoFPS
                 if (GetButtonUp(FpsInputButton.Use))
                     m_InteractionMgr.InteractRelease();
             }
+        }
+
+        public void EnableAirJump()
+        {
+            CheckMotionGraphConnection();
+            m_MaxAirJumpCountProperty.value = 1;
+        }
+        public void DisableAirJump()
+        {
+            CheckMotionGraphConnection();
+            m_MaxAirJumpCountProperty.value = 0;
+        }
+        public void EnableDash()
+        {
+            dashEnabled = true;
+        }
+        public void DisableDash()
+        {
+            dashEnabled = false;
         }
 	}
 }

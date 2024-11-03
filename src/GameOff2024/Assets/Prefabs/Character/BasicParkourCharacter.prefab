@@ -2105,6 +2105,7 @@ MonoBehaviour:
   m_DodgeLeftKey: 
   m_DodgeRightKey: 
   m_AbilityKey: dash
+  m_MaxAirJumpCountKey: maxAirJumpCount
   m_CustomInputs: []
 --- !u!114 &2985648793847698478
 MonoBehaviour:

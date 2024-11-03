@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8711815371221736044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5a78367a23ca4b919922a6452c53a, type: 3}
+  m_Name: Condition Group
+  m_EditorClassIdentifier: 
+  m_Property: {fileID: 0}
+  m_CompareValue: 1
 --- !u!114 &-8534320537252141978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76,6 +90,20 @@ MonoBehaviour:
   m_Parameter: {fileID: 114707774285179388}
   m_OnEnter: 1
   m_OnExit: 2
+--- !u!114 &-7096726668818357769
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5a78367a23ca4b919922a6452c53a, type: 3}
+  m_Name: Condition Group
+  m_EditorClassIdentifier: 
+  m_Property: {fileID: 0}
+  m_CompareValue: 1
 --- !u!114 &-6251280296265895874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -180,6 +208,20 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-5122306305803978943
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5a78367a23ca4b919922a6452c53a, type: 3}
+  m_Name: Condition Group
+  m_EditorClassIdentifier: 
+  m_Property: {fileID: 0}
+  m_CompareValue: 1
 --- !u!114 &-5027776498675615288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -356,6 +398,19 @@ MonoBehaviour:
   m_Parameter: {fileID: 114230198322158870}
   m_OnEnter: 1
   m_OnExit: 2
+--- !u!114 &-308892737697623029
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3a3b456335ca61438524818321f8afd, type: 3}
+  m_Name: doubleJumpEnabled
+  m_EditorClassIdentifier: 
+  m_StartingValue: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,6 +449,7 @@ MonoBehaviour:
   - {fileID: 114704328195489624}
   - {fileID: -8358909571641916082}
   - {fileID: 114391281375215262}
+  - {fileID: -308892737697623029}
   m_Data:
   - {fileID: 114131737730045814}
   - {fileID: 114660871019546414}
@@ -2804,7 +2860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7b04e8eb10890648a35112ad42c468a, type: 3}
   m_Name: maxAirJumpCount
   m_EditorClassIdentifier: 
-  m_StartingValue: 1
+  m_StartingValue: 0
 --- !u!114 &114301585025065414
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4531,7 +4587,7 @@ MonoBehaviour:
   - {fileID: 114632625954145654}
   - {fileID: 114365256359211232}
   m_SerializationKey: -812367954
-  internalUiPosition: {x: 4, y: -174.00003}
+  internalUiPosition: {x: 5, y: -173.00003}
   m_Container: {fileID: 11400000}
   m_States:
   - {fileID: 114065836836721504}
@@ -7553,6 +7609,20 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1982185905516162806
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5a78367a23ca4b919922a6452c53a, type: 3}
+  m_Name: Condition Group
+  m_EditorClassIdentifier: 
+  m_Property: {fileID: 0}
+  m_CompareValue: 1
 --- !u!114 &2624219454872976533
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7630,3 +7700,17 @@ MonoBehaviour:
   m_Conditions:
   - {fileID: 7071269985035658581}
   m_ConditionGroups: []
+--- !u!114 &9162672360442629015
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea5a78367a23ca4b919922a6452c53a, type: 3}
+  m_Name: Condition Group
+  m_EditorClassIdentifier: 
+  m_Property: {fileID: 0}
+  m_CompareValue: 1
