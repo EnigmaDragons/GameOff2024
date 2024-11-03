@@ -117,7 +117,7 @@ MonoBehaviour:
     m_DisplayNameInvalidError: 0
     m_DisplayNameDuplicateError: 0
   - m_Name: Crouch
-    m_DefaultPrimary: 0
+    m_DefaultPrimary: 306
     m_DefaultSecondary: 0
     m_Context: 0
     m_DisplayName: Crouch (Hold)
@@ -128,7 +128,7 @@ MonoBehaviour:
     m_DisplayNameInvalidError: 0
     m_DisplayNameDuplicateError: 0
   - m_Name: CrouchToggle
-    m_DefaultPrimary: 306
+    m_DefaultPrimary: 0
     m_DefaultSecondary: 0
     m_Context: 0
     m_DisplayName: Crouch (Toggle)
@@ -730,7 +730,7 @@ MonoBehaviour:
     expanded: 1
   m_ScriptFolder: {fileID: 102900000, guid: 10ed3970f6fc79b4bb4d5dc5bb43ab6f, type: 3}
   m_ScriptTemplate: {fileID: 4900000, guid: 897da003026b2cf4fb3623c5a0766e24, type: 3}
-  m_ExpandInputButtons: 0
+  m_ExpandInputButtons: 1
   m_ExpandInputAxes: 0
   m_ExpandInputContexts: 0
   m_Revert:
@@ -1262,9 +1262,537 @@ MonoBehaviour:
     m_NameReservedError: 0
     m_DisplayNameInvalidError: 0
     m_DisplayNameDuplicateError: 0
-  m_Snapshot: []
+  m_Snapshot:
+  - m_Name: Forward
+    m_DefaultPrimary: 119
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Forward
+    m_Category: 1
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Backward
+    m_DefaultPrimary: 115
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Backward
+    m_Category: 1
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Left
+    m_DefaultPrimary: 97
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Strafe Left
+    m_Category: 1
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Right
+    m_DefaultPrimary: 100
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Strafe Right
+    m_Category: 1
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Jump
+    m_DefaultPrimary: 32
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Jump
+    m_Category: 1
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Sprint
+    m_DefaultPrimary: 0
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Sprint (Hold)
+    m_Category: 1
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: SprintToggle
+    m_DefaultPrimary: 304
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Sprint (Toggle)
+    m_Category: 1
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Crouch
+    m_DefaultPrimary: 306
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Crouch (Hold)
+    m_Category: 1
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: CrouchToggle
+    m_DefaultPrimary: 0
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Crouch (Toggle)
+    m_Category: 1
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: LeanLeft
+    m_DefaultPrimary: 122
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Lean Left
+    m_Category: 1
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: LeanRight
+    m_DefaultPrimary: 99
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Lean Right
+    m_Category: 1
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Use
+    m_DefaultPrimary: 101
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Use
+    m_Category: 3
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: PickUp
+    m_DefaultPrimary: 120
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Pick Up
+    m_Category: 3
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: PrimaryFire
+    m_DefaultPrimary: 323
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Primary Fire
+    m_Category: 2
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: SecondaryFire
+    m_DefaultPrimary: 324
+    m_DefaultSecondary: 0
+    m_Context: 2
+    m_DisplayName: Secondary Fire
+    m_Category: 2
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: SwitchWeaponModes
+    m_DefaultPrimary: 325
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Switch Weapon Modes
+    m_Category: 2
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Reload
+    m_DefaultPrimary: 114
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Reload
+    m_Category: 2
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Aim
+    m_DefaultPrimary: 0
+    m_DefaultSecondary: 0
+    m_Context: 1
+    m_DisplayName: Aim (Hold)
+    m_Category: 2
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: AimToggle
+    m_DefaultPrimary: 324
+    m_DefaultSecondary: 0
+    m_Context: 1
+    m_DisplayName: Aim (Toggle)
+    m_Category: 2
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Quickslot1
+    m_DefaultPrimary: 49
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Quickslot 1
+    m_Category: 4
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Quickslot2
+    m_DefaultPrimary: 50
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Quickslot 2
+    m_Category: 4
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Quickslot3
+    m_DefaultPrimary: 51
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Quickslot 3
+    m_Category: 4
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Quickslot4
+    m_DefaultPrimary: 52
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Quickslot 4
+    m_Category: 4
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Quickslot5
+    m_DefaultPrimary: 53
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Quickslot 5
+    m_Category: 4
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Quickslot6
+    m_DefaultPrimary: 54
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Quickslot 6
+    m_Category: 4
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Quickslot7
+    m_DefaultPrimary: 55
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Quickslot 7
+    m_Category: 4
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Quickslot8
+    m_DefaultPrimary: 56
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Quickslot 8
+    m_Category: 4
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Quickslot9
+    m_DefaultPrimary: 57
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Quickslot 9
+    m_Category: 4
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Quickslot10
+    m_DefaultPrimary: 48
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Quickslot 10
+    m_Category: 4
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: PrevWeapon
+    m_DefaultPrimary: 91
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Previous Weapon
+    m_Category: 4
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: NextWeapon
+    m_DefaultPrimary: 93
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Next Weapon
+    m_Category: 4
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: SwitchWeapon
+    m_DefaultPrimary: 113
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Switch Weapon
+    m_Category: 4
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: DropWeapon
+    m_DefaultPrimary: 103
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Drop Weapon
+    m_Category: 4
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Inspect
+    m_DefaultPrimary: 108
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Inspect Weapon
+    m_Category: 4
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Holster
+    m_DefaultPrimary: 104
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Holster Weapon
+    m_Category: 4
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: QuickMenu
+    m_DefaultPrimary: 47
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Quick Menu
+    m_Category: 0
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Stats
+    m_DefaultPrimary: 9
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Show Stats
+    m_Category: 0
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Inventory
+    m_DefaultPrimary: 105
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Inventory
+    m_Category: 0
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Character
+    m_DefaultPrimary: 0
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Character Menu
+    m_Category: 0
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Crafting
+    m_DefaultPrimary: 0
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Crafting Menu
+    m_Category: 0
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Journal
+    m_DefaultPrimary: 106
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Journal
+    m_Category: 0
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Map
+    m_DefaultPrimary: 109
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Map
+    m_Category: 0
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: QuickSave
+    m_DefaultPrimary: 286
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Quick Save
+    m_Category: 0
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: QuickLoad
+    m_DefaultPrimary: 290
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Quick Load
+    m_Category: 0
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Ability
+    m_DefaultPrimary: 308
+    m_DefaultSecondary: 326
+    m_Context: 0
+    m_DisplayName: Ability
+    m_Category: 0
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: Flashlight
+    m_DefaultPrimary: 102
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Flashlight
+    m_Category: 0
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: OpticsLightPlus
+    m_DefaultPrimary: 270
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Optics Light (+)
+    m_Category: 0
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
+  - m_Name: OpticsLightMinus
+    m_DefaultPrimary: 269
+    m_DefaultSecondary: 0
+    m_Context: 0
+    m_DisplayName: Optics Light (-)
+    m_Category: 0
+    m_NameInvalidError: 0
+    m_NameDuplicateError: 0
+    m_NameReservedError: 0
+    m_DisplayNameInvalidError: 0
+    m_DisplayNameDuplicateError: 0
   m_ButtonsRequireRebuild: 0
-  m_InputButtonsDirty: 0
+  m_InputButtonsDirty: 1
   m_InputButtonsError: 0
   m_InputAxisInfo:
   - name: MouseX

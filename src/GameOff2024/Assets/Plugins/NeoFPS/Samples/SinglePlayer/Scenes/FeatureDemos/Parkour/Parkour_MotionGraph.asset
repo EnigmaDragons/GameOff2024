@@ -1301,7 +1301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b6f2a201b9e4034d8813652ee5adbd4, type: 3}
   m_Name: Crouch Slide
   m_EditorClassIdentifier: 
-  uiPosition: {x: -125.99982, y: 53.500153}
+  uiPosition: {x: -125.99982, y: 52.500153}
   defaultName: NewState
   m_Parent: {fileID: 114931437778338140}
   m_Connections:
@@ -2167,7 +2167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea5a78367a23ca4b919922a6452c53a, type: 3}
   m_Name: Condition
   m_EditorClassIdentifier: 
-  m_Property: {fileID: 114443509508329774}
+  m_Property: {fileID: 114217965587876698}
   m_CompareValue: 1
 --- !u!114 &114220794765215940
 MonoBehaviour:
@@ -4133,7 +4133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea5a78367a23ca4b919922a6452c53a, type: 3}
   m_Name: Condition
   m_EditorClassIdentifier: 
-  m_Property: {fileID: 114443509508329774}
+  m_Property: {fileID: 114217965587876698}
   m_CompareValue: 1
 --- !u!114 &114484070591521362
 MonoBehaviour:
@@ -4147,7 +4147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea5a78367a23ca4b919922a6452c53a, type: 3}
   m_Name: Condition
   m_EditorClassIdentifier: 
-  m_Property: {fileID: 114443509508329774}
+  m_Property: {fileID: 114217965587876698}
   m_CompareValue: 0
 --- !u!114 &114488262703914038
 MonoBehaviour:

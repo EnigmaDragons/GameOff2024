@@ -1154,11 +1154,7 @@ MonoBehaviour:
   m_AutoSwitchStyle: 0
   m_BackupItem: {fileID: 114220906628037716, guid: fea32a3c49938a24c86df8b49a457398,
     type: 3}
-  m_StartingItems:
-  - {fileID: 114155156615581814, guid: dd380354ce548fb45a4ca08cf3c74330, type: 3}
-  - {fileID: 4371458688707006376, guid: 37c21ae69cd95f64eb65bfc278164dcc, type: 3}
-  - {fileID: 4371458688707006376, guid: 15f088c139c899f4ca281e7e593b595a, type: 3}
-  - {fileID: 114218284299294058, guid: 629f7d2c2a05c3b4d9df1274a2bebf8c, type: 3}
+  m_StartingItems: []
   m_DuplicateBehaviour: 0
 --- !u!114 &3791627966505940873
 MonoBehaviour:
