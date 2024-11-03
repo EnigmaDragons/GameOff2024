@@ -3,26 +3,26 @@ using UnityEngine;
 
 public enum RoomSlotType
 {
-    LargeSegment,
-    SmallSquare
+    LargeSegment = 0,
+    SmallSquare = 1,
 }
 
 public enum RoomSegmentType
 {
-    Decor,
-    Blocker,
-    Empty,
-    Obstacle,
-    Connector,
+    Obstacle = 0,
+    Decor = 1,
+    Blocker = 2,
+    Empty = 3,
+    Connector = 4,
 }
 
 public enum RoomObstacleType
 {
-    None,
-    Jump,
-    Walk,
-    Slide,
-    Climb,
+    Walk = 0,
+    Jump = 1,
+    Slide = 2,
+    Climb = 3,
+    None = 4,
 }
 
 public class RoomSegment : MonoBehaviour
