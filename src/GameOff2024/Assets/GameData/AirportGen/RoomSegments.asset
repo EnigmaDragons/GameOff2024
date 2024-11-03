@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: RoomSegments
   m_EditorClassIdentifier: 
   segments:
+  - prefab: {fileID: 7788789297830909933, guid: 3deb1a334cb074b24a30d197201fbbe6,
+      type: 3}
+    difficulty: 1
+  - prefab: {fileID: 9152191977462706700, guid: 4a01edf8e01f94f41ba872af65a12050,
+      type: 3}
+    difficulty: 1
   - prefab: {fileID: 1093971900045450519, guid: fa00b10e12b70491bab8e2cdf5bdeab6,
       type: 3}
     difficulty: 1
@@ -22,6 +28,3 @@ MonoBehaviour:
   - prefab: {fileID: 7661319564714934312, guid: fe73304fd512f439f800ec612d9a44a6,
       type: 3}
     difficulty: 3
-  - prefab: {fileID: 9152191977462706700, guid: 4a01edf8e01f94f41ba872af65a12050,
-      type: 3}
-    difficulty: 1
