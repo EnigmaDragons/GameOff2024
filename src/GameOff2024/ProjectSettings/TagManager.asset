@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 3
   tags:
   - AI
+  - AppManagers
+  - Loader
+  - Music
+  - UiSounds
   layers:
   - Default
   - TransparentFX
@@ -33,7 +37,7 @@ TagManager:
   - SmallDynamicObjects
   - Effects
   - AiVisibility
-  - 
+  - Obstacle
   - 
   - 
   - 

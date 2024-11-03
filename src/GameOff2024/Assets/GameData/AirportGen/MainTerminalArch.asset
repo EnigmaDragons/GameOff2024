@@ -19,10 +19,10 @@ MonoBehaviour:
   BranchCapTileSets: []
   BranchCapType: 1
   BranchingDepth:
-    Min: 2
-    Max: 5
+    Min: 1
+    Max: 3
   BranchCount:
     Min: 1
-    Max: 5
+    Max: 4
   StraightenChance: 0
   Unique: 0
