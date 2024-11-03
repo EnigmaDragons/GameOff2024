@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 
+[CreateAssetMenu]
 public class RoomSegmentPool : ScriptableObject
 {
     public RoomSegmentSpawnInfo[] segments;

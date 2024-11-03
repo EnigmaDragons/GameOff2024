@@ -2,10 +2,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class RoomSegmentSelector : MonoBehaviour
+public class RoomSegmentSpawner : MonoBehaviour
 {
     [SerializeField] private RoomSegmentPool pool;
-    [SerializeField] private RoomSegmentSlot slots;
+    [SerializeField] private RoomSegmentSlot[] slots;
 
     // Done - Rule 1: Spawn something in all the slots
     // Done - Rule 2: Don't spawn the same thing in a slot group
@@ -18,10 +18,15 @@ public class RoomSegmentSelector : MonoBehaviour
         SpawnAllSegments();
     }
 
+    private void OnValidate()
+    {
+        slots = GetComponentsInChildren<RoomSegmentSlot>();
+    }
+
     private RoomSegmentSlot[][] GetGroupedSlots()
     {
         var slotGroups = new Dictionary<int, List<RoomSegmentSlot>>();
-        foreach (var slot in slots.GetComponentsInChildren<RoomSegmentSlot>())
+        foreach (var slot in slots)
         {
             var groupId = slot.roomGroupId;
             if (!slotGroups.ContainsKey(groupId))
