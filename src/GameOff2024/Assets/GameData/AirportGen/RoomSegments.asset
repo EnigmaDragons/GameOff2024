@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb94e75670754b119a07da661517ac21, type: 3}
   m_Name: RoomSegments
   m_EditorClassIdentifier: 
-  segments: []
+  segments:
+  - prefab: {fileID: 1093971900045450519, guid: fa00b10e12b70491bab8e2cdf5bdeab6,
+      type: 3}
+    difficulty: 1
