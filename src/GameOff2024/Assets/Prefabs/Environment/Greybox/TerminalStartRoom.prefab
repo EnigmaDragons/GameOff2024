@@ -220,6 +220,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Prototype_Mid_WallThick4x2
       objectReference: {fileID: 0}
+    - target: {fileID: 1892938865250534, guid: b5bb9229754069943b01a43f34f4357c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4720616665662404, guid: b5bb9229754069943b01a43f34f4357c, type: 3}
       propertyPath: m_LocalScale.y
       value: 4
@@ -1177,6 +1181,10 @@ PrefabInstance:
     - target: {fileID: 1892938865250534, guid: b5bb9229754069943b01a43f34f4357c, type: 3}
       propertyPath: m_Name
       value: Prototype_Mid_WallThick4x2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892938865250534, guid: b5bb9229754069943b01a43f34f4357c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4720616665662404, guid: b5bb9229754069943b01a43f34f4357c, type: 3}
       propertyPath: m_LocalScale.y
