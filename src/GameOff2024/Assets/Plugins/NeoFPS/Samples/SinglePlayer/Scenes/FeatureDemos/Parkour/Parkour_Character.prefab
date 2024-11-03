@@ -856,6 +856,7 @@ GameObject:
   - component: {fileID: 3791266948784702911}
   - component: {fileID: 3787658626957033873}
   - component: {fileID: 3791211544953134053}
+  - component: {fileID: 7338559408949382619}
   m_Layer: 13
   m_Name: Parkour_Character
   m_TagString: Player
@@ -1277,6 +1278,19 @@ MonoBehaviour:
   expandNeoComponents: 0
   expandOtherComponents: 1
   prefabGuid: c989f146ee5a5e94999fed61792249fa
+--- !u!114 &7338559408949382619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3822332490209919901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1acbbf72a2dc4c5495ed5514b9c7852e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 3820775801633059455}
 --- !u!1 &3822397271618541163
 GameObject:
   m_ObjectHideFlags: 0

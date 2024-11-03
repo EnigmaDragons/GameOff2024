@@ -1643,7 +1643,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e014f5abca19d488e0b8fe33e7cd4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spySpeedMinimum: 5
+  spySpeedMinimum: 2
   spySpeedMaximum: 10
   minDistance: 1
   maxDistance: 10
