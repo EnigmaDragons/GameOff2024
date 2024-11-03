@@ -19,6 +19,9 @@ MonoBehaviour:
   - prefab: {fileID: 9152191977462706700, guid: 4a01edf8e01f94f41ba872af65a12050,
       type: 3}
     difficulty: 1
+  - prefab: {fileID: 6607916996355382637, guid: d66c8cefeb23e4e9e9dbf5b17e8a8778,
+      type: 3}
+    difficulty: 1
   - prefab: {fileID: 1093971900045450519, guid: fa00b10e12b70491bab8e2cdf5bdeab6,
       type: 3}
     difficulty: 1
