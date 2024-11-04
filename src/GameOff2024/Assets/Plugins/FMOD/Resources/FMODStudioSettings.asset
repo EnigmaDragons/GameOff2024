@@ -259,6 +259,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - Bnk_MX_Airport
   - Test_Bank
   BanksToLoad: []
   LiveUpdatePort: 9264

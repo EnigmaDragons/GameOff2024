@@ -479,11 +479,11 @@ MonoBehaviour:
     - {fileID: 2981419149448586568}
     - {fileID: 2981869722199029160}
     m_GameObject: {fileID: 3667672191868126944}
-  m_PrefabStrongID: -276320370
+  m_PrefabStrongID: 1848276176
   expandChildObjects: 1
   expandNeoComponents: 0
   expandOtherComponents: 0
-  prefabGuid: 1c039dd0b6867dc448c4cff9f38475ab
+  prefabGuid: 30d25fd7f89c2ff43b75bd24db0a9ee5
 --- !u!1 &2950525077125590464
 GameObject:
   m_ObjectHideFlags: 0
@@ -842,11 +842,11 @@ MonoBehaviour:
     m_Values:
     - {fileID: 3667672191868126944}
     m_GameObject: {fileID: 2372288562094351743}
-  m_PrefabStrongID: -276320370
+  m_PrefabStrongID: 1848276176
   expandChildObjects: 0
   expandNeoComponents: 0
   expandOtherComponents: 0
-  prefabGuid: 1c039dd0b6867dc448c4cff9f38475ab
+  prefabGuid: 30d25fd7f89c2ff43b75bd24db0a9ee5
 --- !u!1 &2950735467195405742
 GameObject:
   m_ObjectHideFlags: 0
@@ -1780,11 +1780,11 @@ MonoBehaviour:
     m_Keys: 
     m_Values: []
     m_GameObject: {fileID: 2981419149448586568}
-  m_PrefabStrongID: -276320370
+  m_PrefabStrongID: 1848276176
   expandChildObjects: 0
   expandNeoComponents: 0
   expandOtherComponents: 0
-  prefabGuid: 1c039dd0b6867dc448c4cff9f38475ab
+  prefabGuid: 30d25fd7f89c2ff43b75bd24db0a9ee5
 --- !u!1 &2951255869235385890
 GameObject:
   m_ObjectHideFlags: 0
@@ -1806,8 +1806,10 @@ GameObject:
   - component: {fileID: 2981876898640929334}
   - component: {fileID: 2985648793847698478}
   - component: {fileID: 2982023308618288730}
+  - component: {fileID: 3495813416419250249}
+  - component: {fileID: 4450776790001023176}
   m_Layer: 13
-  m_Name: BasicParkourCharacter
+  m_Name: BasicParkourCharacter_wMusicManager
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2180,11 +2182,54 @@ MonoBehaviour:
     m_Values:
     - {fileID: 2981896847714195612}
     m_GameObject: {fileID: 2982023308618288730}
-  m_PrefabStrongID: -276320370
+  m_PrefabStrongID: 1848276176
   expandChildObjects: 0
   expandNeoComponents: 0
   expandOtherComponents: 1
-  prefabGuid: 1c039dd0b6867dc448c4cff9f38475ab
+  prefabGuid: 30d25fd7f89c2ff43b75bd24db0a9ee5
+--- !u!114 &3495813416419250249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951255869235385890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1292527353
+      Data2: 1211895714
+      Data3: 277581446
+      Data4: 1802672103
+    Path: event:/MX/InGame/MX_Lvl_Airport_Chase
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &4450776790001023176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951255869235385890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516d6f4299ccb0c4e975d7e9eacd4f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2951255870412331690
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,11 +2478,11 @@ MonoBehaviour:
     m_Keys: 
     m_Values: []
     m_GameObject: {fileID: 2981869722199029160}
-  m_PrefabStrongID: -276320370
+  m_PrefabStrongID: 1848276176
   expandChildObjects: 0
   expandNeoComponents: 0
   expandOtherComponents: 0
-  prefabGuid: 1c039dd0b6867dc448c4cff9f38475ab
+  prefabGuid: 30d25fd7f89c2ff43b75bd24db0a9ee5
 --- !u!1 &2951255870599328466
 GameObject:
   m_ObjectHideFlags: 0
@@ -2514,8 +2559,8 @@ MonoBehaviour:
     m_Values:
     - {fileID: 2372288562094351743}
     m_GameObject: {fileID: 2981896847714195612}
-  m_PrefabStrongID: -276320370
+  m_PrefabStrongID: 1848276176
   expandChildObjects: 0
   expandNeoComponents: 0
   expandOtherComponents: 0
-  prefabGuid: 1c039dd0b6867dc448c4cff9f38475ab
+  prefabGuid: 30d25fd7f89c2ff43b75bd24db0a9ee5

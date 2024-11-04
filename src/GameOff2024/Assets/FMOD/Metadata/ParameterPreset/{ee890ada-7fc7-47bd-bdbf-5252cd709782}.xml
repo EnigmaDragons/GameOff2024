@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{ee890ada-7fc7-47bd-bdbf-5252cd709782}">
+		<property name="name">
+			<value>MX_Running</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f08f82fe-c49b-48a2-b3a4-6b73c2f8e1ea}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{658f60e4-8c88-4059-9845-9f9649144b3f}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{658f60e4-8c88-4059-9845-9f9649144b3f}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
