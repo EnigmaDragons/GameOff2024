@@ -1091,7 +1091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7609c21a89e4b60a498981358bbfcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 0}
+  pool: {fileID: 11400000, guid: 7abc5c6fb0ee445b194759308f88b739, type: 2}
   slots:
   - {fileID: 6417361260936788119}
   - {fileID: 5913570919432832093}
@@ -1111,7 +1111,7 @@ PrefabInstance:
     - target: {fileID: 8946284473825114565, guid: 07f89a0c47aa4f94591c3dc752f380dc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.4
+      value: 14.87
       objectReference: {fileID: 0}
     - target: {fileID: 8946284473825114565, guid: 07f89a0c47aa4f94591c3dc752f380dc,
         type: 3}
@@ -1185,7 +1185,7 @@ PrefabInstance:
     - target: {fileID: 8946284473825114565, guid: 07f89a0c47aa4f94591c3dc752f380dc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 15.4
+      value: 14.87
       objectReference: {fileID: 0}
     - target: {fileID: 8946284473825114565, guid: 07f89a0c47aa4f94591c3dc752f380dc,
         type: 3}
