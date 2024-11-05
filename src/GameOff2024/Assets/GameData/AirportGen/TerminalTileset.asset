@@ -43,4 +43,33 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       TileSet: {fileID: 11400000}
+    - Value: {fileID: 8431033618325710352, guid: 1ad5a70c84813b249b2a5ff6e346499d,
+        type: 3}
+      MainPathWeight: 1
+      BranchPathWeight: 1
+      DepthWeightScale:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      TileSet: {fileID: 0}
   LockPrefabs: []
