@@ -93,6 +93,9 @@ namespace NeoFPS
 
         private bool dashEnabled = false;
 
+        Animator m_animator;
+        [SerializeField] float animatorDampDeltaTime;
+
         [Serializable]
         private struct MotionGraphInput
         {
@@ -131,6 +134,8 @@ namespace NeoFPS
 
             if (m_Character.bodyTransformHandler != null)
                 m_BodyLean = m_Character.bodyTransformHandler.GetComponent<BodyLeanBase>();
+
+            m_animator = GetComponentInChildren<Animator> ();
         }
 
         void CheckMotionGraphConnection()
@@ -218,6 +223,8 @@ namespace NeoFPS
                     move.Normalize();
 
                 m_Character.motionController.inputMoveDirection = move;
+                m_animator.SetFloat("forward", move.y, animatorDampDeltaTime, Time.deltaTime);
+                m_animator.SetFloat("strafe", move.x, animatorDampDeltaTime, Time.deltaTime);
                 m_Character.motionController.inputMoveScale = mag;
 
                 // Movement modifiers
