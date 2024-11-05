@@ -16,12 +16,11 @@ public class CoolCameraIntro : MonoBehaviour
     private float _remainingDuration = 1f;
     private int _index = 0;
     private Camera _cam;
-    private bool _showedSkipPrompt = false;
     private bool _shouldSkip;
 
     private void OnEnable()
     {
-        _cam = FindObjectOfType<Camera>();
+        _cam = FindFirstObjectByType<Camera>();
         MoveNext();
         _cam.transform.position = _currentStartPoint.position;
         _cam.transform.rotation = _currentStartPoint.rotation;
