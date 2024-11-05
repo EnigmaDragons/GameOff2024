@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: 27c895fc1c38850489a461404d4b1d2e
+AssetOrigin:
+  serializedVersion: 1
+  productId: 262051
+  packageName: poly airport
+  packageVersion: 1.0
+  assetPath: Assets/airport/models/transport/SM_light_aircraft.fbx
+  uploadId: 607271
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -30,7 +37,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -105,10 +112,3 @@ ModelImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 262051
-  packageName: poly airport
-  packageVersion: 1.0
-  assetPath: Assets/airport/models/transport/SM_light_aircraft.fbx
-  uploadId: 607271

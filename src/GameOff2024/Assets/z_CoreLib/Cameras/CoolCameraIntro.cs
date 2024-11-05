@@ -21,7 +21,7 @@ public class CoolCameraIntro : MonoBehaviour
 
     private void OnEnable()
     {
-        _cam = FindObjectOfType<Camera>();
+        _cam = FindFirstObjectByType<Camera>();
         MoveNext();
         _cam.transform.position = _currentStartPoint.position;
         _cam.transform.rotation = _currentStartPoint.rotation;

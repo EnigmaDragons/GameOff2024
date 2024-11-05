@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2103393633908544305}
   - component: {fileID: 6134835133868598021}
+  - component: {fileID: 185764494035979844}
   m_Layer: 0
   m_Name: GameWorld
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 4318498192513637713}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46.455982, y: -0.9709921, z: -43.61865}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -46,6 +47,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d2df190033f40eb8b28f4493b852b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!45 &185764494035979844
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4318498192513637713}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 579a5b5d592b03647ae61ccd3b43c9cc, type: 2}
 --- !u!1 &5965222827529723708
 GameObject:
   m_ObjectHideFlags: 0
