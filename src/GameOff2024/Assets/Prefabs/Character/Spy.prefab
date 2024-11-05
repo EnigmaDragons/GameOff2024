@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4751341441809019609}
   - component: {fileID: 4129343720037358794}
   - component: {fileID: 8421453442861088689}
-  - component: {fileID: 5817633992106021595}
   - component: {fileID: 6989025111469588182}
+  - component: {fileID: 8575804175135261220}
   m_Layer: 0
   m_Name: Spy
   m_TagString: Untagged
@@ -114,23 +114,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5817633992106021595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3447415211903733702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41e014f5abca19d488e0b8fe33e7cd4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spySpeedMinimum: 5
-  spySpeedMaximum: 10
-  minDistance: 1
-  maxDistance: 10
-  playerDistanceCalcInterval: 0.5
 --- !u!195 &6989025111469588182
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -153,6 +136,23 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8575804175135261220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3447415211903733702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d8a296a5d57e8a49a89d7be69c0d1d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spySpeedMinimum: 5
+  spySpeedMaximum: 10
+  minDistance: 2
+  maxDistance: 10
+  playerDistanceCalcInterval: 0.5
 --- !u!1001 &903034284318943809
 PrefabInstance:
   m_ObjectHideFlags: 0
