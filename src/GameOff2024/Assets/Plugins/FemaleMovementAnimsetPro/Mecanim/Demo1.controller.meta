@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 282e92e744946254f809b0d75e0419d7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48903
+  packageName: Female Movement Animset Pro
+  packageVersion: 2.0.0
+  assetPath: Assets/FemaleMovementAnimsetPro/Mecanim/Demo1.controller
+  uploadId: 644995

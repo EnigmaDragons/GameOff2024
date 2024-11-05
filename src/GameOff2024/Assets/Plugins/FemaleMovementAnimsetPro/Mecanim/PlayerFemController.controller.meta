@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 063544d9180ba394b9e7c497c8372a7d
+labels:
+- Controller
+- Female
+- Animated
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 48903
+  packageName: Female Movement Animset Pro
+  packageVersion: 2.0.0
+  assetPath: Assets/FemaleMovementAnimsetPro/Mecanim/PlayerFemController.controller
+  uploadId: 644995
