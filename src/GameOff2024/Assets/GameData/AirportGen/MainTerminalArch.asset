@@ -15,15 +15,15 @@ MonoBehaviour:
   TileSets:
   - {fileID: 11400000, guid: 13761aa7e9c0a91419a871004543658d, type: 2}
   BranchStartTileSets: []
-  BranchStartType: 0
+  BranchStartType: 1
   BranchCapTileSets:
   - {fileID: 11400000, guid: 8fc742676bf59bb4883db4852d4baf74, type: 2}
   BranchCapType: 0
   BranchingDepth:
-    Min: 1
+    Min: 2
     Max: 4
   BranchCount:
-    Min: 2
-    Max: 5
+    Min: 4
+    Max: 6
   StraightenChance: 0
   Unique: 0
