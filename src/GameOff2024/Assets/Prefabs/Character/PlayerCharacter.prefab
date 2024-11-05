@@ -257,7 +257,7 @@ MonoBehaviour:
   m_DeathSequenceDuration: 5
   m_PlayerPrefab: {fileID: 114330862915175946, guid: 3b4baa77285369e46a04c916100b828b,
     type: 3}
-  m_CharacterPrefab: {fileID: 3791229698618900265, guid: c989f146ee5a5e94999fed61792249fa,
+  m_CharacterPrefab: {fileID: 2982077726883408534, guid: 1c039dd0b6867dc448c4cff9f38475ab,
     type: 3}
   m_SpawnOnStart: 1
   m_DeathAction: 0
