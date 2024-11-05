@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{59a4ef64-5ee4-4424-a291-e18f907be6fa}">
+		<property name="assetPath">
+			<value>FS_PC_Concrete_Run_10.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.14933333333333335</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b4e62c31-319b-41a2-99f2-da90039c94f3}</destination>
+		</relationship>
+	</object>
+</objects>

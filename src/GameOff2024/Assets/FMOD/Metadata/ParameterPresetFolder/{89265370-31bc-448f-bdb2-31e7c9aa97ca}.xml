@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPresetFolder" id="{89265370-31bc-448f-bdb2-31e7c9aa97ca}">
+		<property name="name">
+			<value>SFX</value>
+		</property>
+		<relationship name="folder">
+			<destination>{94e5dace-6c47-4fed-8367-09577c2edfb5}</destination>
+		</relationship>
+	</object>
+</objects>

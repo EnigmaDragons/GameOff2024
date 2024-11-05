@@ -260,6 +260,7 @@ MonoBehaviour:
   - Master
   Banks:
   - Bnk_MX_Airport
+  - Bnk_SFX_PC
   - Test_Bank
   BanksToLoad: []
   LiveUpdatePort: 9264

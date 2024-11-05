@@ -6,35 +6,36 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class MusicManagerScript : MonoBehaviour
 {
-    StudioEventEmitter studioEventEmitter;
-    EventInstance mxEvent;
     Rigidbody rb;
     bool firstMove;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        studioEventEmitter = GetComponent<StudioEventEmitter>();
-        rb = GetComponent<Rigidbody>();
+    public EventReference mxEvent;
+    EventInstance mxEventInstance;
 
-        if (studioEventEmitter != null)
-        {
-            mxEvent = studioEventEmitter.EventInstance;
-        }
-        
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        mxEventInstance = RuntimeManager.CreateInstance(mxEvent);
+        mxEventInstance.start();
+    }
+
+    void OnDestroy()
+    {
+        mxEventInstance.release();
     }
 
     void FirstMovement()
     {
-        if (studioEventEmitter != null)
+        if (mxEventInstance.isValid())
         {
-            mxEvent.setParameterByNameWithLabel("MusicControl", "SectionA");
+            mxEventInstance.setParameterByNameWithLabel("MusicControl", "SectionA");
             firstMove = true;
         }
     }
 
     void MovementUpdateRunning(float moveValue)
     {
-        mxEvent.setParameterByName("MX_Running", Mathf.Lerp(0f, 1f, moveValue));
+        mxEventInstance.setParameterByName("MX_Running", Mathf.Lerp(0f, 1f, moveValue));
         if (moveValue >= 1f)
         {
             FirstMovement();

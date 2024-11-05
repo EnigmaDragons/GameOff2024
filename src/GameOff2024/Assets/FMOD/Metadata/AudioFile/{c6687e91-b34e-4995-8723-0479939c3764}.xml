@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c6687e91-b34e-4995-8723-0479939c3764}">
+		<property name="assetPath">
+			<value>Fol_PC_Jeans_Walk_04.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.53993749999999996</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b4e62c31-319b-41a2-99f2-da90039c94f3}</destination>
+		</relationship>
+	</object>
+</objects>
