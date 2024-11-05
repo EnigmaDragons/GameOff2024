@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8711815371221736044
+--- !u!114 &-9178685946787400381
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,11 +9,43 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea5a78367a23ca4b919922a6452c53a, type: 3}
-  m_Name: Condition Group
+  m_Script: {fileID: 11500000, guid: fd329d7afd81819458a87aef68500f7b, type: 3}
+  m_Name: SetAnimatorFloatBehaviour
   m_EditorClassIdentifier: 
-  m_Property: {fileID: 0}
-  m_CompareValue: 1
+  m_Active: 1
+  m_SerializationKey: 1979279828
+  expanded: 1
+  m_ParameterName: forward
+  m_When: 0
+  m_OnEnterType: 1
+  m_OnEnterValue: 0
+  m_OnEnterParameter: {fileID: 0}
+  m_OnExitType: 0
+  m_OnExitValue: 0
+  m_OnExitParameter: {fileID: 0}
+--- !u!114 &-8821859404606935919
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55dd4f5d557b0c44f993d9da079c6ea1, type: 3}
+  m_Name: SetAnimatorBoolBehaviour
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_SerializationKey: -425866322
+  expanded: 1
+  m_ParameterName: climb
+  m_When: 0
+  m_OnEnterType: 0
+  m_OnEnterValue: 1
+  m_OnEnterParameter: {fileID: 0}
+  m_OnExitType: 0
+  m_OnExitValue: 0
+  m_OnExitParameter: {fileID: 0}
 --- !u!114 &-8534320537252141978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -42,6 +74,25 @@ MonoBehaviour:
   m_Name: up
   m_EditorClassIdentifier: 
   m_StartingValue: {x: 0, y: 1, z: 0}
+--- !u!114 &-8228859566758937921
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f543f61cdd9445041a38d83b8079e2e1, type: 3}
+  m_Name: SteeringRateBehaviour
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_SerializationKey: 2054344756
+  expanded: 1
+  m_OnEnter: 0
+  m_OnExit: 2
+  m_EntryValue: 0
+  m_ExitValue: 1
 --- !u!114 &-7994943146330206636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -57,6 +108,29 @@ MonoBehaviour:
   m_Compare: 0
   m_CompareValue: 0.5
   m_Comparison: 0
+--- !u!114 &-7510154358041127221
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55dd4f5d557b0c44f993d9da079c6ea1, type: 3}
+  m_Name: SetAnimatorBoolBehaviour
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_SerializationKey: -1332960740
+  expanded: 1
+  m_ParameterName: airborne
+  m_When: 2
+  m_OnEnterType: 0
+  m_OnEnterValue: 1
+  m_OnEnterParameter: {fileID: 0}
+  m_OnExitType: 0
+  m_OnExitValue: 0
+  m_OnExitParameter: {fileID: 0}
 --- !u!114 &-7467730364356676926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,20 +164,6 @@ MonoBehaviour:
   m_Parameter: {fileID: 114707774285179388}
   m_OnEnter: 1
   m_OnExit: 2
---- !u!114 &-7096726668818357769
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea5a78367a23ca4b919922a6452c53a, type: 3}
-  m_Name: Condition Group
-  m_EditorClassIdentifier: 
-  m_Property: {fileID: 0}
-  m_CompareValue: 1
 --- !u!114 &-6251280296265895874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,7 +268,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-5122306305803978943
+--- !u!114 &-5587180798027568875
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,11 +277,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea5a78367a23ca4b919922a6452c53a, type: 3}
-  m_Name: Condition Group
+  m_Script: {fileID: 11500000, guid: 55dd4f5d557b0c44f993d9da079c6ea1, type: 3}
+  m_Name: SetAnimatorBoolBehaviour
   m_EditorClassIdentifier: 
-  m_Property: {fileID: 0}
-  m_CompareValue: 1
+  m_Active: 1
+  m_SerializationKey: 430027450
+  expanded: 1
+  m_ParameterName: steepSlide
+  m_When: 2
+  m_OnEnterType: 0
+  m_OnEnterValue: 1
+  m_OnEnterParameter: {fileID: 0}
+  m_OnExitType: 0
+  m_OnExitValue: 0
+  m_OnExitParameter: {fileID: 0}
 --- !u!114 &-5027776498675615288
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -242,6 +311,48 @@ MonoBehaviour:
   - {fileID: -5966421488281184184}
   - {fileID: -8534320537252141978}
   m_ConditionGroups: []
+--- !u!114 &-4521649492878543986
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2951c1d1f4e6a0d4fad7435c769bf8d0, type: 3}
+  m_Name: ConstrainCharacterHeadingBehaviour
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_SerializationKey: -1182128544
+  expanded: 1
+  m_ConstraintType: 4
+  m_Direction: {fileID: 0}
+  m_Transform: {fileID: 0}
+  m_AngleRange: 0
+  m_Flipped: 0
+  m_Continuous: 0
+--- !u!114 &-4285603215628392071
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fb8304d3c9cab0479ffe5eef25ebace, type: 3}
+  m_Name: ConstrainCameraYawBehaviour
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_SerializationKey: 103808709
+  expanded: 1
+  m_ConstraintType: 4
+  m_Direction: {fileID: 0}
+  m_Transform: {fileID: 0}
+  m_AngleRange: 180
+  m_Flipped: 0
+  m_Continuous: 0
 --- !u!114 &-3404081541131995405
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -260,6 +371,29 @@ MonoBehaviour:
   m_Parameter: {fileID: 114230198322158870}
   m_OnEnter: 1
   m_OnExit: 2
+--- !u!114 &-3223667376054591428
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beedf455516934b45a1e93c2bab8559b, type: 3}
+  m_Name: ConstrainCameraPitchBehaviour
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_SerializationKey: 98459349
+  expanded: 1
+  m_MinPitchConstraint: 2
+  m_MinimumPitch: -89
+  m_MinPitchParameter: {fileID: 0}
+  m_MinGroundOffset: -30
+  m_MaxPitchConstraint: 0
+  m_MaximumPitch: 89
+  m_MaxPitchParameter: {fileID: 0}
+  m_MaxHorizonOffset: -30
 --- !u!114 &-3102660506004877963
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -380,6 +514,29 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2291486924527271572
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55dd4f5d557b0c44f993d9da079c6ea1, type: 3}
+  m_Name: SetAnimatorBoolBehaviour
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_SerializationKey: 1042522901
+  expanded: 1
+  m_ParameterName: wallRun
+  m_When: 2
+  m_OnEnterType: 0
+  m_OnEnterValue: 1
+  m_OnEnterParameter: {fileID: 0}
+  m_OnExitType: 0
+  m_OnExitValue: 0
+  m_OnExitParameter: {fileID: 0}
 --- !u!114 &-406237819592942950
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -946,7 +1103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f301bfc91b156ad489fd259765d25262, type: 3}
   m_Name: Wall Run Across
   m_EditorClassIdentifier: 
-  uiPosition: {x: 372.00024, y: -18.500092}
+  uiPosition: {x: 372.00024, y: -19.500092}
   defaultName: NewState
   m_Parent: {fileID: 114539652609836404}
   m_Connections:
@@ -963,6 +1120,7 @@ MonoBehaviour:
   - {fileID: 114046214689219392}
   - {fileID: 114440917729716472}
   - {fileID: 114255125826424794}
+  - {fileID: -2291486924527271572}
   m_SerializationKey: -1107274334
   m_WallNormal: {fileID: 114474270435045330}
   m_ClimbGravityMultiplier:
@@ -1263,7 +1421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9a9033d3bcb00542868b292e2f4d573, type: 3}
   m_Name: Ledge Climb
   m_EditorClassIdentifier: 
-  uiPosition: {x: 570.0003, y: 125.50009}
+  uiPosition: {x: 571.0003, y: 125.50009}
   defaultName: NewState
   m_Parent: {fileID: 114250223680194722}
   m_Connections:
@@ -1272,6 +1430,8 @@ MonoBehaviour:
   - {fileID: 114963513310841388}
   - {fileID: 114607628329010628}
   - {fileID: 114727532943645470}
+  - {fileID: 534325562881640066}
+  - {fileID: -8228859566758937921}
   m_SerializationKey: 1062590236
   m_WallNormal: {fileID: 114474270435045330}
   m_ClimbSpeed:
@@ -1365,6 +1525,11 @@ MonoBehaviour:
   m_Behaviours:
   - {fileID: 114098734033758492}
   - {fileID: 114491802556567124}
+  - {fileID: 542807859605420622}
+  - {fileID: 6116793895656541462}
+  - {fileID: 1881853233955715858}
+  - {fileID: -4521649492878543986}
+  - {fileID: -3223667376054591428}
   m_SerializationKey: -70725949
   m_MaxTurnRate:
     m_Data: {fileID: 0}
@@ -1412,7 +1577,7 @@ MonoBehaviour:
   m_Name: moveSpeed
   m_EditorClassIdentifier: 
   m_DataID: -3131970
-  m_Value: 10
+  m_Value: 12.5
 --- !u!114 &114135702136950382
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2430,7 +2595,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624e48642449e8148ae5cdaee559c937, type: 3}
   m_Name: Movement
   m_EditorClassIdentifier: 
-  uiPosition: {x: -5.500122, y: 3.999939}
+  uiPosition: {x: -5.500122, y: 4.999939}
   defaultName: NewState
   m_Parent: {fileID: 114028739362575944}
   m_Connections:
@@ -3458,7 +3623,7 @@ MonoBehaviour:
   m_Name: mantlingClimbSpeed
   m_EditorClassIdentifier: 
   m_DataID: -1946510
-  m_Value: 5
+  m_Value: 10
 --- !u!114 &114378970210956166
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4526,6 +4691,8 @@ MonoBehaviour:
   m_Behaviours:
   - {fileID: 114602568415004120}
   - {fileID: 114731241005212440}
+  - {fileID: -9178685946787400381}
+  - {fileID: 6269026750171033802}
   m_SerializationKey: 878653044
   m_SlopeSpeedCurve: {fileID: 0}
   m_TopSpeed:
@@ -4586,8 +4753,9 @@ MonoBehaviour:
   m_Behaviours:
   - {fileID: 114632625954145654}
   - {fileID: 114365256359211232}
+  - {fileID: -7510154358041127221}
   m_SerializationKey: -812367954
-  internalUiPosition: {x: 5, y: -173.00003}
+  internalUiPosition: {x: 6, y: -173.00003}
   m_Container: {fileID: 11400000}
   m_States:
   - {fileID: 114065836836721504}
@@ -4622,6 +4790,10 @@ MonoBehaviour:
   m_Behaviours:
   - {fileID: 114125442190845316}
   - {fileID: 114721792438779426}
+  - {fileID: 4460135259525635388}
+  - {fileID: -5587180798027568875}
+  - {fileID: 8891042946761954437}
+  - {fileID: -4285603215628392071}
   m_SerializationKey: 1404432434
   m_SlideAngle:
     m_Data: {fileID: 114419619579648780}
@@ -5571,7 +5743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_VelocityType: 1
   m_ComparisonType: 4
-  m_CompareValue: 1
+  m_CompareValue: 0.75
 --- !u!114 &114660871019546414
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -5914,6 +6086,7 @@ MonoBehaviour:
   m_Behaviours:
   - {fileID: 114409646939114408}
   - {fileID: 114627962723457268}
+  - {fileID: 3654152659105383123}
   m_SerializationKey: -1287538939
   m_ChargeParameter: {fileID: 0}
   m_MaximumHeight:
@@ -6517,7 +6690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624e48642449e8148ae5cdaee559c937, type: 3}
   m_Name: Falling
   m_EditorClassIdentifier: 
-  uiPosition: {x: 4, y: -19.499939}
+  uiPosition: {x: 5, y: -19.499939}
   defaultName: NewState
   m_Parent: {fileID: 114539652609836404}
   m_Connections:
@@ -6948,7 +7121,7 @@ MonoBehaviour:
   m_Name: wallCheckDistance
   m_EditorClassIdentifier: 
   m_DataID: -593208
-  m_Value: 0.1
+  m_Value: 0.15
 --- !u!114 &114894576476177812
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7220,6 +7393,7 @@ MonoBehaviour:
   - {fileID: 114536859607494454}
   - {fileID: 114610351334023894}
   - {fileID: -406237819592942950}
+  - {fileID: -8821859404606935919}
   m_SerializationKey: -1233201284
   m_WallNormal: {fileID: 114474270435045330}
   m_UpBoost:
@@ -7545,6 +7719,47 @@ MonoBehaviour:
   m_Name: lastGroundingTime
   m_EditorClassIdentifier: 
   m_StartingValue: 0
+--- !u!114 &534325562881640066
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c0459812fcd1e4b8eb2f54593cd58c, type: 3}
+  m_Name: SetAnimatorTriggerBehaviour
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_SerializationKey: -1376122002
+  expanded: 1
+  m_ParameterName: climb
+  m_OnEnter: 0
+  m_OnExit: 2
+--- !u!114 &542807859605420622
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55dd4f5d557b0c44f993d9da079c6ea1, type: 3}
+  m_Name: SetAnimatorBoolBehaviour
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_SerializationKey: -1131409645
+  expanded: 1
+  m_ParameterName: crouchSlide
+  m_When: 2
+  m_OnEnterType: 0
+  m_OnEnterValue: 1
+  m_OnEnterParameter: {fileID: 0}
+  m_OnExitType: 0
+  m_OnExitValue: 0
+  m_OnExitParameter: {fileID: 0}
 --- !u!114 &888715811779529776
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7609,7 +7824,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1982185905516162806
+--- !u!114 &1881853233955715858
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7618,11 +7833,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea5a78367a23ca4b919922a6452c53a, type: 3}
-  m_Name: Condition Group
+  m_Script: {fileID: 11500000, guid: 36a36a8a7ee314d41840af61c9e25aa1, type: 3}
+  m_Name: AnimatorGroundSlopeBehaviour
   m_EditorClassIdentifier: 
-  m_Property: {fileID: 0}
-  m_CompareValue: 1
+  m_Active: 1
+  m_SerializationKey: 518602860
+  expanded: 1
+  m_SlopeParamName: slideSlope
+  m_DirectionParamName: slideDirection
 --- !u!114 &2624219454872976533
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7638,6 +7856,41 @@ MonoBehaviour:
   m_Compare: 0
   m_CompareValue: 0.5
   m_Comparison: 0
+--- !u!114 &3654152659105383123
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c0459812fcd1e4b8eb2f54593cd58c, type: 3}
+  m_Name: SetAnimatorTriggerBehaviour
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_SerializationKey: 1423580902
+  expanded: 1
+  m_ParameterName: jump
+  m_OnEnter: 0
+  m_OnExit: 2
+--- !u!114 &4460135259525635388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a36a8a7ee314d41840af61c9e25aa1, type: 3}
+  m_Name: AnimatorGroundSlopeBehaviour
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_SerializationKey: -845188795
+  expanded: 1
+  m_SlopeParamName: slideSlope
+  m_DirectionParamName: 
 --- !u!114 &4906649692072399853
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7654,6 +7907,48 @@ MonoBehaviour:
   m_Angle: 90
   m_LessThan: 1
   m_Comparison: 5
+--- !u!114 &6116793895656541462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f543f61cdd9445041a38d83b8079e2e1, type: 3}
+  m_Name: SteeringRateBehaviour
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_SerializationKey: -1568842083
+  expanded: 1
+  m_OnEnter: 0
+  m_OnExit: 2
+  m_EntryValue: 0
+  m_ExitValue: 1
+--- !u!114 &6269026750171033802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55dd4f5d557b0c44f993d9da079c6ea1, type: 3}
+  m_Name: SetAnimatorBoolBehaviour
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_SerializationKey: -783033550
+  expanded: 1
+  m_ParameterName: sprinting
+  m_When: 2
+  m_OnEnterType: 0
+  m_OnEnterValue: 1
+  m_OnEnterParameter: {fileID: 0}
+  m_OnExitType: 0
+  m_OnExitValue: 0
+  m_OnExitParameter: {fileID: 0}
 --- !u!114 &6957408006796187692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7700,7 +7995,7 @@ MonoBehaviour:
   m_Conditions:
   - {fileID: 7071269985035658581}
   m_ConditionGroups: []
---- !u!114 &9162672360442629015
+--- !u!114 &8891042946761954437
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7709,8 +8004,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea5a78367a23ca4b919922a6452c53a, type: 3}
-  m_Name: Condition Group
+  m_Script: {fileID: 11500000, guid: 2951c1d1f4e6a0d4fad7435c769bf8d0, type: 3}
+  m_Name: ConstrainCharacterHeadingBehaviour
   m_EditorClassIdentifier: 
-  m_Property: {fileID: 0}
-  m_CompareValue: 1
+  m_Active: 1
+  m_SerializationKey: 1903181512
+  expanded: 1
+  m_ConstraintType: 4
+  m_Direction: {fileID: 0}
+  m_Transform: {fileID: 0}
+  m_AngleRange: 0
+  m_Flipped: 0
+  m_Continuous: 0

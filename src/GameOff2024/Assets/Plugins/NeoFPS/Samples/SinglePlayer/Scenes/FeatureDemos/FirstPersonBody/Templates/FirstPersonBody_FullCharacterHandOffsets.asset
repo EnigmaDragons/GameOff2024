@@ -49,5 +49,5 @@ MonoBehaviour:
   - {x: 0, y: 90, z: 180}
   - {x: 0, y: 90, z: 180}
   - {x: 0, y: 90, z: 180}
-  expandLeftHand: 1
-  expandRightHand: 1
+  expandLeftHand: 0
+  expandRightHand: 0
