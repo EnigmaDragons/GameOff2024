@@ -8,5 +8,6 @@ public class ObstacleSpawnRule
     public int weight = 1;
     public int difficulty = 1;
     public bool useRandomCardinalRotation = false;
+    public Vector3 placementPadding = Vector3.zero;
 }
 
