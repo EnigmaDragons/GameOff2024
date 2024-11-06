@@ -108,6 +108,25 @@ MonoBehaviour:
   m_Compare: 0
   m_CompareValue: 0.5
   m_Comparison: 0
+--- !u!114 &-7649787244874291014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f55e18ecadae44b91f832602ad90f7, type: 3}
+  m_Name: CalculateFallDistanceParameter
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_SerializationKey: -1652228884
+  expanded: 1
+  m_Parameter_Read: {fileID: 0}
+  m_Distance_Fallen_Parameter: {fileID: -4120716006471088866}
+  m_When: 1
+  m_Value: 0
 --- !u!114 &-7510154358041127221
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -365,6 +384,29 @@ MonoBehaviour:
   m_AngleRange: 0
   m_Flipped: 0
   m_Continuous: 0
+--- !u!114 &-4483847999847245408
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd329d7afd81819458a87aef68500f7b, type: 3}
+  m_Name: SetAnimatorFloatBehaviour
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  m_SerializationKey: 1684175411
+  expanded: 1
+  m_ParameterName: distanceFallen
+  m_When: 0
+  m_OnEnterType: 1
+  m_OnEnterValue: 0
+  m_OnEnterParameter: {fileID: -4120716006471088866}
+  m_OnExitType: 0
+  m_OnExitValue: 0
+  m_OnExitParameter: {fileID: 0}
 --- !u!114 &-4285603215628392071
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -386,6 +428,19 @@ MonoBehaviour:
   m_AngleRange: 180
   m_Flipped: 0
   m_Continuous: 0
+--- !u!114 &-4120716006471088866
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671d3a0fc1d4d1344924a8238c1bfa32, type: 3}
+  m_Name: distanceFallen
+  m_EditorClassIdentifier: 
+  m_StartingValue: 0
 --- !u!114 &-3404081541131995405
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -653,6 +708,7 @@ MonoBehaviour:
   - {fileID: -8358909571641916082}
   - {fileID: 114391281375215262}
   - {fileID: -308892737697623029}
+  - {fileID: -4120716006471088866}
   m_Data:
   - {fileID: 114131737730045814}
   - {fileID: 114660871019546414}
@@ -1665,7 +1721,7 @@ MonoBehaviour:
   m_Conditions:
   - {fileID: 114365631489025790}
   - {fileID: 114573192191701508}
-  - {fileID: 9128849724951244843}
+  - {fileID: 8159813056173605578}
   m_ConditionGroups: []
 --- !u!114 &114138027007290484
 MonoBehaviour:
@@ -2643,7 +2699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 624e48642449e8148ae5cdaee559c937, type: 3}
   m_Name: Movement
   m_EditorClassIdentifier: 
-  uiPosition: {x: -4.500122, y: 3.999939}
+  uiPosition: {x: -3.500122, y: 3.999939}
   defaultName: NewState
   m_Parent: {fileID: 114028739362575944}
   m_Connections:
@@ -6752,6 +6808,7 @@ MonoBehaviour:
   - {fileID: 114801820608157048}
   m_Behaviours:
   - {fileID: 114816233506461234}
+  - {fileID: -7649787244874291014}
   m_SerializationKey: -1845745450
   internalUiPosition: {x: 0, y: -202}
   m_Container: {fileID: 11400000}
@@ -7874,6 +7931,21 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1503501626013415681
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f9bd84af9ad2c4d8de2c02258696e5, type: 3}
+  m_Name: Condition Group
+  m_EditorClassIdentifier: 
+  m_Property: {fileID: -4120716006471088866}
+  m_CompareValue: 3
+  m_ComparisonType: 3
 --- !u!114 &1881853233955715858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7938,21 +8010,6 @@ MonoBehaviour:
   m_Compare: 0
   m_CompareValue: 0.5
   m_Comparison: 0
---- !u!114 &3517742033399190579
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9e2d987ad8624e40bcdd35074601148, type: 3}
-  m_Name: Condition Group
-  m_EditorClassIdentifier: 
-  m_VelocityType: 2
-  m_ComparisonType: 4
-  m_CompareValue: -5
 --- !u!114 &3654152659105383123
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8022,7 +8079,7 @@ MonoBehaviour:
   m_TransitionOn: 0
   m_Conditions:
   - {fileID: -1437753809870193833}
-  - {fileID: 3517742033399190579}
+  - {fileID: 1503501626013415681}
   m_ConditionGroups: []
 --- !u!114 &6116793895656541462
 MonoBehaviour:
@@ -8091,7 +8148,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 433ccd0e3a70475488f1638abe38e477, type: 3}
-  m_Name: RootMotion
+  m_Name: Landing
   m_EditorClassIdentifier: 
   uiPosition: {x: 0, y: 13.000092}
   defaultName: NewState
@@ -8100,6 +8157,7 @@ MonoBehaviour:
   - {fileID: -6675296043617272991}
   m_Behaviours:
   - {fileID: 2242413021838494043}
+  - {fileID: -4483847999847245408}
   m_SerializationKey: -173865147
   m_ForwardParamName: forward
   m_StrafeParamName: strafe
@@ -8147,6 +8205,21 @@ MonoBehaviour:
   m_Conditions:
   - {fileID: 7071269985035658581}
   m_ConditionGroups: []
+--- !u!114 &8159813056173605578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f9bd84af9ad2c4d8de2c02258696e5, type: 3}
+  m_Name: Condition Group
+  m_EditorClassIdentifier: 
+  m_Property: {fileID: -4120716006471088866}
+  m_CompareValue: 3
+  m_ComparisonType: 4
 --- !u!114 &8891042946761954437
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8168,18 +8241,3 @@ MonoBehaviour:
   m_AngleRange: 0
   m_Flipped: 0
   m_Continuous: 0
---- !u!114 &9128849724951244843
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9e2d987ad8624e40bcdd35074601148, type: 3}
-  m_Name: Condition Group
-  m_EditorClassIdentifier: 
-  m_VelocityType: 2
-  m_ComparisonType: 3
-  m_CompareValue: -5
