@@ -252,6 +252,9 @@ namespace NeoFPS.CharacterMotion
         bool m_StickToGround = false;
         bool m_ApplyGravity = false;
 
+        float maxHeightAchieved = 0f;
+        public float distanceFallen = 0f;
+
         void UpdateConnectable(MotionGraphConnectable connectable)
         {
             if (connectable.parent != null)
@@ -332,6 +335,19 @@ namespace NeoFPS.CharacterMotion
                 // Apply gravity / grounding force
                 m_ApplyGravity = currentState.applyGravity;
                 m_StickToGround = currentState.applyGroundingForce;
+
+                if (m_ApplyGravity)
+                {
+                    if(transform.position.y > maxHeightAchieved)
+                    {
+                        maxHeightAchieved = transform.position.y;
+                    }
+                    distanceFallen = maxHeightAchieved - transform.position.y;
+                }
+                else
+                {
+                    maxHeightAchieved = 0;
+                }
             }
             else
             {

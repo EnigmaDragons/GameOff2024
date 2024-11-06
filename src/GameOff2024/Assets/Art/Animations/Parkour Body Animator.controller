@@ -625,7 +625,7 @@ AnimatorStateTransition:
     m_ConditionEvent: airborne
     m_EventTreshold: 0
   - m_ConditionMode: 4
-    m_ConditionEvent: landingIntensity
+    m_ConditionEvent: distanceFallen
     m_EventTreshold: 0.5
   m_DstStateMachine: {fileID: 3716263675811154897}
   m_DstState: {fileID: 0}
@@ -698,7 +698,7 @@ BlendTree:
     m_CycleOffset: 0
     m_DirectBlendParameter: characterHeight
     m_Mirror: 0
-  m_BlendParameter: landingIntensity
+  m_BlendParameter: distanceFallen
   m_BlendParameterY: characterHeight
   m_MinThreshold: 3
   m_MaxThreshold: 15
@@ -1510,7 +1510,7 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: landingIntensity
+  - m_Name: distanceFallen
     m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
