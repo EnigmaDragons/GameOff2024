@@ -148,10 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8a296a5d57e8a49a89d7be69c0d1d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spySpeedMinimum: 5
-  spySpeedMaximum: 10
+  spySpeedMinimum: 6
+  spySpeedMaximum: 18
   minDistance: 2
-  maxDistance: 10
+  maxDistance: 40
   playerDistanceCalcInterval: 0.5
 --- !u!1001 &903034284318943809
 PrefabInstance:
