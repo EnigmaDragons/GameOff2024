@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 96a8a0f04cf131d478fc16cb18b1dd86
+timeCreated: 1609512886
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {fileID: 2800000, guid: cf05e30c5ff9b5245a5ea1159a7a7fcb, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 122250
+  packageName: Icons Manager
+  packageVersion: 1.0
+  assetPath: Assets/FImpossible Creations/Plugins - Other/Icons Manager/Scripts/Helpers/FIcon_LoadingAnimator.cs
+  uploadId: 669811
