@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7399b3bd-0aae-440e-94a5-9ed135d6e75b}">
+		<property name="assetPath">
+			<value>Phy_Test_Imp_05.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.43891666666666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b4e62c31-319b-41a2-99f2-da90039c94f3}</destination>
+		</relationship>
+	</object>
+</objects>
