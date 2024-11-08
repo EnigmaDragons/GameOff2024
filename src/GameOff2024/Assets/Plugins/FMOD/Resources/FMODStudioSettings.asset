@@ -260,6 +260,8 @@ MonoBehaviour:
   - Master
   Banks:
   - Bnk_MX_Airport
+  - Bnk_Phy_Test
+  - Bnk_Phy_WoodenChair
   - Bnk_SFX_PC
   - Test_Bank
   BanksToLoad: []
@@ -386,7 +388,7 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     Overlay:
-      Value: 1
+      Value: 0
       HasValue: 1
     OverlayPosition:
       Value: 0

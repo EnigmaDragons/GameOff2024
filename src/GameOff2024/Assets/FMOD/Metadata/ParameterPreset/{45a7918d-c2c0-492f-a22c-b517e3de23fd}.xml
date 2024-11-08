@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{45a7918d-c2c0-492f-a22c-b517e3de23fd}">
+		<property name="name">
+			<value>Phy_Angular_Velocity</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ba2b2126-2193-4292-a2df-9af9a449569d}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{11e4076d-64bb-41e3-91ac-fd53b29a3816}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{11e4076d-64bb-41e3-91ac-fd53b29a3816}">
+		<property name="maximum">
+			<value>6</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

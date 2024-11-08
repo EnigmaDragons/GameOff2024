@@ -58,6 +58,6 @@ sysinfo.txt
 
 # Log files can be ignored.
 fmod_editor.log
-/src/GameOff2024/Assets/FMOD/.unsaved
-/src/GameOff2024/Assets/FMOD/.cache
-/src/GameOff2024/Assets/FMOD/.user
+/src/GameOff2024/Assets/FMOD/.unsaved/*
+/src/GameOff2024/Assets/FMOD/.cache/*
+/src/GameOff2024/Assets/FMOD/.user/*

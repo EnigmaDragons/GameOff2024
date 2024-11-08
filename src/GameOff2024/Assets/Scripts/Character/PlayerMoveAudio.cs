@@ -118,7 +118,7 @@ public class PlayerMoveAudio : MonoBehaviour
         RuntimeManager.AttachInstanceToGameObject(fsSlideEventInstance, gameObject);
         foleySlideEventInstance.setParameterByName("Char_Speed", charSpeed);
         fsSlideEventInstance.start();
-        Debug.Log("sliding");
+        //Debug.Log("sliding");
 
     }
 

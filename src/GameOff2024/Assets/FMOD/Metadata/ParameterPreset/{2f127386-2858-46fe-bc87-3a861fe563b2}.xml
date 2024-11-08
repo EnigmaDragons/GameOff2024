@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{2f127386-2858-46fe-bc87-3a861fe563b2}">
+		<property name="name">
+			<value>Phy_Impact_Velocity</value>
+		</property>
+		<relationship name="folder">
+			<destination>{ba2b2126-2193-4292-a2df-9af9a449569d}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{02a1998c-487f-45bc-b494-b59ee53a0d0b}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{02a1998c-487f-45bc-b494-b59ee53a0d0b}">
+		<property name="maximum">
+			<value>6</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

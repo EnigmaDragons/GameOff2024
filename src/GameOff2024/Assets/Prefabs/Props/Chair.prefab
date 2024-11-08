@@ -80,6 +80,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3284316362125467303}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e3c2f5e31ca673843b1c6137470c05ae,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4082847856675890385}
   m_SourcePrefab: {fileID: 100100000, guid: e3c2f5e31ca673843b1c6137470c05ae, type: 3}
 --- !u!1 &8995478114032364478 stripped
 GameObject:
@@ -136,3 +140,30 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8715168971582641983, guid: 4f650f71dc7f137449ca1fc78b24814b, type: 3}
+--- !u!114 &4082847856675890385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8995478114032364478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7bd02e9395b8e14483bd5017dfdc41f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SurfaceType: 3
+  PhysicsImpactEvent:
+    Guid:
+      Data1: 2005014545
+      Data2: 1290211275
+      Data3: 875130803
+      Data4: 154915503
+    Path: event:/SFX/Phy/Wood/Chair/Phy_WoodenChair_Imp
+  PhysicsSlideEvent:
+    Guid:
+      Data1: 1987185934
+      Data2: 1173234175
+      Data3: 234369704
+      Data4: -1852743819
+    Path: event:/SFX/Phy/Wood/Chair/Phy_WoodenChair_Slide_Concrete_Lp
