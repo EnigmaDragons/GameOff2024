@@ -13,8 +13,23 @@ namespace NeoFPS.CharacterMotion.States
     [HelpURL("https://docs.neofps.com/manual/motiongraphref-mgs-verticalwallrunstate.html")]
     public class VerticalWallRunState : MotionGraphState
     {
+        /*
+        [SerializeField, Tooltip("How far in front of the player to check from.")]
+        private float distanceForwardParameter = 1f;
+
+        [SerializeField, Tooltip("How far above the player to check from.")]
+        private float checkHeightParameter = 5f;
+
+        [SerializeField, Tooltip("The radius of the spherecast")]
+        private float spherecastRadius = 1f;
+        [SerializeField, Tooltip("Layermask for the spherecast")]
+        private LayerMask m_WallCollisionMask = 0;
+        */
+
         [SerializeField, Tooltip("A parameter containing the wall normal vector the character is running up")]
         private VectorParameter m_WallNormal = null;
+        [SerializeField, Tooltip("A parameter containing the wall normal vector the character is running up")]
+        private FloatParameter m_WallHeightParameter = null;
         [SerializeField, Tooltip("An upward speed boost applied when entering the state")]
         private FloatDataReference m_UpBoost = new FloatDataReference(3f);
         [SerializeField, Tooltip("The upward speed can not be boosted above this value (though it can start higher than this)")]
@@ -72,6 +87,19 @@ namespace NeoFPS.CharacterMotion.States
 
             if (!m_Completed)
             {
+                /*
+                RaycastHit hit;
+                Ray detectionRay = new Ray(controller.transform.position + Vector3.up * checkHeightParameter + controller.transform.forward * distanceForwardParameter, Vector3.down);
+                if (Physics.SphereCast(detectionRay, spherecastRadius, out hit, checkHeightParameter, m_WallCollisionMask))
+                {
+                    float height = hit.point.y - controller.transform.position.y;
+                    if (height > 0)
+                    {
+                        m_WallHeightParameter.value = height;
+                        controller.bodyAnimator.SetFloat(m_ParameterHash, height);
+                    }
+                }
+                */
                 if (m_Boost)
                 {
                     // Apply boost if up velocity is  below max

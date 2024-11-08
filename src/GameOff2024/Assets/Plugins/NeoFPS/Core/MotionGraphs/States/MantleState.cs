@@ -27,6 +27,15 @@ namespace NeoFPS.CharacterMotion.States
         private float m_EndingSpeedMultiplier = 0.5f;
         [SerializeField, Tooltip("The distance to move past the edge onto flat ground before completing")]
         private float m_OvershootDistance = 0.5f;
+        [SerializeField, Tooltip("The parameter to read from to find the player's velocity last frame")]
+        private VectorParameter m_PreviousVelocity = null;
+        [SerializeField, Tooltip("The top movement speed (for keyboard input or max analog input)")]
+        private FloatDataReference m_TopSpeed = new FloatDataReference(5f);
+
+        private float m_HorizontalStartingVelocityMultiplier = 1;
+        [SerializeField, Tooltip("The 'midpoint' of the horizontal velocity curve")] private float horizontalVelocityCurveMidpoint = 0.2f;
+        [SerializeField, Tooltip("The steepness of the horizontal velocity curve")] private float horizontalVelocityCurveSteepness = 10f;
+        [SerializeField, Tooltip("The max value of the horizontal velocity curve")] private float horizontalVelocityCurveMaxvalue = 5f;
 
         private Vector3 m_OutVelocity = Vector3.zero;
         private Vector3 m_StartingWallNormal = Vector3.zero;
@@ -68,12 +77,19 @@ namespace NeoFPS.CharacterMotion.States
 
         public override void OnEnter()
         {
+            Debug.Log("Mantgle");
             base.OnEnter();
             m_Completed = false;
-            m_ClimbMotorSpeed = m_ClimbSpeed.value * m_StartingSpeedMultiplier;
+            Vector3 previousVelocity = m_PreviousVelocity.value;
+            Debug.Log(previousVelocity);
+            Vector3 wallNormalVelocity = Vector3.Dot(previousVelocity, -m_StartingWallNormal) * -m_StartingWallNormal;
+            m_HorizontalStartingVelocityMultiplier = CalculateHorizontalVelocityMultiplier(wallNormalVelocity.magnitude / m_TopSpeed.value);
+
+            m_ClimbMotorSpeed = m_ClimbSpeed.value * m_StartingSpeedMultiplier * m_HorizontalStartingVelocityMultiplier;
             m_ClimbMotorAcceleration = 0f;
             m_StartingWallNormal = Vector3.zero;
             m_TopDistance = 0f;
+            
 
             // Reset vertical velocity to prevent overshooting
             if (Vector3.Dot(characterController.velocity, characterController.up) < 0f)
@@ -162,7 +178,10 @@ namespace NeoFPS.CharacterMotion.States
             m_ClimbSpeed.CheckReference(map);
             base.CheckReferences(map);
         }
-
+        public float CalculateHorizontalVelocityMultiplier(float velocityRatio)
+        {
+            return 1;// .5f+horizontalVelocityCurveMaxvalue/(1+Mathf.Exp(horizontalVelocityCurveSteepness*(velocityRatio-horizontalVelocityCurveMidpoint)));
+        }
         #region SAVE / LOAD
 
         private static readonly NeoSerializationKey k_CompletedKey = new NeoSerializationKey("completed");

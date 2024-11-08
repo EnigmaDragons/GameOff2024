@@ -64,6 +64,9 @@ namespace NeoFPS
         [SerializeField, MotionGraphParameterKey(MotionGraphParameterType.Int)] 
         private string m_MaxAirJumpCountKey = "maxAirJumpCount";
 
+        [SerializeField, MotionGraphParameterKey(MotionGraphParameterType.Vector)]
+        private string m_PreviousVelocityKey = "previousVelocity";
+
 
         [Header("Custom Inputs")]
 
@@ -87,6 +90,7 @@ namespace NeoFPS
         private TriggerParameter m_DodgeRightTrigger = null;
         private TriggerParameter m_AbilityTrigger = null;
         private IntParameter m_MaxAirJumpCountProperty = null;
+        private VectorParameter m_PreviousVelocityProperty = null;  
 
         private float m_DodgeLeftTimer = 0f;
         private float m_DodgeRightTimer = 0f;
@@ -95,6 +99,9 @@ namespace NeoFPS
 
         Animator m_animator;
         [SerializeField] float animatorDampDeltaTime;
+
+        [SerializeField] float previousVelocityFalloffMultiplier = 0.8f;
+        
 
         [Serializable]
         private struct MotionGraphInput
@@ -154,6 +161,7 @@ namespace NeoFPS
                 m_DodgeRightTrigger = motionGraph.GetTriggerProperty(m_DodgeRightKey);
                 m_AbilityTrigger = motionGraph.GetTriggerProperty(m_AbilityKey);
                 m_MaxAirJumpCountProperty = motionGraph.GetIntProperty(m_MaxAirJumpCountKey);
+                m_PreviousVelocityProperty = motionGraph.GetVectorProperty(m_PreviousVelocityKey);
 
                 for (int i = 0; i < m_CustomInputs.Length; ++i)
                     m_CustomInputs[i].Initialise(m_Character.motionController.motionGraph);
@@ -402,6 +410,7 @@ namespace NeoFPS
                 if (GetButtonUp(FpsInputButton.Use))
                     m_InteractionMgr.InteractRelease();
             }
+            m_PreviousVelocityProperty.value = previousVelocityFalloffMultiplier *m_PreviousVelocityProperty.value + (1-previousVelocityFalloffMultiplier)* m_Character.motionController.characterController.velocity;
         }
 
         public void EnableAirJump()

@@ -891,6 +891,10 @@ namespace NeoFPS.CharacterMotion
                 return c as MotionGraphState;
         }
 
+        public Vector3 GetPreviousVelocity()
+        {
+            return m_PreviousVelocity;
+        }
         #endregion
 
         #region STEP TRACKING

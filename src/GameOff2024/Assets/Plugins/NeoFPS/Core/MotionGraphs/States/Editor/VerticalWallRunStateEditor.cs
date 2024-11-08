@@ -21,6 +21,17 @@ namespace NeoFPSEditor.CharacterMotion.States
             MotionGraphEditorGUI.FloatDataReferenceField(container, serializedObject.FindProperty("m_UpBoost"));
             MotionGraphEditorGUI.FloatDataReferenceField(container, serializedObject.FindProperty("m_MaxBoostSpeed"));
             MotionGraphEditorGUI.FloatDataReferenceField(container, serializedObject.FindProperty("m_GravityMultiplier"));
+
+
+            /*
+            EditorGUILayout.LabelField("Wall Height Tracking Properties", EditorStyles.boldLabel);
+
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("distanceForwardParameter"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("checkHeightParameter"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("spherecastRadius"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("m_WallCollisionMask"));
+            EditorGUILayout.PropertyField(serializedObject.FindProperty("m_WallHeightParameter"));
+            */
         }
     }
 }
