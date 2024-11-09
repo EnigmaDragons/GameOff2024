@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [Serializable]
@@ -17,4 +19,6 @@ public sealed class GameState
 
     public bool gameWon;
     public bool gameLost;
+    
 }
+
