@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 4c3d21a21dc70ac409d0471ddeae0d68
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 122250
+  packageName: Icons Manager
+  packageVersion: 1.0
+  assetPath: Assets/FImpossible Creations/Plugins - Other/Icons Manager/Scripts/Helpers/FIcons_Enums.cs
+  uploadId: 669811

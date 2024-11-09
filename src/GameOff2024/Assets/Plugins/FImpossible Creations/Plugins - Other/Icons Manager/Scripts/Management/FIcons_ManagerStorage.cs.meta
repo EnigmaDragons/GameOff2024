@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 53bd506c4484a854d9b9f4b0d93e9c02
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 122250
+  packageName: Icons Manager
+  packageVersion: 1.0
+  assetPath: Assets/FImpossible Creations/Plugins - Other/Icons Manager/Scripts/Management/FIcons_ManagerStorage.cs
+  uploadId: 669811
