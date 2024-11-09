@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 95bd78ebb1f7b5e4086a698c734da2f0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 122250
+  packageName: Icons Manager
+  packageVersion: 1.0
+  assetPath: Assets/FImpossible Creations/Editor/Editor Tools/Scaling Tools/FScale_ScalerWindow.cs
+  uploadId: 669811
