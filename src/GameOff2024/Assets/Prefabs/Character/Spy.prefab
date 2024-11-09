@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 8421453442861088689}
   - component: {fileID: 6989025111469588182}
   - component: {fileID: 8575804175135261220}
-  m_Layer: 0
+  - component: {fileID: 5699631942493178433}
+  m_Layer: 16
   m_Name: Spy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,6 +155,33 @@ MonoBehaviour:
   minDistance: 2
   maxDistance: 40
   playerDistanceCalcInterval: 0.5
+--- !u!54 &5699631942493178433
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3447415211903733702}
+  serializedVersion: 4
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &903034284318943809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -162,10 +190,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5448789521080240422}
     m_Modifications:
+    - target: {fileID: 1112385587148417291, guid: 9e982df8f7b85f14aa60c58aa7db7371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1427005998119893786, guid: 9e982df8f7b85f14aa60c58aa7db7371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 1821130139096103434, guid: 9e982df8f7b85f14aa60c58aa7db7371,
         type: 3}
       propertyPath: m_Name
       value: Game End Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1821130139096103434, guid: 9e982df8f7b85f14aa60c58aa7db7371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969824702253203890, guid: 9e982df8f7b85f14aa60c58aa7db7371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5025907354604642224, guid: 9e982df8f7b85f14aa60c58aa7db7371,
         type: 3}
@@ -267,6 +315,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5058157747914919565, guid: 9e982df8f7b85f14aa60c58aa7db7371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5630997075319901038, guid: 9e982df8f7b85f14aa60c58aa7db7371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6060698750635174456, guid: 9e982df8f7b85f14aa60c58aa7db7371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7831831563155878864, guid: 9e982df8f7b85f14aa60c58aa7db7371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8173092552281499147, guid: 9e982df8f7b85f14aa60c58aa7db7371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531690506777689172, guid: 9e982df8f7b85f14aa60c58aa7db7371,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -361,6 +439,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: sm_enemySpyBlockout
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd239d73265f3164895b06a9efa2edf2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -384,6 +467,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Briefcase
+      objectReference: {fileID: 0}
+    - target: {fileID: 560247129312026402, guid: f1bd50cbe0ee399409ab7dc23ade20b9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4380384669606552435, guid: f1bd50cbe0ee399409ab7dc23ade20b9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4679831329286298779, guid: f1bd50cbe0ee399409ab7dc23ade20b9,
         type: 3}
@@ -434,6 +527,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8715963030960291953, guid: f1bd50cbe0ee399409ab7dc23ade20b9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4794544338026106650, guid: f1bd50cbe0ee399409ab7dc23ade20b9, type: 3}

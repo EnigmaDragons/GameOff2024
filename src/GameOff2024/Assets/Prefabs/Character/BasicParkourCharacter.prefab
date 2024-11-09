@@ -1588,6 +1588,8 @@ GameObject:
   - component: {fileID: 2981876898640929334}
   - component: {fileID: 2985648793847698478}
   - component: {fileID: 2982023308618288730}
+  - component: {fileID: 9016996891014538116}
+  - component: {fileID: 2305251762796639364}
   m_Layer: 13
   m_Name: BasicParkourCharacter
   m_TagString: Player
@@ -1641,7 +1643,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1971,6 +1973,79 @@ MonoBehaviour:
   expandNeoComponents: 0
   expandOtherComponents: 1
   prefabGuid: 1c039dd0b6867dc448c4cff9f38475ab
+--- !u!114 &9016996891014538116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951255869235385890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f4b38a998f3ffa438253a6f388f8768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fsEvent:
+    Guid:
+      Data1: -2070043401
+      Data2: 1078692012
+      Data3: -422171512
+      Data4: 1583506019
+    Path: event:/SFX/Char/FS/FS
+  fsLandEvent:
+    Guid:
+      Data1: -1379352811
+      Data2: 1299877280
+      Data3: 2130791337
+      Data4: 1410283162
+    Path: event:/SFX/Char/FS/FS_Land
+  foleyEvent:
+    Guid:
+      Data1: 1718708425
+      Data2: 1076224811
+      Data3: -1975963233
+      Data4: 419184386
+    Path: event:/SFX/Char/Foley/Fol_PC_Jean_Move
+  jumpFoleyEvent:
+    Guid:
+      Data1: 1008803842
+      Data2: 1193755270
+      Data3: -191675999
+      Data4: -737454707
+    Path: event:/SFX/Char/Foley/Fol_PC_Jean_Jump
+  foleySlideEvent:
+    Guid:
+      Data1: -156326269
+      Data2: 1179230201
+      Data3: 455104191
+      Data4: 557884613
+    Path: event:/SFX/Char/Foley/Fol_PC_Jean_Slide
+  fsSlideEvent:
+    Guid:
+      Data1: 1709769197
+      Data2: 1290792263
+      Data3: 300221104
+      Data4: -1511728638
+    Path: event:/SFX/Char/FS/FS_Slide
+--- !u!114 &2305251762796639364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951255869235385890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516d6f4299ccb0c4e975d7e9eacd4f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mxEvent:
+    Guid:
+      Data1: -1292527353
+      Data2: 1211895714
+      Data3: 277581446
+      Data4: 1802672103
+    Path: event:/MX/InGame/MX_Lvl_Airport_Chase
 --- !u!1 &2951255870412331690
 GameObject:
   m_ObjectHideFlags: 0
