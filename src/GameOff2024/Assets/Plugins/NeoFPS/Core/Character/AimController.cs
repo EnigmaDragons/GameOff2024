@@ -55,8 +55,8 @@ namespace NeoFPS
         private Quaternion m_YawLocalRotation = Quaternion.identity;
         private float m_PendingYaw = 0f;
         private float m_CurrentPitch = 0f;
-        private float m_PitchLimitMin = -89f;
-        private float m_PitchLimitMax = 89f;
+        private float m_PitchLimitMin = -80f;
+        private float m_PitchLimitMax = 80f;
         private float m_PendingPitch = 0f;
 
         protected bool isValid
