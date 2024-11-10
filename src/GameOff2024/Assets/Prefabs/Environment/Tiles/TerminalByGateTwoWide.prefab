@@ -1486,7 +1486,9 @@ PrefabInstance:
       value: Obs_SittingRow (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4830185295165422134, guid: 1051887e2dccf6844875e8cd4e2262ec, type: 3}
+    - {fileID: 8985861030832546592, guid: 1051887e2dccf6844875e8cd4e2262ec, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1051887e2dccf6844875e8cd4e2262ec, type: 3}
