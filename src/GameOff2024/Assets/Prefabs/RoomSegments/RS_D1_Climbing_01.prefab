@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3578437439567440899}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 1730434957296109772}
   - component: {fileID: 1726539173594510256}
   - component: {fileID: 1263405505687565704}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4684800723794282290}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Obstacles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5990972388652008217}
   - component: {fileID: 7788789297830909933}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RS_D1_Climbing_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,6 +221,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4684800723794282290}
     m_Modifications:
+    - target: {fileID: 2004165595673923755, guid: 276d04ad343dd442d9ea94ce24277657,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4976527356645439574, guid: 276d04ad343dd442d9ea94ce24277657,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -271,10 +276,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5940392916493316958, guid: 276d04ad343dd442d9ea94ce24277657,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110189922103930409, guid: 276d04ad343dd442d9ea94ce24277657,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568233464267283408, guid: 276d04ad343dd442d9ea94ce24277657,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758965453054013792, guid: 276d04ad343dd442d9ea94ce24277657,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7004359250759897448, guid: 276d04ad343dd442d9ea94ce24277657,
         type: 3}
       propertyPath: m_Name
       value: Obs_Climb_Single (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004359250759897448, guid: 276d04ad343dd442d9ea94ce24277657,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977521397935588193, guid: 276d04ad343dd442d9ea94ce24277657,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -295,6 +330,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4684800723794282290}
     m_Modifications:
+    - target: {fileID: 2004165595673923755, guid: 276d04ad343dd442d9ea94ce24277657,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4976527356645439574, guid: 276d04ad343dd442d9ea94ce24277657,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -345,10 +385,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5940392916493316958, guid: 276d04ad343dd442d9ea94ce24277657,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6110189922103930409, guid: 276d04ad343dd442d9ea94ce24277657,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6568233464267283408, guid: 276d04ad343dd442d9ea94ce24277657,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758965453054013792, guid: 276d04ad343dd442d9ea94ce24277657,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7004359250759897448, guid: 276d04ad343dd442d9ea94ce24277657,
         type: 3}
       propertyPath: m_Name
       value: Obs_Climb_Single
+      objectReference: {fileID: 0}
+    - target: {fileID: 7004359250759897448, guid: 276d04ad343dd442d9ea94ce24277657,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8977521397935588193, guid: 276d04ad343dd442d9ea94ce24277657,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
