@@ -12,6 +12,9 @@ namespace DunGen.Adapters
 	[AddComponentMenu("DunGen/NavMesh/Unity NavMesh Adapter")]
 	public class UnityNavMeshAdapter : NavMeshAdapter
 	{
+		public static UnityNavMeshAdapter instance;
+		public event EventHandler<EventArgs> OnNavmeshBaked;
+
 		#region Nested Types
 
 		public enum RuntimeNavMeshBakeMode
@@ -57,12 +60,17 @@ namespace DunGen.Adapters
 		private List<NavMeshSurface> addedSurfaces = new List<NavMeshSurface>();
 		private List<NavMeshSurface> fullBakeSurfaces = new List<NavMeshSurface>();
 
-
-		public override void Generate(Dungeon dungeon)
+        private void Awake()
+        {
+            instance = this;
+        }
+        public override void Generate(Dungeon dungeon)
 		{
+			instance = this;
 			if (BakeMode == RuntimeNavMeshBakeMode.FullDungeonBake)
 			{
 				BakeFullDungeon(dungeon);
+				OnNavmeshBaked?.Invoke(this, EventArgs.Empty);
 				return;
 			}
 
@@ -107,9 +115,11 @@ namespace DunGen.Adapters
 
 			if (OnProgress != null)
 				OnProgress(new NavMeshGenerationProgress() { Description = "Done", Percentage = 1.0f });
-		}
+            OnNavmeshBaked?.Invoke(this, EventArgs.Empty);
 
-		private void BakeFullDungeon(Dungeon dungeon)
+        }
+
+        private void BakeFullDungeon(Dungeon dungeon)
 		{
 			if (AutoGenerateFullRebakeSurfaces)
 			{

@@ -6,9 +6,8 @@ namespace DunGen.Adapters
 	{
 		public int Priority = 0;
 		public virtual bool RunDuringAnalysis { get; set; }
-
+		
 		protected DungeonGenerator dungeonGenerator;
-
 
 		protected virtual void OnEnable()
 		{

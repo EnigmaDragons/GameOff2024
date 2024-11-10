@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5448789521080240422}
   - component: {fileID: 4751341441809019609}
-  - component: {fileID: 4129343720037358794}
   - component: {fileID: 8421453442861088689}
   - component: {fileID: 6989025111469588182}
   - component: {fileID: 8575804175135261220}
@@ -49,51 +48,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3447415211903733702}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4129343720037358794
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3447415211903733702}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 4b4778d6077ae488cab4ea82c51c14bb, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &8421453442861088689
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -127,7 +81,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -151,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8a296a5d57e8a49a89d7be69c0d1d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spySpeedMinimum: 6
-  spySpeedMaximum: 18
+  spySpeedMinimum: 4
+  spySpeedMaximum: 4
   minDistance: 2
   maxDistance: 40
   playerDistanceCalcInterval: 0.5
@@ -195,6 +149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b1d50d7e7918754d8951d5d6daf5e32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lerpSpeed: 10
+  visuals: {fileID: 4687998008082777517}
+  jumpSpeed: 4
 --- !u!1001 &903034284318943809
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -662,6 +619,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: rigged_temp_spy
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 9a8b27233ae3ded4d8c1eb7d5314a607,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 31d6811a398d5a1448d230481d9ab5e6, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 9a8b27233ae3ded4d8c1eb7d5314a607,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -671,6 +638,12 @@ PrefabInstance:
       addedObject: {fileID: 6992806544628713599}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a8b27233ae3ded4d8c1eb7d5314a607, type: 3}
+--- !u!1 &4687998008082777517 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9a8b27233ae3ded4d8c1eb7d5314a607,
+    type: 3}
+  m_PrefabInstance: {fileID: 5606546714921957628}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5351628710199107351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9a8b27233ae3ded4d8c1eb7d5314a607,
