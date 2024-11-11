@@ -20,10 +20,11 @@ public class NavMeshPathVisualizer : MonoBehaviour
         if (!showPath || agent == null) return;
         if (!agent.hasPath)
         {
-            Debug.Log("No path found");
             return;
         }
-        
+        Debug.Log("Path found");
+
+
         Vector3[] corners = agent.path.corners;
 
         // Draw lines between each corner
