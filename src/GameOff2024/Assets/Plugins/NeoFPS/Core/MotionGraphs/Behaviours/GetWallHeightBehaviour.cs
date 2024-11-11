@@ -55,7 +55,7 @@ namespace NeoFPS.CharacterMotion.Behaviours
 
         public override void OnEnter()
         {
-            if (m_WallHeightParameter != null && (m_When == When.OnEnter || m_When == When.Both))
+            if (m_WallHeightParameter != null && controller.transform != null && (m_When == When.OnEnter || m_When == When.Both))
             {
                 RaycastHit hit;
                 Ray detectionRay = new Ray(controller.transform.position + Vector3.up * checkHeightParameter - m_WallNormalParameter.value * distanceForwardParameter, Vector3.down);
@@ -78,7 +78,7 @@ namespace NeoFPS.CharacterMotion.Behaviours
 
         public override void OnExit()
         {
-            if (m_WallHeightParameter != null && (m_When == When.OnExit || m_When == When.Both))
+            if (m_WallHeightParameter != null && controller.transform != null && (m_When == When.OnExit || m_When == When.Both))
             {
                 RaycastHit hit;
                 Ray detectionRay = new Ray(controller.transform.position + Vector3.up * checkHeightParameter + controller.transform.forward * distanceForwardParameter, Vector3.down);
