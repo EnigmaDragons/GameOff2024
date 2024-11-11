@@ -7,6 +7,7 @@ public class AgentLinkMover : MonoBehaviour
     [SerializeField] private float lerpSpeed = 1f;  // Max units per second
 
     private NavMeshAgent m_agent;
+    NavMeshHit m_hit;
     [SerializeField] private GameObject visuals;
     Animator m_animator;
 
@@ -15,6 +16,11 @@ public class AgentLinkMover : MonoBehaviour
     private bool isJumping;
     float agentBaseSpeed;
     [SerializeField] float jumpSpeed = 2;
+
+    [SerializeField] float groundedCheckRadius = .5f;
+    [SerializeField] LayerMask groundedCheckMask;
+    bool isGrounded;
+    [SerializeField] Transform groundedCheckPosition;
 
     private void Awake()
     {
@@ -35,8 +41,35 @@ public class AgentLinkMover : MonoBehaviour
         }
         if (m_agent.isOnOffMeshLink)
         {
-            Debug.Log("Link");
+            m_agent.SamplePathPosition(NavMesh.AllAreas, 0f, out m_hit);
+            if (m_hit.mask == NavMesh.GetAreaFromName("Slide"))
+            {
+                m_animator.SetBool("Slide", true);
+            }
+            else
+            {
+                m_animator.SetBool("Slide", false);
+            }
+            if (m_hit.mask == NavMesh.GetAreaFromName("Climb"))
+            {
+                m_animator.SetBool("Climb", true);
+                m_animator.SetFloat("YVelocity", m_agent.desiredVelocity.y);
+            }
+            else
+            {
+                m_animator.SetBool("Climb", false);
+            }
         }
+        else
+        {
+            m_animator.SetBool("Climb", false);
+            m_animator.SetBool("Slide", false);
+        }
+    }
+    void GroundedCheck()
+    {
+        isGrounded = Physics.CheckSphere(groundedCheckPosition.position, groundedCheckRadius);
+        m_animator.SetBool("IsGrounded", isGrounded);
     }
 
     private void JumpBehaviour()
@@ -61,7 +94,7 @@ public class AgentLinkMover : MonoBehaviour
         // Lerp y position towards the target with clamping to avoid overshoot
         float newY = Mathf.MoveTowards(currentY, targetY, maxLerpDistance);
 
-        if (activeJumpPath == null && Mathf.Approximately(newY, targetY))
+        if (isGrounded)
         {
             m_animator.SetTrigger("Land");
             m_animator.ResetTrigger("Jump");
@@ -100,5 +133,10 @@ public class AgentLinkMover : MonoBehaviour
         {
             activeJumpPath = null;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(groundedCheckPosition.position, groundedCheckRadius);
     }
 }

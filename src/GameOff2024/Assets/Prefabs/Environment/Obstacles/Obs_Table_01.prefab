@@ -386,6 +386,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table_Round (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8726856798942697562, guid: 475eda4c2cb528e449d4e4106096bd02,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726856798942697562, guid: 475eda4c2cb528e449d4e4106096bd02,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726856798942697562, guid: 475eda4c2cb528e449d4e4106096bd02,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

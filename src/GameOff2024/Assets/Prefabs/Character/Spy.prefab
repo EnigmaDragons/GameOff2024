@@ -39,6 +39,7 @@ Transform:
   - {fileID: 5275866882034890225}
   - {fileID: 747871306472026344}
   - {fileID: 5351628710199107351}
+  - {fileID: 1435512595342280724}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4751341441809019609
@@ -128,6 +129,11 @@ MonoBehaviour:
   lerpSpeed: 10
   visuals: {fileID: 4687998008082777517}
   jumpSpeed: 3
+  groundedCheckRadius: 0.3
+  groundedCheckMask:
+    serializedVersion: 2
+    m_Bits: 0
+  groundedCheckPosition: {fileID: 1435512595342280724}
 --- !u!114 &4259197965517285680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +177,37 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
+--- !u!1 &8966128325048622642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1435512595342280724}
+  m_Layer: 16
+  m_Name: Ground Check Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1435512595342280724
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8966128325048622642}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5448789521080240422}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &903034284318943809
 PrefabInstance:
   m_ObjectHideFlags: 0

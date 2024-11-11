@@ -1,3 +1,4 @@
+using DunGen.Adapters;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -36,10 +37,17 @@ public class SpyController : OnMessage<GameStateChanged>
     private void Start()
     {
         pathToPlayer = new NavMeshPath();
+        UnityNavMeshAdapter.instance.OnNavmeshBaked += Instance_OnNavmeshBaked;
+    }
+
+    private void Instance_OnNavmeshBaked(object sender, System.EventArgs e)
+    {
+        navMeshAgent.enabled = true;
     }
 
     private void FixedUpdate()
     {
+        if(!navMeshAgent.enabled) return;
         if (_playerFound && _destinationFound)
         {
             if (navMeshAgent.destination != destinationTransform.position)
@@ -80,7 +88,10 @@ public class SpyController : OnMessage<GameStateChanged>
         if(destinationTransform != null)
         {
             _destinationFound = true;
-            navMeshAgent.SetDestination(destinationTransform.position);
+            if (navMeshAgent.enabled)
+            {
+                navMeshAgent.SetDestination(destinationTransform.position);
+            }
         }
     }
 }
