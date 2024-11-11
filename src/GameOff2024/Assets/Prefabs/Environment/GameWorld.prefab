@@ -266,7 +266,7 @@ MonoBehaviour:
     DisallowOverhangs: 0
     AvoidCollisionsWithOtherDungeons: 1
     Root: {fileID: 0}
-    DungeonFlow: {fileID: 11400000, guid: 15360138f20d8e1488c64610c151e3ad, type: 2}
+    DungeonFlow: {fileID: 11400000, guid: c565df8c317794e439f3de9de18f567a, type: 2}
     fileVersion: 1
   GenerateOnStart: 1
   Root: {fileID: 9127829965771701466}
@@ -283,10 +283,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Priority: 0
-  BakeMode: 2
+  BakeMode: 1
   LayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8396288
   AddNavMeshLinksBetweenRooms: 1
   NavMeshAgentTypes:
   - AgentTypeID: 0

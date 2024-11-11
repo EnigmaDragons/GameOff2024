@@ -231,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_RegisterOnAwake: 1
   m_ReuseDelay: 0
-  m_OverlapTest: 0
+  m_OverlapTest: 2
   m_BlockingLayers:
     serializedVersion: 2
     m_Bits: 8403457
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_DeathSequenceDuration: 5
   m_PlayerPrefab: {fileID: 114330862915175946, guid: 3b4baa77285369e46a04c916100b828b,
     type: 3}
-  m_CharacterPrefab: {fileID: 2982077726883408534, guid: e9a492e6965433e47b59cf7111496f76,
+  m_CharacterPrefab: {fileID: 2982077726883408534, guid: 1c039dd0b6867dc448c4cff9f38475ab,
     type: 3}
   m_SpawnOnStart: 1
   m_DeathAction: 0
