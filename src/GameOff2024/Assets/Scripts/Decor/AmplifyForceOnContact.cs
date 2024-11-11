@@ -22,7 +22,7 @@ public class AmplifyForceOnContact : MonoBehaviour
             
             // Add force in kick direction plus some upward force
             rb.AddForce((kickDirection * _kickForce + Vector3.up * _upwardForce), ForceMode.Impulse);
-            Log.Info("Amplified Force!");
+            //Log.Info("Amplified Force!");
         }
     }
 }

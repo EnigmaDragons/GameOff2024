@@ -14,8 +14,8 @@ public class SpyController : OnMessage<GameStateChanged>
     [SerializeField] float minDistance;
     [SerializeField] float maxDistance;
 
-    Transform playerCharacterTransform;
-    Transform destinationTransform;
+    [SerializeField] Transform playerCharacterTransform;
+    [SerializeField] Transform destinationTransform;
 
     private NavMeshPath pathToPlayer;
 
@@ -32,9 +32,7 @@ public class SpyController : OnMessage<GameStateChanged>
         if (navMeshAgent == null)
             Log.Error("Missing NavMeshAgent");
     }
-
     
-
     private void Start()
     {
         pathToPlayer = new NavMeshPath();
@@ -44,6 +42,8 @@ public class SpyController : OnMessage<GameStateChanged>
     {
         if (_playerFound && _destinationFound)
         {
+            if (navMeshAgent.destination != destinationTransform.position)
+                navMeshAgent.SetDestination(destinationTransform.position);
             playerDistanceCalcTimer -= Time.deltaTime;
             if (playerDistanceCalcTimer <= 0f)
             {

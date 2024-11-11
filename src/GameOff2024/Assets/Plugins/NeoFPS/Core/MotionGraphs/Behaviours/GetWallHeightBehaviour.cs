@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NeoFPS.CharacterMotion;
@@ -61,7 +62,7 @@ namespace NeoFPS.CharacterMotion.Behaviours
                 if (Physics.SphereCast(detectionRay, spherecastRadius, out hit, checkHeightParameter, m_WallCollisionMask))
                 {
                     float height = hit.point.y - controller.transform.position.y;
-                    if(height > 0)
+                    if (height > 0)
                     {
                         m_WallHeightParameter.value = height;
                         controller.bodyAnimator.SetFloat(m_ParameterHash, height);

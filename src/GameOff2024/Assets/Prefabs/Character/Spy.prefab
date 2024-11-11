@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8575804175135261220}
   - component: {fileID: 5699631942493178433}
   - component: {fileID: 5475013908267335931}
+  - component: {fileID: 4259197965517285680}
   m_Layer: 16
   m_Name: Spy
   m_TagString: Untagged
@@ -106,9 +107,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spySpeedMinimum: 4
-  spySpeedMaximum: 4
+  spySpeedMaximum: 20
   minDistance: 2
   maxDistance: 40
+  playerCharacterTransform: {fileID: 0}
+  destinationTransform: {fileID: 0}
   playerDistanceCalcInterval: 0.5
 --- !u!54 &5699631942493178433
 Rigidbody:
@@ -152,6 +155,22 @@ MonoBehaviour:
   lerpSpeed: 10
   visuals: {fileID: 4687998008082777517}
   jumpSpeed: 4
+--- !u!114 &4259197965517285680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3447415211903733702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f3873e1a90a4bf7941c4d36a46d0ad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  showPath: 1
+  lineWidth: 1
+  showInGame: 1
 --- !u!1001 &903034284318943809
 PrefabInstance:
   m_ObjectHideFlags: 0

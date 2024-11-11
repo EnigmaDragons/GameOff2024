@@ -77,11 +77,10 @@ namespace NeoFPS.CharacterMotion.States
 
         public override void OnEnter()
         {
-            Debug.Log("Mantgle");
             base.OnEnter();
             m_Completed = false;
             Vector3 previousVelocity = m_PreviousVelocity.value;
-            Debug.Log(previousVelocity);
+            Debug.Log($"Mantle - Previous Velocity {previousVelocity}");
             Vector3 wallNormalVelocity = Vector3.Dot(previousVelocity, -m_StartingWallNormal) * -m_StartingWallNormal;
             m_HorizontalStartingVelocityMultiplier = CalculateHorizontalVelocityMultiplier(wallNormalVelocity.magnitude / m_TopSpeed.value);
 
@@ -90,7 +89,6 @@ namespace NeoFPS.CharacterMotion.States
             m_StartingWallNormal = Vector3.zero;
             m_TopDistance = 0f;
             
-
             // Reset vertical velocity to prevent overshooting
             if (Vector3.Dot(characterController.velocity, characterController.up) < 0f)
                 characterController.ResetVerticalVelocity();
