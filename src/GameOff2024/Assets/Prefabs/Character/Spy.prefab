@@ -81,7 +81,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 3447415211903733702}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
@@ -106,10 +106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8a296a5d57e8a49a89d7be69c0d1d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spySpeedMinimum: 4
+  spySpeedMinimum: 5
   spySpeedMaximum: 20
   minDistance: 2
-  maxDistance: 40
+  maxDistance: 60
   playerCharacterTransform: {fileID: 0}
   destinationTransform: {fileID: 0}
   playerDistanceCalcInterval: 0.5

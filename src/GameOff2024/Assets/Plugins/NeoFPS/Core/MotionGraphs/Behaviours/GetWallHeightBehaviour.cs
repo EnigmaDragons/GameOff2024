@@ -55,46 +55,60 @@ namespace NeoFPS.CharacterMotion.Behaviours
 
         public override void OnEnter()
         {
-            if (m_WallHeightParameter != null && controller.transform != null && (m_When == When.OnEnter || m_When == When.Both))
+            try
             {
-                RaycastHit hit;
-                Ray detectionRay = new Ray(controller.transform.position + Vector3.up * checkHeightParameter - m_WallNormalParameter.value * distanceForwardParameter, Vector3.down);
-                if (Physics.SphereCast(detectionRay, spherecastRadius, out hit, checkHeightParameter, m_WallCollisionMask))
+                if (m_WallHeightParameter != null && controller.transform != null && (m_When == When.OnEnter || m_When == When.Both))
                 {
-                    float height = hit.point.y - controller.transform.position.y;
-                    if (height > 0)
+                    RaycastHit hit;
+                    Ray detectionRay = new Ray(controller.transform.position + Vector3.up * checkHeightParameter - m_WallNormalParameter.value * distanceForwardParameter, Vector3.down);
+                    if (Physics.SphereCast(detectionRay, spherecastRadius, out hit, checkHeightParameter, m_WallCollisionMask))
                     {
-                        m_WallHeightParameter.value = height;
-                        controller.bodyAnimator.SetFloat(m_ParameterHash, height);
+                        float height = hit.point.y - controller.transform.position.y;
+                        if (height > 0)
+                        {
+                            m_WallHeightParameter.value = height;
+                            controller.bodyAnimator.SetFloat(m_ParameterHash, height);
+                        }
+                    }
+                    else
+                    {
+                        m_WallHeightParameter.value = 5;
+                        controller.bodyAnimator.SetFloat(m_ParameterHash, 5);
                     }
                 }
-                else
-                {
-                    m_WallHeightParameter.value = 5;
-                    controller.bodyAnimator.SetFloat(m_ParameterHash, 5);
-                }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning($"Error in GetWallHeightBehaviour.OnEnter: {e.Message}");
             }
         }
 
         public override void OnExit()
         {
-            if (m_WallHeightParameter != null && controller.transform != null && (m_When == When.OnExit || m_When == When.Both))
+            try
             {
-                RaycastHit hit;
-                Ray detectionRay = new Ray(controller.transform.position + Vector3.up * checkHeightParameter + controller.transform.forward * distanceForwardParameter, Vector3.down);
-                if (Physics.SphereCast(detectionRay, spherecastRadius, out hit, checkHeightParameter, m_WallCollisionMask))
+                if (m_WallHeightParameter != null && controller.transform != null && (m_When == When.OnExit || m_When == When.Both))
                 {
-                    float height = hit.point.y - controller.transform.position.y;
-                    if (height > 0)
+                    RaycastHit hit;
+                    Ray detectionRay = new Ray(controller.transform.position + Vector3.up * checkHeightParameter + controller.transform.forward * distanceForwardParameter, Vector3.down);
+                    if (Physics.SphereCast(detectionRay, spherecastRadius, out hit, checkHeightParameter, m_WallCollisionMask))
                     {
-                        m_WallHeightParameter.value = height;
+                        float height = hit.point.y - controller.transform.position.y;
+                        if (height > 0)
+                        {
+                            m_WallHeightParameter.value = height;
+                        }
+                    }
+                    else
+                    {
+                        m_WallHeightParameter.value = 5;
+                        controller.bodyAnimator.SetFloat(m_ParameterHash, 5);
                     }
                 }
-                else
-                {
-                    m_WallHeightParameter.value = 5;
-                    controller.bodyAnimator.SetFloat(m_ParameterHash, 5);
-                }
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogWarning($"Error in GetWallHeightBehaviour.OnExit: {e.Message}");
             }
         }
         
