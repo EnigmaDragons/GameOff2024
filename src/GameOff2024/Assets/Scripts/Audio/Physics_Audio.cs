@@ -33,7 +33,7 @@ public class Physics_Audio : MonoBehaviour
     private bool slideSFXPlaying = false;
     private EventInstance PhysicsSlideEventInstance;
     private float lastVelocity = 0f;
-    private bool collsionEnabled = false;
+    private bool collisionEnabled = false;
 
     private void Start()
     {
@@ -42,7 +42,7 @@ public class Physics_Audio : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collsionEnabled)
+        if (collisionEnabled)
         {
             if (collision.relativeVelocity.sqrMagnitude > collisionThreshold)
             {
@@ -52,7 +52,7 @@ public class Physics_Audio : MonoBehaviour
     }
     private void OnCollisionStay(Collision collision)
     {
-        if (collsionEnabled)
+        if (collisionEnabled)
         {
             if (collision.relativeVelocity.sqrMagnitude > collisionThreshold)
             {
@@ -61,22 +61,9 @@ public class Physics_Audio : MonoBehaviour
         }            
     }
 
-    //used to optimize the triggering of physics sounds until the player is actually near those objects
-    private void OnTriggerEnter(Collider other)
+    public void ToggleCollision(bool value)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            collsionEnabled = true;
-        }        
-        
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            collsionEnabled = false;
-        }
+        collisionEnabled = value;
     }
 
     void CollsionHandler(Collision collision)
