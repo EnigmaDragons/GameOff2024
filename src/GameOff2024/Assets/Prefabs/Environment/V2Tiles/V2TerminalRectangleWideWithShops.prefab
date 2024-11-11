@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 7775807362348566860}
   - component: {fileID: 4518494605091208537}
   - component: {fileID: 7221461740473214658}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shops (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -436,7 +436,7 @@ GameObject:
   - component: {fileID: 8302479928476109444}
   - component: {fileID: 7081101758010092548}
   - component: {fileID: 3382446213526584362}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shops (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
