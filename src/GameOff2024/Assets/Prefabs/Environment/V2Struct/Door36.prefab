@@ -76,10 +76,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6125419885717569309}
     m_Modifications:
+    - target: {fileID: 2755642784940137096, guid: 452a806e47ea24b42b213652a12c71dd,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3020744805404375566, guid: 452a806e47ea24b42b213652a12c71dd,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3974185212988967784, guid: 452a806e47ea24b42b213652a12c71dd,
         type: 3}
       propertyPath: m_Name
       value: Wall36
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974185212988967784, guid: 452a806e47ea24b42b213652a12c71dd,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6896896000005095607, guid: 452a806e47ea24b42b213652a12c71dd,
         type: 3}
