@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 8421453442861088689}
   - component: {fileID: 6989025111469588182}
   - component: {fileID: 8575804175135261220}
-  - component: {fileID: 5699631942493178433}
   - component: {fileID: 5475013908267335931}
   - component: {fileID: 4259197965517285680}
+  - component: {fileID: 1772217593623304785}
   m_Layer: 16
   m_Name: Spy
   m_TagString: Untagged
@@ -82,7 +82,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.3
-  m_Speed: 1
+  m_Speed: 6
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -113,33 +113,6 @@ MonoBehaviour:
   playerCharacterTransform: {fileID: 0}
   destinationTransform: {fileID: 0}
   playerDistanceCalcInterval: 0.5
---- !u!54 &5699631942493178433
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3447415211903733702}
-  serializedVersion: 4
-  m_Mass: 10
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!114 &5475013908267335931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,7 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lerpSpeed: 10
   visuals: {fileID: 4687998008082777517}
-  jumpSpeed: 4
+  jumpSpeed: 3
 --- !u!114 &4259197965517285680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,6 +144,33 @@ MonoBehaviour:
   showPath: 1
   lineWidth: 1
   showInGame: 1
+--- !u!54 &1772217593623304785
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3447415211903733702}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 14
+  m_CollisionDetection: 0
 --- !u!1001 &903034284318943809
 PrefabInstance:
   m_ObjectHideFlags: 0

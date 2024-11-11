@@ -18,7 +18,11 @@ public class NavMeshPathVisualizer : MonoBehaviour
     private void OnDrawGizmos()
     {
         if (!showPath || agent == null) return;
-        if (!agent.hasPath) return;
+        if (!agent.hasPath)
+        {
+            Debug.Log("No path found");
+            return;
+        }
         
         Vector3[] corners = agent.path.corners;
 

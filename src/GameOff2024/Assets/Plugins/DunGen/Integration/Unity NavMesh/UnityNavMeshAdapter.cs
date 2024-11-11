@@ -81,6 +81,10 @@ namespace DunGen.Adapters
 				{
 					// Find existing surfaces
 					var existingSurfaces = tile.gameObject.GetComponentsInChildren<NavMeshSurface>();
+					foreach(NavMeshSurface surface in existingSurfaces)
+					{
+						surface.layerMask = LayerMask;
+					}
 
 					// Add surfaces for any agent type that is missing one
 					var addedSurfaces = AddMissingSurfaces(tile, existingSurfaces);
@@ -199,7 +203,7 @@ namespace DunGen.Adapters
 			var agentSettings = NavMesh.GetSettingsByID(agentLinkInfo.AgentTypeID);
 
 			// We need to account for the agent's radius when setting the link's width
-			float linkWidth = Mathf.Max(connection.A.Socket.Size.x - (agentSettings.agentRadius * 2), 0.01f);
+			float linkWidth = Mathf.Max(connection.A.Socket.Size.x - (agentSettings.agentRadius * 2), 0.5f);
 
 			// Add NavMeshLink to one of the doorways
 			var link = doorway.AddComponent<NavMeshLink>();

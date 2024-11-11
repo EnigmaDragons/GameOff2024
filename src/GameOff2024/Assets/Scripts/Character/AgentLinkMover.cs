@@ -33,6 +33,10 @@ public class AgentLinkMover : MonoBehaviour
         {
             JumpBehaviour();
         }
+        if (m_agent.isOnOffMeshLink)
+        {
+            Debug.Log("Link");
+        }
     }
 
     private void JumpBehaviour()
@@ -86,7 +90,7 @@ public class AgentLinkMover : MonoBehaviour
                 isJumping = true;
                 m_agent.speed = jumpSpeed;
                 m_animator.SetTrigger("Jump");
-                m_animator.SetFloat("Random Jump Float", Random.Range(1, 4));
+                //m_animator.SetFloat("Random Jump Float", Random.Range(1, 4));
             }
         }
     }

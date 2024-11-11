@@ -51,7 +51,7 @@ public class SpyController : OnMessage<GameStateChanged>
                 {
                     currentDistance = Mathf.Clamp(CalculatePathDistance(), minDistance, maxDistance);
                     spySpeed = Mathf.Lerp(spySpeedMaximum, spySpeedMinimum, (currentDistance - minDistance) / (maxDistance - minDistance));
-                    navMeshAgent.speed = spySpeed;
+                    //navMeshAgent.speed = spySpeed;
                     playerDistanceCalcTimer = playerDistanceCalcInterval;
                 }
             }
