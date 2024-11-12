@@ -40,6 +40,10 @@ public class SpyController : OnMessage<GameStateChanged>
     [SerializeField] float playerDistanceCalcInterval;
     float playerDistanceCalcTimer = 0f;
 
+    [Header("Tagging the spy")]
+    [SerializeField] SphereCollider playerTagTrigger;
+    [SerializeField] float playerTagTriggerRadius;
+
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -54,6 +58,7 @@ public class SpyController : OnMessage<GameStateChanged>
         SetSpeed(TraversalLinkTypes.running);
         if (UnityNavMeshAdapter.instance != null)
             UnityNavMeshAdapter.instance.OnNavmeshBaked += Instance_OnNavmeshBaked;
+        playerTagTrigger.radius = playerTagTriggerRadius;
     }
 
     private void Instance_OnNavmeshBaked(object sender, System.EventArgs e)
@@ -147,6 +152,18 @@ public class SpyController : OnMessage<GameStateChanged>
             {
                 navMeshAgent.SetDestination(destinationTransform.position);
             }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("Wion");
+            CurrentGameState.UpdateState(gs =>
+            {
+                gs.gameWon = true;
+            });
         }
     }
 }
