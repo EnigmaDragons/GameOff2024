@@ -25,6 +25,9 @@ public class AgentLinkMover : MonoBehaviour
     bool isGrounded;
     [SerializeField] Transform groundedCheckPosition;
 
+    private int slideMask = -1;
+    private int climbMask = -1;
+
     private void Awake()
     {
         m_agent = GetComponent<NavMeshAgent>();
@@ -34,6 +37,10 @@ public class AgentLinkMover : MonoBehaviour
 
     private void Start()
     {
+        agentBaseSpeed = m_agent.speed;
+        slideMask = NavMesh.GetAreaFromName("Slide");
+        climbMask = NavMesh.GetAreaFromName("Climb");
+        Debug.Log($"Spy - Climb is {climbMask}, Slide is {slideMask}");
     }
 
     private void Update()
@@ -53,15 +60,20 @@ public class AgentLinkMover : MonoBehaviour
         }
         else if (m_agent.isOnOffMeshLink)
         {
+            Debug.Log($"Spy Movement is {m_hit.mask}");
             m_agent.SamplePathPosition(NavMesh.AllAreas, 0f, out m_hit);
-
-            if (m_hit.mask == 1<<NavMesh.GetAreaFromName("Slide"))
+            if (m_hit.mask == 1<<slideMask)
             {
+                Debug.Log($"Spy - Started Slide");
                 m_animator.SetBool("Slide", true);
                 isSliding = true;
                 controller.SetSpeed(SpyController.TraversalLinkTypes.sliding);
             }
-            else if (m_hit.mask == 1<<NavMesh.GetAreaFromName("Climb"))
+            else
+            {
+                m_animator.SetBool("Slide", false);
+            }
+            if (m_hit.mask == 1<<climbMask)
             {
                 m_animator.SetBool("Climb", true);
                 m_animator.SetFloat("YVelocity", m_agent.desiredVelocity.y);
@@ -116,7 +128,7 @@ public class AgentLinkMover : MonoBehaviour
             visuals.transform.position.z
         );
 
-        // Check if we have reached the target height when there’s no active jump path
+        // Check if we have reached the target height when thereï¿½s no active jump path
 
     }
     private void SlidingBehaviour()

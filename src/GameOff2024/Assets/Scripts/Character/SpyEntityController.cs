@@ -51,8 +51,9 @@ public class SpyController : OnMessage<GameStateChanged>
     private void Start()
     {
         pathToPlayer = new NavMeshPath();
-        UnityNavMeshAdapter.instance.OnNavmeshBaked += Instance_OnNavmeshBaked;
         SetSpeed(TraversalLinkTypes.running);
+        if (UnityNavMeshAdapter.instance != null)
+            UnityNavMeshAdapter.instance.OnNavmeshBaked += Instance_OnNavmeshBaked;
     }
 
     private void Instance_OnNavmeshBaked(object sender, System.EventArgs e)
