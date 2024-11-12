@@ -286,7 +286,7 @@ MonoBehaviour:
   BakeMode: 1
   LayerMask:
     serializedVersion: 2
-    m_Bits: 8396288
+    m_Bits: 8396289
   AddNavMeshLinksBetweenRooms: 1
   NavMeshAgentTypes:
   - AgentTypeID: 0

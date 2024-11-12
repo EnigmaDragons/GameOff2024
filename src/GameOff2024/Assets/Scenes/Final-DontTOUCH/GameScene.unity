@@ -245,22 +245,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2225610707508339990, guid: c209c4c2941e94b4ea2f50b586f8c06c,
-        type: 3}
-      propertyPath: Generator.DungeonFlow
-      value: 
-      objectReference: {fileID: 11400000, guid: c565df8c317794e439f3de9de18f567a,
-        type: 2}
-    - target: {fileID: 2613185845116811231, guid: c209c4c2941e94b4ea2f50b586f8c06c,
-        type: 3}
-      propertyPath: BakeMode
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2613185845116811231, guid: c209c4c2941e94b4ea2f50b586f8c06c,
-        type: 3}
-      propertyPath: LayerMask.m_Bits
-      value: 8396289
-      objectReference: {fileID: 0}
     - target: {fileID: 4318498192513637713, guid: c209c4c2941e94b4ea2f50b586f8c06c,
         type: 3}
       propertyPath: m_Name

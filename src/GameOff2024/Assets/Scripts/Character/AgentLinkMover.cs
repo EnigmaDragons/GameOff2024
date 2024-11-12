@@ -37,7 +37,6 @@ public class AgentLinkMover : MonoBehaviour
 
     private void Start()
     {
-        agentBaseSpeed = m_agent.speed;
         slideMask = NavMesh.GetAreaFromName("Slide");
         climbMask = NavMesh.GetAreaFromName("Climb");
         Debug.Log($"Spy - Climb is {climbMask}, Slide is {slideMask}");

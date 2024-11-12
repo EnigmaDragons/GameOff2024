@@ -16,7 +16,6 @@ public class CoolCameraIntro : MonoBehaviour
     private float _remainingDuration = 1f;
     private int _index = 0;
     private Camera _cam;
-    private bool _showedSkipPrompt = false;
     private bool _shouldSkip;
 
     private void OnEnable()
