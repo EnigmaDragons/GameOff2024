@@ -4,8 +4,21 @@ using UnityEngine.AI;
 
 public class SpyController : OnMessage<GameStateChanged>
 {
-    [SerializeField] float spySpeedMinimum;
-    [SerializeField] float spySpeedMaximum;
+    public enum TraversalLinkTypes
+    {
+        running,
+        climbing,
+        sliding,
+        jumping
+    }
+    [SerializeField] float spyBaseSpeedRunning;
+    [SerializeField] float spyBaseSpeedClimbing;
+    [SerializeField] float spyBaseSpeedSliding;
+    [SerializeField] float spyBaseSpeedJumping;
+
+    private float spyBaseSpeed;
+    [SerializeField] float spySpeedMultiplierMinimum;
+    [SerializeField] float spySpeedMultiplierMaximum;
     float spySpeed;
     NavMeshAgent navMeshAgent;
 
@@ -32,12 +45,14 @@ public class SpyController : OnMessage<GameStateChanged>
         navMeshAgent = GetComponent<NavMeshAgent>();
         if (navMeshAgent == null)
             Log.Error("Missing NavMeshAgent");
+        navMeshAgent.autoTraverseOffMeshLink = false;
     }
     
     private void Start()
     {
         pathToPlayer = new NavMeshPath();
         UnityNavMeshAdapter.instance.OnNavmeshBaked += Instance_OnNavmeshBaked;
+        SetSpeed(TraversalLinkTypes.running);
     }
 
     private void Instance_OnNavmeshBaked(object sender, System.EventArgs e)
@@ -50,19 +65,58 @@ public class SpyController : OnMessage<GameStateChanged>
         if(!navMeshAgent.enabled) return;
         if (_playerFound && _destinationFound)
         {
-            if (navMeshAgent.destination != destinationTransform.position)
+            if ((navMeshAgent.destination -destinationTransform.position).sqrMagnitude > 1)
+            {
+                Debug.Log("Current destination: " + navMeshAgent.destination);
+                Debug.Log("Setting destination to " + destinationTransform.position);
                 navMeshAgent.SetDestination(destinationTransform.position);
+                Debug.Log(navMeshAgent.destination);
+            }
             playerDistanceCalcTimer -= Time.deltaTime;
             if (playerDistanceCalcTimer <= 0f)
             {
                 if (navMeshAgent.CalculatePath(playerCharacterTransform.position, pathToPlayer))
                 {
                     currentDistance = Mathf.Clamp(CalculatePathDistance(), minDistance, maxDistance);
-                    spySpeed = Mathf.Lerp(spySpeedMaximum, spySpeedMinimum, (currentDistance - minDistance) / (maxDistance - minDistance));
-                    //navMeshAgent.speed = spySpeed;
+                    spySpeed = Mathf.Lerp(spyBaseSpeed*spySpeedMultiplierMaximum, spyBaseSpeed*spySpeedMultiplierMinimum, (currentDistance - minDistance) / (maxDistance - minDistance));
+                    navMeshAgent.speed = spySpeed;
                     playerDistanceCalcTimer = playerDistanceCalcInterval;
                 }
             }
+        }
+        if (navMeshAgent.isOnOffMeshLink)
+        {
+            OffMeshLinkData data = navMeshAgent.currentOffMeshLinkData;
+
+            //calculate the final point of the link
+            Vector3 endPos = data.endPos + Vector3.up * navMeshAgent.baseOffset;
+
+            //Move the navMeshAgent to the end point
+            navMeshAgent.transform.position = Vector3.MoveTowards(navMeshAgent.transform.position, endPos, navMeshAgent.speed * Time.deltaTime);
+
+            //when the navMeshAgent reach the end point you should tell it, and the navMeshAgent will "exit" the link and work normally after that
+            if (navMeshAgent.transform.position == endPos)
+            {
+                navMeshAgent.CompleteOffMeshLink();
+            }
+        }
+    }
+    public void SetSpeed(TraversalLinkTypes linkType)
+    {
+        switch(linkType)
+        {
+            case TraversalLinkTypes.running:
+                spyBaseSpeed = spyBaseSpeedRunning;
+                break;
+            case TraversalLinkTypes.sliding:
+                spyBaseSpeed = spyBaseSpeedSliding;
+                break;
+            case TraversalLinkTypes.climbing:
+                spyBaseSpeed = spyBaseSpeedClimbing;
+                break;
+            case TraversalLinkTypes.jumping:
+                spyBaseSpeed = spyBaseSpeedJumping;
+                break;
         }
     }
 

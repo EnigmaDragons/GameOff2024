@@ -107,8 +107,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8a296a5d57e8a49a89d7be69c0d1d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spySpeedMinimum: 5
-  spySpeedMaximum: 20
+  spyBaseSpeedRunning: 10
+  spyBaseSpeedClimbing: 3
+  spyBaseSpeedSliding: 10
+  spyBaseSpeedJumping: 7
+  spySpeedMultiplierMinimum: 0.25
+  spySpeedMultiplierMaximum: 1.25
   minDistance: 2
   maxDistance: 60
   playerCharacterTransform: {fileID: 0}
@@ -129,6 +133,8 @@ MonoBehaviour:
   lerpSpeed: 10
   visuals: {fileID: 4687998008082777517}
   jumpSpeed: 3
+  slideSpeed: 5
+  climbSpeed: 5
   groundedCheckRadius: 0.3
   groundedCheckMask:
     serializedVersion: 2

@@ -20,7 +20,6 @@ public class NavMeshLinkTools : MonoBehaviour
     {
         m_link.enabled = false;
         m_link.enabled = true;
-        Debug.Log("Refresh");
     }
 
 }
