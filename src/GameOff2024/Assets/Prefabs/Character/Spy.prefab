@@ -110,6 +110,7 @@ MonoBehaviour:
   spyBaseSpeedClimbing: 3
   spyBaseSpeedSliding: 10
   spyBaseSpeedJumping: 3
+  spyBaseSpeedFalling: 10
   spySpeedMultiplierMinimum: 0.25
   spySpeedMultiplierMaximum: 1.25
   minDistance: 2

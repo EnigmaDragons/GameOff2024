@@ -17,6 +17,7 @@ public class AgentLinkMover : MonoBehaviour
     private bool isJumping;
     private bool isClimbing;
     private bool isSliding;
+    private bool isJumpingDown;
     [SerializeField] float jumpSpeed = 2;
     [SerializeField] float slideSpeed = 5;
     [SerializeField] float climbSpeed = 5;
@@ -28,6 +29,7 @@ public class AgentLinkMover : MonoBehaviour
 
     private int slideMask = -1;
     private int climbMask = -1;
+    private int jumpDownMask = -1;
 
     private void Awake()
     {
@@ -59,6 +61,10 @@ public class AgentLinkMover : MonoBehaviour
         {
             ClimbingBehaviour();
         }
+        else if (isJumpingDown)
+        {
+            JumpingDownBehaviour();
+        }
         else if (m_agent.isOnOffMeshLink)
         {
             Debug.Log($"Spy Movement is {m_hit.mask}");
@@ -77,9 +83,14 @@ public class AgentLinkMover : MonoBehaviour
             if (m_hit.mask == 1<<climbMask)
             {
                 m_animator.SetBool("Climb", true);
-                m_animator.SetFloat("YVelocity", m_agent.desiredVelocity.y);
                 isClimbing = true;
                 controller.SetSpeed(SpyController.TraversalLinkTypes.climbing);
+
+            }
+            if (m_hit.mask == 1 << jumpDownMask)
+            {
+                isJumpingDown = true;
+                controller.SetSpeed(SpyController.TraversalLinkTypes.jumpingDown);
 
             }
 
@@ -148,6 +159,14 @@ public class AgentLinkMover : MonoBehaviour
         {
             m_animator.SetBool("Climb", false);
             isClimbing = false;
+            controller.SetSpeed(SpyController.TraversalLinkTypes.running);
+        }
+    }
+    private void JumpingDownBehaviour()
+    {
+        if (isGrounded)
+        {
+            isJumpingDown = false;
             controller.SetSpeed(SpyController.TraversalLinkTypes.running);
         }
     }

@@ -16,7 +16,7 @@ NavMeshProjectSettings:
   - name: Climb
     cost: 1.5
   - name: Jump Down
-    cost: 1
+    cost: 1.5
   - name: 
     cost: 1
   - name: 

@@ -9,12 +9,14 @@ public class SpyController : OnMessage<GameStateChanged>
         running,
         climbing,
         sliding,
-        jumping
+        jumping,
+        jumpingDown
     }
     [SerializeField] float spyBaseSpeedRunning;
     [SerializeField] float spyBaseSpeedClimbing;
     [SerializeField] float spyBaseSpeedSliding;
     [SerializeField] float spyBaseSpeedJumping;
+    [SerializeField] float spyBaseSpeedFalling;
 
     private float spyBaseSpeed;
     [SerializeField] float spySpeedMultiplierMinimum;
@@ -127,6 +129,9 @@ public class SpyController : OnMessage<GameStateChanged>
                 break;
             case TraversalLinkTypes.jumping:
                 spyBaseSpeed = spyBaseSpeedJumping;
+                break;
+            case TraversalLinkTypes.jumpingDown:
+                spyBaseSpeed = spyBaseSpeedFalling;
                 break;
         }
     }
