@@ -149,7 +149,7 @@ namespace DunGen.Adapters
 						surface = dungeon.gameObject.AddComponent<NavMeshSurface>();
 
 						surface.agentTypeID = settings.agentTypeID;
-						surface.collectObjects = CollectObjects.Children;
+						surface.collectObjects = CollectObjects.All;
 						surface.layerMask = LayerMask;
 					}
 

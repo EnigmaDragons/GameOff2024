@@ -50,6 +50,7 @@ public class SpyController : OnMessage<GameStateChanged>
         if (navMeshAgent == null)
             Log.Error("Missing NavMeshAgent");
         navMeshAgent.autoTraverseOffMeshLink = false;
+        navMeshAgent.enabled = false;
     }
     
     private void Start()
@@ -75,8 +76,12 @@ public class SpyController : OnMessage<GameStateChanged>
             {
                 Debug.Log("Current destination: " + navMeshAgent.destination);
                 Debug.Log("Setting destination to " + destinationTransform.position);
-                navMeshAgent.SetDestination(destinationTransform.position);
+               navMeshAgent.SetDestination(destinationTransform.position);
                 Debug.Log(navMeshAgent.destination);
+            }
+            else
+            {
+                Debug.Log(navMeshAgent.hasPath);
             }
             playerDistanceCalcTimer -= Time.deltaTime;
             if (playerDistanceCalcTimer <= 0f)
@@ -150,6 +155,7 @@ public class SpyController : OnMessage<GameStateChanged>
             _destinationFound = true;
             if (navMeshAgent.enabled)
             {
+                Debug.Log(destinationTransform.position);
                 navMeshAgent.SetDestination(destinationTransform.position);
             }
         }
@@ -159,7 +165,6 @@ public class SpyController : OnMessage<GameStateChanged>
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Wion");
             CurrentGameState.UpdateState(gs =>
             {
                 gs.gameWon = true;

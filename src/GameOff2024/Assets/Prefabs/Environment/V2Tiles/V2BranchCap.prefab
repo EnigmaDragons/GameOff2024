@@ -172,9 +172,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2282863401702526138, guid: cb5e1d1780a46a24a90f02a71c182dcb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2479726193952877901, guid: cb5e1d1780a46a24a90f02a71c182dcb,
         type: 3}
       propertyPath: BlockerSceneObjects.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4217315778250964167, guid: cb5e1d1780a46a24a90f02a71c182dcb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4252428571770663039, guid: cb5e1d1780a46a24a90f02a71c182dcb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5664817462726087197, guid: cb5e1d1780a46a24a90f02a71c182dcb,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7289894570628952634, guid: cb5e1d1780a46a24a90f02a71c182dcb,
@@ -187,12 +207,18 @@ PrefabInstance:
       propertyPath: BlockerSceneObjects.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8481837247392290323, guid: cb5e1d1780a46a24a90f02a71c182dcb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8853143053957375046, guid: cb5e1d1780a46a24a90f02a71c182dcb,
         type: 3}
       propertyPath: BlockerSceneObjects.Array.size
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4217315778250964167, guid: cb5e1d1780a46a24a90f02a71c182dcb, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1724272208326467326, guid: cb5e1d1780a46a24a90f02a71c182dcb,
