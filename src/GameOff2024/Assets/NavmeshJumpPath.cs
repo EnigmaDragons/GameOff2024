@@ -59,16 +59,15 @@ public class NavmeshJumpPath : MonoBehaviour
         for (int i = 0; i <= resolution; i++)
         {
             float t = i / (float)resolution;
-            points[i] = CalculateParabolaPoint(start, end, height, t);
+            points[i] = Vector3.Lerp(start, end, t) + Vector3.up * CalculateParabolaPoint(height, t);
         }
         return points;
     }
 
-    private Vector3 CalculateParabolaPoint(Vector3 start, Vector3 end, float height, float t)
+    private float CalculateParabolaPoint(float height, float t)
     {
-        Vector3 mid = Vector3.Lerp(start, end, t);
-        mid.y += Mathf.Sin(t * Mathf.PI) * height;  // Parabolic height adjustment
-        return mid;
+        return Mathf.Sin(t * Mathf.PI) * height;
+
     }
 
     public float GetArcYCoordinate(Vector3 position)
@@ -80,7 +79,6 @@ public class NavmeshJumpPath : MonoBehaviour
         float t = Mathf.Clamp01(projection / totalDistance);
 
         // Get the y-coordinate using CalculateParabolaPoint
-        Vector3 pointOnArc = CalculateParabolaPoint(pathStart.position, pathEnd.position, pathHeight, t);
-        return pointOnArc.y;
+        return CalculateParabolaPoint(pathHeight, t);
     }
 }

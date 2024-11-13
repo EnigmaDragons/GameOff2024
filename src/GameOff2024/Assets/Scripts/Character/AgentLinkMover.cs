@@ -9,6 +9,7 @@ public class AgentLinkMover : MonoBehaviour
     private NavMeshAgent m_agent;
     NavMeshHit m_hit;
     [SerializeField] private GameObject visuals;
+    float visualsLocalY;
     Animator m_animator;
 
     private NavmeshJumpPath activeJumpPath;
@@ -39,6 +40,7 @@ public class AgentLinkMover : MonoBehaviour
     {
         slideMask = NavMesh.GetAreaFromName("Slide");
         climbMask = NavMesh.GetAreaFromName("Climb");
+        visualsLocalY = visuals.transform.localPosition.y;
         Debug.Log($"Spy - Climb is {climbMask}, Slide is {slideMask}");
     }
 
@@ -85,7 +87,7 @@ public class AgentLinkMover : MonoBehaviour
     }
     void GroundedCheck()
     {
-        isGrounded = Physics.CheckSphere(groundedCheckPosition.position, groundedCheckRadius);
+        isGrounded = Physics.CheckSphere(groundedCheckPosition.position, groundedCheckRadius, groundedCheckMask);
         m_animator.SetBool("IsGrounded", isGrounded);
     }
 
@@ -96,35 +98,34 @@ public class AgentLinkMover : MonoBehaviour
         if (activeJumpPath != null)
         {
             // Calculate the target y position along the parabola path
-            targetY = activeJumpPath.GetArcYCoordinate(visuals.transform.position);
+            targetY = visualsLocalY+0.01f+activeJumpPath.GetArcYCoordinate(transform.position);
         }
         else
         {
             // No active jump path; lerp toward ground level (y = 0)
-            targetY = 0f;
+            targetY = visualsLocalY;
         }
 
         // Calculate the current y position of visuals and the max allowed lerp distance
-        float currentY = visuals.transform.position.y;
+        float currentY = visuals.transform.localPosition.y;
         float maxLerpDistance = lerpSpeed * Time.deltaTime;
 
         // Lerp y position towards the target with clamping to avoid overshoot
         float newY = Mathf.MoveTowards(currentY, targetY, maxLerpDistance);
 
-        if (isGrounded)
+        if (isGrounded && targetY == visualsLocalY)
         {
-            m_animator.SetTrigger("Land");
             m_animator.ResetTrigger("Jump");
-            newY = 0;
+            newY = visualsLocalY;
             isJumping = false;  // Stop jumping once visuals are at y = 0
             controller.SetSpeed(SpyController.TraversalLinkTypes.running);
 
         }
         // Update the visuals position
-        visuals.transform.position = new Vector3(
-            visuals.transform.position.x,
+        visuals.transform.localPosition = new Vector3(
+            0,
             newY,
-            visuals.transform.position.z
+            0
         );
 
         // Check if we have reached the target height when there�s no active jump path
@@ -162,6 +163,7 @@ public class AgentLinkMover : MonoBehaviour
                 controller.SetSpeed(SpyController.TraversalLinkTypes.jumping);
                 m_animator.SetTrigger("Jump");
                 //m_animator.SetFloat("Random Jump Float", Random.Range(1, 4));
+                Debug.Log("Jomp");
             }
         }
     }

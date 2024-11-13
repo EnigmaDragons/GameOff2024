@@ -269,7 +269,7 @@ GameObject:
   - component: {fileID: 7640923947748451591}
   - component: {fileID: 5396053219667898544}
   - component: {fileID: 7585941688929126324}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.1
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 0aa7fc33b19cddc44925b9d6e09ab37c, type: 2}
   m_BuildHeightMesh: 0

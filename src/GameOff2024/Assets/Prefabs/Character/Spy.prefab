@@ -110,7 +110,7 @@ MonoBehaviour:
   spyBaseSpeedRunning: 10
   spyBaseSpeedClimbing: 3
   spyBaseSpeedSliding: 10
-  spyBaseSpeedJumping: 7
+  spyBaseSpeedJumping: 3
   spySpeedMultiplierMinimum: 0.25
   spySpeedMultiplierMaximum: 1.25
   minDistance: 2
@@ -140,7 +140,7 @@ MonoBehaviour:
   groundedCheckRadius: 0.3
   groundedCheckMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   groundedCheckPosition: {fileID: 1435512595342280724}
 --- !u!114 &4259197965517285680
 MonoBehaviour:
