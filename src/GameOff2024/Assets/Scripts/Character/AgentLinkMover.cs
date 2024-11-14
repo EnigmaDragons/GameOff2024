@@ -51,6 +51,10 @@ public class AgentLinkMover : MonoBehaviour
 
     private void Update()
     {
+        if (!m_agent.enabled)
+        {
+            return;
+        }
         GroundedCheck();
         m_agent.SamplePathPosition(NavMesh.AllAreas, 0f, out m_hit);
 
