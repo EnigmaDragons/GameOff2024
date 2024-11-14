@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{99f843a5-4df1-4804-b61d-dbeb8d1c07cd}">
+		<property name="color">
+			<value>Yellow</value>
+		</property>
 		<property name="assetPath">
 			<value>MX_Airport_Chase_Drums_01.wav</value>
 		</property>

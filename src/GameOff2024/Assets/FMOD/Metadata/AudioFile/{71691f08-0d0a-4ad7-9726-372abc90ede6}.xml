@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{71691f08-0d0a-4ad7-9726-372abc90ede6}">
+		<property name="color">
+			<value>Yellow</value>
+		</property>
 		<property name="assetPath">
 			<value>MX_Airport_Chase_Baritone Sax_01.wav</value>
 		</property>

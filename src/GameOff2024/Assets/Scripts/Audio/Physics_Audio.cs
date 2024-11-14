@@ -17,18 +17,10 @@ public class Physics_Audio : MonoBehaviour
     public SurfaceTypeAudio SurfaceType;
     public EventReference PhysicsImpactEvent;
     public EventReference PhysicsSlideEvent;
-    //defines the threshold when a collision is considered significant enough to play a sound
-    public float collisionThreshold = 0.01f;
     private float lastCollsionTime = 0f;
     //The time at which we consider a subsequent impact to be the start of a sliding motion and not an impact
-    private static readonly float timerThresholdForSlide = 0.1f;
-    //a collision large enough while sliding to deserve another impact sound
-    private static readonly float slideBumpThreshold = 30f;
+    private static readonly float timerThresholdForSlide = 0.05f;
     private Rigidbody rb;
-    //a buffer for storing previous angular velocities
-    private List<float> angularVelBuffer = new List<float> ();
-    private static int maxCollsion = 5;
-    private int collisionCounter = 0;
     private static float slideTimeBuffer = 0.2f;
     private bool slideSFXPlaying = false;
     private EventInstance PhysicsSlideEventInstance;
@@ -44,20 +36,14 @@ public class Physics_Audio : MonoBehaviour
     {
         if (collisionEnabled)
         {
-            if (collision.relativeVelocity.sqrMagnitude > collisionThreshold)
-            {
-                CollsionHandler(collision);
-            }
+            CollsionHandler(collision);
         }        
     }
     private void OnCollisionStay(Collision collision)
     {
         if (collisionEnabled)
         {
-            if (collision.relativeVelocity.sqrMagnitude > collisionThreshold)
-            {
-                CollsionHandler(collision);
-            }
+            CollsionHandler(collision);
         }            
     }
 
@@ -98,28 +84,6 @@ public class Physics_Audio : MonoBehaviour
 
     private void HandleSlideSound(Collision collision)
     {
-        
-        //stores angular velocities in a buffer so we can consider changes over a number of collsions
-        if(angularVelBuffer.Count < maxCollsion)
-        {
-            angularVelBuffer.Add(rb.angularVelocity.sqrMagnitude);
-        }
-        else
-        {
-            angularVelBuffer[collisionCounter % maxCollsion] = rb.angularVelocity.sqrMagnitude;
-        }
-
-        collisionCounter++;
-
-        //has there been a large change in angular velocity over the last 10 collsions and or a big impact to deserve another impact sound
-        if (angularVelBuffer.Max() - rb.angularVelocity.sqrMagnitude > 30f)
-        {
-           TriggerImpactAudio(collision);
-        }
-        else if (collision.relativeVelocity.sqrMagnitude > slideBumpThreshold)
-        {
-            TriggerImpactAudio(collision);
-        }
 
         if (!slideSFXPlaying)
         {
@@ -145,7 +109,7 @@ public class Physics_Audio : MonoBehaviour
     private void StartSlidingSound(Collision collision)
     {
         PhysicsSlideEventInstance = RuntimeManager.CreateInstance(PhysicsSlideEvent);
-        RuntimeManager.AttachInstanceToGameObject(PhysicsSlideEventInstance, gameObject);
+        PhysicsSlideEventInstance.set3DAttributes(RuntimeUtils.To3DAttributes(collision.GetContact(0).point));
         PhysicsSlideEventInstance.setParameterByName("Phy_Impact_Velocity", collision.relativeVelocity.sqrMagnitude);
         PhysicsSlideEventInstance.setParameterByName("Phy_Angular_Velocity", rb.angularVelocity.sqrMagnitude);
         PhysicsSlideEventInstance.start();
@@ -158,7 +122,5 @@ public class Physics_Audio : MonoBehaviour
         PhysicsImpactEventInstance.setParameterByName("Phy_Impact_Velocity", collision.relativeVelocity.sqrMagnitude);
         PhysicsImpactEventInstance.start();
         PhysicsImpactEventInstance.release();
-        //clear the buffer ready for ther next impact evaluation
-        angularVelBuffer.Clear();
     }
 }

@@ -4,9 +4,6 @@
 		<property name="assetPath">
 			<value>Fol_PC_Jeans_Slide_Lp.wav</value>
 		</property>
-		<property name="isStreaming">
-			<value>true</value>
-		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
 		</property>
