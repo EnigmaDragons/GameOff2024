@@ -104,6 +104,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   refreshOnMeshBake: 1
+  min_cost: 0.75
+  max_cost: 2.5
 --- !u!1 &5640703005894404346
 GameObject:
   m_ObjectHideFlags: 0
