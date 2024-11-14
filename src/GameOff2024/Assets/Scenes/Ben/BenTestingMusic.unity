@@ -11240,7 +11240,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.1
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 25e83c29a0e5064408ff848bd7d4f696, type: 2}
   m_BuildHeightMesh: 0
@@ -17597,7 +17597,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_CharacterPrefab
       value: 
-      objectReference: {fileID: 2982077726883408534, guid: e9a492e6965433e47b59cf7111496f76,
+      objectReference: {fileID: 2982077726883408534, guid: 1c039dd0b6867dc448c4cff9f38475ab,
         type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

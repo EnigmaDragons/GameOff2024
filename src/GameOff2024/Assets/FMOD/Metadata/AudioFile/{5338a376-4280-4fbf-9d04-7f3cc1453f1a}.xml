@@ -4,9 +4,6 @@
 		<property name="assetPath">
 			<value>FS_PC_Concrete_Slide_Lp.wav</value>
 		</property>
-		<property name="isStreaming">
-			<value>true</value>
-		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>
 		</property>

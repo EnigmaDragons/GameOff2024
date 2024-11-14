@@ -260,6 +260,7 @@ MonoBehaviour:
   - Master
   Banks:
   - Bnk_MX_Airport
+  - Bnk_MX_FrontEnd
   - Bnk_Phy_Test
   - Bnk_Phy_WoodenChair
   - Bnk_SFX_PC
