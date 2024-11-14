@@ -27,6 +27,7 @@ public class AgentLinkMover : MonoBehaviour
     bool isGrounded;
     [SerializeField] Transform groundedCheckPosition;
 
+    private int jumpMask = -1;
     private int slideMask = -1;
     private int climbMask = -1;
     private int jumpDownMask = -1;
@@ -40,8 +41,10 @@ public class AgentLinkMover : MonoBehaviour
 
     private void Start()
     {
+        jumpMask = NavMesh.GetAreaFromName("Jump");
         slideMask = NavMesh.GetAreaFromName("Slide");
         climbMask = NavMesh.GetAreaFromName("Climb");
+        jumpDownMask = NavMesh.GetAreaFromName("Jump Down");
         visualsLocalY = visuals.transform.localPosition.y;
         Debug.Log($"Spy - Climb is {climbMask}, Slide is {slideMask}");
     }
@@ -49,6 +52,8 @@ public class AgentLinkMover : MonoBehaviour
     private void Update()
     {
         GroundedCheck();
+        m_agent.SamplePathPosition(NavMesh.AllAreas, 0f, out m_hit);
+
         if (isJumping)
         {
             JumpBehaviour();
@@ -68,7 +73,6 @@ public class AgentLinkMover : MonoBehaviour
         else if (m_agent.isOnOffMeshLink)
         {
             Debug.Log($"Spy Movement is {m_hit.mask}");
-            m_agent.SamplePathPosition(NavMesh.AllAreas, 0f, out m_hit);
             if (m_hit.mask == 1<<slideMask)
             {
                 Debug.Log($"Spy - Started Slide");
@@ -76,21 +80,24 @@ public class AgentLinkMover : MonoBehaviour
                 isSliding = true;
                 controller.SetSpeed(SpyController.TraversalLinkTypes.sliding);
             }
-            else
-            {
-                m_animator.SetBool("Slide", false);
-            }
-            if (m_hit.mask == 1<<climbMask)
+            else if (m_hit.mask == 1<<climbMask)
             {
                 m_animator.SetBool("Climb", true);
                 isClimbing = true;
                 controller.SetSpeed(SpyController.TraversalLinkTypes.climbing);
 
             }
-            if (m_hit.mask == 1 << jumpDownMask)
+            else if (m_hit.mask == 1 << jumpDownMask)
             {
                 isJumpingDown = true;
                 controller.SetSpeed(SpyController.TraversalLinkTypes.jumpingDown);
+
+            }
+            else if (m_hit.mask == 1 << jumpMask)
+            {
+                isJumping = true;
+                m_animator.SetTrigger("Jump");
+                controller.SetSpeed(SpyController.TraversalLinkTypes.jumping);
 
             }
 
@@ -124,14 +131,14 @@ public class AgentLinkMover : MonoBehaviour
         // Lerp y position towards the target with clamping to avoid overshoot
         float newY = Mathf.MoveTowards(currentY, targetY, maxLerpDistance);
 
-        if (isGrounded && targetY == visualsLocalY)
+        if (m_hit.mask != 1 << jumpMask)
         {
             m_animator.ResetTrigger("Jump");
             newY = visualsLocalY;
-            isJumping = false;  // Stop jumping once visuals are at y = 0
+            isJumping = false;
             controller.SetSpeed(SpyController.TraversalLinkTypes.running);
-
         }
+
         // Update the visuals position
         visuals.transform.localPosition = new Vector3(
             0,
@@ -144,8 +151,7 @@ public class AgentLinkMover : MonoBehaviour
     }
     private void SlidingBehaviour()
     {
-        m_agent.SamplePathPosition(NavMesh.AllAreas, 0f, out m_hit);
-        if (m_hit.mask != 1 << NavMesh.GetAreaFromName("Slide"))
+        if (m_hit.mask != 1 << slideMask)
         {
             m_animator.SetBool("Slide", false);
             isSliding = false;
@@ -154,8 +160,7 @@ public class AgentLinkMover : MonoBehaviour
     }
     private void ClimbingBehaviour()
     {
-        m_agent.SamplePathPosition(NavMesh.AllAreas, 0f, out m_hit);
-        if (m_hit.mask != 1 << NavMesh.GetAreaFromName("Climb"))
+        if (m_hit.mask != 1 << climbMask)
         {
             m_animator.SetBool("Climb", false);
             isClimbing = false;
@@ -164,7 +169,7 @@ public class AgentLinkMover : MonoBehaviour
     }
     private void JumpingDownBehaviour()
     {
-        if (isGrounded)
+        if (m_hit.mask != 1 << jumpDownMask)
         {
             isJumpingDown = false;
             controller.SetSpeed(SpyController.TraversalLinkTypes.running);
@@ -178,11 +183,10 @@ public class AgentLinkMover : MonoBehaviour
             if (activeJumpPath == null)
             {
                 activeJumpPath = navmeshJumpPath;
-                isJumping = true;
-                controller.SetSpeed(SpyController.TraversalLinkTypes.jumping);
-                m_animator.SetTrigger("Jump");
+                //isJumping = true;
+                //controller.SetSpeed(SpyController.TraversalLinkTypes.jumping);
+                //m_animator.SetTrigger("Jump");
                 //m_animator.SetFloat("Random Jump Float", Random.Range(1, 4));
-                Debug.Log("Jomp");
             }
         }
     }
