@@ -2,7 +2,7 @@
 
 public class BystanderTexting : MonoBehaviour
 {
-    private Animator animator;
+    public SkinnedNpc skinnedNpc;
     private float nextStateCheck;
     private bool isTexting;
     private const float MIN_INTERVAL = 2f;
@@ -11,7 +11,6 @@ public class BystanderTexting : MonoBehaviour
 
     void Start()
     {
-        animator = GetComponent<Animator>();
         nextStateCheck = Random.Range(MIN_INTERVAL, MAX_INTERVAL);
         isTexting = Random.value > 0.5f;
         UpdateAnimator();
@@ -34,9 +33,6 @@ public class BystanderTexting : MonoBehaviour
 
     private void UpdateAnimator()
     {
-        if (animator != null)
-        {
-            animator.SetBool("isTexting", isTexting);
-        }
+        skinnedNpc.SetBool("isTexting", isTexting);
     }
 }
