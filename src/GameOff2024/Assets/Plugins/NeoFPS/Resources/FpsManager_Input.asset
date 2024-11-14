@@ -118,7 +118,7 @@ MonoBehaviour:
     m_DisplayNameDuplicateError: 0
   - m_Name: Crouch
     m_DefaultPrimary: 306
-    m_DefaultSecondary: 0
+    m_DefaultSecondary: 310
     m_Context: 0
     m_DisplayName: Crouch (Hold)
     m_Category: 1
