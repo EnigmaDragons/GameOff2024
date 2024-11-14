@@ -212,6 +212,11 @@ PrefabInstance:
       propertyPath: BlockerSceneObjects.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8121641160161199644, guid: cb5e1d1780a46a24a90f02a71c182dcb,
+        type: 3}
+      propertyPath: interior
+      value: 
+      objectReference: {fileID: 564560765861509778}
     - target: {fileID: 8481837247392290323, guid: cb5e1d1780a46a24a90f02a71c182dcb,
         type: 3}
       propertyPath: m_Enabled
@@ -238,6 +243,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8359994132796897526}
   m_SourcePrefab: {fileID: 100100000, guid: cb5e1d1780a46a24a90f02a71c182dcb, type: 3}
+--- !u!1 &564560765861509778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6786267244976363971, guid: cb5e1d1780a46a24a90f02a71c182dcb,
+    type: 3}
+  m_PrefabInstance: {fileID: 6482952678218621777}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5287855992275664007 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1196319361227399126, guid: cb5e1d1780a46a24a90f02a71c182dcb,

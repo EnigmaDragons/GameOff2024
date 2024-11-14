@@ -78,10 +78,13 @@ namespace DunGen
 		/// </summary>
 		public TagContainer Tags = new TagContainer();
 
-		/// <summary>
-		/// The calculated world-space bounds of this Tile
-		/// </summary>
-		[HideInInspector]
+        public GameObject interior;
+
+
+        /// <summary>
+        /// The calculated world-space bounds of this Tile
+        /// </summary>
+        [HideInInspector]
 		public Bounds Bounds { get { return transform.TransformBounds(Placement.LocalBounds); } }
 
 		/// <summary>
@@ -106,7 +109,6 @@ namespace DunGen
 		private TilePlacementData placement;
 		[SerializeField]
 		private int fileVersion;
-
 
 		internal void AddTriggerVolume()
 		{
@@ -209,6 +211,15 @@ namespace DunGen
 			return null;
 		}
 
+		
+		public void LoadInterior()
+		{
+			interior.SetActive(true);
+		}
+		public void UnloadInterior()
+		{
+			interior.SetActive(false);
+		}
 		#region ISerializationCallbackReceiver Implementation
 
 		public void OnBeforeSerialize()

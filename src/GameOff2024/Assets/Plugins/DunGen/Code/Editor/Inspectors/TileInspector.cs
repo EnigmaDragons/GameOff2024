@@ -21,6 +21,7 @@ namespace DunGen.Editor
 			public static readonly GUIContent OverrideConnectionChance = new GUIContent("Override Connection Chance", "If checked, this tile will override the global connection chance set in the dungeon flow. If both tiles override the connection chance, the lowest value will be used");
 			public static readonly GUIContent ConnectionChance = new GUIContent("Connection Chance", "The chance that this tile will be connected to an overlapping doorway");
 			public static readonly GUIContent Tags = new GUIContent("Tags", "A set of user-defined tags that can be used with the dungeon flow to restrict tile connections or referenced in code to apply custom logic");
+			public static readonly GUIContent Interior = new GUIContent("Interior", "The part of the tile that can be unloaded to save processing power");
 		}
 
 		#endregion
@@ -34,6 +35,7 @@ namespace DunGen.Editor
 		private SerializedProperty overrideConnectionChance;
 		private SerializedProperty connectionChance;
 		private SerializedProperty tags;
+		private SerializedProperty interior;
 
 		private BoxBoundsHandle overrideBoundsHandle;
 
@@ -49,6 +51,7 @@ namespace DunGen.Editor
 			overrideConnectionChance = serializedObject.FindProperty("OverrideConnectionChance");
 			connectionChance = serializedObject.FindProperty("ConnectionChance");
 			tags = serializedObject.FindProperty("Tags");
+			interior = serializedObject.FindProperty("interior");
 
 
 			overrideBoundsHandle = new BoxBoundsHandle();
@@ -113,6 +116,8 @@ namespace DunGen.Editor
 			EditorGUILayout.Space();
 
 			EditorGUILayout.PropertyField(tags, Label.Tags);
+
+			EditorGUILayout.PropertyField(interior, Label.Interior);
 
 			serializedObject.ApplyModifiedProperties();
 		}

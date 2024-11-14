@@ -11,6 +11,5 @@ public class RecordAsSpyDestinationOnStart : MonoBehaviour
         {
             gs.spyDestination = spyDestination;
         });
-        Debug.Log("Spy destination is " + spyDestination.position);
     }
 }
