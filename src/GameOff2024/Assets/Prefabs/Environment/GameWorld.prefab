@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: 1004264156841116331}
   - component: {fileID: 2225610707508339990}
   - component: {fileID: 2613185845116811231}
+  - component: {fileID: 4209000436514702091}
   m_Layer: 0
   m_Name: Generator
   m_TagString: Untagged
@@ -283,7 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Priority: 0
-  BakeMode: 1
+  BakeMode: 3
   LayerMask:
     serializedVersion: 2
     m_Bits: 8396289
@@ -297,6 +298,18 @@ MonoBehaviour:
   FullRebakeTargets: []
   UseAutomaticLinkDistance: 0
   AutomaticLinkDistanceOffset: 0.1
+--- !u!114 &4209000436514702091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7732851940731914352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0decf480931994abf5de5609a2fc06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9127829965771701466
 GameObject:
   m_ObjectHideFlags: 0
