@@ -9,7 +9,7 @@ public class StanchionPlacer : EditorWindow
     private GameObject stanchionPrefab;
     private GameObject ropePrefab;
     private List<GameObject> placedObjects = new List<GameObject>();
-    private const float ROPE_LENGTH = 2f;
+    private const float ROPE_LENGTH = 3.6f;
 
     [MenuItem("Tools/Stanchion Placer")]
     public static void ShowWindow()
@@ -21,8 +21,8 @@ public class StanchionPlacer : EditorWindow
     {
         SceneView.duringSceneGui += OnSceneGUI;
         // You'll need to set these to your actual prefabs
-        stanchionPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Stanchion.prefab");
-        ropePrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Rope.prefab");
+        stanchionPrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Environment/Obs_Pieces/Stanchion.prefab");
+        ropePrefab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Environment/Obs_Pieces/Stanchion_Rope_Pos.prefab");
     }
 
     private void OnDisable()
@@ -67,6 +67,10 @@ public class StanchionPlacer : EditorWindow
                     if (distance >= ROPE_LENGTH)
                     {
                         splinePoints.Add(currentPoint);
+                        // Draw green circle at completion point
+                        Handles.color = Color.green;
+                        Handles.DrawWireDisc(currentPoint, Vector3.up, 0.5f);
+                        Handles.DrawSolidDisc(currentPoint, Vector3.up, 0.4f);
                     }
                 }
                 SceneView.RepaintAll();
@@ -102,33 +106,32 @@ public class StanchionPlacer : EditorWindow
         Undo.RecordObject(this, "Place Stanchions and Ropes");
         List<GameObject> newObjects = new List<GameObject>();
 
-        for (int i = 0; i < splinePoints.Count; i++)
+        for (int i = 0; i < splinePoints.Count - 1; i++)
         {
-            // Place stanchion
-            GameObject stanchion = PrefabUtility.InstantiatePrefab(stanchionPrefab) as GameObject;
-            stanchion.transform.position = splinePoints[i];
-            newObjects.Add(stanchion);
-            Undo.RegisterCreatedObjectUndo(stanchion, "Place Stanchion");
+            // Place stanchion at start of rope segment
+            GameObject stanchionStart = PrefabUtility.InstantiatePrefab(stanchionPrefab) as GameObject;
+            stanchionStart.transform.position = splinePoints[i];
+            newObjects.Add(stanchionStart);
+            Undo.RegisterCreatedObjectUndo(stanchionStart, "Place Stanchion");
 
-            // Place rope between stanchions
-            if (i < splinePoints.Count - 1)
-            {
-                GameObject rope = PrefabUtility.InstantiatePrefab(ropePrefab) as GameObject;
-                Vector3 midPoint = (splinePoints[i] + splinePoints[i + 1]) / 2f;
-                rope.transform.position = midPoint;
-                
-                // Orient rope between points
-                Vector3 direction = splinePoints[i + 1] - splinePoints[i];
-                rope.transform.rotation = Quaternion.LookRotation(direction);
-                
-                // Scale rope to fit distance
-                float distance = Vector3.Distance(splinePoints[i], splinePoints[i + 1]);
-                rope.transform.localScale = new Vector3(1, 1, distance);
-                
-                newObjects.Add(rope);
-                Undo.RegisterCreatedObjectUndo(rope, "Place Rope");
-            }
+            // Place rope
+            GameObject rope = PrefabUtility.InstantiatePrefab(ropePrefab) as GameObject;
+            Vector3 midPoint = (splinePoints[i] + splinePoints[i + 1]) / 2f;
+            rope.transform.position = midPoint;
+            
+            // Orient rope between points
+            Vector3 direction = splinePoints[i + 1] - splinePoints[i];
+            rope.transform.rotation = Quaternion.LookRotation(direction);
+            
+            newObjects.Add(rope);
+            Undo.RegisterCreatedObjectUndo(rope, "Place Rope");
         }
+
+        // Place final stanchion at end of last rope
+        GameObject stanchionEnd = PrefabUtility.InstantiatePrefab(stanchionPrefab) as GameObject;
+        stanchionEnd.transform.position = splinePoints[splinePoints.Count - 1];
+        newObjects.Add(stanchionEnd);
+        Undo.RegisterCreatedObjectUndo(stanchionEnd, "Place Stanchion");
 
         placedObjects.AddRange(newObjects);
     }
