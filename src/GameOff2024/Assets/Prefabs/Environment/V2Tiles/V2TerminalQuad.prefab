@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1724272208326467326}
   - component: {fileID: 8121641160161199644}
+  - component: {fileID: 7033375281397311454}
   m_Layer: 0
   m_Name: V2TerminalQuad
   m_TagString: Untagged
@@ -103,6 +104,18 @@ MonoBehaviour:
     position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0, w: 1}
   fileVersion: 2
+--- !u!114 &7033375281397311454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 566851246133791185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6662cfa529b4653b1bb5accf1016044, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2436143004348843662
 GameObject:
   m_ObjectHideFlags: 0
