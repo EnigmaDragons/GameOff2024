@@ -9,6 +9,7 @@ TagManager:
   - Loader
   - Music
   - UiSounds
+  - Spawnable
   layers:
   - Default
   - TransparentFX
