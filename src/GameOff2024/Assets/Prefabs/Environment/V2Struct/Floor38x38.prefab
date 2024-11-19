@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4198158894815765629}
   m_Layer: 9
   m_Name: Floor38x38
-  m_TagString: Untagged
+  m_TagString: Spawnable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647

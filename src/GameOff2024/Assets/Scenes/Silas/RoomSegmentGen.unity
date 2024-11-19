@@ -712,6 +712,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RS_D1_Sliding_Stanchion
       objectReference: {fileID: 0}
+    - target: {fileID: 3784482784904258199, guid: 323529dd276523c45b42eb023fb6431a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4037061848612589864, guid: 323529dd276523c45b42eb023fb6431a,
         type: 3}
       propertyPath: m_LocalPosition.x

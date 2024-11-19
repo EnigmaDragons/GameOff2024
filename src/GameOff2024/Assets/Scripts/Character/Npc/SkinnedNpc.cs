@@ -66,6 +66,11 @@ public class SkinnedNpc : MonoBehaviour
         }
     }
 
+    public void SetIsTexting(bool value)
+    {
+        SetBool("isTexting", value);
+    }
+    
     public void SetFloat(string paramName, float value)
     {
         if (activeAnimator != null && isInRange)
