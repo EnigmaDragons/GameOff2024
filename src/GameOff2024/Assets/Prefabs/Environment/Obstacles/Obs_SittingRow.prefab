@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9133462550271759794}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Path Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 593181034478975433}
   - component: {fileID: 95672868546291089}
   - component: {fileID: 5366566534015100021}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: JumpPath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,7 +115,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3160029344759735511}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Obs_SittingRow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8693045109542616982}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Path End
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 3605082910458583436}
   - component: {fileID: 387084457970708000}
   - component: {fileID: 7175709619118839915}
-  m_Layer: 24
+  m_Layer: 21
   m_Name: Navmesh Jump Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -288,6 +288,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_bench_1 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 230030557178267580, guid: 51ebdf09a59540946935ad07846e521e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 611059351698332934, guid: 51ebdf09a59540946935ad07846e521e,
         type: 3}
       propertyPath: m_LocalScale.y
@@ -343,6 +348,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1203079956738901182, guid: 51ebdf09a59540946935ad07846e521e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494860965757394798, guid: 51ebdf09a59540946935ad07846e521e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4595710070086506333, guid: 51ebdf09a59540946935ad07846e521e,
         type: 3}
       propertyPath: m_Carve
@@ -377,6 +392,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_bench_1 Variant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 230030557178267580, guid: 51ebdf09a59540946935ad07846e521e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 611059351698332934, guid: 51ebdf09a59540946935ad07846e521e,
         type: 3}
@@ -433,6 +453,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1203079956738901182, guid: 51ebdf09a59540946935ad07846e521e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494860965757394798, guid: 51ebdf09a59540946935ad07846e521e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4595710070086506333, guid: 51ebdf09a59540946935ad07846e521e,
         type: 3}
       propertyPath: m_Carve
@@ -467,6 +497,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_bench_1 Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 230030557178267580, guid: 51ebdf09a59540946935ad07846e521e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 611059351698332934, guid: 51ebdf09a59540946935ad07846e521e,
         type: 3}
@@ -523,6 +558,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1203079956738901182, guid: 51ebdf09a59540946935ad07846e521e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494860965757394798, guid: 51ebdf09a59540946935ad07846e521e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4595710070086506333, guid: 51ebdf09a59540946935ad07846e521e,
         type: 3}
       propertyPath: m_Carve
@@ -557,6 +602,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SM_bench_1 Variant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 230030557178267580, guid: 51ebdf09a59540946935ad07846e521e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 611059351698332934, guid: 51ebdf09a59540946935ad07846e521e,
         type: 3}
@@ -612,6 +662,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1203079956738901182, guid: 51ebdf09a59540946935ad07846e521e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1494860965757394798, guid: 51ebdf09a59540946935ad07846e521e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4595710070086506333, guid: 51ebdf09a59540946935ad07846e521e,
         type: 3}

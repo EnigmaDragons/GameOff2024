@@ -2375,7 +2375,7 @@ PrefabInstance:
     - target: {fileID: 7150891152426346238, guid: 1fab8c9520621b84896290957c8ca856,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 128.19193
+      value: -67.31313
       objectReference: {fileID: 0}
     - target: {fileID: 7824151879811824291, guid: 1fab8c9520621b84896290957c8ca856,
         type: 3}
@@ -2607,6 +2607,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2613185845116811231, guid: c209c4c2941e94b4ea2f50b586f8c06c,
+        type: 3}
+      propertyPath: LayerMask.m_Bits
+      value: 142614017
       objectReference: {fileID: 0}
     - target: {fileID: 4318498192513637713, guid: c209c4c2941e94b4ea2f50b586f8c06c,
         type: 3}
