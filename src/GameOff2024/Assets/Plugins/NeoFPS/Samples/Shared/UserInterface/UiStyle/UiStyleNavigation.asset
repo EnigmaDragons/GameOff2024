@@ -3,32 +3,35 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eca1da46cd5ddd7489029c240e30e7b5, type: 3}
   m_Name: UiStyleNavigation
   m_EditorClassIdentifier: 
-  m_HeightSmall: 80
-  m_HeightLarge: 110
+  m_HeightSmall: 110
+  m_HeightLarge: 140
+  m_IndentSize: 28
+  m_Spacing: 6
   m_Background: {fileID: 21300000, guid: 8ba5b4d1ed71104448e8c61e481806e2, type: 3}
   m_InputPulseDuration: 0.15
   m_Colours:
-    normal: {r: 0, g: 0, b: 0, a: 0.54901963}
-    highlighted: {r: 0, g: 1, b: 0.6275861, a: 0.39215687}
-    focussed: {r: 0, g: 1, b: 0.6275861, a: 0.627451}
-    pressed: {r: 0, g: 1, b: 0.6275861, a: 0.39215687}
+    normal: {r: 0, g: 0, b: 0, a: 0.78431374}
+    highlighted: {r: 0.98823535, g: 0.28627452, b: 0.3647059, a: 0.7529412}
+    focussed: {r: 0.9803922, g: 0.3019608, b: 0.37254903, a: 0.627451}
+    pressed: {r: 0.98823535, g: 0.30980393, b: 0.37647063, a: 0.39215687}
     disabled: {r: 0, g: 0, b: 0, a: 0.27450982}
   m_TextInfo:
-    font: {fileID: 12800000, guid: e7621c975d79eaa4f92bcc51d2679a70, type: 3}
-    headerColour: {r: 1, g: 1, b: 1, a: 1}
-    headerFontSize: 32
-    descriptionColour: {r: 1, g: 1, b: 1, a: 0.54901963}
+    font: {fileID: 12800000, guid: 57c62f7916f633b419be55176fbc8293, type: 3}
+    headerColour: {r: 0.9058824, g: 0.9803922, b: 0.882353, a: 1}
+    headerFontSize: 40
+    descriptionColour: {r: 0.9058824, g: 0.9803922, b: 0.8705883, a: 0.54901963}
     descriptionFontSize: 20
-    controlColour: {r: 1, g: 1, b: 1, a: 1}
-    controlFontSize: 32
+    controlColour: {r: 0.9058824, g: 0.9803922, b: 0.8705883, a: 1}
+    controlFontSize: 40
   m_Icons:
     plus: {fileID: 21300002, guid: 4d974bd370650f047bbe67e82a47e4ff, type: 3}
     minus: {fileID: 21300000, guid: 4d974bd370650f047bbe67e82a47e4ff, type: 3}
