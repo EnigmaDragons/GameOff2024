@@ -93,10 +93,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: -516883910658270607}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e3c2f5e31ca673843b1c6137470c05ae,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -2850566572735975682}
   m_SourcePrefab: {fileID: 100100000, guid: e3c2f5e31ca673843b1c6137470c05ae, type: 3}
 --- !u!1 &8995478114032364478 stripped
 GameObject:
@@ -191,25 +187,3 @@ MonoBehaviour:
       Data3: 234369704
       Data4: -1852743819
     Path: event:/SFX/Phy/Wood/Chair/Phy_WoodenChair_Slide_Concrete_Lp
-  collisionThreshold: 0.01
---- !u!135 &-2850566572735975682
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8995478114032364478}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 5
-  m_Center: {x: 0.000000014901161, y: 0.6119164, z: 0.00032043457}
