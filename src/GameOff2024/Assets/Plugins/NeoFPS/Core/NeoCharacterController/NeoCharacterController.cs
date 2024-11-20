@@ -154,6 +154,7 @@ namespace NeoCC
         private float m_GroundingCheckDistance = 0.05f;
         private bool m_BlockGroundSnapping = true;
         private bool m_PlatformWasNull = true;
+        private bool m_EscalatorWasNull = true;
         private Rigidbody m_Rigidbody = null;
         private Rigidbody m_PlatformRigidbody = null;
         private Vector3 m_ExternalForceMove = Vector3.zero;
@@ -179,6 +180,9 @@ namespace NeoCC
         private int m_MoveIterations = 0;
         private int m_Depenetrations = 0;
         private List<Transform> m_IgnoreTransforms = new List<Transform>(4);
+
+        private Rigidbody m_EscalatorRigidbody = null;
+        private Vector3 m_EscalatorVelocity = Vector3.zero;
 
         private NeoCharacterControllerDelegates.GetMoveVector m_MoveCallback;
         private NeoCharacterControllerDelegates.OnMoved m_OnMoved;
@@ -316,7 +320,7 @@ namespace NeoCC
             get;
             private set;
         }
-
+        public Escalator escalator;
         // The component of a move to be discounted from final velocity calculations
         enum VelocityCorrection : byte
         {
@@ -1138,6 +1142,12 @@ namespace NeoCC
 
                 AddMoveFirst(platformMove, true, VelocityCorrection.Full);
             }
+            if(escalator != null)
+            {
+                Vector3 escalatorMove = escalator.GetEscalatorDisplacement()*Time.deltaTime;
+                m_EscalatorVelocity = escalatorMove / Time.deltaTime;
+                AddMoveFirst(escalatorMove, true, VelocityCorrection.Full);
+            }
 
             // Add offset translation
             if (m_PositionOffset != Vector3.zero)
@@ -1208,8 +1218,12 @@ namespace NeoCC
                 if (platform != null && m_PlatformWasNull)
                     velocity -= (platform.fixedPosition - platform.previousPosition) / Time.fixedDeltaTime;
             }
+            if(escalator == null && !m_EscalatorWasNull && Vector3.Dot(velocity, m_EscalatorVelocity) > 0)
+            {
+                velocity += m_EscalatorVelocity;
+            }
             m_PlatformWasNull = (platform == null);
-
+            m_EscalatorWasNull = (escalator == null);
             // Reset frame correction
             m_PositionCorrection = Vector3.zero;
 
@@ -1772,6 +1786,8 @@ namespace NeoCC
         {
             var oldPlatform = platform;
             platform = null;
+            var oldEscalator = escalator;
+            escalator = null;
 
 #if UNITY_EDITOR
             GetGroundingCheckDistance();
@@ -1814,10 +1830,19 @@ namespace NeoCC
                         IMovingPlatform p;
                         m_Hit.transform.TryGetComponent(out p);
                         platform = p;
+
+                        m_Hit.transform.TryGetComponent(out Escalator e);
+                        escalator = e;
                     }
                     else
+                    {
                         platform = oldPlatform;
+                        escalator = oldEscalator;
+                    }
                 }
+
+                // Check if the ground contact is an escalator
+
 
                 // Get ground normals
                 groundNormal = m_Hit.normal;

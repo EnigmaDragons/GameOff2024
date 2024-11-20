@@ -14,4 +14,11 @@ public sealed class Navigator : ScriptableObject
             Log.Info($"Navigating to {sceneName}");
         Message.Publish(new NavigateToSceneRequested(sceneName));
     }
+
+    public void NavigateInstantly(string sceneName)
+    {
+        if (loggingEnabled)
+            Log.Info($"Navigating instantly to {sceneName}");
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
+    }
 }

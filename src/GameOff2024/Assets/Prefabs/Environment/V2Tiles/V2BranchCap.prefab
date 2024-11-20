@@ -202,6 +202,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7048682667984277911, guid: cb5e1d1780a46a24a90f02a71c182dcb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7289894570628952634, guid: cb5e1d1780a46a24a90f02a71c182dcb,
         type: 3}
       propertyPath: BlockerSceneObjects.Array.size

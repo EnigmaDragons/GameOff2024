@@ -130,7 +130,7 @@ public class TileGraph
 
             // Set primary connections based on the tile's doorways
             SetPrimaryConnections(tile);
-            Debug.Log(tileConnections[tile].PrimaryConnections.Count());
+            //Debug.Log(tileConnections[tile].PrimaryConnections.Count());
         }
 
         // After primary connections are set, add secondary connections

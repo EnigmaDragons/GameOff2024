@@ -259,6 +259,8 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - Bnk_CS
+  - Bnk_DX
   - Bnk_MX_Airport
   - Bnk_MX_FrontEnd
   - Bnk_Phy_Test

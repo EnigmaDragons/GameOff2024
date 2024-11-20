@@ -11,7 +11,12 @@ PrefabInstance:
     - target: {fileID: 3403934103758963036, guid: fb908a07c79a3bd4b98d1e4c5e5fc997,
         type: 3}
       propertyPath: m_Name
-      value: Ceiling38x38 Variant
+      value: Ceiling38x38
+      objectReference: {fileID: 0}
+    - target: {fileID: 3403934103758963036, guid: fb908a07c79a3bd4b98d1e4c5e5fc997,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 8993971920777344043, guid: fb908a07c79a3bd4b98d1e4c5e5fc997,
         type: 3}
