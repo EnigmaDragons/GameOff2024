@@ -86,27 +86,6 @@ MonoBehaviour:
   m_OnExit: 2
   m_EntryValue: 0
   m_ExitValue: 1
---- !u!114 &-8150719129218137505
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0004d1c6b38b2974c9780b8be7a26d48, type: 3}
-  m_Name: Connection
-  m_EditorClassIdentifier: 
-  m_Mute: 0
-  m_Source: {fileID: 114877570108072272}
-  m_Destination: {fileID: 114117096493270014}
-  m_TransitionOn: 0
-  m_Conditions:
-  - {fileID: 4546204214454576878}
-  - {fileID: -4263916064995577657}
-  - {fileID: -4869581450934910872}
-  m_ConditionGroups: []
 --- !u!114 &-8021609736704340764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -428,22 +407,6 @@ MonoBehaviour:
   - {fileID: -5966421488281184184}
   - {fileID: -8534320537252141978}
   m_ConditionGroups: []
---- !u!114 &-4869581450934910872
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8add6707d19f5324ca19ec063c97c34d, type: 3}
-  m_Name: Condition Group
-  m_EditorClassIdentifier: 
-  m_VectorParameter: {fileID: 114474270435045330}
-  m_Angle: 140
-  m_LessThan: 1
-  m_Comparison: 1
 --- !u!114 &-4521649492878543986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -509,29 +472,6 @@ MonoBehaviour:
   m_AngleRange: 180
   m_Flipped: 0
   m_Continuous: 0
---- !u!114 &-4263916064995577657
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5bb564de80863d499d6f67215b16d24, type: 3}
-  m_Name: Condition Group
-  m_EditorClassIdentifier: 
-  m_OutputWallNormal: {fileID: 114474270435045330}
-  m_CheckDirection: 0
-  m_CheckDistance:
-    m_Data: {fileID: 114894549298415322}
-    m_Value: 0.25
-  m_WallCollisionMask:
-    serializedVersion: 2
-    m_Bits: 513
-  m_MaxClimbHeight: 2
-  m_ClimbForward: 0.25
-  m_OutputClimbHeight: {fileID: 7214953401777157741}
 --- !u!114 &-4120716006471088866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7288,7 +7228,6 @@ MonoBehaviour:
   m_Connections:
   - {fileID: 114872738272463196}
   - {fileID: 114252841872181272}
-  - {fileID: -8150719129218137505}
   m_Behaviours:
   - {fileID: 114642222406559178}
   - {fileID: 114895520358610738}
@@ -8231,21 +8170,6 @@ MonoBehaviour:
   expanded: 1
   m_SlopeParamName: slideSlope
   m_DirectionParamName: 
---- !u!114 &4546204214454576878
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9e2d987ad8624e40bcdd35074601148, type: 3}
-  m_Name: Condition Group
-  m_EditorClassIdentifier: 
-  m_VelocityType: 6
-  m_ComparisonType: 2
-  m_CompareValue: 7.5
 --- !u!114 &4906649692072399853
 MonoBehaviour:
   m_ObjectHideFlags: 1

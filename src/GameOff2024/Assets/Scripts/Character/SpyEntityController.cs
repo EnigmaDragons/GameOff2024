@@ -3,6 +3,7 @@ using DunGen.Adapters;
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -16,12 +17,17 @@ public class SpyController : OnMessage<GameStateChanged>
         jumping,
         jumpingDown
     }
+    bool linkHasCurve = false;
+    [SerializeField] AnimationCurve climbSpeedCurveX;
+    [SerializeField] AnimationCurve climbSpeedCurveY;
+    float climbTime;
+    [SerializeField] float climbTimeTotalDuration = 180f;
     [SerializeField] float spyBaseSpeedRunning;
     [SerializeField] float spyBaseSpeedClimbing;
     [SerializeField] float spyBaseSpeedSliding;
     [SerializeField] float spyBaseSpeedJumping;
     [SerializeField] float spyBaseSpeedFalling;
-
+    OffMeshLinkData currentLink;
     private float spyBaseSpeed;
     [SerializeField] float spySpeedMultiplierMinimum;
     [SerializeField] float spySpeedMultiplierMaximum;
@@ -57,7 +63,7 @@ public class SpyController : OnMessage<GameStateChanged>
         if (navMeshAgent == null)
             Log.Error("Missing NavMeshAgent");
         navMeshAgent.autoTraverseOffMeshLink = false;
-        navMeshAgent.enabled = false;
+        
     }
     
     private void Start()
@@ -65,8 +71,13 @@ public class SpyController : OnMessage<GameStateChanged>
         pathToPlayer = new NavMeshPath();
         SetSpeed(TraversalLinkTypes.running);
         if (UnityNavMeshAdapter.instance != null)
+        {
+            navMeshAgent.enabled = false;
             UnityNavMeshAdapter.instance.OnNavmeshBaked += Instance_OnNavmeshBaked;
+
+        }
         playerTagTrigger.radius = playerTagTriggerRadius;
+
     }
 
     private void Instance_OnNavmeshBaked(object sender, System.EventArgs e)
@@ -93,23 +104,69 @@ public class SpyController : OnMessage<GameStateChanged>
         }
         if (navMeshAgent.isOnOffMeshLink)
         {
-            OffMeshLinkData data = navMeshAgent.currentOffMeshLinkData;
-
-            //calculate the final point of the link
-            Vector3 endPos = data.endPos + Vector3.up * navMeshAgent.baseOffset;
-
-            //Move the navMeshAgent to the end point
-            navMeshAgent.transform.position = Vector3.MoveTowards(navMeshAgent.transform.position, endPos, navMeshAgent.speed * Time.deltaTime);
-
-            //when the navMeshAgent reach the end point you should tell it, and the navMeshAgent will "exit" the link and work normally after that
-            if (navMeshAgent.transform.position == endPos)
+            OffMeshLinkData previousLink = currentLink;
+            currentLink = navMeshAgent.currentOffMeshLinkData;
+            if (linkHasCurve)
             {
-                navMeshAgent.CompleteOffMeshLink();
+                if(!previousLink.Equals(currentLink))
+                    StartCoroutine(TraverseClimbLink());
             }
+            else
+            {
+                //calculate the final point of the link
+                Vector3 endPos = currentLink.endPos + Vector3.up * navMeshAgent.baseOffset;
+
+                //Move the navMeshAgent to the end point
+                navMeshAgent.transform.position = Vector3.MoveTowards(navMeshAgent.transform.position, endPos, navMeshAgent.speed * Time.deltaTime);
+
+                //when the navMeshAgent reach the end point you should tell it, and the navMeshAgent will "exit" the link and work normally after that
+                if (navMeshAgent.transform.position == endPos)
+                {
+                    navMeshAgent.CompleteOffMeshLink();
+                }
+            }
+            
         }
+    }
+    IEnumerator TraverseClimbLink()
+    {
+        climbTime = 0f;
+        // Normalize time for the climb based on total duration
+        float normalizedTime = 0f;
+        Vector3 xzStart = new Vector3(currentLink.startPos.x, 0, currentLink.startPos.z);
+        Vector3 xzEnd = new Vector3(currentLink.endPos.x, 0, currentLink.endPos.z);
+        Vector3 xzPosition;
+        Vector3 yStart = currentLink.startPos + Vector3.up * navMeshAgent.baseOffset;
+        Vector3 yEnd = currentLink.endPos + Vector3.up * navMeshAgent.baseOffset;
+        Debug.Log(yStart.y);
+        Debug.Log(yEnd.y);
+        while (normalizedTime < 1f)
+        {
+            climbTime += Time.deltaTime;
+            normalizedTime = Mathf.Clamp01(climbTime / climbTimeTotalDuration);
+
+            // Evaluate the curve to get progress along the XZ direction
+            float progressXZ = climbSpeedCurveX.Evaluate(normalizedTime);
+            float progressY = climbSpeedCurveY.Evaluate(normalizedTime);
+
+            // Calculate the XZ position based on the direction vector
+
+            xzPosition = Vector3.Lerp(xzStart, xzEnd, progressXZ);
+
+            // Interpolate the Y position directly
+            float yPosition = Mathf.Lerp(yStart.y, yEnd.y, progressY);
+
+            // Combine XZ and Y into the final position
+            navMeshAgent.transform.position = new Vector3(xzPosition.x, yPosition, xzPosition.z);
+            yield return null;
+        }
+        Debug.Log("Completing");
+        navMeshAgent.CompleteOffMeshLink();
+
     }
     public void SetSpeed(TraversalLinkTypes linkType)
     {
+        linkHasCurve = false;
         switch(linkType)
         {
             case TraversalLinkTypes.running:
@@ -120,6 +177,8 @@ public class SpyController : OnMessage<GameStateChanged>
                 break;
             case TraversalLinkTypes.climbing:
                 spyBaseSpeed = spyBaseSpeedClimbing;
+                linkHasCurve = true;
+                climbTime = 0f;
                 break;
             case TraversalLinkTypes.jumping:
                 spyBaseSpeed = spyBaseSpeedJumping;
