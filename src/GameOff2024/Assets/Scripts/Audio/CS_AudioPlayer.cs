@@ -12,16 +12,17 @@ public class CS_AudioPlayer : MonoBehaviour
     private EVENT_CALLBACK callback;
 
     public event Action OnCinematicEventEnded;
+    public event Action OnCinematicMarkerHit;
 
     // trigger Cinematic Event
-    void TriggerCinematicAudio()
+    public void TriggerCinematicAudio()
     {
         CinematicEventInstance = RuntimeManager.CreateInstance(CinematicEvent);
 
         if (CinematicEventInstance.isValid())
         {
             callback = new EVENT_CALLBACK(OnEventStopped);
-            CinematicEventInstance.setCallback(callback, EVENT_CALLBACK_TYPE.STOPPED);
+            CinematicEventInstance.setCallback(callback, EVENT_CALLBACK_TYPE.STOPPED | EVENT_CALLBACK_TYPE.TIMELINE_MARKER);
             CinematicEventInstance.start();
         }
     }
@@ -36,7 +37,11 @@ public class CS_AudioPlayer : MonoBehaviour
         if (type == EVENT_CALLBACK_TYPE.STOPPED) 
         {
             OnCinematicEventEnded?.Invoke();
-        } 
+        }
+        else if(type == EVENT_CALLBACK_TYPE.TIMELINE_MARKER)
+        {
+            OnCinematicMarkerHit?.Invoke();
+        }
         
         return FMOD.RESULT.OK; 
     }
