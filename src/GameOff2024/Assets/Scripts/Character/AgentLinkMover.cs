@@ -89,7 +89,7 @@ public class AgentLinkMover : MonoBehaviour
                 m_animator.SetBool("Climb", true);
                 isClimbing = true;
                 controller.SetSpeed(SpyController.TraversalLinkTypes.climbing);
-
+                Debug.Log("Started Climbing");
             }
             else if (m_hit.mask == 1 << jumpDownMask)
             {
