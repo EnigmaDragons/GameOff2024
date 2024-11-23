@@ -150,8 +150,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8611135546641698965}
   - component: {fileID: 1144254951848767315}
-  - component: {fileID: 5806988541738405693}
-  - component: {fileID: 4165272429824892729}
   - component: {fileID: 4430614412155456020}
   m_Layer: 0
   m_Name: CS_IntroCutsceneController
@@ -208,65 +206,8 @@ MonoBehaviour:
   audioEnded:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5806988541738405693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 341214888996673878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 96004265
-      Data2: 1295613301
-      Data3: -1743869276
-      Data4: -1503590325
-    Path: event:/CS/CS_Intro
-  Event: 
-  EventPlayTrigger: 0
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!114 &4165272429824892729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 341214888996673878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 963427fb743b4ad2850ffea57316798e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventEmitter: {fileID: 5806988541738405693}
-  fadeToGameplayAction:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6701227518221827590}
-        m_TargetAssemblyTypeName: FadeToGameplayController, Assembly-CSharp
-        m_MethodName: TriggerFadeToGameplay
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  delayBeforeEnableLookControls: 37
+  delayBeforeEnableMovementControls: 48
 --- !u!114 &4430614412155456020
 MonoBehaviour:
   m_ObjectHideFlags: 0

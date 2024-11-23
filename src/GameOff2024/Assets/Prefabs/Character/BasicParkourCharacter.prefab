@@ -1202,6 +1202,7 @@ GameObject:
   - component: {fileID: 2982023308618288730}
   - component: {fileID: 9016996891014538116}
   - component: {fileID: 2305251762796639364}
+  - component: {fileID: 1395988942662652233}
   m_Layer: 13
   m_Name: BasicParkourCharacter
   m_TagString: Player
@@ -1660,6 +1661,20 @@ MonoBehaviour:
       Data3: 277581446
       Data4: 1802672103
     Path: event:/MX/InGame/MX_Lvl_Airport_Chase
+--- !u!114 &1395988942662652233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2951255869235385890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e612a2732b82e941b45b68c39eb68ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aimController: {fileID: 2982165107998016072}
+  movementController: {fileID: 2985883533691273718}
 --- !u!1 &2951255870412331690
 GameObject:
   m_ObjectHideFlags: 0
