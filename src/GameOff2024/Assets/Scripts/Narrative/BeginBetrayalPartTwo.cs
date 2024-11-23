@@ -5,6 +5,7 @@ using UnityEngine;
 public class BeginBetrayalPartTwo : OnMessage<BeginNarrativeSection>
 {
     [SerializeField] private NeoCharacterController playerController;
+    [SerializeField] private CS_AudioPlayer handlerAudio;
     [SerializeField] private Navigator navigator;
     
     [SerializeField] private bool doingExtendedEnding = true;
@@ -15,7 +16,8 @@ public class BeginBetrayalPartTwo : OnMessage<BeginNarrativeSection>
             return;
         
         Log.Info("Begin Betrayal - Part Two. Briefcase Delivered");
-        TriggerCutscene();
+        Message.Publish(new FadeOutMusic());
+        this.ExecuteAfterDelay(TriggerCutscene, 0.2f);
     }
 
     private void TriggerCutscene()
@@ -26,6 +28,9 @@ public class BeginBetrayalPartTwo : OnMessage<BeginNarrativeSection>
     private void BeginHandlerAudioSection(Action onFinished)
     {
         Message.Publish(new DisablePlayerControls());
+        handlerAudio.OnCinematicMarkerHit += onFinished;
+        handlerAudio.TriggerCinematicAudio();
+        
         // NARRATIVE SCRIPT:
         // PLAYER ARRIVES. PLAYER LOSES CONTROL. 
         //
@@ -45,8 +50,6 @@ public class BeginBetrayalPartTwo : OnMessage<BeginNarrativeSection>
         // “I can’t trust anyone. I have to reveal the agency’s secrets in that briefcase.” 
         // “Only I can do it. It has to be me.” 
         // “I’ll never forget…your sacrifice.” 
-
-        onFinished();
     }
 
     private void BeginCliffhangerEnding()
@@ -66,27 +69,23 @@ public class BeginBetrayalPartTwo : OnMessage<BeginNarrativeSection>
         // SFX: Briefcase skids across the floor, slamming into the Handler with a dull thud. Followed instantly by the deafening crack of a pistol.
         //
         // (hit by suitcase) “Agh!” 
+        //
+        // PC runs towards cover. 
         
         ForceMovePlayerToCover();
+        
+        //
+        //     SFX: Barrage of gunshots crack through the air, pinging off metal as they strike the PC’s cover, until the weapon clicks empty.
+        //
+        // (angry grunt) “Nrghh!”  
+        //
+        // PC comes out of cover and sees the Handler running away. 
+        //
+        //     PLAYER RESUMES CONTROL. 
     }
 
     private void ForceMovePlayerToCover()
     {
-
+        Log.Info("Force Move To Cover");
     }
-
-    // SFX: Briefcase skids across the floor, slamming into the Handler with a dull thud. Followed instantly by the deafening crack of a pistol.
-    //
-    // (hit by suitcase) “Agh!” 
-    //
-    // PC runs towards cover. 
-    //
-    //     SFX: Barrage of gunshots crack through the air, pinging off metal as they strike the PC’s cover, until the weapon clicks empty.
-    //
-    // (angry grunt) “Nrghh!”  
-    //
-    // PC comes out of cover and sees the Handler running away. 
-    //
-    //     PLAYER RESUMES CONTROL. 
-
 }

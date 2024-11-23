@@ -226,7 +226,7 @@ MonoBehaviour:
       Data2: 1295613301
       Data3: -1743869276
       Data4: -1503590325
-    Path: event:/CS/CS_Intro
+    Path: event:/CS/CS_Intro_DX
 --- !u!1 &5148976293186815716
 GameObject:
   m_ObjectHideFlags: 0

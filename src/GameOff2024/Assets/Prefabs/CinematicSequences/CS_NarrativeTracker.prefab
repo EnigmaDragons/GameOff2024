@@ -178,6 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 0}
+  handlerAudio: {fileID: 8598908672889429937}
   navigator: {fileID: 11400000, guid: c3cd3edfa3cf5c94fbbf792f8728cebb, type: 2}
   doingExtendedEnding: 1
 --- !u!114 &8598908672889429937
