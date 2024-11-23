@@ -7,7 +7,6 @@ public class FadeOutImage : MonoBehaviour
     [SerializeField] private float fadeSeconds = 2.8f;
     [SerializeField] private float fadeDelay = 7.2f;
 
-    private float currentTime;
     private float fadeTime;
     private float startAlpha;
     private bool isFading;
@@ -22,22 +21,17 @@ public class FadeOutImage : MonoBehaviour
         }
 
         startAlpha = targetImage.color.a;
-        currentTime = 0f;
         fadeTime = 0f;
         isFading = false;
         targetImage.enabled = true;
+
+        this.ExecuteAfterDelay(() => isFading = true, fadeDelay);
     }
 
     private void Update()
     {
-        currentTime += Time.unscaledDeltaTime;
-        
         if (!isFading)
         {
-            if (currentTime >= fadeDelay)
-            {
-                isFading = true;
-            }
             return;
         }
 

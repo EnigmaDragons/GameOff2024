@@ -1130,7 +1130,6 @@ GameObject:
   - component: {fileID: 3013828629751184858}
   - component: {fileID: 3014246183795489264}
   - component: {fileID: 3075929777637882973}
-  - component: {fileID: 2981767455860496834}
   - component: {fileID: 5226417235249654710}
   - component: {fileID: 5477747327984158668}
   m_Layer: 14
@@ -1433,18 +1432,6 @@ MonoBehaviour:
   m_AudioSources:
   - {fileID: 3013828629751184858}
   - {fileID: 3014246183795489264}
---- !u!114 &2981767455860496834
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2951255867781852894}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd0f844ac3729c4ead2b35c0bbd03f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5226417235249654710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1469,8 +1456,8 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -2577,7 +2564,7 @@ Camera:
   m_GameObject: {fileID: 7946493401156641282}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.5137255, g: 0.47058827, b: 0.38823533, a: 0.019607844}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
