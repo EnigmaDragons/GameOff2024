@@ -1,4 +1,5 @@
 ﻿
+using FMODUnity;
 using UnityEngine;
 
 public class BeginBetrayalPartOne : OnMessage<BeginNarrativeSection>
