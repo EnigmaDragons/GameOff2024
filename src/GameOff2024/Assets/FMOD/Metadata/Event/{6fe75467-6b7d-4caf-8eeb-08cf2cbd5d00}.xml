@@ -134,7 +134,7 @@
 			<value>23.4375</value>
 		</property>
 		<property name="name">
-			<value>LightOff</value>
+			<value>LightOn</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{80bfe82f-bff1-4203-b23d-fbc4661d6c21}</destination>
