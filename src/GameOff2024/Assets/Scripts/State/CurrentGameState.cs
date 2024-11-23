@@ -5,7 +5,7 @@ public static class CurrentGameState
 {
     [SerializeField] private static GameState gameState;
 
-    public static GameState ReadOnly => gameState;
+    public static GameState ReadOnly => gameState ?? (gameState = new GameState());
     
     public static void Init() => gameState = new GameState();
     public static void Init(GameState initialState) => gameState = initialState;

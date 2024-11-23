@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 [Serializable]
@@ -13,6 +11,8 @@ public sealed class GameState
     
     // All enums used in this class should have specified integer values.
     // This is necessary to preserve backwards save compatibility.
+
+    public bool shouldShowIntroCutscene;
 
     public Transform playerTransform;
     public Transform spyDestination;
