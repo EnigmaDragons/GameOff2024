@@ -13,6 +13,28 @@ MonoBehaviour:
   m_Name: EyeRenderFeature
   m_EditorClassIdentifier: 
   m_Active: 1
+--- !u!114 &-363082598059390086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5f41feb474f4a1e8d09836bb8a9d06c, type: 3}
+  m_Name: IntoxicationEffectRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    blurAmount: 1
+    swayAmount: 1
+    swaySpeed: 1
+    chromaticAberration: 0.2
+    saturation: 1.2
+    animate: 1
+    pulseSpeed: 1
+    pulseAmount: 0.2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39,8 +61,9 @@ MonoBehaviour:
     probeSamplingDebugMesh: {fileID: 0}
     probeSamplingDebugTexture: {fileID: 0}
     probeVolumeBlendStatesCS: {fileID: 0}
-  m_RendererFeatures: []
-  m_RendererFeatureMap: 
+  m_RendererFeatures:
+  - {fileID: -363082598059390086}
+  m_RendererFeatureMap: 7a4b8bfe4c12f6fa
   m_UseNativeRenderPass: 0
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
@@ -66,3 +89,25 @@ MonoBehaviour:
   m_DepthTextureFormat: 0
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 1
+--- !u!114 &7442799621903540644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: IntoxicationEffectRenderFeature
+  m_EditorClassIdentifier: Assembly-CSharp::IntoxicationEffectRenderFeature
+  m_Active: 1
+  settings:
+    blurAmount: 1
+    swayAmount: 1
+    swaySpeed: 1
+    chromaticAberration: 0.2
+    saturation: 1.2
+    animate: 1
+    pulseSpeed: 1
+    pulseAmount: 0.2

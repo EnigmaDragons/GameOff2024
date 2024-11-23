@@ -23,11 +23,18 @@ public class IntroCutsceneLauncher : MonoBehaviour
             Message.Publish(new HideEyes());
     }
 
+    private void OnDestroy()
+    {
+        csAudio.OnCinematicMarkerHit -= fadeToGameplay.Invoke;
+        csAudio.OnCinematicEventEnded -= audioEnded.Invoke;
+    }
+
     private void BeginCutscene()
     {
         Message.Publish(new FadeOutMusic());
-        csAudio.OnCinematicMarkerHit += () => fadeToGameplay.Invoke();
-        csAudio.OnCinematicEventEnded += () => audioEnded.Invoke();
+        csAudio.OnCinematicMarkerHit += fadeToGameplay.Invoke;
+        csAudio.OnCinematicEventEnded += audioEnded.Invoke;
         csAudio.TriggerCinematicAudio();
+        Message.Publish(new SetIntoxicationLevel(1f));
     }
 }

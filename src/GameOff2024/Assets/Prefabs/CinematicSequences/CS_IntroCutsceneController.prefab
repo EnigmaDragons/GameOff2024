@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2082009711423231957}
   - component: {fileID: 6149208756574058676}
   - component: {fileID: 8883740536114292592}
+  - component: {fileID: 3208399330689545397}
   m_Layer: 0
   m_Name: IntroPhase1-Waking
   m_TagString: Untagged
@@ -50,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvasFader: {fileID: 8883740536114292592}
   vignette: {fileID: 2082009711423231957}
+  drunkBlurFadeDelay: 2
 --- !u!114 &2082009711423231957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,7 +93,6 @@ MonoBehaviour:
   delaySeconds: 1
   postProcessVolume: {fileID: 6149208756574058676}
   eyelidColor: {r: 0, g: 0, b: 0, a: 1}
-  maxEyelidHeight: 1
 --- !u!114 &6149208756574058676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,6 +126,20 @@ MonoBehaviour:
   fadeSeconds: 2.8
   fadeDelay: 7.2
   startOnEnable: 0
+--- !u!114 &3208399330689545397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84476059820045263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f053bd59494dafe46bf3f8fd7aa7915f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intoxicationLevel: 0
+  transitionSpeed: 1
 --- !u!1 &341214888996673878
 GameObject:
   m_ObjectHideFlags: 0
