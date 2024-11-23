@@ -1,11 +1,8 @@
-using DunGen;
 using DunGen.Adapters;
-using NUnit.Framework;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class SpyController : OnMessage<GameStateChanged>
 {
@@ -211,7 +208,7 @@ public class SpyController : OnMessage<GameStateChanged>
         if(destinationTransform != null)
         {
             _destinationFound = true;
-            StartCoroutine("SetDestination");//navMeshAgent.SetDestination(destinationTransform.position);
+            StartCoroutine(nameof(SetDestination));//navMeshAgent.SetDestination(destinationTransform.position);
             //StartCoroutine(CalculatePathWithClosestPortals(destinationTransform.position));
         }
     }
@@ -227,12 +224,7 @@ public class SpyController : OnMessage<GameStateChanged>
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            CurrentGameState.UpdateState(gs =>
-            {
-                gs.gameWon = true;
-            });
-        }
+        if (other.gameObject.CompareTag("Player")) 
+            Message.Publish(new BeginNarrativeSection(NarrativeSection.CaughtSpy));
     }
 }

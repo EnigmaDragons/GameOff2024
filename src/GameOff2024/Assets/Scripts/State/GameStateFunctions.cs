@@ -8,4 +8,13 @@ public class GameStateFunctions : ScriptableObject
         CurrentGameState.Init();
         CurrentGameState.UpdateState(state => state.shouldShowIntroCutscene = value);
     }
+
+    public void SetGameWon(bool value)
+    {
+        CurrentGameState.UpdateState(state =>
+        {
+            state.gameLost = false;
+            state.gameWon = true;
+        });
+    }
 }
