@@ -2,7 +2,7 @@
 using NeoCC;
 using UnityEngine;
 
-public class CutsceneCharacterController : MonoBehaviour 
+public class CutsceneCharacterController : OnMessage<ForceMovePlayer>
 {
     [SerializeField] private NeoCharacterController characterController;
     
@@ -13,6 +13,7 @@ public class CutsceneCharacterController : MonoBehaviour
 
     public void StartCutsceneAndTravelToDestination(Vector3 destination, Action onReached)
     {
+        characterController.enabled = true;
         cutsceneActive = true;
         cutsceneDestination = destination;
         onReachedDestination = onReached;
@@ -30,7 +31,28 @@ public class CutsceneCharacterController : MonoBehaviour
         if (cutsceneActive)
         {
             Vector3 direction = (cutsceneDestination - transform.position).normalized;
-            moveVector = direction * Time.fixedDeltaTime * 5f; // Adjust speed as needed
+            moveVector = direction * Time.fixedDeltaTime * 10f; // Adjust speed as needed
+            
+            // Look towards destination using smooth rotation
+            Vector3 lookDirection = direction;
+            lookDirection.y = 0; // Keep look direction level with ground
+            if (lookDirection != Vector3.zero)
+            {
+                // Get target rotation
+                Quaternion targetRotation = Quaternion.LookRotation(lookDirection);
+                
+                // Smoothly interpolate rotation
+                float turnSpeed = 360f; // Degrees per second
+                transform.rotation = Quaternion.RotateTowards(
+                    transform.rotation,
+                    targetRotation, 
+                    turnSpeed * Time.fixedDeltaTime
+                );
+                
+                // Apply to character controller
+                characterController.Teleport(transform.position, transform.rotation, false);
+            }
+
             
             // Check if we've reached the destination
             if (Vector3.Distance(transform.position, cutsceneDestination) < 0.1f)
@@ -59,5 +81,10 @@ public class CutsceneCharacterController : MonoBehaviour
             // Reset to normal player movement callback
             characterController.SetMoveCallback(null, null);
         }
+    }
+
+    protected override void Execute(ForceMovePlayer msg)
+    {
+        StartCutsceneAndTravelToDestination(msg.Destination, msg.OnReached);
     }
 }
