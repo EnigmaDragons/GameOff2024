@@ -12,12 +12,8 @@ public class CameraEyeVignette : OnMessage<HideEyes, OpenEyes>
     [SerializeField] private bool startClosed = true;
     [SerializeField] private float delaySeconds = 0f;
     [SerializeField] private Volume postProcessVolume;
-
-    [Header("Eyelid Settings")] [SerializeField]
-    private Color eyelidColor = Color.black;
-
-    [SerializeField] private float maxEyelidHeight = 1.0f;
-
+    [SerializeField] private Color eyelidColor = Color.black;
+    
     private bool isAnimating = false;
     private bool isOpen = false;
     private bool isEnabled = true;

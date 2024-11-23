@@ -6,6 +6,7 @@ public class FadeOutImage : MonoBehaviour
     [SerializeField] private Image targetImage;
     [SerializeField] private float fadeSeconds = 2.8f;
     [SerializeField] private float fadeDelay = 7.2f;
+    [SerializeField] private bool startOnEnable = true;
 
     private float fadeTime;
     private float startAlpha;
@@ -25,7 +26,13 @@ public class FadeOutImage : MonoBehaviour
         isFading = false;
         targetImage.enabled = true;
 
-        this.ExecuteAfterDelay(() => isFading = true, fadeDelay);
+        if (startOnEnable)
+            this.ExecuteAfterDelay(() => isFading = true, fadeDelay);
+    }
+
+    public void StartFade(bool withDelay)
+    {
+        this.ExecuteAfterDelay(() => isFading = true, withDelay ? fadeDelay : 0);
     }
 
     private void Update()

@@ -4,7 +4,7 @@ using FMOD.Studio;
 using UnityEngine.SceneManagement;
 using static UnityEngine.Rendering.DebugUI;
 
-public class MusicManagerScript : MonoBehaviour
+public class MusicManagerScript : OnMessage<FadeOutMusic, FadeInMusic>
 {
     Rigidbody rb;
     bool firstMove;
@@ -62,5 +62,20 @@ public class MusicManagerScript : MonoBehaviour
         return toMin + (retFloat - fromMin) * (toMax - toMin) / (fromMax - fromMin);
     }
 
+    protected override void Execute(FadeOutMusic msg)
+    {
+        if (mxEventInstance.isValid())
+        {
+            mxEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
+    }
+
+    protected override void Execute(FadeInMusic msg)
+    {
+        if (mxEventInstance.isValid())
+        {
+            mxEventInstance.start();
+        }
+    }
 }
 
