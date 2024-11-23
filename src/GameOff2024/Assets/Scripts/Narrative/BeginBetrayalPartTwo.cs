@@ -87,5 +87,6 @@ public class BeginBetrayalPartTwo : OnMessage<BeginNarrativeSection>
     private void ForceMovePlayerToCover()
     {
         Log.Info("Force Move To Cover");
+        Message.Publish(new ForceMovePlayer(CurrentGameState.ReadOnly.coverDestination.position, () => Log.Info("Force Move Finished")));
     }
 }
