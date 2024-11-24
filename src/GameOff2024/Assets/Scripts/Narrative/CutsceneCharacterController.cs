@@ -1,15 +1,20 @@
 ﻿using System;
 using NeoCC;
+using NeoFPS.CharacterMotion;
 using UnityEngine;
 
-public class CutsceneCharacterController : OnMessage<ForceMovePlayer>
+public class CutsceneCharacterController : OnMessage<ForceMovePlayer, ForceLookPlayer, EnablePlayerControls>
 {
     [SerializeField] private NeoCharacterController characterController;
+    [SerializeField] private MotionController motionController;
     
     private Vector3 cutsceneDestination;
     private bool cutsceneActive = false;
+    private bool forceLookActive = false;
     
     private Action onReachedDestination;
+    private Action onLookComplete;
+    private Vector3 lookTarget;
 
     public void StartCutsceneAndTravelToDestination(Vector3 destination, Action onReached)
     {
@@ -62,6 +67,35 @@ public class CutsceneCharacterController : OnMessage<ForceMovePlayer>
                 moveVector = Vector3.zero;
             }
         }
+        else if (forceLookActive)
+        {
+            moveVector = Vector3.zero;
+            
+            // Calculate direction to look target
+            Vector3 directionToTarget = (lookTarget - transform.position).normalized;
+            directionToTarget.y = 0; // Keep look direction level with ground
+            
+            // Get target rotation
+            Quaternion targetRotation = Quaternion.LookRotation(directionToTarget);
+            
+            // Smoothly interpolate rotation
+            float turnSpeed = 180f; // Degrees per second
+            transform.rotation = Quaternion.RotateTowards(
+                transform.rotation,
+                targetRotation,
+                turnSpeed * Time.fixedDeltaTime
+            );
+            
+            // Apply to character controller
+            characterController.Teleport(transform.position, transform.rotation, false);
+            
+            // Check if we're looking at target
+            if (Quaternion.Angle(transform.rotation, targetRotation) < 0.1f)
+            {
+                onLookComplete?.Invoke();
+                forceLookActive = false;
+            }
+        }
         else
         {
             moveVector = Vector3.zero;
@@ -73,7 +107,7 @@ public class CutsceneCharacterController : OnMessage<ForceMovePlayer>
 
     private void OnCutsceneMoved()
     {
-        if (!cutsceneActive)
+        if (!cutsceneActive && !forceLookActive)
         {
             // Cutscene complete, restore normal control
             characterController.collisionsEnabled = true;
@@ -86,5 +120,26 @@ public class CutsceneCharacterController : OnMessage<ForceMovePlayer>
     protected override void Execute(ForceMovePlayer msg)
     {
         StartCutsceneAndTravelToDestination(msg.Destination, msg.OnReached);
+    }
+
+    protected override void Execute(ForceLookPlayer msg)
+    {
+        characterController.enabled = true;
+        forceLookActive = true;
+        lookTarget = msg.Target;
+        onLookComplete = msg.OnFinished;
+        
+        characterController.SetMoveCallback(CutsceneMoveCallback, OnCutsceneMoved);
+        characterController.collisionsEnabled = false;
+        characterController.ignoreExternalForces = true;
+    }
+
+    protected override void Execute(EnablePlayerControls msg)
+    {
+        cutsceneActive = false;
+        forceLookActive = false;
+        characterController.collisionsEnabled = true;
+        characterController.ignoreExternalForces = false;
+        motionController.Reconnect();
     }
 }

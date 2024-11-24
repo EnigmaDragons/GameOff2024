@@ -1,14 +1,22 @@
 ﻿using System;
-using NeoCC;
 using UnityEngine;
 
 public class BeginBetrayalPartTwo : OnMessage<BeginNarrativeSection>
 {
-    [SerializeField] private NeoCharacterController playerController;
     [SerializeField] private CS_AudioPlayer handlerAudio;
     [SerializeField] private Navigator navigator;
-    
-    [SerializeField] private bool doingExtendedEnding = true;
+
+    protected override void AfterEnable()
+    {
+        handlerAudio.OnCinematicMarkerHit += MarkerAction;
+        handlerAudio.OnCinematicEventEnded += OnFinishedAction;
+    }
+
+    protected override void AfterDisable()
+    {
+        handlerAudio.OnCinematicMarkerHit -= MarkerAction;
+        handlerAudio.OnCinematicEventEnded -= OnFinishedAction;
+    }
     
     protected override void Execute(BeginNarrativeSection msg)
     {
@@ -17,18 +25,22 @@ public class BeginBetrayalPartTwo : OnMessage<BeginNarrativeSection>
         
         Log.Info("Begin Betrayal - Part Two. Briefcase Delivered");
         Message.Publish(new FadeOutMusic());
-        this.ExecuteAfterDelay(TriggerCutscene, 0.2f);
+        this.ExecuteAfterDelay(BeginHandlerAudioSection, 0.2f);
     }
 
-    private void TriggerCutscene()
+    private void MarkerAction()
     {
-        BeginHandlerAudioSection(doingExtendedEnding ? BeginFullEnding : BeginCliffhangerEnding);
+        ForceMovePlayerToCover();
     }
 
-    private void BeginHandlerAudioSection(Action onFinished)
+    private void OnFinishedAction()
+    {
+        BeginFullEnding();
+    }
+    
+    private void BeginHandlerAudioSection()
     {
         Message.Publish(new DisablePlayerControls());
-        handlerAudio.OnCinematicMarkerHit += onFinished;
         handlerAudio.TriggerCinematicAudio();
         
         // NARRATIVE SCRIPT:
@@ -52,6 +64,7 @@ public class BeginBetrayalPartTwo : OnMessage<BeginNarrativeSection>
         // “I’ll never forget…your sacrifice.” 
     }
 
+    [Obsolete]
     private void BeginCliffhangerEnding()
     {
         // SCRIPT
@@ -62,7 +75,7 @@ public class BeginBetrayalPartTwo : OnMessage<BeginNarrativeSection>
         
         navigator.NavigateToCreditsScene();
     }
-
+    
     private void BeginFullEnding()
     {
         // SCRIPT
@@ -71,9 +84,6 @@ public class BeginBetrayalPartTwo : OnMessage<BeginNarrativeSection>
         // (hit by suitcase) “Agh!” 
         //
         // PC runs towards cover. 
-        
-        ForceMovePlayerToCover();
-        
         //
         //     SFX: Barrage of gunshots crack through the air, pinging off metal as they strike the PC’s cover, until the weapon clicks empty.
         //
@@ -82,11 +92,18 @@ public class BeginBetrayalPartTwo : OnMessage<BeginNarrativeSection>
         // PC comes out of cover and sees the Handler running away. 
         //
         //     PLAYER RESUMES CONTROL. 
+        Message.Publish(new EnablePlayerControls());
     }
 
     private void ForceMovePlayerToCover()
     {
         Log.Info("Force Move To Cover");
-        Message.Publish(new ForceMovePlayer(CurrentGameState.ReadOnly.coverDestination.position, () => Log.Info("Force Move Finished")));
+        Message.Publish(new ForceMovePlayer(CurrentGameState.ReadOnly.coverDestination.position, ForceLookPlayerAtHandler));
+    }
+
+    private void ForceLookPlayerAtHandler()
+    {
+        Log.Info("Force Look At Handler");
+        Message.Publish(new ForceLookPlayer(CurrentGameState.ReadOnly.coverLookPoint.position, () => Log.Info("Force Move Finished")));
     }
 }

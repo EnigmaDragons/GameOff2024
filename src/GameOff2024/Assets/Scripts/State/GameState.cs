@@ -17,9 +17,9 @@ public sealed class GameState
     public Transform playerTransform;
     public Transform spyDestination;
     public Transform coverDestination;
+    public Transform coverLookPoint;
 
     public bool gameWon;
     public bool gameLost;
-    
 }
 

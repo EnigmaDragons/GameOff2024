@@ -1689,6 +1689,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 2985883533691273718}
+  motionController: {fileID: 2981713072900199206}
 --- !u!1 &2951255870412331690
 GameObject:
   m_ObjectHideFlags: 0
