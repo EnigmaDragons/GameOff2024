@@ -51,6 +51,8 @@ public class BeginBetrayalPartOne : OnMessage<BeginNarrativeSection>
         fadeOut.StartFade(false, () => { 
             Log.Info("Re-enabling player controls");
             Message.Publish(new EnablePlayerControls());
+            Log.Info("Player is Holding Briefcase");
+            Message.Publish(new PlayerHoldBriefcase());
             Log.Info("Playing handler voice line");
             handlerVoice.Play();
         });

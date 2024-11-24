@@ -42,6 +42,7 @@ public class BeginBetrayalPartTwo : OnMessage<BeginNarrativeSection>
     {
         Message.Publish(new DisablePlayerControls());
         handlerAudio.TriggerCinematicAudio();
+        this.ExecuteAfterDelay(() => Message.Publish(new PlayerReleaseBriefcase()), 4f);
         
         // NARRATIVE SCRIPT:
         // PLAYER ARRIVES. PLAYER LOSES CONTROL. 

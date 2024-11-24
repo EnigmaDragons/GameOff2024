@@ -3,10 +3,11 @@ using NeoCC;
 using NeoFPS.CharacterMotion;
 using UnityEngine;
 
-public class CutsceneCharacterController : OnMessage<ForceMovePlayer, ForceLookPlayer, EnablePlayerControls>
+public class CutsceneCharacterController : OnMessage<ForceMovePlayer, ForceLookPlayer, EnablePlayerControls, PlayerHoldBriefcase, PlayerReleaseBriefcase>
 {
     [SerializeField] private NeoCharacterController characterController;
     [SerializeField] private MotionController motionController;
+    [SerializeField] private Transform briefcaseObject;
     
     private Vector3 cutsceneDestination;
     private bool cutsceneActive = false;
@@ -141,5 +142,15 @@ public class CutsceneCharacterController : OnMessage<ForceMovePlayer, ForceLookP
         characterController.collisionsEnabled = true;
         characterController.ignoreExternalForces = false;
         motionController.Reconnect();
+    }
+
+    protected override void Execute(PlayerHoldBriefcase msg)
+    {
+        briefcaseObject.gameObject.SetActive(true);
+    }
+
+    protected override void Execute(PlayerReleaseBriefcase msg)
+    {
+        briefcaseObject.gameObject.SetActive(false);
     }
 }

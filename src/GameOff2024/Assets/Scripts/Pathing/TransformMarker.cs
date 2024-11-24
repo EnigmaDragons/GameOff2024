@@ -5,4 +5,5 @@
     Spy = 2,
     HandlerCoverDestination = 3,
     HandlerCoverLookPoint = 4,
+    DroppedBriefcase = 5,
 }

@@ -526,7 +526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetImage: {fileID: 8000079001158638914}
-  fadeSeconds: 1.6
+  fadeSeconds: 0.6
   fadeDelay: 0
   startOnEnable: 0
 --- !u!114 &2731948596935620724

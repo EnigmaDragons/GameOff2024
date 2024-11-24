@@ -42,7 +42,6 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
 
     [SerializeField] Transform playerCharacterTransform;
     [SerializeField] Transform destinationTransform;
-
     private NavMeshPath pathToPlayer;
 
     private bool _playerFound = false;
@@ -56,7 +55,8 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
     [Header("Tagging the spy")]
     [SerializeField] SphereCollider playerTagTrigger;
     [SerializeField] float playerTagTriggerRadius;
-
+    [SerializeField] private Transform handBriefcase;
+    
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -65,9 +65,14 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
         navMeshAgent.autoTraverseOffMeshLink = false;
         
         // Cache ragdoll components
-        ragdollRigidbodies = GetComponentsInChildren<Rigidbody>();
-        animator = GetComponent<Animator>();
-        // Initially disable ragdoll
+        ragdollRigidbodies = GetComponentsInChildren<Rigidbody>(true);
+        animator = GetComponentInChildren<Animator>();
+        
+        // Initially disable ragdoll and ensure colliders are set up properly
+        foreach (var rb in ragdollRigidbodies)
+        {
+            rb.GetComponent<Collider>().enabled = false; // Disable colliders initially
+        }
         SetRagdollState(false);
     }
     
@@ -225,8 +230,38 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
         
         isKnockedOut = true;
         navMeshAgent.enabled = false;
-        if (animator != null) animator.enabled = false;
+        
+        // Disable animator and enable ragdoll physics
+        if (animator != null)
+        {
+            animator.enabled = false;
+        }
+        
         SetRagdollState(true);
+        
+        // Enable colliders and apply gentle downward force
+        foreach (var rb in ragdollRigidbodies)
+        {
+            var collider = rb.GetComponent<Collider>();
+            collider.enabled = true;
+            
+            // Just add a small downward force to make them collapse
+            rb.AddForce(Vector3.down * 1f, ForceMode.Impulse);
+            
+            // Lock rotation on X and Z axes to prevent spinning
+            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            
+            // Zero out any existing velocity/angular velocity
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
+        
+        // Drop the briefcase when knocked out
+        if (handBriefcase != null)
+        {
+            handBriefcase.gameObject.SetActive(false);
+        }
     }
 
     protected override void Execute(StopTheSpy msg)
