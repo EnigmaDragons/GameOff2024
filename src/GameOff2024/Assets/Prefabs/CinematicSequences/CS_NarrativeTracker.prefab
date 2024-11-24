@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1449363615453592084}
   - component: {fileID: 4560456136552872365}
   - component: {fileID: 6737244450035023232}
-  - component: {fileID: 3567958589002374754}
+  - component: {fileID: 292008907600849925}
+  - component: {fileID: 1076060087177084997}
   m_Layer: 0
   m_Name: BetrayalPartOne
   m_TagString: Untagged
@@ -54,7 +55,9 @@ MonoBehaviour:
   knockoutSound: {fileID: 4560456136552872365}
   delayBetweenSounds: 0.5
   briefcaseSound: {fileID: 6737244450035023232}
-  handlerVoice: {fileID: 3567958589002374754}
+  handlerVoice: {fileID: 292008907600849925}
+  delayBetweenHandlerLines: 0.5
+  handlerLineAfterBriefcaseTransfer: {fileID: 1076060087177084997}
 --- !u!114 &4560456136552872365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +120,26 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!114 &3567958589002374754
+--- !u!114 &292008907600849925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661963829582026888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daed9cb6a9f692649b8f801bd5182bc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CinematicEvent:
+    Guid:
+      Data1: -1253554371
+      Data2: 1105679926
+      Data3: 1414661525
+      Data4: 1977475542
+    Path: event:/DX/DX_Handler_YeahNice
+--- !u!114 &1076060087177084997
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -132,11 +154,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -1253554371
-      Data2: 1105679926
-      Data3: 1414661525
-      Data4: 1977475542
-    Path: event:/DX/DX_Handler_YeahNice
+      Data1: 372669681
+      Data2: 1179733748
+      Data3: 729170820
+      Data4: -1010864590
+    Path: event:/DX/DX_Handler_Remember
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0

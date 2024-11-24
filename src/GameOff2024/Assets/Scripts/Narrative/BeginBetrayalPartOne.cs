@@ -9,15 +9,27 @@ public class BeginBetrayalPartOne : OnMessage<BeginNarrativeSection>
     [SerializeField] private StudioEventEmitter knockoutSound;
     [SerializeField] private float delayBetweenSounds = 0.5f;
     [SerializeField] private StudioEventEmitter briefcaseSound;
-    [SerializeField] private StudioEventEmitter handlerVoice;
+    [SerializeField] private CS_AudioPlayer handlerVoice;
+    [SerializeField] private float delayBetweenHandlerLines = 0.5f;
+    [SerializeField] private StudioEventEmitter handlerLineAfterBriefcaseTransfer;
+
+    protected override void AfterEnable()
+    {
+        handlerVoice.OnCinematicEventEnded += PlayFinalHandlerLines;
+    }
+
+    protected override void AfterDisable()
+    {
+        handlerVoice.OnCinematicEventEnded -= PlayFinalHandlerLines;
+    }
     
     protected override void Execute(BeginNarrativeSection msg)
     {
         if (msg.Section != NarrativeSection.CaughtSpy)
             return;
         
-        Log.Info("Begin Betrayal - Part One");
-        Log.Info("Disabling player controls");
+        Log.Info("Betrayal - Part One");
+        Log.Info("Betrayal - Part One - Disabling player controls");
         Message.Publish(new StopTheSpy());
         Message.Publish(new FadeOutMusic());
         Message.Publish(new DisablePlayerControls());
@@ -26,35 +38,38 @@ public class BeginBetrayalPartOne : OnMessage<BeginNarrativeSection>
 
     private void FadeToBlack()
     {
-        Log.Info("Starting fade to black");
+        Log.Info("Betrayal - Part One - Starting fade to black");
         fadeIn.StartFade(false, PlaySounds);   
     }
 
     private void PlaySounds()
     {
-        Log.Info("Playing knockout sequence sounds");
-        Message.Publish(new KnockOutTheSpy());
+        Log.Info("Betrayal - Part One - Playing knockout sequence sounds");
         knockoutSound.Play();
-        this.ExecuteAfterDelay(() => {
-            Log.Info("Playing briefcase sound");
-            briefcaseSound.Play();
-        }, delayBetweenSounds);
-        this.ExecuteAfterDelay(() => {
-            Log.Info("Starting fade back in");
-            FadeGameInAndResume();
-        }, fadeCloseTime);
+        Message.Publish(new KnockOutTheSpy());
+        this.ExecuteAfterDelay(briefcaseSound.Play, delayBetweenSounds);
+        this.ExecuteAfterDelay(FadeGameInAndResume, fadeCloseTime);
     }
 
     private void FadeGameInAndResume()
     {
-        Log.Info("Fading game back in and resuming");
+        Log.Info("Betrayal - Part One - Fading game back in and resuming");
         fadeOut.StartFade(false, () => { 
-            Log.Info("Re-enabling player controls");
+            Log.Info("Betrayal - Part One - Re-enabling player controls");
             Message.Publish(new EnablePlayerControls());
-            Log.Info("Player is Holding Briefcase");
+            Log.Info("Betrayal - Part One - Player is Holding Briefcase");
             Message.Publish(new PlayerHoldBriefcase());
-            Log.Info("Playing handler voice line");
-            handlerVoice.Play();
+            Log.Info("Betrayal - Part One - Playing handler voice line");
+            handlerVoice.TriggerCinematicAudio();
         });
+    }
+
+    private void PlayFinalHandlerLines()
+    {
+        this.ExecuteAfterDelay(() =>
+        {
+            Log.Info("Betrayal - Part One - Playing Final Handler Lines");
+            handlerLineAfterBriefcaseTransfer.Play();
+        }, delayBetweenHandlerLines);
     }
 }
