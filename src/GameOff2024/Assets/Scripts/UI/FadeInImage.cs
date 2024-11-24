@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System;
 
-public class FadeOutImage : MonoBehaviour
+public class FadeInImage : MonoBehaviour
 {
     [SerializeField] private Image targetImage;
     [SerializeField] private float fadeSeconds = 2.8f;
@@ -51,7 +51,7 @@ public class FadeOutImage : MonoBehaviour
         fadeTime += Time.unscaledDeltaTime;
         
         float normalizedTime = fadeTime / currentFadeSeconds;
-        float currentAlpha = Mathf.Lerp(1f, 0f, normalizedTime);
+        float currentAlpha = Mathf.Lerp(0f, 1f, normalizedTime);
         
         Color color = targetImage.color;
         color.a = currentAlpha;
@@ -60,7 +60,7 @@ public class FadeOutImage : MonoBehaviour
         if (fadeTime >= currentFadeSeconds)
         {
             onFadeComplete?.Invoke();
-            Log.Info("Fade Out - Completed");
+            Log.Info("Fade In - Completed");
             enabled = false;
         }
     }

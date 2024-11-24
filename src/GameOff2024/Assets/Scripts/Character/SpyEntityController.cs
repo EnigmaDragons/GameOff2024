@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-public class SpyController : OnMessage<GameStateChanged>
+public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopTheSpy>
 {
     public enum TraversalLinkTypes
     {
@@ -30,7 +30,10 @@ public class SpyController : OnMessage<GameStateChanged>
     [SerializeField] float spySpeedMultiplierMaximum;
     float spySpeed;
     NavMeshAgent navMeshAgent;
-
+    private Rigidbody[] ragdollRigidbodies;
+    private Animator animator;
+    private bool isKnockedOut = false;
+    private bool hasBeenTagged = false;
 
     // Distance from player is tracked, move speed is lerped between 
     float currentDistance;
@@ -61,6 +64,11 @@ public class SpyController : OnMessage<GameStateChanged>
             Log.Error("Missing NavMeshAgent");
         navMeshAgent.autoTraverseOffMeshLink = false;
         
+        // Cache ragdoll components
+        ragdollRigidbodies = GetComponentsInChildren<Rigidbody>();
+        animator = GetComponent<Animator>();
+        // Initially disable ragdoll
+        SetRagdollState(false);
     }
     
     private void Start()
@@ -74,7 +82,6 @@ public class SpyController : OnMessage<GameStateChanged>
 
         }
         playerTagTrigger.radius = playerTagTriggerRadius;
-
     }
 
     private void Instance_OnNavmeshBaked(object sender, System.EventArgs e)
@@ -84,7 +91,7 @@ public class SpyController : OnMessage<GameStateChanged>
 
     private void FixedUpdate()
     {
-        if(!navMeshAgent.enabled) return;
+        if(!navMeshAgent.enabled || isKnockedOut) return;
         if (_playerFound && _destinationFound)
         {
             playerDistanceCalcTimer -= Time.deltaTime;
@@ -208,8 +215,33 @@ public class SpyController : OnMessage<GameStateChanged>
         if(destinationTransform != null)
         {
             _destinationFound = true;
-            StartCoroutine(nameof(SetDestination));//navMeshAgent.SetDestination(destinationTransform.position);
-            //StartCoroutine(CalculatePathWithClosestPortals(destinationTransform.position));
+            StartCoroutine(nameof(SetDestination));
+        }
+    }
+
+    protected override void Execute(KnockOutTheSpy msg)
+    {
+        if (isKnockedOut) return;
+        
+        isKnockedOut = true;
+        navMeshAgent.enabled = false;
+        if (animator != null) animator.enabled = false;
+        SetRagdollState(true);
+    }
+
+    protected override void Execute(StopTheSpy msg)
+    {
+        navMeshAgent.enabled = false;
+        if (animator != null) animator.enabled = false;
+        StopAllCoroutines();
+    }
+
+    private void SetRagdollState(bool state)
+    {
+        foreach (var rb in ragdollRigidbodies)
+        {
+            rb.isKinematic = !state;
+            rb.useGravity = state;
         }
     }
 
@@ -224,7 +256,10 @@ public class SpyController : OnMessage<GameStateChanged>
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player")) 
+        if (!hasBeenTagged && other.gameObject.CompareTag("Player"))
+        {
+            hasBeenTagged = true;
             Message.Publish(new BeginNarrativeSection(NarrativeSection.CaughtSpy));
+        }
     }
 }
