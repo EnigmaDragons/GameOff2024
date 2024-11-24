@@ -5,7 +5,7 @@
 			<value>Cbt_KnockOut_Spy</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{ccd074b9-1f04-4974-8a3b-c48522256a0d}</destination>
@@ -113,7 +113,6 @@
 	<object class="MixerBusEffectChain" id="{275b0966-6aeb-4802-a470-9e0a79c588c2}">
 		<relationship name="effects">
 			<destination>{bedaba94-3b10-47ed-9665-d41aa99214bc}</destination>
-			<destination>{54078ae8-f13f-4e31-bb8d-3ba1ca509bcc}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{e1b92574-b6a9-424b-9b69-fcad03536f9e}" />
@@ -125,6 +124,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{e0387c5a-d360-42bf-84cd-457fee774c96}" />
 	<object class="MixerBusFader" id="{bedaba94-3b10-47ed-9665-d41aa99214bc}" />
-	<object class="SpatialiserEffect" id="{54078ae8-f13f-4e31-bb8d-3ba1ca509bcc}" />
 	<object class="MixerBusFader" id="{0b417e6f-4fd9-4690-9c59-9bd7eb130e56}" />
 </objects>

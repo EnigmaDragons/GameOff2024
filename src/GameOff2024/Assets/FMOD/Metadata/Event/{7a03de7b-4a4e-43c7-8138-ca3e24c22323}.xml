@@ -5,7 +5,7 @@
 			<value>Pkup_Briefcase</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>0</value>
 		</property>
 		<relationship name="folder">
 			<destination>{03c953d4-a63c-49a0-b59d-b680060b24a5}</destination>
@@ -113,7 +113,6 @@
 	<object class="MixerBusEffectChain" id="{f7417c40-0c56-473f-99e4-3020f231c9a5}">
 		<relationship name="effects">
 			<destination>{39be6904-33ac-42b7-81bf-d4ab6c1b0912}</destination>
-			<destination>{0f10cace-4d07-4bb4-bcb9-693be36e854a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{328a9531-b4be-4b01-95ed-0fc4f461a5fa}" />
@@ -125,6 +124,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{2c2e082e-8ef7-418c-816a-6dcc4ea09deb}" />
 	<object class="MixerBusFader" id="{39be6904-33ac-42b7-81bf-d4ab6c1b0912}" />
-	<object class="SpatialiserEffect" id="{0f10cace-4d07-4bb4-bcb9-693be36e854a}" />
 	<object class="MixerBusFader" id="{2f9c1209-f924-4f9d-87ba-6477cbc12d53}" />
 </objects>
