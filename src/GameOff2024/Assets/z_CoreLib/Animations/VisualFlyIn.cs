@@ -34,21 +34,28 @@ public class VisualFlyIn : MonoBehaviour
         var glideOffset = (glideDistance / (shouldFlyOut ? 2 : 1)) * (_fromRight ? 1 : -1);
         if (shouldGlide)
             initialTarget += new Vector3(glideOffset, 0, 0);
-    
-        transform.DOLocalMoveX(initialTarget.x, flyInDuration);
-        yield return new WaitForSeconds(flyInDuration);
+
+        Sequence sequence = DOTween.Sequence();
+        
+        // Fly in with easing
+        sequence.Append(transform.DOLocalMoveX(initialTarget.x, flyInDuration)
+            .SetEase(Ease.InQuad));
+
         if (shouldGlide)
         {
-            transform.DOLocalMoveX(-glideOffset, glideDuration);
-            yield return new WaitForSeconds(glideDuration);
+            // Glide with matching easing
+            sequence.Append(transform.DOLocalMoveX(-glideOffset, glideDuration)
+                .SetEase(Ease.Linear));
         }
 
         if (shouldFlyOut)
         {
-            transform.DOLocalMoveX(-(_initialPosition.x + (_fromRight ? 1600 : -1600)), flyOutDuration);
-            yield return new WaitForSeconds(flyOutDuration);
+            // Fly out with matching easing
+            sequence.Append(transform.DOLocalMoveX(-(_initialPosition.x + (_fromRight ? 1600 : -1600)), flyOutDuration)
+                .SetEase(Ease.OutQuad));
         }
-    
+
+        yield return sequence.WaitForCompletion();
         Finish();
     }
 
