@@ -29939,8 +29939,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: c3cd3edfa3cf5c94fbbf792f8728cebb, type: 2}
         m_TargetAssemblyTypeName: Navigator, Assembly-CSharp
-        m_MethodName: NavigateToScene
-        m_Mode: 5
+        m_MethodName: NavigateToIntroScene
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -34009,6 +34009,7 @@ MonoBehaviour:
   targetImage: {fileID: 4793618756441876544}
   fadeSeconds: 2.8
   fadeDelay: 7.2
+  startOnEnable: 1
 --- !u!1 &8022247792017285197
 GameObject:
   m_ObjectHideFlags: 0
