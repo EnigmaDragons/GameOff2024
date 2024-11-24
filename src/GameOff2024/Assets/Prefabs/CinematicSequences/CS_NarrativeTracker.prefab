@@ -177,10 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1a697bd521f48cca6db4d8b1f6e80db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerController: {fileID: 0}
   handlerAudio: {fileID: 8598908672889429937}
   navigator: {fileID: 11400000, guid: c3cd3edfa3cf5c94fbbf792f8728cebb, type: 2}
-  doingExtendedEnding: 1
 --- !u!114 &8598908672889429937
 MonoBehaviour:
   m_ObjectHideFlags: 0
