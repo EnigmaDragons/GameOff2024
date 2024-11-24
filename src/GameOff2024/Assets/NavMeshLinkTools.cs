@@ -2,6 +2,7 @@ using DunGen.Adapters;
 using UnityEngine;
 using System;
 using Unity.AI.Navigation;
+using DunGen;
 
 public class NavMeshLinkTools : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class NavMeshLinkTools : MonoBehaviour
     
     private void OnEnable()
     {
+        transform.parent = GetComponentInParent<Tile>().transform;
+    
         if (UnityNavMeshAdapter.instance != null)
             UnityNavMeshAdapter.instance.OnNavmeshBaked += Instance_OnNavmeshBaked;
     }

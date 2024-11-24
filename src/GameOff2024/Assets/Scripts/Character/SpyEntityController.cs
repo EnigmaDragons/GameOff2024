@@ -71,6 +71,10 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
         // Initially disable ragdoll and ensure colliders are set up properly
         foreach (var rb in ragdollRigidbodies)
         {
+            if (rb.transform.Equals(transform))
+            {
+                continue;
+            }
             rb.GetComponent<Collider>().enabled = false; // Disable colliders initially
         }
         SetRagdollState(false);
