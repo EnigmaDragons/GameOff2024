@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class FadeOutImage : MonoBehaviour
 {
     [SerializeField] private Image targetImage;
     [SerializeField] private float fadeSeconds = 2.8f;
     [SerializeField] private float fadeDelay = 7.2f;
+    [SerializeField] private bool startOnEnable = true;
 
-    private float currentTime;
     private float fadeTime;
-    private float startAlpha;
     private bool isFading;
+    private Action onFadeComplete;
+    private float currentFadeSeconds;
 
     private void OnEnable()
     {
@@ -21,40 +23,45 @@ public class FadeOutImage : MonoBehaviour
             return;
         }
 
-        startAlpha = targetImage.color.a;
-        currentTime = 0f;
         fadeTime = 0f;
         isFading = false;
+        currentFadeSeconds = fadeSeconds;
         targetImage.enabled = true;
+
+        if (startOnEnable)
+            this.ExecuteAfterDelay(() => isFading = true, fadeDelay);
+    }
+
+    public void StartFade(bool withDelay, Action onComplete = null, float overrideFadeSeconds = -1)
+    {
+        enabled = true;
+        onFadeComplete = onComplete;
+        fadeTime = 0f;
+        currentFadeSeconds = overrideFadeSeconds > 0 ? overrideFadeSeconds : fadeSeconds;
+        this.ExecuteAfterDelay(() => isFading = true, withDelay ? fadeDelay : 0);
     }
 
     private void Update()
     {
-        currentTime += Time.unscaledDeltaTime;
-        
         if (!isFading)
         {
-            if (currentTime >= fadeDelay)
-            {
-                isFading = true;
-            }
             return;
         }
 
         fadeTime += Time.unscaledDeltaTime;
-        if (fadeTime < fadeSeconds)
-        {
-            float normalizedTime = fadeTime / fadeSeconds;
-            float currentAlpha = Mathf.Lerp(startAlpha, 0f, normalizedTime);
-            
-            Color color = targetImage.color;
-            color.a = currentAlpha;
-            targetImage.color = color;
+        
+        float normalizedTime = fadeTime / currentFadeSeconds;
+        float currentAlpha = Mathf.Lerp(1f, 0f, normalizedTime);
+        
+        Color color = targetImage.color;
+        color.a = currentAlpha;
+        targetImage.color = color;
 
-            if (fadeTime >= fadeSeconds)
-            {
-                enabled = false;
-            }
+        if (fadeTime >= currentFadeSeconds)
+        {
+            onFadeComplete?.Invoke();
+            Log.Info("Fade Out - Completed");
+            enabled = false;
         }
     }
 }

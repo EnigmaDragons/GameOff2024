@@ -1,13 +1,10 @@
-using DunGen;
 using DunGen.Adapters;
-using NUnit.Framework;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
-public class SpyController : OnMessage<GameStateChanged>
+public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopTheSpy>
 {
     public enum TraversalLinkTypes
     {
@@ -33,7 +30,10 @@ public class SpyController : OnMessage<GameStateChanged>
     [SerializeField] float spySpeedMultiplierMaximum;
     float spySpeed;
     NavMeshAgent navMeshAgent;
-
+    private Rigidbody[] ragdollRigidbodies;
+    private Animator animator;
+    private bool isKnockedOut = false;
+    private bool hasBeenTagged = false;
 
     // Distance from player is tracked, move speed is lerped between 
     float currentDistance;
@@ -42,7 +42,6 @@ public class SpyController : OnMessage<GameStateChanged>
 
     [SerializeField] Transform playerCharacterTransform;
     [SerializeField] Transform destinationTransform;
-
     private NavMeshPath pathToPlayer;
 
     private bool _playerFound = false;
@@ -56,7 +55,8 @@ public class SpyController : OnMessage<GameStateChanged>
     [Header("Tagging the spy")]
     [SerializeField] SphereCollider playerTagTrigger;
     [SerializeField] float playerTagTriggerRadius;
-
+    [SerializeField] private Transform handBriefcase;
+    
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -64,6 +64,20 @@ public class SpyController : OnMessage<GameStateChanged>
             Log.Error("Missing NavMeshAgent");
         navMeshAgent.autoTraverseOffMeshLink = false;
         
+        // Cache ragdoll components
+        ragdollRigidbodies = GetComponentsInChildren<Rigidbody>(true);
+        animator = GetComponentInChildren<Animator>();
+        
+        // Initially disable ragdoll and ensure colliders are set up properly
+        foreach (var rb in ragdollRigidbodies)
+        {
+            if (rb.transform.Equals(transform))
+            {
+                continue;
+            }
+            rb.GetComponent<Collider>().enabled = false; // Disable colliders initially
+        }
+        SetRagdollState(false);
     }
     
     private void Start()
@@ -77,7 +91,6 @@ public class SpyController : OnMessage<GameStateChanged>
 
         }
         playerTagTrigger.radius = playerTagTriggerRadius;
-
     }
 
     private void Instance_OnNavmeshBaked(object sender, System.EventArgs e)
@@ -87,7 +100,7 @@ public class SpyController : OnMessage<GameStateChanged>
 
     private void FixedUpdate()
     {
-        if(!navMeshAgent.enabled) return;
+        if(!navMeshAgent.enabled || isKnockedOut) return;
         if (_playerFound && _destinationFound)
         {
             playerDistanceCalcTimer -= Time.deltaTime;
@@ -211,8 +224,63 @@ public class SpyController : OnMessage<GameStateChanged>
         if(destinationTransform != null)
         {
             _destinationFound = true;
-            StartCoroutine("SetDestination");//navMeshAgent.SetDestination(destinationTransform.position);
-            //StartCoroutine(CalculatePathWithClosestPortals(destinationTransform.position));
+            StartCoroutine(nameof(SetDestination));
+        }
+    }
+
+    protected override void Execute(KnockOutTheSpy msg)
+    {
+        if (isKnockedOut) return;
+        
+        isKnockedOut = true;
+        navMeshAgent.enabled = false;
+        
+        // Disable animator and enable ragdoll physics
+        if (animator != null)
+        {
+            animator.enabled = false;
+        }
+        
+        SetRagdollState(true);
+        
+        // Enable colliders and apply gentle downward force
+        foreach (var rb in ragdollRigidbodies)
+        {
+            var collider = rb.GetComponent<Collider>();
+            collider.enabled = true;
+            
+            // Just add a small downward force to make them collapse
+            rb.AddForce(Vector3.down * 1f, ForceMode.Impulse);
+            
+            // Lock rotation on X and Z axes to prevent spinning
+            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            
+            // Zero out any existing velocity/angular velocity
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
+        
+        // Drop the briefcase when knocked out
+        if (handBriefcase != null)
+        {
+            handBriefcase.gameObject.SetActive(false);
+        }
+    }
+
+    protected override void Execute(StopTheSpy msg)
+    {
+        navMeshAgent.enabled = false;
+        if (animator != null) animator.enabled = false;
+        StopAllCoroutines();
+    }
+
+    private void SetRagdollState(bool state)
+    {
+        foreach (var rb in ragdollRigidbodies)
+        {
+            rb.isKinematic = !state;
+            rb.useGravity = state;
         }
     }
 
@@ -227,12 +295,10 @@ public class SpyController : OnMessage<GameStateChanged>
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (!hasBeenTagged && other.gameObject.CompareTag("Player"))
         {
-            CurrentGameState.UpdateState(gs =>
-            {
-                gs.gameWon = true;
-            });
+            hasBeenTagged = true;
+            Message.Publish(new BeginNarrativeSection(NarrativeSection.CaughtSpy));
         }
     }
 }

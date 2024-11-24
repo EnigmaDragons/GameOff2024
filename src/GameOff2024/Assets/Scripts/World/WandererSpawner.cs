@@ -31,7 +31,7 @@ public class WandererSpawner : MonoBehaviour
         }
         else
         {
-            Debug.LogError("UnityNavMeshAdapter instance is null!");
+            Debug.LogWarning("UnityNavMeshAdapter instance is null!");
         }
     }
 

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{03c953d4-a63c-49a0-b59d-b680060b24a5}">
+		<property name="name">
+			<value>Pkup</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a8c28ff3-68ca-4b7a-81f2-2c614d4b1882}</destination>
+		</relationship>
+	</object>
+</objects>

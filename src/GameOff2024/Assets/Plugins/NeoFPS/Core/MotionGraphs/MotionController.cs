@@ -269,6 +269,12 @@ namespace NeoFPS.CharacterMotion
             connectable.DynamicUpdate();
         }
 
+        public void Reconnect()
+        {
+            this.enabled = true;
+            characterController.SetMoveCallback(GetMoveVector, OnMoved);
+        }
+        
         void GetMoveVector(out Vector3 move, out bool applyGravity, out bool stickToGround)
         {
             // Skip if time is effectively paused

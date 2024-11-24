@@ -1,5 +1,40 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3836945971720972003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e46633b8bdb104bb60d8ca07749a45, type: 3}
+  m_Name: EyeRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+--- !u!114 &-363082598059390086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5f41feb474f4a1e8d09836bb8a9d06c, type: 3}
+  m_Name: IntoxicationEffectRenderFeature
+  m_EditorClassIdentifier: 
+  m_Active: 1
+  settings:
+    blurAmount: 1
+    swayAmount: 1
+    swaySpeed: 1
+    chromaticAberration: 0.2
+    saturation: 1.2
+    animate: 1
+    pulseSpeed: 1
+    pulseAmount: 0.2
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -53,3 +88,25 @@ MonoBehaviour:
   m_DepthTextureFormat: 0
   m_AccurateGbufferNormals: 0
   m_IntermediateTextureMode: 1
+--- !u!114 &7442799621903540644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: IntoxicationEffectRenderFeature
+  m_EditorClassIdentifier: Assembly-CSharp::IntoxicationEffectRenderFeature
+  m_Active: 1
+  settings:
+    blurAmount: 1
+    swayAmount: 1
+    swaySpeed: 1
+    chromaticAberration: 0.2
+    saturation: 1.2
+    animate: 1
+    pulseSpeed: 1
+    pulseAmount: 0.2
