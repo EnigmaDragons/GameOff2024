@@ -1,15 +1,37 @@
+using System;
 using UnityEngine;
 
 public class CS_EndingSequence : MonoBehaviour
 {
-    private CS_AudioPlayer CS_script;
+    [SerializeField] private bool beginImmediately;
+    [SerializeField] private CS_AudioPlayer CS_script;
+    
     private int MarkerInc = 0;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private Action onLightsOff = () => { };
+    private Action onLightsOn = () => { };
+    private Action onPlayerResume = () => { };
+    
+    private void OnEnable()
     {
         CS_script = GetComponent<CS_AudioPlayer>();
         CS_script.OnCinematicMarkerHit += CS_script_OnCinematicMarkerHit;
+        if (beginImmediately)
+            CS_script.TriggerCinematicAudio();
+    }
+
+    private void OnDisable()
+    {
+        CS_script.OnCinematicMarkerHit -= CS_script_OnCinematicMarkerHit;
+    }
+
+    public void TriggerCinematicAudio(Action lightsOff, Action lightsOn, Action playerResume)
+    {
+        onLightsOff = lightsOff;
+        onLightsOn = lightsOn;
+        onPlayerResume = playerResume;
+        MarkerInc = 0;
+        
         CS_script.TriggerCinematicAudio();
     }
 
@@ -19,16 +41,19 @@ public class CS_EndingSequence : MonoBehaviour
         if (MarkerInc == 0)
         {
             Debug.Log("Light Switch off");
+            onLightsOff();
         }
         //light switch on
         else if (MarkerInc == 1)
         {
             Debug.Log("Light Switch on");
+            onLightsOn();
         }
         //resume player control
         else if (MarkerInc == 2)
         {
             Debug.Log("Player resume control");
+            onPlayerResume();
         }
         MarkerInc++;
     }
