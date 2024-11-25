@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="SandboxScene" id="{fdc6f2a9-90ff-4d10-a90f-cbe7a9c9f24f}">
+		<property name="name">
+			<value>Test_Reverb</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a70550b1-ae14-4c92-bd70-17f3597d5081}</destination>
+		</relationship>
+		<relationship name="markerTracks">
+			<destination>{6cb525ce-8721-4b15-ad73-e0f7b7cad875}</destination>
+		</relationship>
+		<relationship name="timeline">
+			<destination>{748b70e1-2eba-43de-b661-1d581fedf798}</destination>
+		</relationship>
+		<relationship name="emitters">
+			<destination>{22707446-cb0b-407c-8864-771d4dcd276e}</destination>
+			<destination>{a406cc37-b64e-4c7e-b22d-5213fd436937}</destination>
+		</relationship>
+	</object>
+	<object class="MarkerTrack" id="{6cb525ce-8721-4b15-ad73-e0f7b7cad875}" />
+	<object class="Timeline" id="{748b70e1-2eba-43de-b661-1d581fedf798}" />
+	<object class="SandboxEmitter" id="{22707446-cb0b-407c-8864-771d4dcd276e}">
+		<property name="positionX">
+			<value>-2.42499995</value>
+		</property>
+		<property name="positionZ">
+			<value>-0.275000006</value>
+		</property>
+		<relationship name="event">
+			<destination>{8269cbae-b24e-4e4e-9078-851a8c04f610}</destination>
+		</relationship>
+	</object>
+	<object class="SandboxEmitter" id="{a406cc37-b64e-4c7e-b22d-5213fd436937}">
+		<property name="positionX">
+			<value>-0.100000262</value>
+		</property>
+		<property name="positionZ">
+			<value>1.45000017</value>
+		</property>
+		<property name="rotationY">
+			<value>-4.32028866</value>
+		</property>
+		<property name="loopPlayback">
+			<value>true</value>
+		</property>
+		<relationship name="sandboxParameters">
+			<destination>{a8c698c8-b88d-4c83-a12f-e29db4af8c2e}</destination>
+		</relationship>
+		<relationship name="event">
+			<destination>{849da4f7-88ac-404b-882c-d6e66362625e}</destination>
+		</relationship>
+	</object>
+	<object class="SandboxParameter" id="{a8c698c8-b88d-4c83-a12f-e29db4af8c2e}">
+		<property name="parameterValue">
+			<value>0</value>
+		</property>
+		<relationship name="parameter">
+			<destination>{37f10c59-0c0c-45c9-837e-67f99ce24e86}</destination>
+		</relationship>
+	</object>
+</objects>

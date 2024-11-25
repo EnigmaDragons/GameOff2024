@@ -4,6 +4,7 @@ using FMOD.Studio;
 using NeoCC;
 using Unity.Mathematics;
 using System;
+using NeoFPS.CharacterMotion;
 
 
 
@@ -28,10 +29,13 @@ public class PlayerMoveAudio : MonoBehaviour
     bool triggerLandingFS = false;
     float charHeight = 2f;
     bool waitForNextStep = false;
+    MotionController mc;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        mc = GetComponent<MotionController>();
         rb = GetComponent<Rigidbody>();
         lastPosition = transform.position;
         characterController = GetComponent<INeoCharacterController>();
@@ -47,6 +51,8 @@ public class PlayerMoveAudio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(mc.currentState.name);
+
         if (rb)
         {
             
