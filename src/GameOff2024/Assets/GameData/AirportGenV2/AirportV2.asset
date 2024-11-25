@@ -17,10 +17,10 @@ MonoBehaviour:
   Length:
     Min: 8
     Max: 16
-  BranchMode: 0
+  BranchMode: 1
   BranchCount:
-    Min: 1
-    Max: 5
+    Min: 6
+    Max: 10
   GlobalProps: []
   KeyManager: {fileID: 0}
   DoorwayConnectionChance: 0.519
