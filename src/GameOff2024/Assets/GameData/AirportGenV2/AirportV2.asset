@@ -15,9 +15,9 @@ MonoBehaviour:
   globalPropGroupID_obsolete: 
   globalPropRanges_obsolete: []
   Length:
-    Min: 8
-    Max: 16
-  BranchMode: 1
+    Min: 14
+    Max: 18
+  BranchMode: 2
   BranchCount:
     Min: 6
     Max: 10
