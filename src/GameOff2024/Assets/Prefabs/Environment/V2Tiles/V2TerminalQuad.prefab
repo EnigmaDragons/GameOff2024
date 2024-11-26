@@ -121,8 +121,8 @@ MonoBehaviour:
   wandererPrefab: {fileID: 8954216929442975738, guid: 76648ed74f45ba641835d495e0d1d983,
     type: 3}
   spawnParent: {fileID: 3585298126761017893}
-  minSpawns: 8
-  maxSpawns: 16
+  minSpawns: 12
+  maxSpawns: 32
   maxAttempts: 10
   spawnWidth: 36
   positionOffset: {x: 0, y: -0.05, z: 0}

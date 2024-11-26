@@ -214,11 +214,25 @@ namespace DunGen
 		
 		public void LoadInterior()
 		{
-			interior.SetActive(true);
+			if (interior != null)
+			{
+				interior.SetActive(true);
+			}
+			else
+			{
+				Debug.LogWarning("Tile Interior is null - Limited Optimization Possible");
+			}
 		}
 		public void UnloadInterior()
 		{
-			interior.SetActive(false);
+			if (interior != null)
+			{
+				interior.SetActive(false);
+			}
+			else
+			{
+				Debug.LogWarning("Tile Interior is null - Limited Optimization Possible");
+			}
 		}
 		#region ISerializationCallbackReceiver Implementation
 
