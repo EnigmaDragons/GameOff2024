@@ -48,15 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cffb59a9ff58842698aae5817372ff88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animators:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   renderers: []
   animationDistance: 20
+  activeAnimator: {fileID: 6469681677900087332}
 --- !u!114 &5355200078503872138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,6 +174,12 @@ PrefabInstance:
 --- !u!4 &1092336085111626334 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9fa81fb2b5a7e354b9628252fc9174ac,
+    type: 3}
+  m_PrefabInstance: {fileID: 622192313008274869}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &6469681677900087332 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 9fa81fb2b5a7e354b9628252fc9174ac,
     type: 3}
   m_PrefabInstance: {fileID: 622192313008274869}
   m_PrefabAsset: {fileID: 0}
