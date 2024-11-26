@@ -2,8 +2,7 @@
 
 public class OnlyActiveWithinRangeOfPlayer : MonoBehaviour
 {
-    [SerializeField] private GameObject targets;
-    [SerializeField] private GameObject[] otherTargets;
+    [SerializeField] SkinnedNpc npcChild;
     [SerializeField] private float animationDistance = 40f;
     [SerializeField] private float updatePeriod = 0.25f;
 
@@ -16,13 +15,9 @@ public class OnlyActiveWithinRangeOfPlayer : MonoBehaviour
 
         if (CurrentGameState.ReadOnly.playerTransform == null) return;
 
-        float distanceToPlayer = Vector3.Distance(transform.position, CurrentGameState.ReadOnly.playerTransform.position);
-        bool shouldBeInRange = distanceToPlayer <= animationDistance;
+        float distanceToPlayer = Vector3.SqrMagnitude(transform.position-CurrentGameState.ReadOnly.playerTransform.position);
+        bool shouldBeInRange = distanceToPlayer <= animationDistance*animationDistance;
 
-        targets.SetActive(shouldBeInRange);
-        foreach (GameObject otherTarget in otherTargets)
-        {
-            otherTarget.SetActive(shouldBeInRange);
-        }
+        npcChild.SetShouldAnimate(shouldBeInRange);
     }
 }

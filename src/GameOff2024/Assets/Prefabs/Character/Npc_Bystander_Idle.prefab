@@ -143,8 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62777fa9980d4d41a80f5c0f163456b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets: {fileID: 1103602405821182892}
-  otherTargets: []
+  npcChild: {fileID: 6670717521826186770}
   animationDistance: 48
   updatePeriod: 0.25
 --- !u!1001 &386343104777148528
@@ -215,12 +214,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10d63e6478444cd439d7004ada770d89, type: 3}
---- !u!1 &1103602405821182892 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 724052096815803356, guid: 10d63e6478444cd439d7004ada770d89,
-    type: 3}
-  m_PrefabInstance: {fileID: 386343104777148528}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2415664586975328454 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2655640699530010806, guid: 10d63e6478444cd439d7004ada770d89,
@@ -233,7 +226,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 386343104777148528}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103602405821182892}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cffb59a9ff58842698aae5817372ff88, type: 3}
