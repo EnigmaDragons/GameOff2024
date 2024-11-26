@@ -24,6 +24,25 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{922a626d-9f4a-4648-83d3-b6496eefdb59}" />
-	<object class="ThreeEQEffect" id="{c6812474-b48f-4a7f-9c60-320750542314}" />
+	<object class="ThreeEQEffect" id="{c6812474-b48f-4a7f-9c60-320750542314}">
+		<property name="highCrossover">
+			<value>1350</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{3c0f51c1-316d-4fe3-b99d-6a05841094a8}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{9e32e246-3938-44de-9a19-a96fe8112992}" />
+	<object class="SidechainModulator" id="{3c0f51c1-316d-4fe3-b99d-6a05841094a8}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>highGain</value>
+		</property>
+		<property name="amount">
+			<value>80</value>
+		</property>
+		<relationship name="sidechains">
+			<destination>{a8ccde9b-2a95-4eed-8cf0-2eb7b8bab9a2}</destination>
+			<destination>{9e2bcfd6-aec1-4d82-a709-a0e9907caa11}</destination>
+		</relationship>
+	</object>
 </objects>
