@@ -262,6 +262,7 @@ MonoBehaviour:
   - Bnk_Ambience
   - Bnk_CS
   - Bnk_DX
+  - Bnk_MainMenu
   - Bnk_MX_Airport
   - Bnk_MX_FrontEnd
   - Bnk_Phy_Test
