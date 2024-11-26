@@ -233,7 +233,7 @@ MonoBehaviour:
   spyBaseSpeedJumping: 3
   spyBaseSpeedFalling: 10
   spySpeedMultiplierMinimum: 0.25
-  spySpeedMultiplierMaximum: 1.25
+  spySpeedMultiplierMaximum: 2.5
   minDistance: 2
   maxDistance: 60
   playerCharacterTransform: {fileID: 0}
@@ -654,7 +654,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -8700617353114198275, guid: 877019ffd4f92aa498e73f8ad0ae60bf, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 877019ffd4f92aa498e73f8ad0ae60bf,
         type: 3}

@@ -259,6 +259,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
+  - Bnk_Ambience
   - Bnk_CS
   - Bnk_DX
   - Bnk_MX_Airport
@@ -266,6 +267,7 @@ MonoBehaviour:
   - Bnk_Phy_Test
   - Bnk_Phy_WoodenChair
   - Bnk_SFX_PC
+  - Bnk_Snapshots
   - Test_Bank
   BanksToLoad: []
   LiveUpdatePort: 9264

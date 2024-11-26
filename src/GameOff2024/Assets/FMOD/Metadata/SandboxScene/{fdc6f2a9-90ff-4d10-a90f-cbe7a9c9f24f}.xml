@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="SandboxScene" id="{fdc6f2a9-90ff-4d10-a90f-cbe7a9c9f24f}">
+		<property name="name">
+			<value>Test_Reverb</value>
+		</property>
+		<relationship name="folder">
+			<destination>{a70550b1-ae14-4c92-bd70-17f3597d5081}</destination>
+		</relationship>
+		<relationship name="markerTracks">
+			<destination>{6cb525ce-8721-4b15-ad73-e0f7b7cad875}</destination>
+		</relationship>
+		<relationship name="timeline">
+			<destination>{748b70e1-2eba-43de-b661-1d581fedf798}</destination>
+		</relationship>
+		<relationship name="emitters">
+			<destination>{d87edf34-9af9-4e9f-b203-305914955a2c}</destination>
+			<destination>{94a37099-356a-4ab8-9bb2-16394026544a}</destination>
+		</relationship>
+	</object>
+	<object class="MarkerTrack" id="{6cb525ce-8721-4b15-ad73-e0f7b7cad875}" />
+	<object class="Timeline" id="{748b70e1-2eba-43de-b661-1d581fedf798}" />
+	<object class="SandboxEmitter" id="{d87edf34-9af9-4e9f-b203-305914955a2c}">
+		<property name="positionX">
+			<value>1.20000005</value>
+		</property>
+		<property name="positionZ">
+			<value>3.42499995</value>
+		</property>
+		<relationship name="event">
+			<destination>{2365c2a9-5ba7-4e5a-8cca-7de0d486f549}</destination>
+		</relationship>
+	</object>
+	<object class="SandboxEmitter" id="{94a37099-356a-4ab8-9bb2-16394026544a}">
+		<property name="positionX">
+			<value>-1.75</value>
+		</property>
+		<property name="positionZ">
+			<value>0.300000012</value>
+		</property>
+		<relationship name="event">
+			<destination>{05b8e8a9-7d75-4d39-a4aa-0e984b0861a6}</destination>
+		</relationship>
+	</object>
+</objects>

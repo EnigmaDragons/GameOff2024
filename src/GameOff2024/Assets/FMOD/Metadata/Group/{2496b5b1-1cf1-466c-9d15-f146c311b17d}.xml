@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{2496b5b1-1cf1-466c-9d15-f146c311b17d}">
+		<property name="name">
+			<value>Cmbt</value>
+		</property>
+		<relationship name="effectChain">
+			<destination>{ba8e0cd1-eda1-4e2b-bdc1-3d5af6391b9c}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{f83a4f5f-56bf-48a2-812e-d377aa7136b2}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{6d4fef95-f5dc-4e73-8a6e-1bbbffabed78}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{ba8e0cd1-eda1-4e2b-bdc1-3d5af6391b9c}">
+		<relationship name="effects">
+			<destination>{2013a960-816f-4282-8ecb-41aa0be36eaa}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{f83a4f5f-56bf-48a2-812e-d377aa7136b2}" />
+	<object class="MixerBusFader" id="{2013a960-816f-4282-8ecb-41aa0be36eaa}" />
+</objects>

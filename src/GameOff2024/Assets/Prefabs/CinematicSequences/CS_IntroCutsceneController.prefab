@@ -52,6 +52,7 @@ MonoBehaviour:
   canvasFader: {fileID: 8883740536114292592}
   vignette: {fileID: 2082009711423231957}
   drunkBlurFadeDelay: 2
+  introPostPro: {fileID: 6149208756574058676}
 --- !u!114 &2082009711423231957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsGlobal: 1
-  priority: 0
+  priority: 10
   blendDistance: 0
   weight: 1
   sharedProfile: {fileID: 11400000, guid: 3a21c6839f3645f46b9a83247de7cf43, type: 2}

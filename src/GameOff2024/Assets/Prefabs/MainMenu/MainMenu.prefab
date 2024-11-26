@@ -34008,7 +34008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetImage: {fileID: 4793618756441876544}
   fadeSeconds: 2.8
-  fadeDelay: 7.2
+  fadeDelay: 0
   startOnEnable: 1
 --- !u!1 &8022247792017285197
 GameObject:

@@ -4,18 +4,13 @@ using FMOD.Studio;
 using NeoCC;
 using Unity.Mathematics;
 using System;
+using NeoFPS.CharacterMotion;
 
 
 
 public class PlayerMoveAudio : MonoBehaviour
 {
     Rigidbody rb;
-    float walkStrideLength = 2f;
-    float runStrideLength = 3f;
-    float walkVelocity = 1f;
-    Vector3 lastPosition;
-    float totalDistance = 0f;
-    StudioEventEmitter emitter;
     public EventReference fsEvent;
     public EventReference fsLandEvent;
     public EventReference foleyEvent;
@@ -25,77 +20,94 @@ public class PlayerMoveAudio : MonoBehaviour
     EventInstance foleySlideEventInstance;
     EventInstance fsSlideEventInstance;
     INeoCharacterController characterController;
-    bool triggerLandingFS = false;
-    float charHeight = 2f;
     bool waitForNextStep = false;
+    MotionController mc;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        mc = GetComponent<MotionController>();
+        mc.onStep += Mc_onStep;
+        mc.onCurrentStateChanged += Mc_onCurrentStateChanged;
         rb = GetComponent<Rigidbody>();
-        lastPosition = transform.position;
         characterController = GetComponent<INeoCharacterController>();
-        characterController.onHeightChanged += CharacterController_onHeightChanged;
-        //characterController.onControllerHit += CharacterController_onControllerHit;
+    }
+
+    private void Mc_onCurrentStateChanged()
+    {
+        Debug.Log(mc.currentState.name);
+        switch (mc.currentState.name)
+        {
+            case "Sprint":
+                StopSlidingSound();
+                break;
+            case "Crouch":
+                StopSlidingSound();
+                break;
+            case "Crouch Slide":
+                TriggerSlidingSound(rb.linearVelocity.magnitude);
+                break;
+            case "Jump":
+                TriggerJumpSound();
+                StopSlidingSound();
+                break;
+            case "Landing":
+                TriggerLandingFootStep();
+                StopSlidingSound();
+                break;
+            case "Ledge Climb":
+                break;
+            case "Jump Directional":
+                TriggerJumpSound();
+                StopSlidingSound();
+                break;
+            case "Wall Run Across":
+                StopSlidingSound();
+                break;
+            case "Wall Run Up":
+                StopSlidingSound();
+                break;
+            case "Wall Slide Down":
+                TriggerSlidingSound(rb.linearVelocity.magnitude);
+                break;
+            case "Push Off Hard":
+                TriggerJumpSound();
+                StopSlidingSound();
+                break;
+            case "Ladder Climb":
+                break;
+            case "Ladder Push Off":
+                TriggerJumpSound();
+                StopSlidingSound();
+                break;
+            case "Push Off Soft":
+                TriggerJumpSound();
+                StopSlidingSound();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void Mc_onStep()
+    {
+        TriggerFootstep(rb.linearVelocity.magnitude);
+        TriggerFoley(rb.linearVelocity.magnitude);
     }
 
     //private void CharacterController_onControllerHit(NeoCharacterControllerHit hit)
     //{
-   //     Debug.Log("Player Hit");
- //   }
+    //     Debug.Log("Player Hit");
+    //   }
 
     // Update is called once per frame
     void Update()
-    {
+    {    
         if (rb)
         {
-            
-            if (characterController.isGrounded)
-            {
-                if (rb.linearVelocity.sqrMagnitude >= 0.1f && !triggerLandingFS && (charHeight != 1))
-                {
-                    if (rb.linearVelocity.sqrMagnitude >= walkVelocity * walkVelocity)
-                    {
-                        //running
-                        if (totalDistance > runStrideLength + UnityEngine.Random.Range(-0.1f, 0.1f))
-                        {
-                            TriggerFootstep(rb.linearVelocity.magnitude);
-                        }
-                    }
-                    else
-                    {
-                        //walking
-                        if (totalDistance > walkStrideLength + UnityEngine.Random.Range(-0.1f, 0.1f))
-                        {
-                            TriggerFootstep(rb.linearVelocity.magnitude);
-                        }
-                    }
-                    if (totalDistance < runStrideLength && !waitForNextStep)
-                    {
-                        TriggerFoley(rb.linearVelocity.magnitude);
-                        waitForNextStep = true;
-                    }
-                    if(charHeight == 1)
-                    {
-                        foleySlideEventInstance.setParameterByName("Char_Speed", rb.linearVelocity.magnitude);
-                        fsSlideEventInstance.setParameterByName("Char_Speed", rb.linearVelocity.magnitude);
-                    }
-                    totalDistance += Mathf.Abs((lastPosition - transform.position).magnitude);
-                    lastPosition = transform.position;
-                }
-                else if(triggerLandingFS)
-                {
-                    TriggerLandingFootStep();
-                }
-            }
-            else
-            {
-                if(!triggerLandingFS)
-                {
-                    TriggerJumpSound();
-                }
-                triggerLandingFS = true;
-            }
+            foleySlideEventInstance.setParameterByName("Char_Speed", rb.linearVelocity.magnitude);
+            fsSlideEventInstance.setParameterByName("Char_Speed", rb.linearVelocity.magnitude);
         }
     }
 
@@ -122,13 +134,6 @@ public class PlayerMoveAudio : MonoBehaviour
 
     }
 
-    private void CharacterController_onHeightChanged(float newHeight, float rootOffset)
-    {
-        charHeight = newHeight;
-        if (charHeight == 1) { TriggerSlidingSound(rb.linearVelocity.magnitude); }
-        else { StopSlidingSound(); }
-    }
-
     private void StopSlidingSound()
     {
         foleySlideEventInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
@@ -139,7 +144,6 @@ public class PlayerMoveAudio : MonoBehaviour
 
     void TriggerLandingFootStep()
     {
-        triggerLandingFS = false;
         EventInstance fsLandEventInstance = RuntimeManager.CreateInstance(fsLandEvent);
         RuntimeManager.AttachInstanceToGameObject(fsLandEventInstance, gameObject);
         fsLandEventInstance.start();
@@ -148,9 +152,6 @@ public class PlayerMoveAudio : MonoBehaviour
 
     void TriggerFootstep(float charSpeed)
     {
-        //reset total distance so we start tracking the distance until the next stride
-        totalDistance = 0f;
-        waitForNextStep = false;
         EventInstance fsEventInstance = RuntimeManager.CreateInstance(fsEvent);
         RuntimeManager.AttachInstanceToGameObject(fsEventInstance, gameObject);
         fsEventInstance.setParameterByName("Char_Speed", charSpeed);
