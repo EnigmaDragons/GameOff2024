@@ -8,8 +8,7 @@ public class SkinnedNpc : MonoBehaviour
     [SerializeField] private Animator activeAnimator;
     private SkinnedMeshRenderer activeRenderer;
     private bool isInRange;
-
-    public SkinnedMeshRenderer Renderer => activeRenderer; 
+    public SkinnedMeshRenderer Renderer => activeRenderer;
 
     public void SetShouldAnimate(bool shouldAnimate)
     {
@@ -21,6 +20,8 @@ public class SkinnedNpc : MonoBehaviour
         if (activeAnimator != null && isInRange)
         {
             activeAnimator.SetTrigger(triggerName);
+            activeAnimator.SetBool("isTexting", false);
+            activeAnimator.SetBool("isWalking", false);
         }
     }
 
@@ -52,4 +53,5 @@ public class SkinnedNpc : MonoBehaviour
             activeAnimator.SetInteger(paramName, value);
         }
     }
+
 }

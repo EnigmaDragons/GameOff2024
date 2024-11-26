@@ -5,6 +5,7 @@ using UnityEngine.AI;
 public class BystanderWandering : MonoBehaviour
 {
     [SerializeField] private SkinnedNpc character;
+    NPCReactions npcReactions;
 
     private NavMeshAgent agent;
     private float nextActionTime;
@@ -21,6 +22,7 @@ public class BystanderWandering : MonoBehaviour
     private void OnEnable()
     {
         agent = GetComponent<NavMeshAgent>();
+        npcReactions = GetComponentInChildren<NPCReactions>();
         startPosition = transform.position;
         
         // Randomize initial state
@@ -42,6 +44,15 @@ public class BystanderWandering : MonoBehaviour
 
     private void Update()
     {
+        if (npcReactions.isTripping)
+        {
+            agent.enabled = false;
+            return;
+        }
+        else
+        {
+            agent.enabled = true;
+        }
         if (Time.time >= nextActionTime)
         {
             if (remainingWanderSegments > 0)

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6094149041182611159}
   - component: {fileID: 5006834353275892295}
   - component: {fileID: 7370451264537289967}
+  - component: {fileID: 7647911051986525157}
   m_Layer: 12
   m_Name: inner
   m_TagString: Untagged
@@ -56,7 +57,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4650810359498804005}
   serializedVersion: 4
-  m_Mass: 5
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.8
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -73,7 +74,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &7370451264537289967
 CapsuleCollider:
@@ -98,6 +99,20 @@ CapsuleCollider:
   m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &7647911051986525157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4650810359498804005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf00a64c48ed1a468155b010a82b11f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTripping: 0
+  rotateSpeed: 5
 --- !u!1 &5551895725633019247
 GameObject:
   m_ObjectHideFlags: 0
@@ -207,6 +222,11 @@ PrefabInstance:
     - target: {fileID: 2655640699530010806, guid: 10d63e6478444cd439d7004ada770d89,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6469681677900087332, guid: 10d63e6478444cd439d7004ada770d89,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

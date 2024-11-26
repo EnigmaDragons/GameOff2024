@@ -3,6 +3,7 @@
 public class BystanderTexting : MonoBehaviour
 {
     public SkinnedNpc skinnedNpc;
+    NPCReactions npcReactions;
     private float nextStateCheck;
     private bool isTexting;
     private const float MIN_INTERVAL = 2f;
@@ -11,6 +12,7 @@ public class BystanderTexting : MonoBehaviour
 
     void Start()
     {
+        npcReactions = GetComponentInChildren<NPCReactions>();
         nextStateCheck = Random.Range(MIN_INTERVAL, MAX_INTERVAL);
         isTexting = Random.value > 0.5f;
         UpdateAnimator();
@@ -18,7 +20,7 @@ public class BystanderTexting : MonoBehaviour
 
     void Update()
     {
-        if (Time.time >= nextStateCheck)
+        if (Time.time >= nextStateCheck && !npcReactions.isTripping)
         {
             // Check if we should change state
             if (Random.value < STATE_CHANGE_CHANCE)

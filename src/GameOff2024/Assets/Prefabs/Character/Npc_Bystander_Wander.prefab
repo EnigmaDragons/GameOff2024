@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1232400936769249048}
   - component: {fileID: 6715499618463834701}
   - component: {fileID: 6658498439481932806}
+  - component: {fileID: 4122963392001677941}
   m_Layer: 12
   m_Name: inner
   m_TagString: Untagged
@@ -44,7 +45,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 128998306632823180}
   serializedVersion: 4
-  m_Mass: 5
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.8
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -61,7 +62,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &1232400936769249048
 CapsuleCollider:
@@ -121,6 +122,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 2081015769255587644}
+--- !u!114 &4122963392001677941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128998306632823180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf00a64c48ed1a468155b010a82b11f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTripping: 0
+  rotateSpeed: 5
 --- !u!1 &8954216929442975738
 GameObject:
   m_ObjectHideFlags: 0
