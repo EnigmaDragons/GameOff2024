@@ -301,4 +301,13 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
             Message.Publish(new BeginNarrativeSection(NarrativeSection.CaughtSpy));
         }
     }
+
+    /*private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.TryGetComponent(out SkinnedNpc npc))
+        {
+            Rigidbody otherRB = npc.GetComponent<Rigidbody>();
+
+        }
+    }*/
 }
