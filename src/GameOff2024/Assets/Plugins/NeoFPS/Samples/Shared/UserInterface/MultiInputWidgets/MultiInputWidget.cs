@@ -351,7 +351,8 @@ namespace NeoFPS.Samples
 		public override void OnPointerEnter (PointerEventData eventData)
 		{
 			base.OnPointerEnter (eventData);
-			if (IsActive () && IsInteractable () && EventSystem.current != null)
+            PlayAudio(MenuAudio.Move);
+            if (IsActive () && IsInteractable () && EventSystem.current != null)
 				EventSystem.current.SetSelectedGameObject (gameObject);
 		}
 
