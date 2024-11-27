@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
+using FMODUnity;
 
 namespace NeoFPS.Samples
 {
@@ -18,6 +19,9 @@ namespace NeoFPS.Samples
         [SerializeField] private string m_Label = "Label";
         [SerializeField] private string m_Description = string.Empty;
 		[SerializeField] private RectTransform m_Indentable = null;
+		[SerializeField] private EventReference moveSound;
+		[SerializeField] private EventReference clickValidSound;
+		[SerializeField] private EventReference clickInvalidSound;
 
 		private MenuAudioPlayer m_MenuAudioPlayer = null;
 
