@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FMOD.Studio;
+using FMODUnity;
+using System;
 using UnityEngine;
 
 namespace NeoFPS.Samples
@@ -8,25 +10,15 @@ namespace NeoFPS.Samples
 	[RequireComponent (typeof (AudioSource))]
 	public class MenuAudioPlayer : MonoBehaviour
 	{
-		private AudioSource[] m_Sources = null;
-        private int m_CurrentIndex = 0;
-
-        protected void Awake ()
+		public void PlayClip (EventReference clip)
 		{
-			m_Sources = GetComponents <AudioSource> ();
-		}
-
-		public void PlayClip (AudioClip clip)
-		{
-			// Get the source
-			AudioSource source = m_Sources [m_CurrentIndex];
-			++m_CurrentIndex;
-			if (m_CurrentIndex >= m_Sources.Length)
-				m_CurrentIndex = 0;
-
-			// Play the clip
-			source.PlayOneShot (clip);
-		}
+            EventInstance clipInstance = RuntimeManager.CreateInstance(clip);
+            if(clipInstance.isValid())
+            {
+                clipInstance.start();
+                clipInstance.release();
+            }           
+        }
 	}
 }
 

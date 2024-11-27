@@ -19,9 +19,6 @@ namespace NeoFPS.Samples
         [SerializeField] private string m_Label = "Label";
         [SerializeField] private string m_Description = string.Empty;
 		[SerializeField] private RectTransform m_Indentable = null;
-		[SerializeField] private EventReference moveSound;
-		[SerializeField] private EventReference clickValidSound;
-		[SerializeField] private EventReference clickInvalidSound;
 
 		private MenuAudioPlayer m_MenuAudioPlayer = null;
 
@@ -451,15 +448,15 @@ namespace NeoFPS.Samples
 				switch (audio)
 				{
 					case MenuAudio.Move:
-						if (m_Style.soundEffects.move != null)
+						if (!m_Style.soundEffects.move.IsNull)
 							m_MenuAudioPlayer.PlayClip (m_Style.soundEffects.move);
 						break;
 					case MenuAudio.ClickValid:
-						if (m_Style.soundEffects.press != null)
+						if (!m_Style.soundEffects.press.IsNull)
 							m_MenuAudioPlayer.PlayClip (m_Style.soundEffects.press);
 						break;
 					case MenuAudio.ClickInvalid:
-						if (m_Style.soundEffects.error != null)
+						if (!m_Style.soundEffects.error.IsNull)
 							m_MenuAudioPlayer.PlayClip (m_Style.soundEffects.error);
 						break;
 				}
