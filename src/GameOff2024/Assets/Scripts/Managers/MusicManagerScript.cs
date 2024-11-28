@@ -1,8 +1,9 @@
+using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 
-public class MusicManagerScript : OnMessage<FadeOutMusic, FadeInMusic>
+public class MusicManagerScript : OnMessage<FadeOutMusic, FadeInMusic, BeginNarrativeSection>
 {
     Rigidbody rb;
     bool firstMove;
@@ -14,6 +15,18 @@ public class MusicManagerScript : OnMessage<FadeOutMusic, FadeInMusic>
     private float targetVolume = 1f;
     private float fadeTimer = 0f;
     private bool isFading = false;
+
+    private Dictionary<NarrativeSection, string> sectionMapping = new()
+    {
+        { NarrativeSection.Intro, "Unconscious" },
+        { NarrativeSection.IntroOpenEyes, "Tutorial" },
+        { NarrativeSection.IntroPlayerFullControl, "TutorialSectionA" },
+        { NarrativeSection.IntroHalfwayThrough, "TutorialSectionB" },
+        { NarrativeSection.ChasingSpy, "SectionA" },
+        { NarrativeSection.CaughtSpy, "SectionB" },
+        { NarrativeSection.CarriedBriefcase, "SectionC" },
+        { NarrativeSection.ChasingHandler, "SectionD" }
+    };
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
@@ -30,11 +43,11 @@ public class MusicManagerScript : OnMessage<FadeOutMusic, FadeInMusic>
 
     void FirstMovement()
     {
-        if (mxEventInstance.isValid())
-        {
-            mxEventInstance.setParameterByNameWithLabel("MusicControl", "SectionA");
-            firstMove = true;
-        }
+        // if (mxEventInstance.isValid())
+        // {
+        //     mxEventInstance.setParameterByNameWithLabel("MusicControl", "SectionA");
+        //     firstMove = true;
+        // }
     }
 
     void MovementUpdateRunning(float moveValue)
@@ -96,6 +109,19 @@ public class MusicManagerScript : OnMessage<FadeOutMusic, FadeInMusic>
             targetVolume = 1f;
             fadeTimer = 0f;
             isFading = true;
+        }
+    }
+
+    protected override void Execute(BeginNarrativeSection msg)
+    {
+        if (sectionMapping.TryGetValue(msg.Section, out var musicParam))
+        {
+            Log.Info($"Music Manager - param {musicParam} for section {msg.Section}");
+            mxEventInstance.setParameterByNameWithLabel("MusicControl", musicParam);
+        }
+        else
+        {
+            Log.Warn($"Music Manager - No Music Param known for {msg.Section}");
         }
     }
 }

@@ -33,13 +33,20 @@ public class IntroCutsceneLauncher : MonoBehaviour
 
     private void BeginCutscene()
     {
-        Message.Publish(new FadeOutMusic());
+        //Message.Publish(new FadeOutMusic());
+        Message.Publish(new BeginNarrativeSection(NarrativeSection.Intro));
         Message.Publish(new DisablePlayerControls());
         csAudio.OnCinematicMarkerHit += fadeToGameplay.Invoke;
         csAudio.OnCinematicEventEnded += audioEnded.Invoke;
         csAudio.TriggerCinematicAudio();
         Message.Publish(new SetIntoxicationLevel(1f));
-        this.ExecuteAfterDelay(() => Message.Publish(new EnablePlayerLookControls()), delayBeforeEnableLookControls);
-        this.ExecuteAfterDelay(() => Message.Publish(new EnablePlayerControls()), delayBeforeEnableMovementControls);
+        this.ExecuteAfterDelay(() => { 
+            Message.Publish(new BeginNarrativeSection(NarrativeSection.IntroOpenEyes));
+            Message.Publish(new EnablePlayerLookControls());
+        }, delayBeforeEnableLookControls);
+        this.ExecuteAfterDelay(() => {
+            Message.Publish(new BeginNarrativeSection(NarrativeSection.IntroPlayerFullControl));
+            Message.Publish(new EnablePlayerControls());
+        }, delayBeforeEnableMovementControls);
     }
 }

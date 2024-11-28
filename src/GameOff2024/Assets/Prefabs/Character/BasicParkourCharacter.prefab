@@ -1657,11 +1657,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mxEvent:
     Guid:
-      Data1: -1292527353
-      Data2: 1211895714
-      Data3: 277581446
-      Data4: 1802672103
-    Path: event:/MX/InGame/MX_Lvl_Airport_Chase
+      Data1: -2052126882
+      Data2: 1101428552
+      Data3: 1432410503
+      Data4: 686139575
+    Path: event:/MX/InGame/MX_Lvl_MasterEvent
   fadeTime: 2
 --- !u!114 &1395988942662652233
 MonoBehaviour:
