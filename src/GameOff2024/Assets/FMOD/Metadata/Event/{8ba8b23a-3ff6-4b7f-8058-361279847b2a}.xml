@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{8ba8b23a-3ff6-4b7f-8058-361279847b2a}">
 		<property name="name">
-			<value>DX_Handler_WaitIGot</value>
+			<value>DX_Intro_2</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -85,6 +85,7 @@
 	<object class="MultiSound" id="{66a1b11e-3acd-4316-be6c-f45d6dec9a21}">
 		<relationship name="sounds">
 			<destination>{c2d34d10-9711-4298-be91-bdbb9ee2e4e8}</destination>
+			<destination>{2aa86679-d5fe-4705-8829-0e90db5a06c3}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{e77cb1dd-57d2-4af2-bf32-26e2043bb624}">
@@ -102,6 +103,11 @@
 	<object class="SingleSound" id="{c2d34d10-9711-4298-be91-bdbb9ee2e4e8}">
 		<relationship name="audioFile">
 			<destination>{03c8b768-59a7-4019-aa0b-3ca61a4646b1}</destination>
+		</relationship>
+	</object>
+	<object class="EventSound" id="{2aa86679-d5fe-4705-8829-0e90db5a06c3}">
+		<relationship name="event">
+			<destination>{b36b2546-a10e-49bf-bed3-9b7099c01425}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{85062347-229d-4e27-be55-e04d6edcac64}" />
