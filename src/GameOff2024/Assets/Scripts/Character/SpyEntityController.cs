@@ -234,33 +234,12 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
         
         isKnockedOut = true;
         navMeshAgent.enabled = false;
-        
-        // Disable animator and enable ragdoll physics
+
         if (animator != null)
         {
-            animator.enabled = false;
-        }
-        
-        SetRagdollState(true);
-        
-        // Enable colliders and apply gentle downward force
-        foreach (var rb in ragdollRigidbodies)
-        {
-            var collider = rb.GetComponent<Collider>();
-            collider.enabled = true;
-            
-            // Just add a small downward force to make them collapse
-            rb.AddForce(Vector3.down * 1f, ForceMode.Impulse);
-            
-            // Lock rotation on X and Z axes to prevent spinning
-            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-            
-            // Zero out any existing velocity/angular velocity
-            rb.linearVelocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+            animator.SetBool("Sprawl", true);
         }
 
-        
         // Drop the briefcase when knocked out
         if (handBriefcase != null)
         {
@@ -271,7 +250,6 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
     protected override void Execute(StopTheSpy msg)
     {
         navMeshAgent.enabled = false;
-        if (animator != null) animator.enabled = false;
         StopAllCoroutines();
     }
 

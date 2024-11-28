@@ -1,8 +1,6 @@
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
-using UnityEngine.SceneManagement;
-using static UnityEngine.Rendering.DebugUI;
 
 public class MusicManagerScript : OnMessage<FadeOutMusic, FadeInMusic>
 {
