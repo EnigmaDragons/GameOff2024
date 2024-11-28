@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{4acf6853-b674-47af-8c5f-3cc340b981fc}">
+		<property name="name">
+			<value>CharTiredness</value>
+		</property>
+		<relationship name="folder">
+			<destination>{19937b21-ae46-42e1-a19e-2bf3bb10bd6e}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{97129fad-4665-4cc2-9a51-4534e0933207}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{97129fad-4665-4cc2-9a51-4534e0933207}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>6</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>None</value>
+			<value>Start</value>
+			<value>Tired</value>
+			<value>Exhausted</value>
+			<value>Recovering</value>
+			<value>Settling</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

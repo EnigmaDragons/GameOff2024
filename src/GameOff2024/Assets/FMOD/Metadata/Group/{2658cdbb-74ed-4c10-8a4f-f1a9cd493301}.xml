@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="MixerGroup" id="{2658cdbb-74ed-4c10-8a4f-f1a9cd493301}">
+		<property name="volume">
+			<value>-14.5</value>
+		</property>
+		<property name="name">
+			<value>VOXBreath</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{b02c766a-a45d-40c7-a60d-7eb0b7ad1578}</destination>
+		</relationship>
+		<relationship name="effectChain">
+			<destination>{8b298519-e836-48ce-b496-f2f1603c460a}</destination>
+		</relationship>
+		<relationship name="panner">
+			<destination>{36ec64b6-dd4a-44de-bac2-7f58f55e796c}</destination>
+		</relationship>
+		<relationship name="output">
+			<destination>{7e8531e4-a9f7-4c3d-a923-800275801b7a}</destination>
+		</relationship>
+	</object>
+	<object class="SidechainModulator" id="{b02c766a-a45d-40c7-a60d-7eb0b7ad1578}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="amount">
+			<value>80</value>
+		</property>
+		<property name="releaseTime">
+			<value>1300</value>
+		</property>
+		<relationship name="sidechains">
+			<destination>{8a3c7201-4fdf-4d01-a648-92504235496e}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusEffectChain" id="{8b298519-e836-48ce-b496-f2f1603c460a}">
+		<relationship name="effects">
+			<destination>{93c7e9b2-3030-4bbf-9631-ab91b534f31a}</destination>
+		</relationship>
+	</object>
+	<object class="MixerBusPanner" id="{36ec64b6-dd4a-44de-bac2-7f58f55e796c}" />
+	<object class="MixerBusFader" id="{93c7e9b2-3030-4bbf-9631-ab91b534f31a}" />
+</objects>

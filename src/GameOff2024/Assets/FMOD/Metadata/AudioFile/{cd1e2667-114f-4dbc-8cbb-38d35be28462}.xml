@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{cd1e2667-114f-4dbc-8cbb-38d35be28462}">
+		<property name="assetPath">
+			<value>VOX_PC_Bump_06.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.53774999999999995</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b4e62c31-319b-41a2-99f2-da90039c94f3}</destination>
+		</relationship>
+	</object>
+</objects>
