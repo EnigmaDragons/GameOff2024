@@ -279,6 +279,4 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
             Message.Publish(new BeginNarrativeSection(NarrativeSection.CaughtSpy));
         }
     }
-
-
 }
