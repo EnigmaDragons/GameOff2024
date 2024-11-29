@@ -1201,7 +1201,6 @@ GameObject:
   - component: {fileID: 2985648793847698478}
   - component: {fileID: 2982023308618288730}
   - component: {fileID: 9016996891014538116}
-  - component: {fileID: 2305251762796639364}
   - component: {fileID: 1395988942662652233}
   - component: {fileID: 8164822674752754805}
   m_Layer: 13
@@ -1643,26 +1642,6 @@ MonoBehaviour:
       Data3: 300221104
       Data4: -1511728638
     Path: event:/SFX/Char/FS/FS_Slide
---- !u!114 &2305251762796639364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2951255869235385890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 516d6f4299ccb0c4e975d7e9eacd4f6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mxEvent:
-    Guid:
-      Data1: -2052126882
-      Data2: 1101428552
-      Data3: 1432410503
-      Data4: 686139575
-    Path: event:/MX/InGame/MX_Lvl_MasterEvent
-  fadeTime: 2
 --- !u!114 &1395988942662652233
 MonoBehaviour:
   m_ObjectHideFlags: 0
