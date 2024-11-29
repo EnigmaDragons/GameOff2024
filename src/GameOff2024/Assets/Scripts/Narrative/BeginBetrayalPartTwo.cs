@@ -25,6 +25,7 @@ protected override void AfterEnable()
         
         Log.Info("Begin Betrayal - Part Two. Briefcase Delivered");
         Message.Publish(new FadeOutMusic());
+        Message.Publish(new UnregisterObjective());
         this.ExecuteAfterDelay(BeginHandlerAudioSection, 0.2f);
     }
 
