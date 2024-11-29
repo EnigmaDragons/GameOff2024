@@ -1,0 +1,229 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3795725818545826772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8448901509808936954}
+  - component: {fileID: 8005394879639046982}
+  m_Layer: 0
+  m_Name: Chase1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8448901509808936954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795725818545826772}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 477374255808356420}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8005394879639046982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3795725818545826772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa0f594a2dbb49b7a7898d3ae9ced2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines:
+  - Guid:
+      Data1: 695915873
+      Data2: 1146258550
+      Data3: -407980870
+      Data4: -73491135
+    Path: event:/DX/Chase1/DX_Handler_ComeOn
+  - Guid:
+      Data1: 1696304594
+      Data2: 1197705027
+      Data3: -716313928
+      Data4: 2097686977
+    Path: event:/DX/Chase1/DX_Handler_ComeOnZDrinks
+  - Guid:
+      Data1: -589941075
+      Data2: 1211977559
+      Data3: 1511940739
+      Data4: -1647639369
+    Path: event:/DX/Chase1/DX_Handler_JustBreathe
+  - Guid:
+      Data1: 1506933405
+      Data2: 1178694980
+      Data3: 725073302
+      Data4: -40164907
+    Path: event:/DX/Chase1/DX_Handler_MoveI
+  - Guid:
+      Data1: 1878641591
+      Data2: 1286071134
+      Data3: 1525701529
+      Data4: 732864133
+    Path: event:/DX/Chase1/DX_Handler_ThatThat
+  - Guid:
+      Data1: -645029815
+      Data2: 1114292379
+      Data3: -584578129
+      Data4: -475543134
+    Path: event:/DX/Chase1/DX_Handler_YoureTheBest
+  - Guid:
+      Data1: -1105578251
+      Data2: 1211638061
+      Data3: 964261303
+      Data4: 1160247730
+    Path: event:/DX/Chase1/DX_Handler_ZCome
+  minSecondsBetweenLines: 12
+  maxSecondsBetweenLines: 28
+  chaseSection: 5
+--- !u!1 &5099898826507141649
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 484483233884269390}
+  - component: {fileID: 6496782877766453125}
+  m_Layer: 0
+  m_Name: Chase2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &484483233884269390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5099898826507141649}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 477374255808356420}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6496782877766453125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5099898826507141649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa0f594a2dbb49b7a7898d3ae9ced2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lines:
+  - Guid:
+      Data1: -904862838
+      Data2: 1117370577
+      Data3: 1950057348
+      Data4: -118800327
+    Path: event:/DX/Chase2/DX_Handler_IDidntWan
+  - Guid:
+      Data1: 1179179392
+      Data2: 1247680413
+      Data3: 1663368324
+      Data4: 969903436
+    Path: event:/DX/Chase2/DX_Handler_LetMeGo
+  - Guid:
+      Data1: -510454039
+      Data2: 1243678677
+      Data3: -1531513193
+      Data4: 1530709969
+    Path: event:/DX/Chase2/DX_Handler_WhoDoYou
+  - Guid:
+      Data1: -939437413
+      Data2: 1159089596
+      Data3: 1356084660
+      Data4: 699290772
+    Path: event:/DX/Chase2/DX_Handler_ZIDidn
+  minSecondsBetweenLines: 12
+  maxSecondsBetweenLines: 28
+  chaseSection: 25
+--- !u!1 &5469530463556778721
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 477374255808356420}
+  - component: {fileID: 5235816139455548751}
+  m_Layer: 0
+  m_Name: DX_GameScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &477374255808356420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5469530463556778721}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8448901509808936954}
+  - {fileID: 484483233884269390}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5235816139455548751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5469530463556778721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -545565894
+      Data2: 1144239713
+      Data3: 2137597074
+      Data4: 649876519
+    Path: event:/CS/CS_GameStart_DX
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

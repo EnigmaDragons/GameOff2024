@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
+using FMODUnity;
 
 namespace NeoFPS.Samples
 {
@@ -350,7 +351,8 @@ namespace NeoFPS.Samples
 		public override void OnPointerEnter (PointerEventData eventData)
 		{
 			base.OnPointerEnter (eventData);
-			if (IsActive () && IsInteractable () && EventSystem.current != null)
+            PlayAudio(MenuAudio.Move);
+            if (IsActive () && IsInteractable () && EventSystem.current != null)
 				EventSystem.current.SetSelectedGameObject (gameObject);
 		}
 
@@ -447,15 +449,15 @@ namespace NeoFPS.Samples
 				switch (audio)
 				{
 					case MenuAudio.Move:
-						if (m_Style.soundEffects.move != null)
+						if (!m_Style.soundEffects.move.IsNull)
 							m_MenuAudioPlayer.PlayClip (m_Style.soundEffects.move);
 						break;
 					case MenuAudio.ClickValid:
-						if (m_Style.soundEffects.press != null)
+						if (!m_Style.soundEffects.press.IsNull)
 							m_MenuAudioPlayer.PlayClip (m_Style.soundEffects.press);
 						break;
 					case MenuAudio.ClickInvalid:
-						if (m_Style.soundEffects.error != null)
+						if (!m_Style.soundEffects.error.IsNull)
 							m_MenuAudioPlayer.PlayClip (m_Style.soundEffects.error);
 						break;
 				}

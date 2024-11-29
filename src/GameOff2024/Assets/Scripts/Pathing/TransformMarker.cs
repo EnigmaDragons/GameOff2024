@@ -6,4 +6,7 @@
     HandlerCoverDestination = 3,
     HandlerCoverLookPoint = 4,
     DroppedBriefcase = 5,
+    Objective = 6,
+    MaintenanceHangarDoor = 7,
+    MaintenanceHangarRoom = 8,
 }

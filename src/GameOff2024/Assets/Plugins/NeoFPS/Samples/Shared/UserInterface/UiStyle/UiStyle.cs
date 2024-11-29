@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
 
 namespace NeoFPS.Samples
 {
@@ -123,9 +124,9 @@ namespace NeoFPS.Samples
 		[Serializable]
 		public struct SoundEffects
 		{
-			public AudioClip move;
-			public AudioClip press;
-			public AudioClip error;
+			public EventReference move;
+			public EventReference press;
+			public EventReference error;
 		}
 	}
 }

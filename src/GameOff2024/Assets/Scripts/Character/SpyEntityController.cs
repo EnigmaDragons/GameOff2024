@@ -56,6 +56,13 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
     [SerializeField] SphereCollider playerTagTrigger;
     [SerializeField] float playerTagTriggerRadius;
     [SerializeField] private Transform handBriefcase;
+
+    [Header("Handler Variant")] 
+    [SerializeField] private bool startsAsSpy = true;
+    [SerializeField] private Animator spyAnimator;
+    [SerializeField] private GameObject spyModel;
+    [SerializeField] private Animator handlerAnimator;
+    [SerializeField] private GameObject handlerModel;
     
     private void Awake()
     {
@@ -66,7 +73,9 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
         
         // Cache ragdoll components
         ragdollRigidbodies = GetComponentsInChildren<Rigidbody>(true);
-        animator = GetComponentInChildren<Animator>();
+        animator = startsAsSpy ? spyAnimator : handlerAnimator;
+        spyModel.SetActive(startsAsSpy);
+        handlerModel.SetActive(!startsAsSpy);
         
         // Initially disable ragdoll and ensure colliders are set up properly
         foreach (var rb in ragdollRigidbodies)
@@ -234,33 +243,12 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
         
         isKnockedOut = true;
         navMeshAgent.enabled = false;
-        
-        // Disable animator and enable ragdoll physics
+
         if (animator != null)
         {
-            animator.enabled = false;
-        }
-        
-        SetRagdollState(true);
-        
-        // Enable colliders and apply gentle downward force
-        foreach (var rb in ragdollRigidbodies)
-        {
-            var collider = rb.GetComponent<Collider>();
-            collider.enabled = true;
-            
-            // Just add a small downward force to make them collapse
-            rb.AddForce(Vector3.down * 1f, ForceMode.Impulse);
-            
-            // Lock rotation on X and Z axes to prevent spinning
-            rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
-            
-            // Zero out any existing velocity/angular velocity
-            rb.linearVelocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
+            animator.SetBool("Sprawl", true);
         }
 
-        
         // Drop the briefcase when knocked out
         if (handBriefcase != null)
         {
@@ -271,7 +259,6 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
     protected override void Execute(StopTheSpy msg)
     {
         navMeshAgent.enabled = false;
-        if (animator != null) animator.enabled = false;
         StopAllCoroutines();
     }
 
@@ -301,6 +288,4 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
             Message.Publish(new BeginNarrativeSection(NarrativeSection.CaughtSpy));
         }
     }
-
-
 }

@@ -42,6 +42,24 @@ MonoBehaviour:
     locked: {fileID: 0}
     alert: {fileID: 0}
   m_SoundEffects:
-    move: {fileID: 8300000, guid: 58d3bb8878851f241b424aecd5ab5284, type: 3}
-    press: {fileID: 0}
-    error: {fileID: 0}
+    move:
+      Guid:
+        Data1: -1167467947
+        Data2: 1260366250
+        Data3: 1112922507
+        Data4: 848928798
+      Path: event:/SFX/UI/MainMenu/UI_Menu_Move
+    press:
+      Guid:
+        Data1: 616907759
+        Data2: 1076604600
+        Data3: -1537139046
+        Data4: 227098368
+      Path: event:/SFX/UI/MainMenu/UI_Menu_ClickValid
+    error:
+      Guid:
+        Data1: -484364335
+        Data2: 1116543312
+        Data3: 117665664
+        Data4: 642231679
+      Path: event:/SFX/UI/MainMenu/UI_Menu_InValid

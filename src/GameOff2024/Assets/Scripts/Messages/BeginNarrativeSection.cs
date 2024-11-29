@@ -2,9 +2,15 @@
 public enum NarrativeSection
 {
     Intro = 0,
+    IntroOpenEyes = 2,
+    IntroPlayerFullControl = 3,
+    IntroHalfwayThrough = 4,
+    ChasingSpy = 5,
     CaughtSpy = 10,
+    CarryingBriefcase = 15,
     CarriedBriefcase = 20,
-    CaughtHandler = 30
+    ChasingHandler = 25,
+    CaughtHandler = 30,
 }
 
 public class BeginNarrativeSection

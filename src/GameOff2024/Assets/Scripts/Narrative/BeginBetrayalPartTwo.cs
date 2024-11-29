@@ -6,7 +6,7 @@ public class BeginBetrayalPartTwo : OnMessage<BeginNarrativeSection>
     [SerializeField] private CS_AudioPlayer handlerAudio;
     [SerializeField] private Navigator navigator;
 
-    protected override void AfterEnable()
+protected override void AfterEnable()
     {
         handlerAudio.OnCinematicMarkerHit += MarkerAction;
         handlerAudio.OnCinematicEventEnded += OnFinishedAction;
@@ -25,6 +25,7 @@ public class BeginBetrayalPartTwo : OnMessage<BeginNarrativeSection>
         
         Log.Info("Begin Betrayal - Part Two. Briefcase Delivered");
         Message.Publish(new FadeOutMusic());
+        Message.Publish(new UnregisterObjective());
         this.ExecuteAfterDelay(BeginHandlerAudioSection, 0.2f);
     }
 

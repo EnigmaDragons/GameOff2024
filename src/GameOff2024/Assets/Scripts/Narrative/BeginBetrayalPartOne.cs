@@ -31,7 +31,8 @@ public class BeginBetrayalPartOne : OnMessage<BeginNarrativeSection>
         Log.Info("Betrayal - Part One");
         Log.Info("Betrayal - Part One - Disabling player controls");
         Message.Publish(new StopTheSpy());
-        Message.Publish(new FadeOutMusic());
+        Message.Publish(new UnregisterObjective());
+        //Message.Publish(new FadeOutMusic());
         Message.Publish(new DisablePlayerControls());
         FadeToBlack();
     }
@@ -61,6 +62,7 @@ public class BeginBetrayalPartOne : OnMessage<BeginNarrativeSection>
             Message.Publish(new PlayerHoldBriefcase());
             Log.Info("Betrayal - Part One - Playing handler voice line");
             handlerVoice.TriggerCinematicAudio();
+            Message.Publish(new BeginNarrativeSection(NarrativeSection.CarryingBriefcase));
         });
     }
 
