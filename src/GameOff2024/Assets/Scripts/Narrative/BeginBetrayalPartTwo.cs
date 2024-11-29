@@ -6,7 +6,7 @@ public class BeginBetrayalPartTwo : OnMessage<BeginNarrativeSection>
     [SerializeField] private CS_AudioPlayer handlerAudio;
     [SerializeField] private Navigator navigator;
 
-    protected override void AfterEnable()
+protected override void AfterEnable()
     {
         handlerAudio.OnCinematicMarkerHit += MarkerAction;
         handlerAudio.OnCinematicEventEnded += OnFinishedAction;

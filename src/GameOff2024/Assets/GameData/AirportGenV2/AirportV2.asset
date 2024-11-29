@@ -49,12 +49,28 @@ MonoBehaviour:
     Keys: []
     Locks: []
     LockPlacement: 0
+  - Graph: {fileID: 11400000}
+    TileSets:
+    - {fileID: 11400000, guid: 297067d511eec4894b662332a8b80789, type: 2}
+    NodeType: 0
+    Position: 0.6769231
+    Label: MaintenanceHangar
+    Keys: []
+    Locks: []
+    LockPlacement: 0
   Lines:
   - Graph: {fileID: 11400000}
     DungeonArchetypes:
     - {fileID: 11400000, guid: 8eeb7e66671ac0a4ba2147a19e2d87cb, type: 2}
     Position: 0
-    Length: 1
+    Length: 0.5923077
+    Keys: []
+    Locks: []
+  - Graph: {fileID: 11400000}
+    DungeonArchetypes:
+    - {fileID: 11400000, guid: 8eeb7e66671ac0a4ba2147a19e2d87cb, type: 2}
+    Position: 0.5923077
+    Length: 0.4076923
     Keys: []
     Locks: []
   currentFileVersion: 1

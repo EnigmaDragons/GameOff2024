@@ -7,6 +7,7 @@ public enum NarrativeSection
     IntroHalfwayThrough = 4,
     ChasingSpy = 5,
     CaughtSpy = 10,
+    CarryingBriefcase = 15,
     CarriedBriefcase = 20,
     ChasingHandler = 25,
     CaughtHandler = 30,

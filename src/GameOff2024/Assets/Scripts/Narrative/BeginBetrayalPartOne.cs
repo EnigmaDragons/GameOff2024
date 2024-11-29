@@ -62,6 +62,7 @@ public class BeginBetrayalPartOne : OnMessage<BeginNarrativeSection>
             Message.Publish(new PlayerHoldBriefcase());
             Log.Info("Betrayal - Part One - Playing handler voice line");
             handlerVoice.TriggerCinematicAudio();
+            Message.Publish(new BeginNarrativeSection(NarrativeSection.CarryingBriefcase));
         });
     }
 
