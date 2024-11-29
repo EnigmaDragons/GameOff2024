@@ -21,14 +21,6 @@ public class MusicManagerScript : OnMessage<BeginNarrativeSection>
         { NarrativeSection.ChasingHandler, "SectionD" }
     };
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
-    {
-        Log.Info("Music Manager - Awake");
-        mxEventInstance = RuntimeManager.CreateInstance(mxEvent);
-        mxEventInstance.start();
-    }
-
     void OnDestroy()
     {
         Log.Info("Music Manager - OnDestroy");
@@ -38,6 +30,13 @@ public class MusicManagerScript : OnMessage<BeginNarrativeSection>
 
     protected override void Execute(BeginNarrativeSection msg)
     {
+        
+        if(msg.Section == NarrativeSection.IntroOpenEyes)
+        {
+            mxEventInstance = RuntimeManager.CreateInstance(mxEvent);
+            mxEventInstance.start();
+        }        
+
         if (sectionMapping.TryGetValue(msg.Section, out var musicParam))
         {
             Log.Info($"Music Manager - param {musicParam} for section {msg.Section}");
