@@ -241,9 +241,8 @@
 		<relationship name="triggerConditions">
 			<destination>{9fac6903-6b62-4db7-bac4-9189833816e7}</destination>
 			<destination>{f1ba43c3-0512-41b9-87bf-d25b5e99a8df}</destination>
-			<destination>{9113e874-82c2-41c1-85a2-5573302f9632}</destination>
-			<destination>{ca1ad126-a679-4c00-b502-3a8f3d2a792e}</destination>
 			<destination>{9b09bcc1-4b77-43ae-b177-c321b18f2e0d}</destination>
+			<destination>{dd776df7-fc6b-435e-afc8-af6138c9f3d1}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{4ca3ef00-0633-4b14-99eb-e3e1ea0fe73e}">
@@ -325,34 +324,23 @@
 			<destination>{9852dab1-2c41-4771-a8b9-ac0c00bca21f}</destination>
 		</relationship>
 	</object>
-	<object class="ParameterCondition" id="{9113e874-82c2-41c1-85a2-5573302f9632}">
-		<property name="minimum">
-			<value>6</value>
-		</property>
-		<property name="maximum">
-			<value>6</value>
-		</property>
-		<relationship name="parameter">
-			<destination>{9852dab1-2c41-4771-a8b9-ac0c00bca21f}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterCondition" id="{ca1ad126-a679-4c00-b502-3a8f3d2a792e}">
-		<property name="minimum">
-			<value>7</value>
-		</property>
-		<property name="maximum">
-			<value>7</value>
-		</property>
-		<relationship name="parameter">
-			<destination>{9852dab1-2c41-4771-a8b9-ac0c00bca21f}</destination>
-		</relationship>
-	</object>
 	<object class="ParameterCondition" id="{9b09bcc1-4b77-43ae-b177-c321b18f2e0d}">
 		<property name="minimum">
 			<value>8</value>
 		</property>
 		<property name="maximum">
 			<value>8</value>
+		</property>
+		<relationship name="parameter">
+			<destination>{9852dab1-2c41-4771-a8b9-ac0c00bca21f}</destination>
+		</relationship>
+	</object>
+	<object class="ParameterCondition" id="{dd776df7-fc6b-435e-afc8-af6138c9f3d1}">
+		<property name="minimum">
+			<value>7</value>
+		</property>
+		<property name="maximum">
+			<value>7</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{9852dab1-2c41-4771-a8b9-ac0c00bca21f}</destination>

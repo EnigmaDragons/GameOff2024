@@ -151,14 +151,14 @@ public class PlayerMoveAudio : MonoBehaviour
             //are we moving? lets start checking how long we've been moving for and if we aren't moving lets reverse the counter
             if(rb.linearVelocity.magnitude > 0.1)
             {
-                movetime += Time.deltaTime;
+                movetime += (Time.deltaTime * 0.5f);
             }
             //we are getting our breath back
             else
             {
                 if (movetime > 0)
                 {
-                    movetime -= (Time.deltaTime * 4);
+                    movetime -= (Time.deltaTime * 4f);
                 }
                 if (movetime >10f)
                 {
