@@ -56,6 +56,13 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
     [SerializeField] SphereCollider playerTagTrigger;
     [SerializeField] float playerTagTriggerRadius;
     [SerializeField] private Transform handBriefcase;
+
+    [Header("Handler Variant")] 
+    [SerializeField] private bool startsAsSpy = true;
+    [SerializeField] private Animator spyAnimator;
+    [SerializeField] private GameObject spyModel;
+    [SerializeField] private Animator handlerAnimator;
+    [SerializeField] private GameObject handlerModel;
     
     private void Awake()
     {
@@ -66,7 +73,9 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
         
         // Cache ragdoll components
         ragdollRigidbodies = GetComponentsInChildren<Rigidbody>(true);
-        animator = GetComponentInChildren<Animator>();
+        animator = startsAsSpy ? spyAnimator : handlerAnimator;
+        spyModel.SetActive(startsAsSpy);
+        handlerModel.SetActive(!startsAsSpy);
         
         // Initially disable ragdoll and ensure colliders are set up properly
         foreach (var rb in ragdollRigidbodies)

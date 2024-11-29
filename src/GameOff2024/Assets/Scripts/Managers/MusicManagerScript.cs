@@ -24,12 +24,14 @@ public class MusicManagerScript : OnMessage<BeginNarrativeSection>
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
+        Log.Info("Music Manager - Awake");
         mxEventInstance = RuntimeManager.CreateInstance(mxEvent);
         mxEventInstance.start();
     }
 
     void OnDestroy()
     {
+        Log.Info("Music Manager - OnDestroy");
         mxEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         mxEventInstance.release();
     }
