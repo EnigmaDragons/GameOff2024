@@ -6,4 +6,5 @@
     HandlerCoverDestination = 3,
     HandlerCoverLookPoint = 4,
     DroppedBriefcase = 5,
+    Objective = 6,
 }

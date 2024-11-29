@@ -31,6 +31,7 @@ public class BeginBetrayalPartOne : OnMessage<BeginNarrativeSection>
         Log.Info("Betrayal - Part One");
         Log.Info("Betrayal - Part One - Disabling player controls");
         Message.Publish(new StopTheSpy());
+        Message.Publish(new UnregisterObjective());
         //Message.Publish(new FadeOutMusic());
         Message.Publish(new DisablePlayerControls());
         FadeToBlack();

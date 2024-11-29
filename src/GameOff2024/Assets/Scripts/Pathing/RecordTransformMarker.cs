@@ -4,8 +4,9 @@ public class RecordTransformMarker : MonoBehaviour
 {
     [SerializeField] private Transform marker;
     [SerializeField] private TransformMarker markerType;
+    [SerializeField] private bool isObjective = false;
 
-    private void Start()
+    private void OnEnable()
     {
         if (markerType == TransformMarker.Player)
             CurrentGameState.UpdateState(gs => gs.playerTransform = marker);
@@ -15,5 +16,9 @@ public class RecordTransformMarker : MonoBehaviour
             CurrentGameState.UpdateState(gs => gs.coverDestination = marker);
         if (markerType == TransformMarker.HandlerCoverLookPoint)
             CurrentGameState.UpdateState(gs => gs.coverLookPoint = marker);
+        if (markerType == TransformMarker.DroppedBriefcase)
+            CurrentGameState.UpdateState(gs => gs.droppedBriefcase = marker);
+        if (isObjective || markerType == TransformMarker.Objective)
+            CurrentGameState.UpdateState(gs => gs.objectiveTransform = marker);
     }
 }
