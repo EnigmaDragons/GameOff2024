@@ -342,10 +342,10 @@
 	</object>
 	<object class="TransitionRegion" id="{f53a0639-719f-4240-8933-cfc584c71d67}">
 		<property name="position">
-			<value>24</value>
+			<value>0</value>
 		</property>
 		<property name="length">
-			<value>8</value>
+			<value>32</value>
 		</property>
 		<property name="quantizationInterval">
 			<value>2</value>
