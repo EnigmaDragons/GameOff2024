@@ -18,7 +18,8 @@ public class MusicManagerScript : OnMessage<BeginNarrativeSection>
         { NarrativeSection.ChasingSpy, "SectionA" },
         { NarrativeSection.CaughtSpy, "SectionB" },
         { NarrativeSection.CarriedBriefcase, "SectionC" },
-        { NarrativeSection.ChasingHandler, "SectionD" }
+        { NarrativeSection.ChasingHandler, "SectionD" },
+        { NarrativeSection.CaughtHandler, "SectionC" }
     };
 
     void OnDestroy()
