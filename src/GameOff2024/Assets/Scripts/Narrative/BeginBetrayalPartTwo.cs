@@ -24,7 +24,7 @@ public class BeginBetrayalPartTwo : OnMessage<BeginNarrativeSection>
             return;
         
         Log.Info("Begin Betrayal - Part Two. Briefcase Delivered");
-        //Message.Publish(new FadeOutMusic());
+        Message.Publish(new FadeOutMusic());
         this.ExecuteAfterDelay(BeginHandlerAudioSection, 0.2f);
     }
 
