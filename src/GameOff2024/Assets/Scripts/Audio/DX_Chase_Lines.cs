@@ -54,7 +54,6 @@ public class DX_Chase_Lines : OnMessage<BeginNarrativeSection>
         if (isInChaseSection && lineQueue.Count > 0)
         {
             cooldownTimer -= Time.deltaTime;
-            Debug.Log($"Cooldown timer: {cooldownTimer}");
             if (cooldownTimer <= 0f)
             {
                 PlayNextLine();

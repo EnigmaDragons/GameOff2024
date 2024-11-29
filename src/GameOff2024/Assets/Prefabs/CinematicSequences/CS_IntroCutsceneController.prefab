@@ -209,6 +209,13 @@ MonoBehaviour:
       m_Calls: []
   delayBeforeEnableLookControls: 37
   delayBeforeEnableMovementControls: 48
+  tutorialSecondHalfAudio:
+    Guid:
+      Data1: -1951878598
+      Data2: 1266630646
+      Data3: 305551488
+      Data4: 712737913
+    Path: event:/DX/DX_Intro_2
 --- !u!114 &4430614412155456020
 MonoBehaviour:
   m_ObjectHideFlags: 0
