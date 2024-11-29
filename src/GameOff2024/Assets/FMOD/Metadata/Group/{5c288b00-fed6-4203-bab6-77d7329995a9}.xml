@@ -31,6 +31,7 @@
 	<object class="MixerBusEffectChain" id="{a72a450a-097d-4a93-80b1-41d67dd0d249}">
 		<relationship name="effects">
 			<destination>{ad6cd627-ccd5-4321-b8ee-9922800b32d6}</destination>
+			<destination>{0133c21e-f9fe-48b5-9d8b-41dccad40bf0}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{8238f41a-bbf5-4c08-a491-e6b45b5727bb}" />
@@ -44,6 +45,20 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{ad6cd627-ccd5-4321-b8ee-9922800b32d6}" />
+	<object class="ThreeEQEffect" id="{0133c21e-f9fe-48b5-9d8b-41dccad40bf0}">
+		<property name="lowCrossover">
+			<value>850</value>
+		</property>
+		<property name="highCrossover">
+			<value>1300</value>
+		</property>
+		<property name="crossoverSlope">
+			<value>0</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{3eae9e3a-7c77-4267-9537-9bc6f74422c6}</destination>
+		</relationship>
+	</object>
 	<object class="AutomationPoint" id="{22b19c53-7087-4456-8c91-e97d5478df23}">
 		<property name="position">
 			<value>0.98728813559322037</value>
@@ -59,5 +74,28 @@
 		<property name="value">
 			<value>-80</value>
 		</property>
+	</object>
+	<object class="SidechainModulator" id="{3eae9e3a-7c77-4267-9537-9bc6f74422c6}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>midGain</value>
+		</property>
+		<property name="amount">
+			<value>80</value>
+		</property>
+		<property name="attackTime">
+			<value>49</value>
+		</property>
+		<property name="releaseTime">
+			<value>62</value>
+		</property>
+		<property name="minimumThreshold">
+			<value>-35</value>
+		</property>
+		<property name="maximumThreshold">
+			<value>-12.5</value>
+		</property>
+		<relationship name="sidechains">
+			<destination>{a8ccde9b-2a95-4eed-8cf0-2eb7b8bab9a2}</destination>
+		</relationship>
 	</object>
 </objects>

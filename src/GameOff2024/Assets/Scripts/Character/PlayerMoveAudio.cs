@@ -5,6 +5,7 @@ using NeoCC;
 using Unity.Mathematics;
 using System;
 using NeoFPS.CharacterMotion;
+using System.Collections.Generic;
 
 
 
@@ -17,11 +18,25 @@ public class PlayerMoveAudio : MonoBehaviour
     public EventReference jumpFoleyEvent;
     public EventReference foleySlideEvent;
     public EventReference fsSlideEvent;
+    //all of the efforts for our player character
+    public EventReference VOXJump;
+    public EventReference VOXBump;
+    public EventReference VOXBumpTable;
+    public EventReference VOXClimb;
+    public EventReference VOXKick;
+    public EventReference VOXLand;
+    public EventReference VOXBreathing;
+    public EventInstance VOXBreathingInstance;
     EventInstance foleySlideEventInstance;
     EventInstance fsSlideEventInstance;
-    INeoCharacterController characterController;
-    bool waitForNextStep = false;
     MotionController mc;
+    //we'll track how long the PC has been moving and then decide they're getting tired so start playing breathing sounds
+    private float movetime = 0f;
+    private bool breathingStart = false;
+    private bool tiredSet = false;
+    private bool exhaustedSet = false;
+    private bool recoveringSet = false;
+    private bool settlingSet = false;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,7 +46,6 @@ public class PlayerMoveAudio : MonoBehaviour
         mc.onStep += Mc_onStep;
         mc.onCurrentStateChanged += Mc_onCurrentStateChanged;
         rb = GetComponent<Rigidbody>();
-        characterController = GetComponent<INeoCharacterController>();
     }
 
     private void Mc_onCurrentStateChanged()
@@ -108,6 +122,78 @@ public class PlayerMoveAudio : MonoBehaviour
         {
             foleySlideEventInstance.setParameterByName("Char_Speed", rb.linearVelocity.magnitude);
             fsSlideEventInstance.setParameterByName("Char_Speed", rb.linearVelocity.magnitude);
+            //are we moving? lets start checking how long we've been moving for and if we aren't moving lets reverse the counter
+            if(rb.linearVelocity.magnitude > 0.1)
+            {
+                movetime += Time.deltaTime;
+            }
+            //we are getting our breath back
+            else
+            {
+                if (movetime > 0)
+                {
+                    movetime -= Time.deltaTime;
+                }
+                if (movetime >10f)
+                {
+                    if(!recoveringSet)
+                    {
+                        recoveringSet = true;
+                        settlingSet = false;
+                        VOXBreathingInstance.setParameterByNameWithLabel("CharTiredness", "Recovering");
+                    }
+                    
+                }
+                if(movetime < 10f)
+                {
+                    if(!settlingSet)
+                    {
+                        settlingSet = true;
+                        recoveringSet = false;
+                        VOXBreathingInstance.setParameterByNameWithLabel("CharTiredness", "Settling");
+                    }
+                    
+                }
+            }
+            //we are getting tired
+            if (movetime > 5f)
+            {
+                if (!breathingStart)
+                {
+                    breathingStart = true;
+                    VOXBreathingInstance = RuntimeManager.CreateInstance(VOXBreathing);
+                    VOXBreathingInstance.setParameterByNameWithLabel("CharTiredness", "Start");
+                    RuntimeManager.AttachInstanceToGameObject(VOXBreathingInstance,gameObject);
+                    VOXBreathingInstance.start();
+                }
+                if(movetime > 10f && movetime < 15f)
+                {
+                    if(!tiredSet)
+                    {
+                        tiredSet = true;
+                        exhaustedSet = false;
+                        VOXBreathingInstance.setParameterByNameWithLabel("CharTiredness", "Tired");
+                    }                    
+                }
+                else if (movetime > 15f)
+                {
+                    if(!exhaustedSet)
+                    {
+                        exhaustedSet = true;
+                        tiredSet = false;
+                        VOXBreathingInstance.setParameterByNameWithLabel("CharTiredness", "Exhausted");
+                    }
+                }
+            }
+            else
+            {
+                if (breathingStart)
+                {
+                    breathingStart = false;
+                    VOXBreathingInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                    VOXBreathingInstance.release();
+                }
+            }
         }
     }
 

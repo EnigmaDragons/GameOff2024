@@ -1642,6 +1642,55 @@ MonoBehaviour:
       Data3: 300221104
       Data4: -1511728638
     Path: event:/SFX/Char/FS/FS_Slide
+  VOXJump:
+    Guid:
+      Data1: 1237697872
+      Data2: 1306696668
+      Data3: 46093956
+      Data4: 2035689023
+    Path: event:/SFX/Char/VOX/VOX_PC_Jump
+  VOXBump:
+    Guid:
+      Data1: -2091685765
+      Data2: 1168314433
+      Data3: -5922654
+      Data4: -631801684
+    Path: event:/SFX/Char/VOX/VOX_PC_Bump
+  VOXBumpTable:
+    Guid:
+      Data1: 2057768615
+      Data2: 1171070126
+      Data3: 639429047
+      Data4: -536539749
+    Path: event:/SFX/Char/VOX/VOX_PC_BumpTable
+  VOXClimb:
+    Guid:
+      Data1: -1748315189
+      Data2: 1129946204
+      Data3: -934030403
+      Data4: -93411750
+    Path: event:/SFX/Char/VOX/VOX_PC_Climb
+  VOXKick:
+    Guid:
+      Data1: 615487931
+      Data2: 1308582957
+      Data3: -1160159829
+      Data4: -1926264165
+    Path: event:/SFX/Char/VOX/VOX_PC_Kick
+  VOXLand:
+    Guid:
+      Data1: -454859385
+      Data2: 1202293695
+      Data3: -965097829
+      Data4: -586454350
+    Path: event:/SFX/Char/VOX/VOX_PC_Land
+  VOXBreathing:
+    Guid:
+      Data1: -1969380002
+      Data2: 1220015922
+      Data3: -733689439
+      Data4: 1771228601
+    Path: event:/SFX/Char/VOX/VOX_PC_Breathing
 --- !u!114 &1395988942662652233
 MonoBehaviour:
   m_ObjectHideFlags: 0
