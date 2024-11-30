@@ -3,7 +3,7 @@ using NeoCC;
 using NeoFPS.CharacterMotion;
 using UnityEngine;
 
-public class CutsceneCharacterController : OnMessage<ForceMovePlayer, ForceLookPlayer, EnablePlayerControls, PlayerHoldBriefcase, PlayerReleaseBriefcase>
+public class CutsceneCharacterController : OnMessage<ForceMovePlayer, ForceLookPlayer, EnablePlayerControls, PlayerHoldBriefcase, PlayerReleaseBriefcase, TeleportPlayer>
 {
     [SerializeField] private NeoCharacterController characterController;
     [SerializeField] private MotionController motionController;
@@ -152,5 +152,10 @@ public class CutsceneCharacterController : OnMessage<ForceMovePlayer, ForceLookP
     protected override void Execute(PlayerReleaseBriefcase msg)
     {
         briefcaseObject.gameObject.SetActive(false);
+    }
+
+    protected override void Execute(TeleportPlayer msg)
+    {
+        characterController.Teleport(msg.Position, Quaternion.identity);
     }
 }

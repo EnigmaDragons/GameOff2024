@@ -43,6 +43,8 @@ protected override void AfterEnable()
     {
         Message.Publish(new DisablePlayerControls());
         handlerAudio.TriggerCinematicAudio();
+        // NOTE: Spawning Early to begin pathfinding
+        Message.Publish(new SpawnHandler());
         this.ExecuteAfterDelay(() => Message.Publish(new PlayerReleaseBriefcase()), 4f);
         
         // NARRATIVE SCRIPT:
@@ -98,7 +100,7 @@ protected override void AfterEnable()
         Message.Publish(new BeginNarrativeSection(NarrativeSection.ChasingHandler));
         this.ExecuteAfterDelay(
             () => Message.Publish(new ForceMovePlayer(CurrentGameState.ReadOnly.handlerWatchRunningPoint.position, 
-                () => Message.Publish(new EnablePlayerControls()))), 0.2f);
+                ForceLookPlayerAtHandlerAfterExitCover)), 0.2f);
     }
 
     private void ForceMovePlayerToCover()
@@ -110,6 +112,18 @@ protected override void AfterEnable()
     private void ForceLookPlayerAtHandler()
     {
         Log.Info("Force Look At Handler");
-        Message.Publish(new ForceLookPlayer(CurrentGameState.ReadOnly.coverLookPoint.position, () => Log.Info("Force Move Finished")));
+        Message.Publish(new ForceLookPlayer(CurrentGameState.ReadOnly.coverLookPoint.position, () => Log.Info("Force Look Finished")));
+    }
+
+    private void ForceLookPlayerAtHandlerAfterExitCover()
+    {
+        Log.Info("Force Look At Handler After Exit Cover");
+        Message.Publish(new ForceLookPlayer(CurrentGameState.ReadOnly.handlerSpawnPoint.position, EnablePlayerControls));
+    }
+
+    private void EnablePlayerControls()
+    {
+        Log.Info("Enable Player Controls");
+        Message.Publish(new EnablePlayerControls());
     }
 }

@@ -62,6 +62,9 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
     [SerializeField] private GameObject spyModel;
     [SerializeField] private Animator handlerAnimator;
     [SerializeField] private GameObject handlerModel;
+
+    private bool _shouldStartRunningOnStart = false;
+    private bool _keepSpeedAtZero = false;
     
     private void Awake()
     {
@@ -82,7 +85,8 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
 
         if (UnityNavMeshAdapter.instance != null)
         {
-            navMeshAgent.enabled = false;
+            if (!_shouldStartRunningOnStart)
+                navMeshAgent.enabled = false;
             UnityNavMeshAdapter.instance.OnNavmeshBaked += Instance_OnNavmeshBaked;
 
         }
@@ -106,7 +110,7 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
                 {
                     currentDistance = Mathf.Clamp(CalculatePathDistance(), minDistance, maxDistance);
                     spySpeed = Mathf.Lerp(spyBaseSpeed*spySpeedMultiplierMaximum, spyBaseSpeed*spySpeedMultiplierMinimum, (currentDistance - minDistance) / (maxDistance - minDistance));
-                    navMeshAgent.speed = spySpeed;
+                    navMeshAgent.speed = _keepSpeedAtZero ? 0f : spySpeed;
                     playerDistanceCalcTimer = playerDistanceCalcInterval;
                 }
             }
@@ -214,12 +218,13 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
         if(playerCharacterTransform != null)
         {
             _playerFound = true;
-
+            Debug.Log($"Player found", playerCharacterTransform);
         }
         destinationTransform = msg.State.spyDestination;
         if(destinationTransform != null)
         {
             _destinationFound = true;
+            Debug.Log($"Destination found", destinationTransform);
             StartCoroutine(nameof(SetDestination));
         }
     }
@@ -249,15 +254,6 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
         StopAllCoroutines();
     }
 
-    private void SetRagdollState(bool state)
-    {
-        foreach (var rb in ragdollRigidbodies)
-        {
-            rb.isKinematic = !state;
-            rb.useGravity = state;
-        }
-    }
-
     public IEnumerator SetDestination()
     {
         while (navMeshAgent.enabled == false)
@@ -267,6 +263,7 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
 
         if (destinationTransform.position != navMeshAgent.destination)
         {
+            Debug.Log($"Setting new destination", destinationTransform);
             navMeshAgent.SetDestination(destinationTransform.position);
         }
     }
@@ -280,11 +277,25 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
         }
     }
 
-    public void InitDestinationAndPlayer(Transform player, Transform destination)
+    public void InitDestinationAndPlayerAndBeginRunning(Transform player, Transform destination)
     {
+        _shouldStartRunningOnStart = true;
         _playerFound = true;
         playerCharacterTransform = player;
         _destinationFound = true;
         destinationTransform = destination;
+        Debug.Log($"Initializing with player: {playerCharacterTransform}, destination: {destinationTransform}", destinationTransform);
+        navMeshAgent.enabled = true;
+        navMeshAgent.SetDestination(destinationTransform.position);
+    }
+
+    public void KeepSpeedAtZero()
+    {
+        _keepSpeedAtZero = true;
+    }
+
+    public void AllowFullSpeed()
+    {
+        _keepSpeedAtZero = false;
     }
 }

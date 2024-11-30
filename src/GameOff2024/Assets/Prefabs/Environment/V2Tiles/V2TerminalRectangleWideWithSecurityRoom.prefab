@@ -192,6 +192,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sign
       objectReference: {fileID: 0}
+    - target: {fileID: 8511704741912276303, guid: 566733f6ef6dd47f7b485c8df115f25d,
+        type: 3}
+      propertyPath: markerType
+      value: 14
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6088885248970395100, guid: 566733f6ef6dd47f7b485c8df115f25d, type: 3}
     m_RemovedGameObjects:

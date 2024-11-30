@@ -13,4 +13,6 @@
     HandlerSpawnPoint = 10,
     HandlerFinalFightRoomDoor = 11,
     HandlerWatchRunningPoint = 12,
+    MaintenanceHangarTeleportPoint = 13,
+    HandlerFinalFightDoorTeleportPoint = 14,
 }

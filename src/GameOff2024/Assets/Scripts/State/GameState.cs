@@ -24,6 +24,9 @@ public sealed class GameState
     public Transform handlerSpawnPoint;
     public Transform handlerFinalFightRoomDoor;
     public Transform handlerWatchRunningPoint;
+    public Transform maintenanceHangarTeleportPoint;
+
+    public Transform handlerFinalFightDoorTeleportPoint;
     public bool gameWon;
     public bool gameLost;
 }

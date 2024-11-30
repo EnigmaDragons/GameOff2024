@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 8413325357096991201}
   - component: {fileID: 6163531242308464813}
   - component: {fileID: 3918198279822641615}
+  - component: {fileID: 6039618904077318396}
   m_Layer: 0
   m_Name: DevCheats
   m_TagString: Untagged
@@ -362,6 +363,34 @@ MonoBehaviour:
       - m_Target: {fileID: 11400000, guid: b5007263096dcb343a39969f08727fad, type: 2}
         m_TargetAssemblyTypeName: EventPublisher, Assembly-CSharp
         m_MethodName: TriggerHandlerCaughtNarrative
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6039618904077318396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2377875293901490152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a58015a0ad344745be8d684218d85943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keys: 300100007400000070000000
+  action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 11400000, guid: b5007263096dcb343a39969f08727fad, type: 2}
+        m_TargetAssemblyTypeName: EventPublisher, Assembly-CSharp
+        m_MethodName: TeleportToMainenanceHangar
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerName: Player
   m_PlayerColourCode: 0
-  m_CrosshairColor: {r: 1, g: 1, b: 1, a: 1}
+  m_CrosshairColor: {r: 0.92941177, g: 0.53333336, b: 0.52156866, a: 1}
   m_HeadBob: 0.25
   m_AutoSwitchWeapons: 1
+  m_AutoReload: 1
