@@ -100,8 +100,9 @@ namespace NeoFPS.Samples
 		public void ShowGameOverPanel()
 		{
             NeoFpsInputManagerBase.PopEscapeHandler(Show);
-
             ShowNavControls(m_GameOverNavControls);
+			NeoFpsInputManagerBase.PopEscapeHandler(m_GameOverNavControls.Back);
+
             HidePanel();
             base.Show();
             CaptureInput();
@@ -121,12 +122,12 @@ namespace NeoFPS.Samples
             // Show Hud
             if (m_HudGroup != null)
                 m_HudGroup.alpha = 1f;
-            NeoFpsInputManagerBase.PopEscapeHandler(Hide);
-			isGameOver = false;
+            NeoFpsInputManagerBase.PushEscapeHandler(Show);
+
+            isGameOver = false;
 
             if (m_PauseGame && NeoFpsTimeScale.isPaused)
                 NeoFpsTimeScale.ResumeTime();
-            NeoFpsInputManagerBase.PushEscapeHandler(Show);
 
             m_OnHideMenu.Invoke();
         }
