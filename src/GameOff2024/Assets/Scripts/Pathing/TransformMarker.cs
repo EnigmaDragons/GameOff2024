@@ -9,4 +9,5 @@
     Objective = 6,
     MaintenanceHangarDoor = 7,
     MaintenanceHangarRoom = 8,
+    HandlerFinalFightRoom = 9,
 }

@@ -71,6 +71,7 @@ public class PlayerMoveAudio : MonoBehaviour
                 StopSlidingSound();
                 break;
             case "Ledge Climb":
+                TriggerClimbSound();
                 break;
             case "Jump Directional":
                 TriggerJumpSound();
@@ -78,8 +79,10 @@ public class PlayerMoveAudio : MonoBehaviour
                 break;
             case "Wall Run Across":
                 StopSlidingSound();
+                TriggerClimbSound();
                 break;
             case "Wall Run Up":
+                TriggerClimbSound();
                 StopSlidingSound();
                 break;
             case "Wall Slide Down":
@@ -90,6 +93,7 @@ public class PlayerMoveAudio : MonoBehaviour
                 StopSlidingSound();
                 break;
             case "Ladder Climb":
+                TriggerClimbLadderSound();
                 break;
             case "Ladder Push Off":
                 TriggerJumpSound();
@@ -102,6 +106,28 @@ public class PlayerMoveAudio : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    private void TriggerClimbSound()
+    {
+        if (UnityEngine.Random.Range(0f, 1f) > 0.7f)
+        {
+            EventInstance VOXClimbEventInstance = RuntimeManager.CreateInstance(VOXClimb);
+            RuntimeManager.AttachInstanceToGameObject(VOXClimbEventInstance, gameObject);
+            VOXClimbEventInstance.start();
+            VOXClimbEventInstance.release();
+        }            
+    }
+
+    private void TriggerClimbLadderSound()
+    {
+        if (UnityEngine.Random.Range(0f, 1f) > 0.7f)
+        {
+            EventInstance VOXClimbEventInstance = RuntimeManager.CreateInstance(VOXClimb);
+            RuntimeManager.AttachInstanceToGameObject(VOXClimbEventInstance, gameObject);
+            VOXClimbEventInstance.start();
+            VOXClimbEventInstance.release();
+        }            
     }
 
     private void Mc_onStep()
@@ -125,18 +151,18 @@ public class PlayerMoveAudio : MonoBehaviour
             //are we moving? lets start checking how long we've been moving for and if we aren't moving lets reverse the counter
             if(rb.linearVelocity.magnitude > 0.1)
             {
-                movetime += Time.deltaTime;
+                movetime += (Time.deltaTime * 0.5f);
             }
             //we are getting our breath back
             else
             {
                 if (movetime > 0)
                 {
-                    movetime -= Time.deltaTime;
+                    movetime -= (Time.deltaTime * 4f);
                 }
                 if (movetime >10f)
                 {
-                    if(!recoveringSet)
+                    if(!recoveringSet && breathingStart)
                     {
                         recoveringSet = true;
                         settlingSet = false;
@@ -146,7 +172,7 @@ public class PlayerMoveAudio : MonoBehaviour
                 }
                 if(movetime < 10f)
                 {
-                    if(!settlingSet)
+                    if(!settlingSet && breathingStart)
                     {
                         settlingSet = true;
                         recoveringSet = false;
@@ -156,7 +182,7 @@ public class PlayerMoveAudio : MonoBehaviour
                 }
             }
             //we are getting tired
-            if (movetime > 5f)
+            if (movetime > 10f)
             {
                 if (!breathingStart)
                 {
@@ -166,7 +192,7 @@ public class PlayerMoveAudio : MonoBehaviour
                     RuntimeManager.AttachInstanceToGameObject(VOXBreathingInstance,gameObject);
                     VOXBreathingInstance.start();
                 }
-                if(movetime > 10f && movetime < 15f)
+                if(movetime > 20f && movetime < 30f)
                 {
                     if(!tiredSet)
                     {
@@ -175,7 +201,7 @@ public class PlayerMoveAudio : MonoBehaviour
                         VOXBreathingInstance.setParameterByNameWithLabel("CharTiredness", "Tired");
                     }                    
                 }
-                else if (movetime > 15f)
+                else if (movetime > 30f)
                 {
                     if(!exhaustedSet)
                     {
@@ -203,6 +229,14 @@ public class PlayerMoveAudio : MonoBehaviour
         RuntimeManager.AttachInstanceToGameObject(jumpFoleyEventInstance, gameObject);
         jumpFoleyEventInstance.start();
         jumpFoleyEventInstance.release();
+
+        if (UnityEngine.Random.Range(0f, 1f) > 0.7f)
+        {
+            EventInstance VOXJumpEventInstance = RuntimeManager.CreateInstance(VOXJump);
+            RuntimeManager.AttachInstanceToGameObject(VOXJumpEventInstance, gameObject);
+            VOXJumpEventInstance.start();
+            VOXJumpEventInstance.release();
+        }            
     }
 
     private void TriggerSlidingSound(float charSpeed)
@@ -217,6 +251,14 @@ public class PlayerMoveAudio : MonoBehaviour
         foleySlideEventInstance.setParameterByName("Char_Speed", charSpeed);
         fsSlideEventInstance.start();
         //Debug.Log("sliding");
+
+        if(UnityEngine.Random.Range(0f,1f) > 0.7f)
+        {
+            EventInstance VOXClimbEventInstance = RuntimeManager.CreateInstance(VOXClimb);
+            RuntimeManager.AttachInstanceToGameObject(VOXClimbEventInstance, gameObject);
+            VOXClimbEventInstance.start();
+            VOXClimbEventInstance.release();
+        }      
 
     }
 
@@ -234,6 +276,11 @@ public class PlayerMoveAudio : MonoBehaviour
         RuntimeManager.AttachInstanceToGameObject(fsLandEventInstance, gameObject);
         fsLandEventInstance.start();
         fsLandEventInstance.release();
+
+        EventInstance VOXLandEventInstance = RuntimeManager.CreateInstance(VOXLand);
+        RuntimeManager.AttachInstanceToGameObject(VOXLandEventInstance, gameObject);
+        VOXLandEventInstance.start();
+        VOXLandEventInstance.release();
     }
 
     void TriggerFootstep(float charSpeed)

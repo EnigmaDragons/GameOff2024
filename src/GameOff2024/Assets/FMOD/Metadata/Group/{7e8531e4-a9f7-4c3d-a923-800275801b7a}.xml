@@ -4,6 +4,9 @@
 		<property name="color">
 			<value>Blue Light 1</value>
 		</property>
+		<property name="volume">
+			<value>-10</value>
+		</property>
 		<property name="name">
 			<value>VOX</value>
 		</property>

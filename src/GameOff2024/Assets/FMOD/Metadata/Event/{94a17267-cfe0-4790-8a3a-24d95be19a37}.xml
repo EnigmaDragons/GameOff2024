@@ -114,6 +114,10 @@
 			<destination>{f3dba5c8-a626-4b96-bb4e-0a3e62f1c598}</destination>
 			<destination>{ddbf5916-53eb-4c4a-adf9-d323480276e7}</destination>
 			<destination>{f98a3a9a-7075-4528-99df-93dff02b7033}</destination>
+			<destination>{0138fa73-af9d-4b97-a2c8-059838b06845}</destination>
+		</relationship>
+		<relationship name="playPercentages">
+			<destination>{b92968c5-4d65-4704-9cc7-2ce77afd72fd}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{a4a5ce00-0b07-41a0-88d4-9a0e14d4c0d0}" />
@@ -162,5 +166,29 @@
 		<relationship name="audioFile">
 			<destination>{fdc601b3-4ad4-4b47-b8b8-e918570aa175}</destination>
 		</relationship>
+	</object>
+	<object class="SilenceSound" id="{0138fa73-af9d-4b97-a2c8-059838b06845}">
+		<property name="duration">
+			<value>2000</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{9648019a-46a5-4f0a-9fd8-de9f32b31957}</destination>
+		</relationship>
+	</object>
+	<object class="PlayPercentage" id="{b92968c5-4d65-4704-9cc7-2ce77afd72fd}">
+		<property name="percentage">
+			<value>30</value>
+		</property>
+		<relationship name="sound">
+			<destination>{0138fa73-af9d-4b97-a2c8-059838b06845}</destination>
+		</relationship>
+	</object>
+	<object class="RandomizerModulator" id="{9648019a-46a5-4f0a-9fd8-de9f32b31957}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>duration</value>
+		</property>
+		<property name="amount">
+			<value>1.5</value>
+		</property>
 	</object>
 </objects>
