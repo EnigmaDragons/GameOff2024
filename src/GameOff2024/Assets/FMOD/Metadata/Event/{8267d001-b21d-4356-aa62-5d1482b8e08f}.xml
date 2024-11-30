@@ -220,8 +220,8 @@
 		<property name="length">
 			<value>40</value>
 		</property>
-		<property name="quantizationInterval">
-			<value>2</value>
+		<property name="triggerConditionMode">
+			<value>1</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{9e2df873-2485-465d-942a-43e46a4aa4aa}</destination>
@@ -237,6 +237,9 @@
 		</relationship>
 		<relationship name="triggerConditions">
 			<destination>{38ff04ec-2871-4f10-b5fb-7eb93724c1f8}</destination>
+			<destination>{e95755e1-5761-4f2a-b7a7-8a1e009a5cdb}</destination>
+			<destination>{45ee5885-520d-4880-a4ed-27ec4d2437cf}</destination>
+			<destination>{cb976085-e8b1-434d-be9d-7365f6afd66f}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{7bca1d32-347e-4e02-841e-19e6e1b3d084}">
@@ -302,6 +305,39 @@
 		</property>
 		<property name="maximum">
 			<value>4</value>
+		</property>
+		<relationship name="parameter">
+			<destination>{9852dab1-2c41-4771-a8b9-ac0c00bca21f}</destination>
+		</relationship>
+	</object>
+	<object class="ParameterCondition" id="{e95755e1-5761-4f2a-b7a7-8a1e009a5cdb}">
+		<property name="minimum">
+			<value>5</value>
+		</property>
+		<property name="maximum">
+			<value>5</value>
+		</property>
+		<relationship name="parameter">
+			<destination>{9852dab1-2c41-4771-a8b9-ac0c00bca21f}</destination>
+		</relationship>
+	</object>
+	<object class="ParameterCondition" id="{45ee5885-520d-4880-a4ed-27ec4d2437cf}">
+		<property name="minimum">
+			<value>7</value>
+		</property>
+		<property name="maximum">
+			<value>7</value>
+		</property>
+		<relationship name="parameter">
+			<destination>{9852dab1-2c41-4771-a8b9-ac0c00bca21f}</destination>
+		</relationship>
+	</object>
+	<object class="ParameterCondition" id="{cb976085-e8b1-434d-be9d-7365f6afd66f}">
+		<property name="minimum">
+			<value>8</value>
+		</property>
+		<property name="maximum">
+			<value>8</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{9852dab1-2c41-4771-a8b9-ac0c00bca21f}</destination>
