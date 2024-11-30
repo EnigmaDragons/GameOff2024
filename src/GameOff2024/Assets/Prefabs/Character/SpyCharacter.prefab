@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1772217593623304785}
   - component: {fileID: 3060452071477352492}
   m_Layer: 16
-  m_Name: Spy
+  m_Name: SpyCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -508,6 +508,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8700617353114198275, guid: 877019ffd4f92aa498e73f8ad0ae60bf, type: 3}
+    - {fileID: 65702495048144492, guid: 877019ffd4f92aa498e73f8ad0ae60bf, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 877019ffd4f92aa498e73f8ad0ae60bf,
         type: 3}
@@ -727,7 +728,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1208425191869825054, guid: 53f2406e6a71b4c17a1cf13f3d75463b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53f2406e6a71b4c17a1cf13f3d75463b, type: 3}

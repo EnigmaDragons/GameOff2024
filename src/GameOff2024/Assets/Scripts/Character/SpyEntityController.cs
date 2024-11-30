@@ -2,7 +2,6 @@ using DunGen.Adapters;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Events;
 
 public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopTheSpy>
 {
@@ -70,29 +69,17 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
         if (navMeshAgent == null)
             Log.Error("Missing NavMeshAgent");
         navMeshAgent.autoTraverseOffMeshLink = false;
-        
-        // Cache ragdoll components
-        ragdollRigidbodies = GetComponentsInChildren<Rigidbody>(true);
+
         animator = startsAsSpy ? spyAnimator : handlerAnimator;
         spyModel.SetActive(startsAsSpy);
         handlerModel.SetActive(!startsAsSpy);
-        
-        // Initially disable ragdoll and ensure colliders are set up properly
-        foreach (var rb in ragdollRigidbodies)
-        {
-            if (rb.transform.Equals(transform))
-            {
-                continue;
-            }
-            rb.GetComponent<Collider>().enabled = false; // Disable colliders initially
-        }
-        SetRagdollState(false);
     }
     
     private void Start()
     {
         pathToPlayer = new NavMeshPath();
         SetSpeed(TraversalLinkTypes.running);
+
         if (UnityNavMeshAdapter.instance != null)
         {
             navMeshAgent.enabled = false;
@@ -277,7 +264,11 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
         {
             yield return null;
         }
-        navMeshAgent.SetDestination(destinationTransform.position);
+
+        if (destinationTransform.position != navMeshAgent.destination)
+        {
+            navMeshAgent.SetDestination(destinationTransform.position);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -287,5 +278,13 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
             hasBeenTagged = true;
             Message.Publish(new BeginNarrativeSection(NarrativeSection.CaughtSpy));
         }
+    }
+
+    public void InitDestinationAndPlayer(Transform player, Transform destination)
+    {
+        _playerFound = true;
+        playerCharacterTransform = player;
+        _destinationFound = true;
+        destinationTransform = destination;
     }
 }

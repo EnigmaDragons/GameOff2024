@@ -25,7 +25,19 @@ MonoBehaviour:
   KeyManager: {fileID: 0}
   DoorwayConnectionChance: 0.519
   RestrictConnectionToSameSection: 1
-  TileInjectionRules: []
+  TileInjectionRules:
+  - TileSet: {fileID: 11400000, guid: cfa6bffab26df423e98b281be8341c41, type: 2}
+    NormalizedPathDepth:
+      Min: 0
+      Max: 1
+    NormalizedBranchDepth:
+      Min: 0.5
+      Max: 1
+    CanAppearOnMainPath: 0
+    CanAppearOnBranchPath: 1
+    IsRequired: 1
+    IsLocked: 0
+    LockID: 0
   TileTagConnectionMode: 0
   TileConnectionTags: []
   BranchTagPruneMode: 1
