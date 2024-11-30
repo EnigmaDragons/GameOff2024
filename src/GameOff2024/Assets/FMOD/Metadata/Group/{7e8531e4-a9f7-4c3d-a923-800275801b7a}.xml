@@ -10,6 +10,12 @@
 		<property name="name">
 			<value>VOX</value>
 		</property>
+		<property name="maxInstances">
+			<value>1</value>
+		</property>
+		<property name="instanceStealing">
+			<value>1</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{2561547f-d3db-46ec-ad35-ce399bd29e80}</destination>
 		</relationship>

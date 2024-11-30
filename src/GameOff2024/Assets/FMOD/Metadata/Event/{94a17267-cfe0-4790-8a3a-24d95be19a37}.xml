@@ -104,6 +104,9 @@
 		<property name="looping">
 			<value>true</value>
 		</property>
+		<property name="playCount">
+			<value>10</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{968cc373-afdf-4dd5-92d7-75e2b6309599}</destination>
 		</relationship>
