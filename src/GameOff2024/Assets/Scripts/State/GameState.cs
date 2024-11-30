@@ -20,6 +20,7 @@ public sealed class GameState
     public Transform coverLookPoint;
     public Transform droppedBriefcase;
     public Transform objectiveTransform;
+    public Transform handlerFinalFightRoom;
 
     public bool gameWon;
     public bool gameLost;
