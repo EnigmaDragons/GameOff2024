@@ -263,7 +263,7 @@ MonoBehaviour:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 5, y: 5, z: 5}
     OverlapThreshold: 0.01
-    Padding: 0
+    Padding: 0.2
     DisallowOverhangs: 0
     AvoidCollisionsWithOtherDungeons: 1
     Root: {fileID: 0}
