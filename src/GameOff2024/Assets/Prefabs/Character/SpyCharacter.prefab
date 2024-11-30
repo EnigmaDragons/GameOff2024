@@ -248,6 +248,7 @@ MonoBehaviour:
   spyModel: {fileID: 125220940072847632}
   handlerAnimator: {fileID: 4425648961082141131}
   handlerModel: {fileID: 6971831914846824715}
+  staminaDegradeRate: 0.04
 --- !u!114 &5475013908267335931
 MonoBehaviour:
   m_ObjectHideFlags: 0

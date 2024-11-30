@@ -67,6 +67,11 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
     private bool _keepSpeedAtZero = false;
     private bool _lockDestination = false;
     private bool _isInvincibleToPlayer = false;
+
+    // Stamina degradation
+    [SerializeField] float staminaDegradeRate;
+    private float staminaDegradeTimer = 0f;
+    private float effectiveMaxSpeedFactor = 1f;
     
     private void Awake()
     {
@@ -106,12 +111,21 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
         if (_playerFound && _destinationFound)
         {
             playerDistanceCalcTimer -= Time.deltaTime;
+            staminaDegradeTimer += Time.deltaTime;
+
+            // Degrade stamina every 10 seconds
+            if (staminaDegradeTimer >= 10f)
+            {
+                effectiveMaxSpeedFactor = Mathf.Max(0.5f, effectiveMaxSpeedFactor - staminaDegradeRate);
+                staminaDegradeTimer = 0f;
+            }
+
             if (playerDistanceCalcTimer <= 0f)
             {
                 if (navMeshAgent.CalculatePath(playerCharacterTransform.position, pathToPlayer))
                 {
                     currentDistance = Mathf.Clamp(CalculatePathDistance(), minDistance, maxDistance);
-                    spySpeed = Mathf.Lerp(spyBaseSpeed*spySpeedMultiplierMaximum, spyBaseSpeed*spySpeedMultiplierMinimum, (currentDistance - minDistance) / (maxDistance - minDistance));
+                    spySpeed = Mathf.Lerp(spyBaseSpeed * spySpeedMultiplierMaximum * effectiveMaxSpeedFactor, spyBaseSpeed * spySpeedMultiplierMinimum, (currentDistance - minDistance) / (maxDistance - minDistance));
                     navMeshAgent.speed = _keepSpeedAtZero ? 0f : spySpeed;
                     playerDistanceCalcTimer = playerDistanceCalcInterval;
                 }
