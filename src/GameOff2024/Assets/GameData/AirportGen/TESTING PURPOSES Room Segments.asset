@@ -13,38 +13,6 @@ MonoBehaviour:
   m_Name: TESTING PURPOSES Room Segments
   m_EditorClassIdentifier: 
   segments:
-  - prefab: {fileID: 7788789297830909933, guid: 3deb1a334cb074b24a30d197201fbbe6,
-      type: 3}
-    difficulty: 1
-  - prefab: {fileID: 9152191977462706700, guid: 4a01edf8e01f94f41ba872af65a12050,
-      type: 3}
-    difficulty: 1
-  - prefab: {fileID: 6607916996355382637, guid: d66c8cefeb23e4e9e9dbf5b17e8a8778,
-      type: 3}
-    difficulty: 1
-  - prefab: {fileID: 3725961816157487740, guid: 323529dd276523c45b42eb023fb6431a,
-      type: 3}
-    difficulty: 1
-  - prefab: {fileID: 1093971900045450519, guid: fa00b10e12b70491bab8e2cdf5bdeab6,
-      type: 3}
-    difficulty: 1
-  - prefab: {fileID: 3450063138784222979, guid: 707733d64e7c64295b355cbbd6b63235,
-      type: 3}
-    difficulty: 2
-  - prefab: {fileID: 941568373817998554, guid: 917437e90ab258c4a83622c4fe63930f, type: 3}
-    difficulty: 2
-  - prefab: {fileID: 3037492685174538849, guid: 3fa428999ea5c489bbd5c87318f37e8d,
-      type: 3}
-    difficulty: 2
   - prefab: {fileID: 7788789297830909933, guid: fdf6bb537d082b441ac3e71cece6a641,
       type: 3}
     difficulty: 2
-  - prefab: {fileID: 7534009571733400233, guid: 66ed3dbc83c078e41ab0661e41d0fd36,
-      type: 3}
-    difficulty: 3
-  - prefab: {fileID: 5111156168008178036, guid: 5a4f498c60f744853b53fbb5d170b843,
-      type: 3}
-    difficulty: 3
-  - prefab: {fileID: 7661319564714934312, guid: fe73304fd512f439f800ec612d9a44a6,
-      type: 3}
-    difficulty: 3
