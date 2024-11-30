@@ -3,7 +3,17 @@ guid: e3173365ae7c7ea478b9c748c9ced0e8
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CarouselBelt
+    second: {fileID: 2100000, guid: d19f478295c0d174b8cfdbd696de4b0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 0ab6487b70f3488409e79ecf638c4f3a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

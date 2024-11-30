@@ -66,6 +66,7 @@ MonoBehaviour:
   ConnectionChance: 0
   Tags:
     Tags: []
+  interior: {fileID: 0}
   AllDoorways: []
   UsedDoorways: []
   UnusedDoorways: []
@@ -115,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b7609c21a89e4b60a498981358bbfcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pool: {fileID: 11400000, guid: 7abc5c6fb0ee445b194759308f88b739, type: 2}
+  pool: {fileID: 11400000, guid: e8de0e1e0a2532f47b5be9561288e900, type: 2}
   slots:
   - {fileID: 11962592624490273}
 --- !u!1 &2670145090852326611
