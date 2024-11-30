@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 using System.Text.RegularExpressions;
@@ -54,3 +55,4 @@ public static class RoomSegmentEditorAssetUpdater
         Debug.Log($"Updated {pools.Length} RoomSegmentPool(s) with {segments.Length} segments");
     }
 }
+#endif

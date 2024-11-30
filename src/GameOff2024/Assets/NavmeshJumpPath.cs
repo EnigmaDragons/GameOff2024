@@ -27,8 +27,7 @@ public class NavmeshJumpPath : MonoBehaviour
     }
 
 #if UNITY_EDITOR
-
-    private void OnDrawGizmos()
+    protected void OnDrawGizmos()
     {
         if (pathStart == null || pathEnd == null)
             return;
@@ -50,8 +49,8 @@ public class NavmeshJumpPath : MonoBehaviour
             }
             Handles.DrawAAPolyLine(offsetArcPoints);
         }
-#endif
     }
+#endif
 
     private Vector3[] CalculateArcPoints(Vector3 start, Vector3 end, float height, int resolution)
     {
