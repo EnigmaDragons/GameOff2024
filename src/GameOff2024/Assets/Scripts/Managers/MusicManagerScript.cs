@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
 
@@ -8,7 +7,8 @@ public class MusicManagerScript : OnMessage<BeginNarrativeSection>
     public EventReference mxEvent;
     EventInstance mxEventInstance;
 
-
+    private bool started = false;
+    
     private Dictionary<NarrativeSection, string> sectionMapping = new()
     {
         { NarrativeSection.Intro, "Unconscious" },
@@ -31,13 +31,7 @@ public class MusicManagerScript : OnMessage<BeginNarrativeSection>
 
     protected override void Execute(BeginNarrativeSection msg)
     {
-        
-        if(msg.Section == NarrativeSection.IntroOpenEyes)
-        {
-            mxEventInstance = RuntimeManager.CreateInstance(mxEvent);
-            mxEventInstance.start();
-        }        
-
+        StartMusicIfNeeded();
         if (sectionMapping.TryGetValue(msg.Section, out var musicParam))
         {
             Log.Info($"Music Manager - param {musicParam} for section {msg.Section}");
@@ -47,5 +41,15 @@ public class MusicManagerScript : OnMessage<BeginNarrativeSection>
         {
             Log.Warn($"Music Manager - No Music Param known for {msg.Section}");
         }
+    }
+
+    private void StartMusicIfNeeded()
+    {
+        if (started)
+            return;
+
+        started = true;
+        mxEventInstance = RuntimeManager.CreateInstance(mxEvent);
+        mxEventInstance.start();
     }
 }

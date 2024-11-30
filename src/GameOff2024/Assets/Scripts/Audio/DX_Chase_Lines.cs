@@ -43,7 +43,7 @@ public class DX_Chase_Lines : OnMessage<BeginNarrativeSection>
         }
         else
         {
-            Debug.Log("Exiting chase section.");
+            Debug.Log($"Exiting chase section - {chaseSection}");
             isInChaseSection = false;
             lineQueue.Clear();
         }
