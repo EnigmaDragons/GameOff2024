@@ -577,6 +577,11 @@ PrefabInstance:
       propertyPath: 'm_RebindableButtons.Array.data[47]'
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114129592479777388, guid: 8d6e4bb7546007e41ab4470bb54ce07d,
+        type: 3}
+      propertyPath: m_SaveGameButton
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 114211792311955032, guid: 8d6e4bb7546007e41ab4470bb54ce07d,
         type: 3}
       propertyPath: m_Color.b
@@ -1807,6 +1812,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 1262678364993850, guid: 8d6e4bb7546007e41ab4470bb54ce07d, type: 3}
+    - {fileID: 1786161585960074, guid: 8d6e4bb7546007e41ab4470bb54ce07d, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8d6e4bb7546007e41ab4470bb54ce07d, type: 3}
