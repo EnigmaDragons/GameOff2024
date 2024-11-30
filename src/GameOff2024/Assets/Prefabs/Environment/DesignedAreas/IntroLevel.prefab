@@ -519,6 +519,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1203384978146995244, guid: cadce10ef7c0900428ddf40589eb9508,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2123912928835418843, guid: cadce10ef7c0900428ddf40589eb9508,
         type: 3}
       propertyPath: m_IsActive
@@ -641,6 +646,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: V2TerminalRectangleWideWithShops (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963324398276951650, guid: f3fb5f14f14831449b1f260db0896ce7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196968189271382233, guid: f3fb5f14f14831449b1f260db0896ce7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4979482206816424874, guid: f3fb5f14f14831449b1f260db0896ce7,
         type: 3}
@@ -805,6 +820,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: V2TerminalRectangleWideWithShops (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1963324398276951650, guid: f3fb5f14f14831449b1f260db0896ce7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196968189271382233, guid: f3fb5f14f14831449b1f260db0896ce7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4979482206816424874, guid: f3fb5f14f14831449b1f260db0896ce7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -879,6 +904,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: V2TerminalRectangleWideWithShops
       objectReference: {fileID: 0}
+    - target: {fileID: 1963324398276951650, guid: f3fb5f14f14831449b1f260db0896ce7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196968189271382233, guid: f3fb5f14f14831449b1f260db0896ce7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4979482206816424874, guid: f3fb5f14f14831449b1f260db0896ce7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -952,6 +987,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: V2TerminalRectangleWideWithShops (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963324398276951650, guid: f3fb5f14f14831449b1f260db0896ce7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196968189271382233, guid: f3fb5f14f14831449b1f260db0896ce7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4979482206816424874, guid: f3fb5f14f14831449b1f260db0896ce7,
         type: 3}
