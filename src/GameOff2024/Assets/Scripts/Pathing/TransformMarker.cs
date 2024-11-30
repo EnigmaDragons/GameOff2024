@@ -10,4 +10,7 @@
     MaintenanceHangarDoor = 7,
     MaintenanceHangarRoom = 8,
     HandlerFinalFightRoom = 9,
+    HandlerSpawnPoint = 10,
+    HandlerFinalFightRoomDoor = 11,
+    HandlerWatchRunningPoint = 12,
 }

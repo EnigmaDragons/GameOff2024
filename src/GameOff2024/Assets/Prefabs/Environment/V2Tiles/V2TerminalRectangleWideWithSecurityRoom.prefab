@@ -177,6 +177,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SecurityRoomDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5583169711699389004, guid: 566733f6ef6dd47f7b485c8df115f25d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6088885248970395100, guid: 566733f6ef6dd47f7b485c8df115f25d,
         type: 3}
       propertyPath: m_Enabled
@@ -200,8 +205,39 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3643691708233878934}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5583169711699389004, guid: 566733f6ef6dd47f7b485c8df115f25d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3471068300619428191}
   m_SourcePrefab: {fileID: 100100000, guid: 566733f6ef6dd47f7b485c8df115f25d, type: 3}
+--- !u!4 &2304918743829858516 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1204421339588769554, guid: 566733f6ef6dd47f7b485c8df115f25d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1101765287445331910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4769636312234268042 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5583169711699389004, guid: 566733f6ef6dd47f7b485c8df115f25d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1101765287445331910}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3471068300619428191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4769636312234268042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80ebc1f8ffa84cf6a211ebb12bfe54fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  marker: {fileID: 2304918743829858516}
+  markerType: 11
+  isObjective: 0
 --- !u!4 &5559251970388289012 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4786252762866948658, guid: 566733f6ef6dd47f7b485c8df115f25d,

@@ -93,8 +93,12 @@ protected override void AfterEnable()
         //
         // PC comes out of cover and sees the Handler running away. 
         //
-        //     PLAYER RESUMES CONTROL. 
-        Message.Publish(new EnablePlayerControls());
+        //     PLAYER RESUMES CONTROL.         
+        
+        Message.Publish(new BeginNarrativeSection(NarrativeSection.ChasingHandler));
+        this.ExecuteAfterDelay(
+            () => Message.Publish(new ForceMovePlayer(CurrentGameState.ReadOnly.handlerWatchRunningPoint.position, 
+                () => Message.Publish(new EnablePlayerControls()))), 0.2f);
     }
 
     private void ForceMovePlayerToCover()

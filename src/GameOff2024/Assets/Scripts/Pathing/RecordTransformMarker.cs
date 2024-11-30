@@ -20,6 +20,12 @@ public class RecordTransformMarker : MonoBehaviour
             CurrentGameState.UpdateState(gs => gs.droppedBriefcase = marker);
         if (markerType == TransformMarker.HandlerFinalFightRoom)
             CurrentGameState.UpdateState(gs => gs.handlerFinalFightRoom = marker);
+        if (markerType == TransformMarker.HandlerSpawnPoint)
+            CurrentGameState.UpdateState(gs => gs.handlerSpawnPoint = marker);
+        if (markerType == TransformMarker.HandlerFinalFightRoomDoor)
+            CurrentGameState.UpdateState(gs => gs.handlerFinalFightRoomDoor = marker);
+        if (markerType == TransformMarker.HandlerWatchRunningPoint)
+            CurrentGameState.UpdateState(gs => gs.handlerWatchRunningPoint = marker);
         if (isObjective || markerType == TransformMarker.Objective)
             CurrentGameState.UpdateState(gs => gs.objectiveTransform = marker);
     }
