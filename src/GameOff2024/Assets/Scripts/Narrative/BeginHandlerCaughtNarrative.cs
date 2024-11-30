@@ -22,11 +22,11 @@ public class BeginHandlerCaughtNarrative : OnMessage<BeginNarrativeSection>
 
     private void OnSwitchLightsOn()
     {
-        fadeOut.StartFade(false);
     }
 
     private void OnPlayerResumeControl()
     {
+        fadeOut.StartFade(false);
         Message.Publish(new EnablePlayerControls());
     }
 }

@@ -65,6 +65,8 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
 
     private bool _shouldStartRunningOnStart = false;
     private bool _keepSpeedAtZero = false;
+    private bool _lockDestination = false;
+    private bool _isInvincibleToPlayer = false;
     
     private void Awake()
     {
@@ -220,6 +222,8 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
             _playerFound = true;
             Debug.Log($"Player found", playerCharacterTransform);
         }
+
+        if (_lockDestination) return;
         destinationTransform = msg.State.spyDestination;
         if(destinationTransform != null)
         {
@@ -270,6 +274,9 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
 
     private void OnTriggerEnter(Collider other)
     {
+        if (_isInvincibleToPlayer)
+            return;
+        
         if (!hasBeenTagged && other.gameObject.CompareTag("Player"))
         {
             hasBeenTagged = true;
@@ -284,6 +291,8 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
         playerCharacterTransform = player;
         _destinationFound = true;
         destinationTransform = destination;
+        _lockDestination = true;
+        _isInvincibleToPlayer = true;
         Debug.Log($"Initializing with player: {playerCharacterTransform}, destination: {destinationTransform}", destinationTransform);
         navMeshAgent.enabled = true;
         navMeshAgent.SetDestination(destinationTransform.position);

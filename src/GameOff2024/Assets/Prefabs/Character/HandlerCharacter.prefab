@@ -86,7 +86,12 @@ PrefabInstance:
     - target: {fileID: 8575804175135261220, guid: 07a015719b1f0264387a4b557925711f,
         type: 3}
       propertyPath: spySpeedMultiplierMaximum
-      value: 4
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8575804175135261220, guid: 07a015719b1f0264387a4b557925711f,
+        type: 3}
+      propertyPath: spySpeedMultiplierMinimum
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
