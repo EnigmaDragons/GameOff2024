@@ -19,7 +19,7 @@ public class ObstacleNearSpy : MonoBehaviour
         }
         else
         {
-            spy = FindAnyObjectByType<SpyController>().transform;
+            spy = FindAnyObjectByType<SpyController>()?.transform;
         }
     }
 }

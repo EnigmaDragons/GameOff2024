@@ -12,6 +12,7 @@ namespace NeoFPS.Samples
 	public class InGameMenu : BaseMenu
 	{
 		[SerializeField] private MenuNavControls m_StartingNavControls = null;
+		[SerializeField] private MenuNavControls m_GameOverNavControls = null;
         [SerializeField] private CanvasGroup m_HudGroup = null;
         [SerializeField] private InGameMenuBackground m_Background = null;
         [SerializeField] private int m_MainMenuScene = 0;
@@ -20,6 +21,8 @@ namespace NeoFPS.Samples
 
 		[SerializeField] private UnityEvent m_OnShowMenu = null;
 		[SerializeField] private UnityEvent m_OnHideMenu = null;
+
+		bool isGameOver;
 
 #if UNITY_EDITOR
 		protected void OnValidate ()
@@ -85,12 +88,48 @@ namespace NeoFPS.Samples
 
 		void OnExitYes ()
 		{
+			isGameOver = false;
 			SceneManager.LoadScene (m_MainMenuScene);
 		}
 
 		void OnExitNo ()
 		{
+			//isGameOver = false;
 		}
+
+		public void ShowGameOverPanel()
+		{
+            NeoFpsInputManagerBase.PopEscapeHandler(Show);
+
+            ShowNavControls(m_GameOverNavControls);
+            HidePanel();
+            base.Show();
+            CaptureInput();
+            // Fade Hud
+            if (m_HudGroup != null)
+                m_HudGroup.alpha = m_HudAlpha;
+
+            if (m_PauseGame)
+                NeoFpsTimeScale.FreezeTime();
+
+            m_OnShowMenu.Invoke();
+        }
+		public void ResetGameOver()
+		{
+            base.Hide();
+            ReleaseInput();
+            // Show Hud
+            if (m_HudGroup != null)
+                m_HudGroup.alpha = 1f;
+            NeoFpsInputManagerBase.PopEscapeHandler(Hide);
+			isGameOver = false;
+
+            if (m_PauseGame && NeoFpsTimeScale.isPaused)
+                NeoFpsTimeScale.ResumeTime();
+            NeoFpsInputManagerBase.PushEscapeHandler(Show);
+
+            m_OnHideMenu.Invoke();
+        }
 
 		void CaptureInput ()
 		{

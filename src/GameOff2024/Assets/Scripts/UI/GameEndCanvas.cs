@@ -2,46 +2,71 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using NeoFPS;
+using NeoFPS.Samples;
 
 public class GameEndCanvas : OnMessage<GameStateChanged>
 {
     [SerializeField] GameObject gameOverPanel;
-    [SerializeField] GameObject youWonSubpanel;
-    [SerializeField] GameObject youLostSubpanel;
-    [SerializeField] Button playAgainButton;
 
     [SerializeField] float GameOverDelay;
 
     bool gameDecided;
 
+    bool showCanvas;
+    [SerializeField] private CanvasGroup loadUi;
+
+    InGameMenu menuParent;
+
+    [SerializeField] Navigator navigator;
+
     private void Start()
     {
-        playAgainButton.onClick.AddListener(()=>SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex));
-        youWonSubpanel.SetActive(false);
-        youLostSubpanel.SetActive(false);
+        gameOverPanel.SetActive(false);
+        menuParent = GetComponentInParent<InGameMenu>();
     }
     protected override void Execute(GameStateChanged msg)
     {
         if(msg != null && !gameDecided)
         {
-            if (msg.State.gameWon)
+            if (msg.State.gameLost)
             {
                 gameDecided = true;
-                StartCoroutine(TriggerGameOver(true));
-            }
-            else if (msg.State.gameLost)
-            {
-                gameDecided = true;
-                StartCoroutine(TriggerGameOver(false));
+                menuParent.ShowGameOverPanel();
+                StartCoroutine(TriggerGameOver());
             }
         }
     }
 
-    IEnumerator TriggerGameOver(bool gameWon)
+    IEnumerator TriggerGameOver()
     {
-        yield return new WaitForSeconds(GameOverDelay);
+        float alpha = 0;
+        NeoFpsTimeScale.FreezeTime();
+
         gameOverPanel.SetActive(true);
-        youWonSubpanel.SetActive(gameWon);
-        youLostSubpanel.SetActive(!gameWon);
+
+        while (alpha < 1)
+        {
+            alpha += 0.5f * Time.unscaledDeltaTime;
+            loadUi.alpha = alpha;
+            yield return null;
+        }
+
+        //Cursor.visible = true;
+        //Cursor.lockState = CursorLockMode.None;
     }
+
+    public void ResetScene()
+    {
+        Debug.Log("Reset Scene");
+        NeoFpsTimeScale.ResumeTime();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        loadUi.alpha = 0;
+        gameOverPanel.SetActive(false);
+        menuParent.ResetGameOver();
+
+        navigator.NavigateToGameScene();
+    }
+
 }
