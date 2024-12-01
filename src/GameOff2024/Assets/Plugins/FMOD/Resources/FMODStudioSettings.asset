@@ -916,8 +916,8 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     SampleRate:
-      Value: 0
-      HasValue: 0
+      Value: 44100
+      HasValue: 1
     BuildDirectory:
       Value: 
       HasValue: 0
