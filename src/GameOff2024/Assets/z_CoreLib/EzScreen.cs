@@ -1,8 +1,5 @@
 ﻿using UnityEngine;
-#if UNITY_EDITOR_WIN
-using Input = UnityEngine.Input;
-using UnityEngine.Windows;
-#endif
+using System.IO;
 
 public class EzScreen : CrossSceneSingleInstance
 {
@@ -13,19 +10,23 @@ public class EzScreen : CrossSceneSingleInstance
 
     protected override void OnAwake()
     {
-#if UNITY_EDITOR_WIN
-        while (File.Exists($"{filename}_{_counter}.png"))
+        string path = Path.Combine(Application.persistentDataPath, "Screenshots");
+        Directory.CreateDirectory(path);
+        
+        while (File.Exists(Path.Combine(path, $"{filename}_{_counter}.png")))
             _counter++;
-#endif
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F12))
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.F12) || Input.GetKeyDown(KeyCode.Backslash))
         {
-            var n = $"{filename}_{_counter++}.png";
+            string path = Path.Combine(Application.persistentDataPath, "Screenshots");
+            var n = Path.Combine(path, $"{filename}_{_counter++}.png");
             ScreenCapture.CaptureScreenshot(n);
             Debug.Log($"Captured screenshot: {n}");
         }
+#endif
     }
 }

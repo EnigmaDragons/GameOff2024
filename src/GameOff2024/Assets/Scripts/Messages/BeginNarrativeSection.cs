@@ -11,6 +11,8 @@ public enum NarrativeSection
     CarriedBriefcase = 20,
     ChasingHandler = 25,
     CaughtHandler = 30,
+
+    MainMenu = 100,
 }
 
 public class BeginNarrativeSection
