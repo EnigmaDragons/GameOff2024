@@ -695,6 +695,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4690061359432292816, guid: f3fb5f14f14831449b1f260db0896ce7,
+        type: 3}
+      propertyPath: maxSpawns
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -4690061359432292816, guid: f3fb5f14f14831449b1f260db0896ce7,
+        type: 3}
+      propertyPath: minSpawns
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 243824786705907250, guid: f3fb5f14f14831449b1f260db0896ce7,
         type: 3}
       propertyPath: m_Name
@@ -718,7 +728,7 @@ PrefabInstance:
     - target: {fileID: 1184740248121224669, guid: f3fb5f14f14831449b1f260db0896ce7,
         type: 3}
       propertyPath: slots.Array.size
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4979482206816424874, guid: f3fb5f14f14831449b1f260db0896ce7,
         type: 3}

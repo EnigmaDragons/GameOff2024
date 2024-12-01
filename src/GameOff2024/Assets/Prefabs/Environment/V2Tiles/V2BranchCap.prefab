@@ -104,6 +104,57 @@ PrefabInstance:
       propertyPath: BlockerSceneObjects.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3455988441782050136, guid: cb5e1d1780a46a24a90f02a71c182dcb,
+        type: 3}
+      propertyPath: maxSpawns
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3455988441782050136, guid: cb5e1d1780a46a24a90f02a71c182dcb,
+        type: 3}
+      propertyPath: minSpawns
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3455988441782050136, guid: cb5e1d1780a46a24a90f02a71c182dcb,
+        type: 3}
+      propertyPath: propPrefabs.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3455988441782050136, guid: cb5e1d1780a46a24a90f02a71c182dcb,
+        type: 3}
+      propertyPath: 'propPrefabs.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1502191936276652306, guid: b552af89c22868c4d89a8d6ff00388b0,
+        type: 3}
+    - target: {fileID: 3455988441782050136, guid: cb5e1d1780a46a24a90f02a71c182dcb,
+        type: 3}
+      propertyPath: 'propPrefabs.Array.data[1]'
+      value: 
+      objectReference: {fileID: 4004587257169454186, guid: 6f4961d894a023e4699718ede695e14b,
+        type: 3}
+    - target: {fileID: 3455988441782050136, guid: cb5e1d1780a46a24a90f02a71c182dcb,
+        type: 3}
+      propertyPath: 'propPrefabs.Array.data[2]'
+      value: 
+      objectReference: {fileID: 315673792555649926, guid: 588f83d73470f2a468ee7f4fe6868e52,
+        type: 3}
+    - target: {fileID: 3455988441782050136, guid: cb5e1d1780a46a24a90f02a71c182dcb,
+        type: 3}
+      propertyPath: 'propPrefabs.Array.data[3]'
+      value: 
+      objectReference: {fileID: 4790048065722136633, guid: c758507aeae726141a14c5faf42cfa76,
+        type: 3}
+    - target: {fileID: 3455988441782050136, guid: cb5e1d1780a46a24a90f02a71c182dcb,
+        type: 3}
+      propertyPath: 'propPrefabs.Array.data[4]'
+      value: 
+      objectReference: {fileID: 7441117133134080531, guid: ca696cb82a88ae84ea6f4e2276c62067,
+        type: 3}
+    - target: {fileID: 3455988441782050136, guid: cb5e1d1780a46a24a90f02a71c182dcb,
+        type: 3}
+      propertyPath: 'propPrefabs.Array.data[5]'
+      value: 
+      objectReference: {fileID: 7460645501551870764, guid: fb44100fa300f68439652ec2e8ee3f46,
+        type: 3}
     - target: {fileID: 4217315778250964167, guid: cb5e1d1780a46a24a90f02a71c182dcb,
         type: 3}
       propertyPath: m_Enabled

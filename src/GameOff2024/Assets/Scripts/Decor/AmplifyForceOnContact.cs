@@ -19,7 +19,6 @@ public class AmplifyForceOnContact : MonoBehaviour
             var kickDirection = transform.position - collision.gameObject.transform.position;
             kickDirection.y = 0; // Zero out y to get horizontal direction
             kickDirection = kickDirection.normalized;
-            
             // Add force in kick direction plus some upward force
             rb.AddForce((kickDirection * _kickForce + Vector3.up * _upwardForce), ForceMode.Impulse);
             //Log.Info("Amplified Force!");

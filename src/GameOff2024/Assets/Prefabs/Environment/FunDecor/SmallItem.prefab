@@ -74,6 +74,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_bag_4 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3606389311037290715, guid: 0a69ba9c4258a364995670c6e6dd762a,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -102,10 +107,8 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8016586287637737993}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 17a398c9efa048ed989f14aa8ed3c16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kickForce: 10
-  upwardForce: 2

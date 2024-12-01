@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 6102868738415964546}
   - component: {fileID: 1184740248121224669}
   - component: {fileID: 6858468421491784553}
+  - component: {fileID: -4690061359432292816}
   m_Layer: 0
   m_Name: V2TerminalRectangleWideWithShops
   m_TagString: Untagged
@@ -249,6 +250,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6662cfa529b4653b1bb5accf1016044, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4690061359432292816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243824786705907250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6888b69092f9b4086783cc8680b239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  propPrefabs:
+  - {fileID: 1502191936276652306, guid: b552af89c22868c4d89a8d6ff00388b0, type: 3}
+  - {fileID: 4004587257169454186, guid: 6f4961d894a023e4699718ede695e14b, type: 3}
+  - {fileID: 315673792555649926, guid: 588f83d73470f2a468ee7f4fe6868e52, type: 3}
+  - {fileID: 4790048065722136633, guid: c758507aeae726141a14c5faf42cfa76, type: 3}
+  - {fileID: 7441117133134080531, guid: ca696cb82a88ae84ea6f4e2276c62067, type: 3}
+  - {fileID: 7460645501551870764, guid: fb44100fa300f68439652ec2e8ee3f46, type: 3}
+  spawnParent: {fileID: 0}
+  minSpawns: 5
+  maxSpawns: 10
+  maxAttempts: 10
+  spawnArea: {fileID: 0}
+  positionOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1030156075170526776
 GameObject:
   m_ObjectHideFlags: 0

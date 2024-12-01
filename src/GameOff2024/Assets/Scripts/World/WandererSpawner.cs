@@ -115,7 +115,7 @@ public class WandererSpawner : MonoBehaviour
                 if (numColliders == 0)
                 {
                     // Spawn the wanderer
-                    GameObject spawned = Instantiate(wandererPrefab, randomPoint, Quaternion.Euler(0, Random.Range(0, 360), 0), transform);
+                    GameObject spawned = Instantiate(wandererPrefab, randomPoint, Quaternion.Euler(0, Random.Range(0, 360), 0), spawnParent);
                     if (ENABLE_LOGGING) Debug.Log($"Successfully spawned wanderer at {spawnPos}");
                     return true;
                 }
@@ -135,7 +135,7 @@ public class WandererSpawner : MonoBehaviour
                     if (allSpawnable)
                     {
                         // Spawn the wanderer since all collisions are with Spawnable objects
-                        GameObject spawned = Instantiate(wandererPrefab, randomPoint, Quaternion.Euler(0, Random.Range(0, 360), 0), transform);
+                        GameObject spawned = Instantiate(wandererPrefab, randomPoint, Quaternion.Euler(0, Random.Range(0, 360), 0), spawnParent);
                         if (ENABLE_LOGGING) Debug.Log($"Successfully spawned wanderer at {spawnPos} (all collisions were Spawnable)");
                         return true;
                     }

@@ -68,6 +68,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ashtray
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5c1bbb5d6f1ba2a47a0fdc0aae68b1f6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 24
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -80,6 +85,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6150711473320818658}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5c1bbb5d6f1ba2a47a0fdc0aae68b1f6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1611778308126651019}
   m_SourcePrefab: {fileID: 100100000, guid: 5c1bbb5d6f1ba2a47a0fdc0aae68b1f6, type: 3}
 --- !u!1 &1967633510512302680 stripped
 GameObject:
@@ -135,3 +144,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1611778308126651019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967633510512302680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a398c9efa048ed989f14aa8ed3c16a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
