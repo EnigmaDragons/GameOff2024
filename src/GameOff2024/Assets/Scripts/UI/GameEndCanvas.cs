@@ -2,12 +2,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using FMODUnity;
 using NeoFPS;
 using NeoFPS.Samples;
 
 public class GameEndCanvas : OnMessage<GameStateChanged>
 {
     [SerializeField] GameObject gameOverPanel;
+    [SerializeField] private EventReference[] gameOverLines;
 
     [SerializeField] float GameOverDelay;
 
@@ -42,6 +44,12 @@ public class GameEndCanvas : OnMessage<GameStateChanged>
     {
         float alpha = 0;
         NeoFpsTimeScale.FreezeTime();
+
+        if (gameOverLines.Length > 0)
+        {
+            int randomIndex = Random.Range(0, gameOverLines.Length);
+            RuntimeManager.PlayOneShot(gameOverLines[randomIndex]);
+        }
 
         gameOverPanel.SetActive(true);
 
