@@ -358,6 +358,9 @@
 		<property name="length">
 			<value>0.5</value>
 		</property>
+		<property name="triggerConditionMode">
+			<value>1</value>
+		</property>
 		<property name="name">
 			<value>SectionC</value>
 		</property>
@@ -372,6 +375,7 @@
 		</relationship>
 		<relationship name="triggerConditions">
 			<destination>{73d59130-2c6e-4cab-95dc-4215d53ee6bd}</destination>
+			<destination>{896ffe0e-b826-40ee-b7ef-05a33088311c}</destination>
 		</relationship>
 		<relationship name="transitionTimeline">
 			<destination>{89e7af40-e96b-4d77-84c7-a5de40776816}</destination>
@@ -637,6 +641,17 @@
 		</property>
 		<property name="maximum">
 			<value>7</value>
+		</property>
+		<relationship name="parameter">
+			<destination>{9852dab1-2c41-4771-a8b9-ac0c00bca21f}</destination>
+		</relationship>
+	</object>
+	<object class="ParameterCondition" id="{896ffe0e-b826-40ee-b7ef-05a33088311c}">
+		<property name="minimum">
+			<value>9</value>
+		</property>
+		<property name="maximum">
+			<value>9</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{9852dab1-2c41-4771-a8b9-ac0c00bca21f}</destination>
