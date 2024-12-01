@@ -50,7 +50,7 @@ public class PlayerMoveAudio : MonoBehaviour
 
     private void Mc_onCurrentStateChanged()
     {
-        Debug.Log(mc.currentState.name);
+        //Debug.Log(mc.currentState.name);
         switch (mc.currentState.name)
         {
             case "Sprint":

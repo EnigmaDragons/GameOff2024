@@ -46,7 +46,6 @@ public class AgentLinkMover : MonoBehaviour
         climbMask = NavMesh.GetAreaFromName("Climb");
         jumpDownMask = NavMesh.GetAreaFromName("Jump Down");
         visualsLocalY = visuals.transform.localPosition.y;
-        Debug.Log($"Spy - Climb is {climbMask}, Slide is {slideMask}");
     }
 
     private void Update()
@@ -76,10 +75,8 @@ public class AgentLinkMover : MonoBehaviour
         }
         else if (m_agent.isOnOffMeshLink)
         {
-            Debug.Log($"Spy Movement is {m_hit.mask}");
             if (m_hit.mask == 1<<slideMask)
             {
-                Debug.Log($"Spy - Started Slide");
                 m_animator.SetBool("Slide", true);
                 isSliding = true;
                 controller.SetSpeed(SpyController.TraversalLinkTypes.sliding);
@@ -89,7 +86,6 @@ public class AgentLinkMover : MonoBehaviour
                 m_animator.SetBool("Climb", true);
                 isClimbing = true;
                 controller.SetSpeed(SpyController.TraversalLinkTypes.climbing);
-                Debug.Log("Started Climbing");
             }
             else if (m_hit.mask == 1 << jumpDownMask)
             {

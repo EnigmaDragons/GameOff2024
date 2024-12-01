@@ -31,8 +31,10 @@ public class GameEndCanvas : OnMessage<GameStateChanged>
     {
         if(msg != null && !gameDecided)
         {
+            Debug.Log("Game decided");
             if (msg.State.gameLost)
             {
+                Debug.Log("Game Lost");
                 gameDecided = true;
                 menuParent.ShowGameOverPanel();
                 StartCoroutine(TriggerGameOver());
@@ -52,7 +54,8 @@ public class GameEndCanvas : OnMessage<GameStateChanged>
         }
 
         gameOverPanel.SetActive(true);
-
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         while (alpha < 1)
         {
             alpha += 0.5f * Time.unscaledDeltaTime;
@@ -60,8 +63,7 @@ public class GameEndCanvas : OnMessage<GameStateChanged>
             yield return null;
         }
 
-        //Cursor.visible = true;
-        //Cursor.lockState = CursorLockMode.None;
+        
     }
 
     public void ResetScene()
@@ -72,6 +74,7 @@ public class GameEndCanvas : OnMessage<GameStateChanged>
         Cursor.lockState = CursorLockMode.Locked;
         loadUi.alpha = 0;
         gameOverPanel.SetActive(false);
+
         menuParent.ResetGameOver();
 
         navigator.NavigateToGameScene();

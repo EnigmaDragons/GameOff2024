@@ -46,7 +46,8 @@ public class LoadingController : OnMessage<NavigateToSceneRequested, HideLoadUiR
 
     protected override void Execute(SpyNavigationCompleted msg)
     {
-        EndLoad();
+        if(isWaitingForPathfinding)
+            EndLoad();
     }
 
     private void Update()

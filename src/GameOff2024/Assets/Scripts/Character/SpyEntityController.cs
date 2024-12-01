@@ -236,15 +236,15 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
         if(playerCharacterTransform != null)
         {
             _playerFound = true;
-            Debug.Log($"Player found", playerCharacterTransform);
+            //Debug.Log($"Player found", playerCharacterTransform);
         }
 
         if (_lockDestination) return;
         destinationTransform = msg.State.spyDestination;
-        if(destinationTransform != null)
+        if(!_destinationFound && destinationTransform != null)
         {
             _destinationFound = true;
-            Debug.Log($"Destination found", destinationTransform);
+            //Debug.Log($"Destination found", destinationTransform);
             StartCoroutine(nameof(SetDestination));
         }
     }
