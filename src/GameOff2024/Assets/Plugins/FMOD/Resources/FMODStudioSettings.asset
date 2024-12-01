@@ -393,7 +393,7 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     Overlay:
-      Value: 0
+      Value: 1
       HasValue: 1
     OverlayPosition:
       Value: 0
@@ -405,7 +405,7 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     SampleRate:
-      Value: 48000
+      Value: 44100
       HasValue: 1
     BuildDirectory:
       Value: 
@@ -931,11 +931,11 @@ MonoBehaviour:
       Value: 128
       HasValue: 1
     DSPBufferLength:
-      Value: 0
-      HasValue: 0
+      Value: 1024
+      HasValue: 1
     DSPBufferCount:
-      Value: 0
-      HasValue: 0
+      Value: 4
+      HasValue: 1
     Plugins:
       Value: []
       HasValue: 1
