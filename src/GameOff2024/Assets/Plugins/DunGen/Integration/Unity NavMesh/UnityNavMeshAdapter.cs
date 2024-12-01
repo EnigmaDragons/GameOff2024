@@ -15,6 +15,8 @@ namespace DunGen.Adapters
 		public static UnityNavMeshAdapter instance;
 		public event EventHandler<EventArgs> OnNavmeshBaked;
 
+		public bool navmeshBaked = false;
+
 		#region Nested Types
 
 		public enum RuntimeNavMeshBakeMode
@@ -67,6 +69,7 @@ namespace DunGen.Adapters
         public override void Generate(Dungeon dungeon)
 		{
 			instance = this;
+			navmeshBaked = false;
 			if (BakeMode == RuntimeNavMeshBakeMode.FullDungeonBake)
 			{
 				BakeFullDungeon(dungeon);
@@ -119,6 +122,7 @@ namespace DunGen.Adapters
 
 			if (OnProgress != null)
 				OnProgress(new NavMeshGenerationProgress() { Description = "Done", Percentage = 1.0f });
+			navmeshBaked = true;
             OnNavmeshBaked?.Invoke(this, EventArgs.Empty);
 
         }

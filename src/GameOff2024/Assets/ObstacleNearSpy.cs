@@ -7,7 +7,7 @@ public class ObstacleNearSpy : MonoBehaviour
     NavMeshObstacle obstacle;
     private void Start()
     {
-        spy = FindAnyObjectByType<SpyController>().transform;
+        spy = FindAnyObjectByType<SpyController>()?.transform;
         obstacle = GetComponent<NavMeshObstacle>();
     }
 

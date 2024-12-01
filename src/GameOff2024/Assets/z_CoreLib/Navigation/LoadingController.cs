@@ -1,24 +1,33 @@
-﻿using System;
+﻿using DunGen.Adapters;
+using NeoFPS;
+using System;
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class LoadingController : OnMessage<NavigateToSceneRequested, HideLoadUiRequested>
+public class LoadingController : OnMessage<NavigateToSceneRequested, HideLoadUiRequested, SpyNavigationCompleted>
 {
     [SerializeField] private CanvasGroup loadUi;
     [SerializeField] private float loadFadeDuration = 0.5f;
     [SerializeField] private bool debugLoggingEnabled;
+    [SerializeField] private TMP_Text loadingText;
     [SerializeField] private UnityEvent onStartedLoading;
+
 
     private bool _isLoading;
     private float _startedTransitionAt;
     private AsyncOperation _loadState;
+
+    bool isWaitingForPathfinding;
 
     private void Awake() => loadUi.alpha = 0;
     
     protected override void Execute(NavigateToSceneRequested msg)
     {
         _isLoading = true;
+        isWaitingForPathfinding = msg.isGameScene;
         onStartedLoading.Invoke();
         _startedTransitionAt = Time.timeSinceLevelLoad;
         this.ExecuteAfterDelay(() =>
@@ -32,6 +41,11 @@ public class LoadingController : OnMessage<NavigateToSceneRequested, HideLoadUiR
     {
         if (!_isLoading && loadUi.alpha <= 0f)
             loadUi.alpha = 0f;
+    }
+
+    protected override void Execute(SpyNavigationCompleted msg)
+    {
+        EndLoad();
     }
 
     private void Update()
@@ -50,8 +64,24 @@ public class LoadingController : OnMessage<NavigateToSceneRequested, HideLoadUiR
 
     private void OnLoadFinished(AsyncOperation _)
     {
+        if (isWaitingForPathfinding)
+        {
+            Message.Publish(new DisablePlayerControls());
+            return;
+        }
+        EndLoad();
+
+    }
+
+    private void EndLoad()
+    {
         _isLoading = false;
         _startedTransitionAt = Time.timeSinceLevelLoad;
         _loadState.completed -= OnLoadFinished;
+        if (isWaitingForPathfinding)
+        {
+            Message.Publish(new EnablePlayerControls());
+            isWaitingForPathfinding= false;
+        }
     }
 }

@@ -15,7 +15,7 @@ public sealed class Navigator : ScriptableObject
     {
         if (loggingEnabled)
             Log.Info($"Navigating to {sceneName}");
-        Message.Publish(new NavigateToSceneRequested(sceneName));
+        Message.Publish(new NavigateToSceneRequested(sceneName, sceneName == "GameScene"));
     }
 
     public void NavigateInstantly(string sceneName)

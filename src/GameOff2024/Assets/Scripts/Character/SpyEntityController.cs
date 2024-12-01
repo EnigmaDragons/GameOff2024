@@ -1,4 +1,5 @@
 using DunGen.Adapters;
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
@@ -45,7 +46,8 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
 
     private bool _playerFound = false;
     private bool _destinationFound = false;
-    private bool _waypointsSet = false;
+
+    public event EventHandler<EventArgs> OnDestinationFound;
 
     // the interval between calculating the distance to the player
     [SerializeField] float playerDistanceCalcInterval;
@@ -282,7 +284,11 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
         if (destinationTransform.position != navMeshAgent.destination)
         {
             Debug.Log($"Setting new destination", destinationTransform);
-            navMeshAgent.SetDestination(destinationTransform.position);
+            if (navMeshAgent.SetDestination(destinationTransform.position))
+            {
+                transform.rotation = Quaternion.LookRotation(navMeshAgent.path.corners[0]-transform.position, Vector3.up);
+                Message.Publish(new SpyNavigationCompleted());
+            }
         }
     }
 
@@ -321,4 +327,9 @@ public class SpyController : OnMessage<GameStateChanged, KnockOutTheSpy, StopThe
     {
         _keepSpeedAtZero = false;
     }
+}
+
+public class SpyNavigationCompleted
+{
+ 
 }
