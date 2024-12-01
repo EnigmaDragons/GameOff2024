@@ -385,6 +385,9 @@
 		<property name="position">
 			<value>5</value>
 		</property>
+		<property name="triggerConditionMode">
+			<value>1</value>
+		</property>
 		<relationship name="timeline">
 			<destination>{b59a8132-c879-4008-ba67-f09660f65375}</destination>
 		</relationship>
@@ -393,6 +396,7 @@
 		</relationship>
 		<relationship name="triggerConditions">
 			<destination>{2f4a0cc0-934d-4e26-a16a-12ea9a2ccb45}</destination>
+			<destination>{b27e4789-8e2f-42d7-9da6-0e7fc050ed6d}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{ee17d165-e794-4c67-b783-0ffe7e3b173f}">
@@ -674,6 +678,17 @@
 		</property>
 		<property name="maximum">
 			<value>7</value>
+		</property>
+		<relationship name="parameter">
+			<destination>{9852dab1-2c41-4771-a8b9-ac0c00bca21f}</destination>
+		</relationship>
+	</object>
+	<object class="ParameterCondition" id="{b27e4789-8e2f-42d7-9da6-0e7fc050ed6d}">
+		<property name="minimum">
+			<value>9</value>
+		</property>
+		<property name="maximum">
+			<value>9</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{9852dab1-2c41-4771-a8b9-ac0c00bca21f}</destination>
