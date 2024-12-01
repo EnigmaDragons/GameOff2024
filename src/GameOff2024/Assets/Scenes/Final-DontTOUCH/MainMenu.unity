@@ -358,6 +358,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 891905557699161667, guid: 1b53162d40c3d8444aaa99049d179da6,
         type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 891905557699161667, guid: 1b53162d40c3d8444aaa99049d179da6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 891905557699161667, guid: 1b53162d40c3d8444aaa99049d179da6,
+        type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -379,6 +389,16 @@ PrefabInstance:
     - target: {fileID: 2131022525257760860, guid: 1b53162d40c3d8444aaa99049d179da6,
         type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131022525257760860, guid: 1b53162d40c3d8444aaa99049d179da6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131022525257760860, guid: 1b53162d40c3d8444aaa99049d179da6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2131022525257760860, guid: 1b53162d40c3d8444aaa99049d179da6,
@@ -509,6 +529,16 @@ PrefabInstance:
     - target: {fileID: 7619293776271824624, guid: 1b53162d40c3d8444aaa99049d179da6,
         type: 3}
       propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619293776271824624, guid: 1b53162d40c3d8444aaa99049d179da6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7619293776271824624, guid: 1b53162d40c3d8444aaa99049d179da6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7619293776271824624, guid: 1b53162d40c3d8444aaa99049d179da6,

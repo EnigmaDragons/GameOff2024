@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 using System.IO;
 
-public class EzScreen : CrossSceneSingleInstance
+public class EzScreen : MonoBehaviour
 {
     [SerializeField] private string filename;
     
-    protected override string UniqueTag => "Screenshots";
     private static int _counter;
 
-    protected override void OnAwake()
+    private void Awake()
     {
         string path = Path.Combine(Application.persistentDataPath, "Screenshots");
         Directory.CreateDirectory(path);
