@@ -28,6 +28,7 @@ public class LoadingController : OnMessage<NavigateToSceneRequested, HideLoadUiR
     {
         _isLoading = true;
         isWaitingForPathfinding = msg.isGameScene;
+        Debug.Log(isWaitingForPathfinding);
         onStartedLoading.Invoke();
         _startedTransitionAt = Time.timeSinceLevelLoad;
         this.ExecuteAfterDelay(() =>
@@ -69,7 +70,11 @@ public class LoadingController : OnMessage<NavigateToSceneRequested, HideLoadUiR
             Message.Publish(new DisablePlayerControls());
             return;
         }
-        EndLoad();
+        else
+        {
+            EndLoad();
+
+        }
 
     }
 
