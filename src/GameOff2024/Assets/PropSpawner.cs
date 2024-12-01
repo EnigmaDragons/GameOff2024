@@ -93,9 +93,16 @@ public class PropSpawner : MonoBehaviour
 
     private bool TrySpawnWanderer()
     {
+        if (propPrefabs.Length == 0)
+        {
+            Debug.LogWarning("No Spawn Prefabs Found", gameObject);
+            return false;
+        }
+        
         // Try to find a valid spawn point on the NavMesh
         for (int attempt = 0; attempt < maxAttempts; attempt++)
         {
+            var prop = propPrefabs.Random();
             // Get random point in a square zone
             Vector3 randomPoint = GetRandomPointInsideCollider(spawnArea);
             randomPoint.y = 0;
@@ -113,7 +120,7 @@ public class PropSpawner : MonoBehaviour
                 if (numColliders == 0)
                 {
                     // Spawn the wanderer
-                    GameObject spawned = Instantiate(propPrefabs[Random.Range(0, propPrefabs.Length)], randomPoint, Quaternion.Euler(0, Random.Range(0, 360), 0), spawnParent);
+                    GameObject spawned = Instantiate(prop, randomPoint, Quaternion.Euler(0, Random.Range(0, 360), 0), spawnParent);
                     if (ENABLE_LOGGING) Debug.Log($"Successfully spawned wanderer at {spawnPos}");
                     return true;
                 }
@@ -133,7 +140,7 @@ public class PropSpawner : MonoBehaviour
                     if (allSpawnable)
                     {
                         // Spawn the wanderer since all collisions are with Spawnable objects
-                        GameObject spawned = Instantiate(propPrefabs[Random.Range(0, propPrefabs.Length)], randomPoint, Quaternion.Euler(0, Random.Range(0, 360), 0), spawnParent);
+                        GameObject spawned = Instantiate(prop, randomPoint, Quaternion.Euler(0, Random.Range(0, 360), 0), spawnParent);
                         if (ENABLE_LOGGING) Debug.Log($"Successfully spawned wanderer at {spawnPos} (all collisions were Spawnable)");
                         return true;
                     }

@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887d0cd22ba35224c84f5eb41800571a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filename: /temp/scrn/spylimit/spylimt_
+  filename: /Users/sreinagel/temp/scrn/spylimit/spylimt_
 --- !u!1 &2613591684815632719
 GameObject:
   m_ObjectHideFlags: 0
