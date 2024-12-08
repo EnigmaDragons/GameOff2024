@@ -10,6 +10,8 @@ Retro Notes:
 - Silas - Using NeoFPS got us launched very quickly with the FPS movement
 - Silas - Using DunGen for procedural generation was very powerful and fun
 - Josh - The procedural generation is excellent!
+- SizzlinKola - Voice acting was great. Really carried the scenes with black screens. 
+- SizzlinKola - Parkour mechanics was pretty fun. 
 
 2. What didn't go well?
 - Josh - Everything went well!
@@ -23,6 +25,7 @@ Retro Notes:
 - Silas - Having the jam include holidays was challenging (especially having it near the end)
 - Silas - Wanted the level designs to be more evolved, but ran into time constraints especially due to environment art progress
 - Silas - The Spy AI was very hard to implement well
+- SizzlinKola - Not enough time/crunch at the end to get a first version of the full narrative. Not enough time to iterate/polish it. 
 
 3. What lessons can we take moving forward?
 - Ben - We should have built and tested builds earlier
@@ -35,6 +38,7 @@ Retro Notes:
 - Silas - Evolve level design skill to be able to greybox faster and with more fidelity
 - Carrie - Plan better. Don't overcommit.
 - Carrie - Building a broader technical stack will increase employability
+- SizzlinKola - Reduce scope of narrative or commit to it much earlier in the jam so that everyone understands the full scope. 
 
 4. What was your personal favorite part of the jam?
 - Silas - When I first saw real spy chasing working, the spy could climb, and the spy could slide. So cool!
@@ -42,6 +46,7 @@ Retro Notes:
 - Ben - Really happy with the main menu music
 - Carrie - Seeing the first-person movement for the first time
 - Josh - Bringing Maria on board (got to be a casting director for a bit)
+- SizzlinKola - Playing through the game the first time with all the voice acting and animations, seeing it all come together. 
 
 5. What is your favorite thing in the game?
 - Josh - The characters are T-Posing, and when you get close enough to them they put their arms down and start to move.
@@ -50,4 +55,5 @@ Retro Notes:
 - Ben - Loves when the spy bulldozes through the props
 - Silas - Amazing voice acting really brough the story life
 - Carrie - The soundtrack!
+- SizzlinKola - The voice acting! Second is the sliding. I love sliding. 
 
